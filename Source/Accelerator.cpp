@@ -33,7 +33,7 @@
 
 // List of modifier strings
 const LPCWSTR CAccelerator::MOD_NAMES[] = {		// // //
-	L"None",
+	L"なし",	/// jp
 	L"Alt",
 	L"Ctrl",
 	L"Ctrl+Alt",
@@ -44,88 +44,88 @@ const LPCWSTR CAccelerator::MOD_NAMES[] = {		// // //
 };
 
 // Default shortcut table
-const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {
-	{L"Decrease octave",				0,				VK_DIVIDE,		ID_CMD_OCTAVE_PREVIOUS},
-	{L"Increase octave",				0,				VK_MULTIPLY,	ID_CMD_OCTAVE_NEXT},
-	{L"Play / Stop",					0,				VK_RETURN,		ID_TRACKER_TOGGLE_PLAY},
-	{L"Play",							0,				0,				ID_TRACKER_PLAY},
-	{L"Play from start",				0,				VK_F5,			ID_TRACKER_PLAY_START},
-	{L"Play from cursor",				0,				VK_F7,			ID_TRACKER_PLAY_CURSOR},
+const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
+	{L"入力オクターブを下げる",				0,				VK_DIVIDE,		ID_CMD_OCTAVE_PREVIOUS},
+	{L"入力オクターブを上げる",				0,				VK_MULTIPLY,	ID_CMD_OCTAVE_NEXT},
+	{L"再生/停止",					0,				VK_RETURN,		ID_TRACKER_TOGGLE_PLAY},
+	{L"再生",							0,				0,				ID_TRACKER_PLAY},
+	{L"最初から再生",				0,				VK_F5,			ID_TRACKER_PLAY_START},
+	{L"カーソル位置から再生",				0,				VK_F7,			ID_TRACKER_PLAY_CURSOR},
 	{L"Play from row marker",			MOD_CONTROL,	VK_F7,			ID_TRACKER_PLAY_MARKER, L"Play from bookmark"},		// // // 050B
-	{L"Play and loop pattern",			0,				VK_F6,			ID_TRACKER_PLAYPATTERN},
-	{L"Play row",						MOD_CONTROL,	VK_RETURN,		ID_TRACKER_PLAYROW},
-	{L"Stop",							0,				VK_F8,			ID_TRACKER_STOP},
-	{L"Edit enable/disable",			0,				VK_SPACE,		ID_TRACKER_EDIT},
+	{L"パターンをループ再生",			0,				VK_F6,			ID_TRACKER_PLAYPATTERN},
+	{L"行を再生",						MOD_CONTROL,	VK_RETURN,		ID_TRACKER_PLAYROW},
+	{L"停止",							0,				VK_F8,			ID_TRACKER_STOP},
+	{L"編集を有効化/無効化",			0,				VK_SPACE,		ID_TRACKER_EDIT},
 	{L"Set row marker",					MOD_CONTROL,	'B',			ID_TRACKER_SET_MARKER, L"Set row marker"},		// // // 050B
-	{L"Paste and mix",					MOD_CONTROL,	'M',			ID_EDIT_PASTEMIX},
-	{L"Paste and overwrite",			0,				0,				ID_EDIT_PASTEOVERWRITE},			// // //
-	{L"Paste and insert",				0,				0,				ID_EDIT_PASTEINSERT},				// // //
-	{L"Select all",						MOD_CONTROL,	'A',			ID_EDIT_SELECTALL},
-	{L"Deselect",						0,				VK_ESCAPE,		ID_SELECT_NONE},					// // //
-	{L"Select row",						0,				0,				ID_SELECT_ROW},						// // //
-	{L"Select column",					0,				0,				ID_SELECT_COLUMN},					// // //
-	{L"Select pattern",					0,				0,				ID_SELECT_PATTERN},					// // //
-	{L"Select frame",					0,				0,				ID_SELECT_FRAME},					// // //
-	{L"Select channel",					0,				0,				ID_SELECT_CHANNEL},					// // //
-	{L"Select track",					0,				0,				ID_SELECT_TRACK},					// // //
-	{L"Select in other editor",			0,				0,				ID_SELECT_OTHER},					// // //
-	{L"Go to row",						MOD_ALT,		'G',			ID_EDIT_GOTO},						// // //
-	{L"Toggle channel",					MOD_ALT,		VK_F9,			ID_TRACKER_TOGGLECHANNEL},
-	{L"Solo channel",					MOD_ALT,		VK_F10,			ID_TRACKER_SOLOCHANNEL},
+	{L"ミックス貼り付け",					MOD_CONTROL,	'M',			ID_EDIT_PASTEMIX},
+	{L"上書き貼り付け",			0,				0,				ID_EDIT_PASTEOVERWRITE},			// // //
+	{L"挿入貼り付け",				0,				0,				ID_EDIT_PASTEINSERT},				// // //
+	{L"全選択",						MOD_CONTROL,	'A',			ID_EDIT_SELECTALL},
+	{L"選択解除",						0,				VK_ESCAPE,		ID_SELECT_NONE},					// // //
+	{L"行を選択",						0,				0,				ID_SELECT_ROW},						// // //
+	{L"カラムを選択",					0,				0,				ID_SELECT_COLUMN},					// // //
+	{L"パターンを選択",					0,				0,				ID_SELECT_PATTERN},					// // //
+	{L"フレームを選択",					0,				0,				ID_SELECT_FRAME},					// // //
+	{L"チャンネルを選択",					0,				0,				ID_SELECT_CHANNEL},					// // //
+	{L"トラックを選択",					0,				0,				ID_SELECT_TRACK},					// // //
+	{L"エディタのフォーカスを切り替え",			0,				0,				ID_SELECT_OTHER},					// // //
+	{L"行まで移動",						MOD_ALT,		'G',			ID_EDIT_GOTO},						// // //
+	{L"チャンネルをミュート",					MOD_ALT,		VK_F9,			ID_TRACKER_TOGGLECHANNEL},
+	{L"チャンネルをソロ",					MOD_ALT,		VK_F10,			ID_TRACKER_SOLOCHANNEL},
 	{L"Toggle chip",					MOD_CONTROL|MOD_ALT, VK_F9,		ID_TRACKER_TOGGLECHIP},				// // //
 	{L"Solo chip",						MOD_CONTROL|MOD_ALT, VK_F10,	ID_TRACKER_SOLOCHIP},				// // //
 	{L"Record to instrument",			0,				0,				ID_TRACKER_RECORDTOINST},			// // //
-	{L"Interpolate",					MOD_CONTROL,	'G',			ID_EDIT_INTERPOLATE},
-	{L"Go to next frame",				MOD_CONTROL,	VK_RIGHT,		ID_NEXT_FRAME},
-	{L"Go to previous frame",			MOD_CONTROL,	VK_LEFT,		ID_PREV_FRAME},
-	{L"Toggle bookmark",				MOD_CONTROL,	'K',			ID_BOOKMARKS_TOGGLE},				// // //
-	{L"Next bookmark",					MOD_CONTROL,	VK_NEXT,		ID_BOOKMARKS_NEXT},					// // //
-	{L"Previous bookmark",				MOD_CONTROL,	VK_PRIOR,		ID_BOOKMARKS_PREVIOUS},				// // //
-	{L"Transpose, decrease notes",		MOD_CONTROL,	VK_F1,			ID_TRANSPOSE_DECREASENOTE},
-	{L"Transpose, increase notes",		MOD_CONTROL,	VK_F2,			ID_TRANSPOSE_INCREASENOTE},
-	{L"Transpose, decrease octaves",	MOD_CONTROL,	VK_F3,			ID_TRANSPOSE_DECREASEOCTAVE},
-	{L"Transpose, increase octaves",	MOD_CONTROL,	VK_F4,			ID_TRANSPOSE_INCREASEOCTAVE},
-	{L"Increase pattern",				0,				VK_ADD,			IDC_FRAME_INC},
-	{L"Decrease pattern",				0,				VK_SUBTRACT,	IDC_FRAME_DEC},
-	{L"Next instrument",				MOD_CONTROL,	VK_DOWN,		ID_CMD_NEXT_INSTRUMENT},
-	{L"Previous instrument",			MOD_CONTROL,	VK_UP,			ID_CMD_PREV_INSTRUMENT},
+	{L"数値の補間",					MOD_CONTROL,	'G',			ID_EDIT_INTERPOLATE},
+	{L"次のフレームへ",				MOD_CONTROL,	VK_RIGHT,		ID_NEXT_FRAME},
+	{L"前のフレームへ",			MOD_CONTROL,	VK_LEFT,		ID_PREV_FRAME},
+	{L"ブックマークを切り替え",				MOD_CONTROL,	'K',			ID_BOOKMARKS_TOGGLE},				// // //
+	{L"次のブックマークへ",					MOD_CONTROL,	VK_NEXT,		ID_BOOKMARKS_NEXT},					// // //
+	{L"前のブックマークへ",				MOD_CONTROL,	VK_PRIOR,		ID_BOOKMARKS_PREVIOUS},				// // //
+	{L"半音下げる",		MOD_CONTROL,	VK_F1,			ID_TRANSPOSE_DECREASENOTE},
+	{L"半音上げる",		MOD_CONTROL,	VK_F2,			ID_TRANSPOSE_INCREASENOTE},
+	{L"1 オクターブ下げる",	MOD_CONTROL,	VK_F3,			ID_TRANSPOSE_DECREASEOCTAVE},
+	{L"1 オクターブ上げる",	MOD_CONTROL,	VK_F4,			ID_TRANSPOSE_INCREASEOCTAVE},
+	{L"パターン番号を増加",				0,				VK_ADD,			IDC_FRAME_INC},
+	{L"パターン番号を減少",				0,				VK_SUBTRACT,	IDC_FRAME_DEC},
+	{L"次の音色へ",				MOD_CONTROL,	VK_DOWN,		ID_CMD_NEXT_INSTRUMENT},
+	{L"前の音色へ",			MOD_CONTROL,	VK_UP,			ID_CMD_PREV_INSTRUMENT},
 	{L"Type instrument number",			0,				0,				ID_CMD_INST_NUM},					// // //
-	{L"Mask instruments",				MOD_ALT,		'T',			ID_EDIT_INSTRUMENTMASK},
-	{L"Mask volume",					MOD_ALT,		'V',			ID_EDIT_VOLUMEMASK},				// // //
-	{L"Edit instrument",				MOD_CONTROL,	'I',			ID_INSTRUMENT_EDIT},
-	{L"Increase step size",				MOD_CONTROL,	VK_ADD,			ID_CMD_INCREASESTEPSIZE},
-	{L"Decrease step size",				MOD_CONTROL,	VK_SUBTRACT,	ID_CMD_DECREASESTEPSIZE},
-	{L"Follow mode",					0,				VK_SCROLL,		IDC_FOLLOW_TOGGLE},
-	{L"Duplicate frame",				MOD_CONTROL,	'D',			ID_MODULE_DUPLICATEFRAME},
-	{L"Insert frame",					0,				0,				ID_MODULE_INSERTFRAME},
-	{L"Remove frame",					0,				0,				ID_MODULE_REMOVEFRAME},
-	{L"Reverse",						MOD_CONTROL,	'R',			ID_EDIT_REVERSE},
-	{L"Select frame editor",			0,				VK_F3,			ID_FOCUS_FRAME_EDITOR},
-	{L"Select pattern editor",			0,				VK_F2,			ID_FOCUS_PATTERN_EDITOR},
-	{L"Move one step up",				MOD_ALT,		VK_UP,			ID_CMD_STEP_UP},
-	{L"Move one step down",				MOD_ALT,		VK_DOWN,		ID_CMD_STEP_DOWN},
-	{L"Replace instrument",				MOD_ALT,		'S',			ID_EDIT_REPLACEINSTRUMENT},
-	{L"Toggle control panel",			0,				0,				ID_VIEW_CONTROLPANEL},
-	{L"Display effect list",			0,				0,				ID_HELP_EFFECTTABLE},
-	{L"Select block start",				MOD_ALT,		'B',			ID_BLOCK_START},
-	{L"Select block end",				MOD_ALT,		'E',			ID_BLOCK_END},
-	{L"Pick up row settings",			0,				0,				ID_POPUP_PICKUPROW},
-	{L"Next song",						0,				0,				ID_NEXT_SONG},
-	{L"Previous song",					0,				0,				ID_PREV_SONG},
-	{L"Expand patterns",				0,				0,				ID_EDIT_EXPANDPATTERNS},
-	{L"Shrink patterns",				0,				0,				ID_EDIT_SHRINKPATTERNS},
-	{L"Stretch patterns",				0,				0,				ID_EDIT_STRETCHPATTERNS},			// // //
-	{L"Clone frame",					0,				0,				ID_MODULE_DUPLICATEFRAMEPATTERNS, L"Duplicate patterns"},		// // //
-	{L"Clone pattern",					MOD_ALT,		'D',			ID_MODULE_DUPLICATECURRENTPATTERN, L"Duplicate current pattern"},	// // //
-	{L"Decrease pattern values",		MOD_SHIFT,		VK_F1,			ID_DECREASEVALUES},
-	{L"Increase pattern values",		MOD_SHIFT,		VK_F2,			ID_INCREASEVALUES},
-	{L"Coarse decrease values",			MOD_SHIFT,		VK_F3,			ID_DECREASEVALUESCOARSE},			// // //
-	{L"Coarse increase values",			MOD_SHIFT,		VK_F4,			ID_INCREASEVALUESCOARSE},			// // //
-	{L"Toggle find / replace tab",		MOD_CONTROL,	'F',			ID_EDIT_FIND_TOGGLE},				// // //
-	{L"Find next",						0,				0,				ID_FIND_NEXT},						// // //
-	{L"Find previous",					0,				0,				ID_FIND_PREVIOUS},					// // //
-	{L"Recall channel state",			0,				0,				ID_RECALL_CHANNEL_STATE},			// // //
-	{L"Compact View",					0,				0,				IDC_COMPACT_TOGGLE},				// // //
+	{L"音色マスク",				MOD_ALT,		'T',			ID_EDIT_INSTRUMENTMASK},
+	{L"音量マスク",					MOD_ALT,		'V',			ID_EDIT_VOLUMEMASK},				// // //
+	{L"音色を編集",				MOD_CONTROL,	'I',			ID_INSTRUMENT_EDIT},
+	{L"ステップ量を増加",				MOD_CONTROL,	VK_ADD,			ID_CMD_INCREASESTEPSIZE},
+	{L"ステップ量を減少",				MOD_CONTROL,	VK_SUBTRACT,	ID_CMD_DECREASESTEPSIZE},
+	{L"自動スクロール",					0,				VK_SCROLL,		IDC_FOLLOW_TOGGLE},
+	{L"現在のフレームを挿入",				MOD_CONTROL,	'D',			ID_MODULE_DUPLICATEFRAME},
+	{L"フレームの挿入",					0,				0,				ID_MODULE_INSERTFRAME},
+	{L"フレームの削除",					0,				0,				ID_MODULE_REMOVEFRAME},
+	{L"反転",						MOD_CONTROL,	'R',			ID_EDIT_REVERSE},
+	{L"フレームエディタにフォーカス",			0,				VK_F3,			ID_FOCUS_FRAME_EDITOR},
+	{L"パターンエディタにフォーカス",			0,				VK_F2,			ID_FOCUS_PATTERN_EDITOR},
+	{L"1 ステップ上へ",				MOD_ALT,		VK_UP,			ID_CMD_STEP_UP},
+	{L"1 ステップ下へ",				MOD_ALT,		VK_DOWN,		ID_CMD_STEP_DOWN},
+	{L"音色の切り替え",				MOD_ALT,		'S',			ID_EDIT_REPLACEINSTRUMENT},
+	{L"コントロールパネルを表示/非表示",			0,				0,				ID_VIEW_CONTROLPANEL},
+	{L"エフェクトリストの表示",			0,				0,				ID_HELP_EFFECTTABLE},
+	{L"ブロックの先頭を選択",				MOD_ALT,		'B',			ID_BLOCK_START},
+	{L"ブロックの末尾を選択",				MOD_ALT,		'E',			ID_BLOCK_END},
+	{L"行の設定を取得",			0,				0,				ID_POPUP_PICKUPROW},
+	{L"次の楽曲へ",						0,				0,				ID_NEXT_SONG},
+	{L"前の楽曲へ",					0,				0,				ID_PREV_SONG},
+	{L"間隔を 2 倍に",				0,				0,				ID_EDIT_EXPANDPATTERNS},
+	{L"間隔を半分に",				0,				0,				ID_EDIT_SHRINKPATTERNS},
+	{L"間隔を編集",				0,				0,				ID_EDIT_STRETCHPATTERNS},			// // //
+	{L"フレームの複製挿入",					0,				0,				ID_MODULE_DUPLICATEFRAMEPATTERNS, L"フレームの複製挿入"},		// // //
+	{L"パターンの複製",					MOD_ALT,		'D',			ID_MODULE_DUPLICATECURRENTPATTERN, L"パターンの複製"},	// // //
+	{L"値の減少（小）",		MOD_SHIFT,		VK_F1,			ID_DECREASEVALUES},
+	{L"値の増加（小）",		MOD_SHIFT,		VK_F2,			ID_INCREASEVALUES},
+	{L"値の減少（大）",			MOD_SHIFT,		VK_F3,			ID_DECREASEVALUESCOARSE},			// // //
+	{L"値の増加（大）",			MOD_SHIFT,		VK_F4,			ID_INCREASEVALUESCOARSE},			// // //
+	{L"検索・置換タブを表示/非表示",		MOD_CONTROL,	'F',			ID_EDIT_FIND_TOGGLE},				// // //
+	{L"次を検索",						0,				0,				ID_FIND_NEXT},						// // //
+	{L"前を検索",					0,				0,				ID_FIND_PREVIOUS},					// // //
+	{L"チャンネルステータスの呼び出し",			0,				0,				ID_RECALL_CHANNEL_STATE},			// // //
+	{L"圧縮表示",					0,				0,				IDC_COMPACT_TOGGLE},				// // //
 };
 
 const int CAccelerator::ACCEL_COUNT = DEFAULT_TABLE.size();
@@ -192,7 +192,7 @@ LPCWSTR CAccelerator::GetItemKeyName(int Item) const
 		return GetVKeyName(m_pEntriesTable[Item].key);
 	}
 
-	return L"None";
+	return L"なし";	/// jp
 }
 
 CStringW CAccelerator::GetVKeyName(int virtualKey) const {		// // //

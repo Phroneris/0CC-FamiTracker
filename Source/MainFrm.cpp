@@ -3259,11 +3259,11 @@ void CMainFrame::OnUpdateGrooveEdit(CCmdUI *pCmdUI)
 	CSongData &song = *GetCurrentSong();
 	int Speed = song.GetSongSpeed();
 	if (song.GetSongGroove()) {
-		m_cButtonGroove.SetWindowTextW(L"Groove");
+		m_cButtonGroove.SetWindowTextW(L"ｸﾞﾙｰｳﾞ");	/// jp
 		Speed = std::clamp(Speed, 0, MAX_GROOVE - 1);
 	}
 	else {
-		m_cButtonGroove.SetWindowTextW(L"Speed");
+		m_cButtonGroove.SetWindowTextW(L"行Tick");	/// jp
 		int MaxSpeed = song.GetSongTempo() ? GetDoc().GetModule()->GetSpeedSplitPoint() - 1 : 0xFF;
 		Speed = std::clamp(Speed, MIN_SPEED, MaxSpeed);
 	}
@@ -3283,12 +3283,12 @@ void CMainFrame::OnToggleFixTempo()
 void CMainFrame::OnUpdateToggleFixTempo(CCmdUI *pCmdUI)
 {
 	if (int Tempo = GetCurrentSong()->GetSongTempo()) {
-		m_cButtonFixTempo.SetWindowTextW(L"Tempo");
+		m_cButtonFixTempo.SetWindowTextW(L"BPM");	/// jp
 		m_cLockedEditTempo.EnableWindow(true);
 		m_wndDialogBar.GetDlgItem(IDC_TEMPO_SPIN)->EnableWindow(true);
 	}
 	else {
-		m_cButtonFixTempo.SetWindowTextW(L"Fixed");
+		m_cButtonFixTempo.SetWindowTextW(L"固定");	/// jp
 		m_cLockedEditTempo.EnableWindow(false);
 		m_wndDialogBar.GetDlgItem(IDC_TEMPO_SPIN)->EnableWindow(false);
 		m_cLockedEditTempo.SetWindowTextW(FormattedW(L"%.2f", static_cast<float>(GetDoc().GetModule()->GetFrameRate()) * 2.5));

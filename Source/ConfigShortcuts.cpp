@@ -67,9 +67,9 @@ BOOL CConfigShortcuts::OnInitDialog()
 	pListView->GetClientRect(&r);
 	int w = r.Width() - ::GetSystemMetrics(SM_CXHSCROLL);
 	pListView->DeleteAllItems();
-	pListView->InsertColumn(0, L"Action", LVCFMT_LEFT, static_cast<int>(.52 * w));
-	pListView->InsertColumn(1, L"Modifier", LVCFMT_LEFT, static_cast<int>(.23 * w));
-	pListView->InsertColumn(2, L"Key", LVCFMT_LEFT, static_cast<int>(.25 * w));
+	pListView->InsertColumn(0, L"操作", LVCFMT_LEFT, static_cast<int>(.52 * w));	/// jp
+	pListView->InsertColumn(1, L"修飾キー", LVCFMT_LEFT, static_cast<int>(.23 * w));	/// jp
+	pListView->InsertColumn(2, L"キー", LVCFMT_LEFT, static_cast<int>(.25 * w));	/// jp
 
 	// Build shortcut list
 	for (int i = 0; i < CAccelerator::ACCEL_COUNT; ++i) {
@@ -127,7 +127,7 @@ BOOL CConfigShortcuts::OnApply()
 		if (it == m.end())
 			m[KeyVal] = i;
 		else {
-			AfxMessageBox(FormattedW(L"These two commands are assigned to the same shortcut (%s):\n- %s\n- %s",
+			AfxMessageBox(FormattedW(L"以下の 2 つのコマンドが、同じショートカット (%s) に割り当てられています:\n- %s\n- %s",	/// jp
 				(LPCWSTR)AssembleKeyString(m_iMods[i], m_iKeys[i]),
 				CAccelerator::DEFAULT_TABLE[it->second].name,
 				CAccelerator::DEFAULT_TABLE[i].name), MB_ICONERROR);
@@ -230,7 +230,7 @@ void CConfigShortcuts::OnBnClickedClear()
 	CListCtrl *pListView = static_cast<CListCtrl*>(GetDlgItem(IDC_SHORTCUTS));
 
 	pListView->SetItemText(m_iSelectedItem, 1, CAccelerator::MOD_NAMES[0]);
-	pListView->SetItemText(m_iSelectedItem, 2, L"None");
+	pListView->SetItemText(m_iSelectedItem, 2, L"なし");	/// jp
 
 	SetDlgItemTextW(IDC_KEY, L"");
 

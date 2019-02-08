@@ -27,56 +27,56 @@
 #include "Settings.h"
 #include "ft0cc/cpputil/enum_traits.hpp"		// // //
 
-const LPCWSTR CConfigGeneral::CONFIG_STR[] = {		// // //
-	L"Wrap cursor",
-	L"Wrap across frames",
-	L"Free cursor edit",
-	L"Preview wave-files",
-	L"Key repeat",
-	L"Show row numbers in hex",
-	L"Preview next/previous frames",
-	L"Don't reset DPCM on note stop",
-	L"Ignore Step when moving",
-	L"Delete-key pulls up rows",
-	L"Backup files",
-	L"Single instance",
-	L"Preview full row",
-	L"Don't select on double-click",
-	L"Warp pattern values",
-	L"Cut sub-volume",
-	L"Use old FDS volume table",
-	L"Retrieve channel state",
-	L"Overflow paste mode",
-	L"Show skipped rows",
-	L"Hexadecimal keypad",
-	L"Multi-frame selection",
-	L"Check version on startup",
+const LPCWSTR CConfigGeneral::CONFIG_STR[] = {		// // //	/// jp
+	L"カーソル回り込み（横）",
+	L"カーソル飛び越し（縦）",
+	L"フリーカーソルモード",
+	L"WAVE ファイルプレビュー",
+	L"キーリピート",
+	L"行数を 16 進数表示",
+	L"前後のフレームをプレビュー表示",
+	L"音停止時の DPCM リセットなし",
+	L"カーソル移動はステップ無視",
+	L"Delete キーで行詰め",
+	L"ファイルをバックアップ",
+	L"同時起動を禁止",
+	L"行全体のプレビュー再生",
+	L"ダブルクリックで選択しない",
+	L"値の回り込み",
+	L"低音量の切捨て",
+	L"旧版 FDS 音量テーブルを使用",
+	L"チャンネルステータスを遡上取得",
+	L"フレーム外貼り付け",
+	L"省略された行を表示",
+	L"テンキーで 16 進数入力",
+	L"フレーム外選択",
+	L"起動時に最新版を確認",
 };
 
-const LPCWSTR CConfigGeneral::CONFIG_DESC[] = {		// // //
-	L"Wrap the cursor around the edges of the pattern editor.",
-	L"Move to next or previous frame when reaching top or bottom in the pattern editor.",
-	L"Unlock the cursor from the center of the pattern editor.",
-	L"Preview wave and DPCM files in the open file dialog when loading samples to the module.",
-	L"Enable key repetition in the pattern editor.",
-	L"Display row numbers and the frame count on the status bar in hexadecimal.",
-	L"Preview next and previous frames in the pattern editor.",
-	L"Prevent resetting the DPCM channel after previewing any DPCM sample.",
-	L"Ignore the pattern step setting when moving the cursor, only use it when inserting notes.",
-	L"Make delete key pull up rows rather than only deleting the value, as if by Shift+Delete.",
-	L"Create a backup copy of the existing file when saving a module.",
-	L"Only allow one single instance of the 0CC-FamiTracker application.",
-	L"Preview all channels when inserting notes in the pattern editor.",
-	L"Do not select the whole channel when double-clicking in the pattern editor.",
-	L"When using Shift + Mouse Wheel to modify a pattern value, allow the parameter to wrap around its limit values.",
-	L"Always silent volume values below 1 due to Axy or 7xy effects.",
-	L"Use the existing volume table for the FDS channel which has higher precision than in exported NSFs.",
-	L"Reconstruct the current channel's state from previous frames upon playing (except when playing one row).",
-	L"Move pasted pattern data outside the rows of the current frame to subsequent frames.",
-	L"Display rows that are truncated by Bxx, Cxx, or Dxx effects.",
-	L"Use the extra keys on the keypad as hexadecimal digits in the pattern editor.",
-	L"Allow pattern selections to span across multiple frames.",
-	L"Check for new 0CC-FamiTracker versions on startup if an internet connection could be established.",
+const LPCWSTR CConfigGeneral::CONFIG_DESC[] = {		// // //	/// jp
+	L"パターンエディタで、カーソルが左右端を回り込んで移動できるようにします。",
+	L"パターンエディタで、カーソルがフレームを越えて移動できるようにします。",
+	L"カーソルを強制的に画面の中央に位置させる機能をオフにします。",
+	L"サンプルをモジュールに読み込む際に、ファイルを開くダイアログで WAVE ファイルや DPCM ファイルをプレビュー再生します。",
+	L"パターンエディタで、キーリピート（キー押しっ放しによる連続入力）を有効にします。",
+	L"ステータスバーにおける行やフレームの数表示を 16 進数にします。",
+	L"パターンエディタで、前後のフレームを薄くプレビュー表示します。",
+	L"DPCM サンプルのプレビュー後、DPCM チャンネルをリセットしません。編集時の不快なポップノイズをなくします。",
+	L"ステップ設定をノート入力にのみ反映させ、カーソル移動はステップ数 1 で行います。",
+	L"Delete キーで行を丸ごと削除し、上に詰めます。Shift+Delete キーと同じ効果になります。",
+	L"モジュールの保存時に既存ファイルの複製バックアップを作成します。",
+	L"0CC-FamiTracker を単一起動でのみ実行します。",
+	L"パターンエディタで、ノート挿入時に全チャンネルをプレビュー再生します。",
+	L"パターンエディタで、ダブルクリックによる全選択機能をオフにします。",
+	L"Shift+マウスホイールで値を変更する際、上下限に達した値を回り込ませます。",
+	L"Axy エフェクトや 7xy エフェクトにおいて、1 未満の音量を切り捨てます。デフォルトでは 1 に切り上げられています。",
+	L"FDS 音量テーブルについて、NSF 書き出しに用いられているものより正確な音量テーブルを採用します。",
+	L"現在位置より前のチャンネルステータスを再現して再生します。1 行だけ再生する場合はこの限りではありません。",
+	L"データの貼り付けをフレーム外にまで及ばせます。",
+	L"Bxx、Cxx、Dxx エフェクトで省略される行を表示します。",
+	L"テンキーの特殊キーを 16 進数入力に割り当てます。ショートカットキーと重複しない必要があります。",
+	L"フレームを越えたパターン選択を有効にします。",
+	L"インターネット接続が可能な場合、ソフト起動時に 0CC-FamiTracker の最新版を確認します。",
 };
 
 // CConfigGeneral dialog
@@ -342,7 +342,7 @@ void CConfigGeneral::OnLvnItemchangedConfigList(NMHDR *pNMHDR, LRESULT *pResult)
 
 	if (pNMLV->uChanged & LVIF_STATE) {
 		if (pNMLV->uNewState & LVNI_SELECTED || pNMLV->uNewState & 0x3000) {
-			SetDlgItemTextW(IDC_EDIT_CONFIG_DESC, FormattedW(L"Description: %s", (LPCWSTR)CONFIG_DESC[pNMLV->iItem]));
+			SetDlgItemTextW(IDC_EDIT_CONFIG_DESC, FormattedW(L"解説: %s", (LPCWSTR)CONFIG_DESC[pNMLV->iItem]));	/// jp
 
 			if (pNMLV->iItem >= 0 && pNMLV->iItem < SETTINGS_BOOL_COUNT)
 				pList->SetItemState(pNMLV->iItem, LVIS_SELECTED | LVIS_FOCUSED, LVIS_SELECTED | LVIS_FOCUSED);
