@@ -13,11 +13,10 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Japanese resources	/// jp
+// 日本語 (日本) resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)	/// jp
-LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT	/// jp
-#pragma code_page(932)	/// jp
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -100,213 +99,213 @@ END
 // Menu
 //
 
-IDR_MAINFRAME MENU	/// jp
+IDR_MAINFRAME MENU
 BEGIN
     POPUP "ファイル(&F)"
     BEGIN
-        MENUITEM "新規作成(&N)\tCtrl+N",                ID_FILE_NEW
-        MENUITEM "開く(&O)...\tCtrl+O",            ID_FILE_OPEN
-        MENUITEM "保存(&S)\tCtrl+S",               ID_FILE_SAVE
-        MENUITEM "名前をつけて保存(&A)...",                 ID_FILE_SAVE_AS
+        MENUITEM "新規作成(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "開く(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
+        MENUITEM "名前をつけて保存(&A)...",             ID_FILE_SAVE_AS
         MENUITEM SEPARATOR
-        MENUITEM "NSF ファイルを生成(&F)...\tCtrl+E",      ID_FILE_CREATE_NSF
-        MENUITEM "WAVE ファイルを生成(&W)...",              ID_FILE_CREATEWAV
+        MENUITEM "NSF ファイルを生成(&F)...\tCtrl+E",  ID_FILE_CREATE_NSF
+        MENUITEM "WAVE ファイルを生成(&W)...",         ID_FILE_CREATEWAV
         MENUITEM SEPARATOR
         POPUP "インポート(&I)"
         BEGIN
-            MENUITEM "テキスト(&T)...",                    ID_FILE_IMPORTTEXT
-            MENUITEM "JSON(&J)...",                    ID_FILE_IMPORTJSON
+            MENUITEM "テキスト(&T)...",                 ID_FILE_IMPORTTEXT
+            MENUITEM "JSON(&J)...",                 ID_FILE_IMPORTJSON
         END
         POPUP "エクスポート(&E)"
         BEGIN
-            MENUITEM "テキスト(&T)...",                    ID_FILE_EXPORTTEXT
-            MENUITEM "JSON(&J)...",                    ID_FILE_EXPORTJSON
-            MENUITEM "行情報 CSV(&C)...",             ID_FILE_EXPORTROWS
+            MENUITEM "テキスト(&T)...",                 ID_FILE_EXPORTTEXT
+            MENUITEM "JSON(&J)...",                 ID_FILE_EXPORTJSON
+            MENUITEM "行情報 CSV(&C)...",              ID_FILE_EXPORTROWS
         END
         MENUITEM SEPARATOR
-        MENUITEM "環境設定(&C)...",           ID_FILE_GENERALSETTINGS
+        MENUITEM "環境設定(&C)...",                 ID_FILE_GENERALSETTINGS
         MENUITEM SEPARATOR
         POPUP "最近のファイル(&R)"
         BEGIN
-            MENUITEM "履歴をクリア(&C)",                      ID_RECENTFILES_CLEAR
+            MENUITEM "履歴をクリア(&C)",                  ID_RECENTFILES_CLEAR
             MENUITEM SEPARATOR
-            MENUITEM "(ファイル履歴)",                      ID_FILE_MRU_FILE1
+            MENUITEM "(ファイル履歴)",                    ID_FILE_MRU_FILE1
         END
         MENUITEM SEPARATOR
-        MENUITEM "終了(&X)\tAlt+F4",               ID_APP_EXIT
+        MENUITEM "終了(&X)\tAlt+F4",              ID_APP_EXIT
     END
     POPUP "編集(&E)"
     BEGIN
-        MENUITEM "元に戻す(&U)\tCtrl+Z",               ID_EDIT_UNDO
-        MENUITEM "やり直し(&R)\tCtrl+Y",               ID_EDIT_REDO
+        MENUITEM "元に戻す(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM "やり直し(&R)\tCtrl+Y",            ID_EDIT_REDO
         MENUITEM SEPARATOR
-        MENUITEM "切り取り(&T)\tCtrl+X",                ID_EDIT_CUT
-        MENUITEM "コピー(&C)\tCtrl+C",               ID_EDIT_COPY
-        MENUITEM "貼り付け(&P)\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "切り取り(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "コピー(&C)\tCtrl+C",             ID_EDIT_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",            ID_EDIT_PASTE
         POPUP "特殊貼り付け(&L)"
         BEGIN
-            MENUITEM "ミックス(&M)",                        ID_EDIT_PASTEMIX
-            MENUITEM "上書き(&O)",                  ID_EDIT_PASTEOVERWRITE
-            MENUITEM "挿入(&I)",                     ID_EDIT_PASTEINSERT
+            MENUITEM "ミックス(&M)",                    ID_EDIT_PASTEMIX
+            MENUITEM "上書き(&O)",                     ID_EDIT_PASTEOVERWRITE
+            MENUITEM "挿入(&I)",                      ID_EDIT_PASTEINSERT
             MENUITEM SEPARATOR
-            MENUITEM "カーソル位置へ貼り付け(&C)",                     ID_PASTESPECIAL_CURSOR, CHECKED
-            MENUITEM "選択範囲へ貼り付け(&S)",                  ID_PASTESPECIAL_SELECTION
-            MENUITEM "選択範囲へループ貼り付け(&F)",                       ID_PASTESPECIAL_FILL
+            MENUITEM "カーソル位置へ貼り付け(&C)",             ID_PASTESPECIAL_CURSOR, CHECKED
+            MENUITEM "選択範囲へ貼り付け(&S)",               ID_PASTESPECIAL_SELECTION
+            MENUITEM "選択範囲へループ貼り付け(&F)",            ID_PASTESPECIAL_FILL
         END
-        MENUITEM "削除(&D)\tDel",                ID_EDIT_DELETE
+        MENUITEM "削除(&D)\tDel",                 ID_EDIT_DELETE
         MENUITEM SEPARATOR
         POPUP "特殊コピー(&A)"
         BEGIN
-            MENUITEM "音量シーケンスとしてコピー(&V)",            ID_COPYAS_VOLUMESEQUENCE
-            MENUITEM "プレーンテキストとしてコピー(&P)",                 ID_COPYAS_TEXT
-            MENUITEM "PPMCK MML データとしてコピー(&M)",             ID_COPYAS_PPMCK
+            MENUITEM "音量シーケンスとしてコピー(&V)",           ID_COPYAS_VOLUMESEQUENCE
+            MENUITEM "プレーンテキストとしてコピー(&P)",          ID_COPYAS_TEXT
+            MENUITEM "PPMCK MML データとしてコピー(&M)",     ID_COPYAS_PPMCK
         END
         MENUITEM SEPARATOR
         POPUP "選択(&S)"
         BEGIN
-            MENUITEM "全て選択(&A)\tCtrl+A",                ID_EDIT_SELECTALL
-            MENUITEM "選択解除(&N)",                       ID_SELECT_NONE
+            MENUITEM "全て選択(&A)\tCtrl+A",            ID_EDIT_SELECTALL
+            MENUITEM "選択解除(&N)",                    ID_SELECT_NONE
             MENUITEM SEPARATOR
-            MENUITEM "行(&R)",                        ID_SELECT_ROW
+            MENUITEM "行(&R)",                       ID_SELECT_ROW
             MENUITEM "カラム(&C)",                     ID_SELECT_COLUMN
             MENUITEM SEPARATOR
             MENUITEM "パターン(&P)",                    ID_SELECT_PATTERN
-            MENUITEM "フレーム(&F)",                      ID_SELECT_FRAME
-            MENUITEM "トラック(&T)",                      ID_SELECT_CHANNEL
-            MENUITEM "楽曲(&S)",                       ID_SELECT_TRACK
+            MENUITEM "フレーム(&F)",                    ID_SELECT_FRAME
+            MENUITEM "トラック(&T)",                    ID_SELECT_CHANNEL
+            MENUITEM "楽曲(&S)",                      ID_SELECT_TRACK
             MENUITEM SEPARATOR
-            MENUITEM "エディタのフォーカスを切り替え(&O)",            ID_SELECT_OTHER
+            MENUITEM "エディタのフォーカスを切り替え(&O)",         ID_SELECT_OTHER
         END
         MENUITEM SEPARATOR
         POPUP "検索/置換(&F)"
         BEGIN
             MENUITEM "検索タブを表示(&T)",                 ID_EDIT_FIND_TOGGLE
             MENUITEM SEPARATOR
-            MENUITEM "次を検索(&N)",                  ID_FIND_NEXT
-            MENUITEM "前を検索(&P)",              ID_FIND_PREVIOUS
+            MENUITEM "次を検索(&N)",                    ID_FIND_NEXT
+            MENUITEM "前を検索(&P)",                    ID_FIND_PREVIOUS
         END
         MENUITEM "移動(&G)...",                   ID_EDIT_GOTO
         POPUP "ブックマーク(&B)"
         BEGIN
-            MENUITEM "ブックマークを切り替え(&T)",            ID_BOOKMARKS_TOGGLE
-            MENUITEM "次のブックマークへ(&N)",              ID_BOOKMARKS_NEXT
-            MENUITEM "前のブックマークへ(&P)",          ID_BOOKMARKS_PREVIOUS
+            MENUITEM "ブックマークを切り替え(&T)",             ID_BOOKMARKS_TOGGLE
+            MENUITEM "次のブックマークへ(&N)",               ID_BOOKMARKS_NEXT
+            MENUITEM "前のブックマークへ(&P)",               ID_BOOKMARKS_PREVIOUS
         END
         MENUITEM SEPARATOR
-        MENUITEM "音色マスク(&I)",            ID_EDIT_INSTRUMENTMASK
-        MENUITEM "音量マスク(&V)",                ID_EDIT_VOLUMEMASK, CHECKED
-        MENUITEM "キーボードを分割...",           ID_EDIT_SPLITKEYBOARD
+        MENUITEM "音色マスク(&I)",                   ID_EDIT_INSTRUMENTMASK
+        MENUITEM "音量マスク(&V)",                   ID_EDIT_VOLUMEMASK, CHECKED
+        MENUITEM "キーボードを分割...",                 ID_EDIT_SPLITKEYBOARD
         MENUITEM SEPARATOR
-        MENUITEM "MIDI デバイスの有効化(&M)",                ID_EDIT_ENABLEMIDI
+        MENUITEM "MIDI デバイスの有効化(&M)",           ID_EDIT_ENABLEMIDI
     END
     POPUP "パターン(&P)"
     BEGIN
-        MENUITEM "数値の補間(&I)",                ID_EDIT_INTERPOLATE
-        MENUITEM "反転(&R)",                    ID_EDIT_REVERSE
-        MENUITEM "音色を置き換える(&E)",         ID_EDIT_REPLACEINSTRUMENT
+        MENUITEM "数値の補間(&I)",                   ID_EDIT_INTERPOLATE
+        MENUITEM "反転(&R)",                      ID_EDIT_REVERSE
+        MENUITEM "音色を置き換える(&E)",                ID_EDIT_REPLACEINSTRUMENT
         MENUITEM SEPARATOR
-        MENUITEM "間隔を 2 倍に(&X)",                     ID_EDIT_EXPANDPATTERNS
-        MENUITEM "間隔を半分に(&H)",                     ID_EDIT_SHRINKPATTERNS
-        MENUITEM "間隔を編集(&S)...",                 ID_EDIT_STRETCHPATTERNS
+        MENUITEM "間隔を 2 倍に(&X)",                ID_EDIT_EXPANDPATTERNS
+        MENUITEM "間隔を半分に(&H)",                  ID_EDIT_SHRINKPATTERNS
+        MENUITEM "間隔を編集(&S)...",                ID_EDIT_STRETCHPATTERNS
         MENUITEM SEPARATOR
         POPUP "トランスポーズ(&T)"
         BEGIN
-            MENUITEM "半音下げる(&D)",              ID_TRANSPOSE_DECREASENOTE
-            MENUITEM "半音上げる(&I)",              ID_TRANSPOSE_INCREASENOTE
-            MENUITEM "1 オクターブ下げる(&E)",            ID_TRANSPOSE_DECREASEOCTAVE
-            MENUITEM "1 オクターブ上げる(&N)",            ID_TRANSPOSE_INCREASEOCTAVE
+            MENUITEM "半音下げる(&D)",                   ID_TRANSPOSE_DECREASENOTE
+            MENUITEM "半音上げる(&I)",                   ID_TRANSPOSE_INCREASENOTE
+            MENUITEM "1 オクターブ下げる(&E)",              ID_TRANSPOSE_DECREASEOCTAVE
+            MENUITEM "1 オクターブ上げる(&N)",              ID_TRANSPOSE_INCREASEOCTAVE
         END
     END
     POPUP "楽曲(&S)"
     BEGIN
-        MENUITEM "フレームの挿入(&I)",               ID_MODULE_INSERTFRAME
-        MENUITEM "フレームの削除(&R)",               ID_MODULE_REMOVEFRAME
-        MENUITEM "現在のフレームを挿入(&D)",            ID_MODULE_DUPLICATEFRAME
-        MENUITEM "フレームを上に移動(&U)",              ID_MODULE_MOVEFRAMEUP
-        MENUITEM "フレームを下に移動(&W)",            ID_MODULE_MOVEFRAMEDOWN
+        MENUITEM "フレームの挿入(&I)",                 ID_MODULE_INSERTFRAME
+        MENUITEM "フレームの削除(&R)",                 ID_MODULE_REMOVEFRAME
+        MENUITEM "現在のフレームを挿入(&D)",              ID_MODULE_DUPLICATEFRAME
+        MENUITEM "フレームを上に移動(&U)",               ID_MODULE_MOVEFRAMEUP
+        MENUITEM "フレームを下に移動(&W)",               ID_MODULE_MOVEFRAMEDOWN
         MENUITEM SEPARATOR
-        MENUITEM "パターンの複製(&C)",             ID_MODULE_DUPLICATECURRENTPATTERN
-        MENUITEM "フレームの複製挿入(&F)",                ID_MODULE_DUPLICATEFRAMEPATTERNS
+        MENUITEM "パターンの複製(&C)",                 ID_MODULE_DUPLICATECURRENTPATTERN
+        MENUITEM "フレームの複製挿入(&F)",               ID_MODULE_DUPLICATEFRAMEPATTERNS
         MENUITEM SEPARATOR
-        MENUITEM "パターンを全削除(&L)",             ID_EDIT_CLEARPATTERNS
-        MENUITEM "重複パターンの統合(&M)",  ID_CLEANUP_MERGEDUPLICATEDPATTERNS
-        MENUITEM "全パターンを全フレームに定着(&Q)",   ID_CLEANUP_POPULATEUNIQUEPATTERNS
+        MENUITEM "パターンを全削除(&L)",                ID_EDIT_CLEARPATTERNS
+        MENUITEM "重複パターンの統合(&M)",               ID_CLEANUP_MERGEDUPLICATEDPATTERNS
+        MENUITEM "全パターンを全フレームに定着(&Q)",          ID_CLEANUP_POPULATEUNIQUEPATTERNS
         MENUITEM SEPARATOR
-        MENUITEM "楽曲のトランスポーズ(&T)...",          ID_TRANSPOSE_CUSTOM
-        MENUITEM "トラックの入れ替え(&S)...",             ID_EDIT_SWAPCHANNELS
+        MENUITEM "楽曲のトランスポーズ(&T)...",           ID_TRANSPOSE_CUSTOM
+        MENUITEM "トラックの入れ替え(&S)...",            ID_EDIT_SWAPCHANNELS
         MENUITEM SEPARATOR
-        MENUITEM "楽曲の長さを算出(&E)",       ID_MODULE_ESTIMATESONGLENGTH
+        MENUITEM "楽曲の長さを算出(&E)",                ID_MODULE_ESTIMATESONGLENGTH
     END
     POPUP "モジュール(&M)"
     BEGIN
-        MENUITEM "モジュールのプロパティ(&M)...\tCtrl+P", ID_MODULE_MODULEPROPERTIES
-        MENUITEM "コメント(&C)...",                ID_MODULE_COMMENTS
+        MENUITEM "モジュールのプロパティ(&M)...\tCtrl+P",  ID_MODULE_MODULEPROPERTIES
+        MENUITEM "コメント(&C)...",                 ID_MODULE_COMMENTS
         POPUP "地域フォーマット(&R)"
         BEGIN
-            MENUITEM "NTSC(&N)",                       ID_TRACKER_NTSC
-            MENUITEM "PAL(&P)",                        ID_TRACKER_PAL
+            MENUITEM "NTSC(&N)",                    ID_TRACKER_NTSC
+            MENUITEM "PAL(&P)",                     ID_TRACKER_PAL
         END
         POPUP "エンジンスピード(&E)"
         BEGIN
-            MENUITEM "デフォルト(&D)",                    ID_SPEED_DEFAULT
-            MENUITEM "カスタム(&C)...",                  ID_SPEED_CUSTOM
+            MENUITEM "デフォルト(&D)",                   ID_SPEED_DEFAULT
+            MENUITEM "カスタム(&C)...",                 ID_SPEED_CUSTOM
         END
         MENUITEM SEPARATOR
-        MENUITEM "デチューン設定(&D)...",         ID_MODULE_DETUNE
-        MENUITEM "グルーヴ設定(&G)",            ID_MODULE_GROOVE
-        MENUITEM "ブックマークマネージャ(&B)",           ID_MODULE_BOOKMARK
-        MENUITEM "トラック(&T)...",                  ID_MODULE_CHANNELS
+        MENUITEM "デチューン設定(&D)...",              ID_MODULE_DETUNE
+        MENUITEM "グルーヴ設定(&G)",                  ID_MODULE_GROOVE
+        MENUITEM "ブックマークマネージャ(&B)",             ID_MODULE_BOOKMARK
+        MENUITEM "トラック(&T)...",                 ID_MODULE_CHANNELS
         MENUITEM SEPARATOR
         POPUP "整理(&U)"
         BEGIN
-            MENUITEM "使われていない音色の削除(&I)",  ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS
-            MENUITEM "使われていない DPCM サンプルの削除(&D)", ID_CLEANUP_REMOVEUNUSEDDPCMSAMPLES
-            MENUITEM "使われていないパターンの削除(&P)",     ID_CLEANUP_REMOVEUNUSEDPATTERNS
+            MENUITEM "使われていない音色の削除(&I)",            ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS
+            MENUITEM "使われていない DPCM サンプルの削除(&D)",    ID_CLEANUP_REMOVEUNUSEDDPCMSAMPLES
+            MENUITEM "使われていないパターンの削除(&P)",          ID_CLEANUP_REMOVEUNUSEDPATTERNS
         END
     END
     POPUP "音色(&I)"
     BEGIN
-        MENUITEM "音色の新規作成(&N)",             ID_INSTRUMENT_NEW
-        MENUITEM "音色の削除(&R)",          ID_INSTRUMENT_REMOVE
-        MENUITEM "音色の複製(&C)",           ID_INSTRUMENT_CLONE
-        MENUITEM "音色をシーケンスごと複製 (&D)",      ID_INSTRUMENT_DEEPCLONE
+        MENUITEM "音色の新規作成(&N)",                 ID_INSTRUMENT_NEW
+        MENUITEM "音色の削除(&R)",                   ID_INSTRUMENT_REMOVE
+        MENUITEM "音色の複製(&C)",                   ID_INSTRUMENT_CLONE
+        MENUITEM "音色をシーケンスごと複製 (&D)",           ID_INSTRUMENT_DEEPCLONE
         MENUITEM SEPARATOR
         MENUITEM "音色ファイルの読み込み(&L)...",          ID_INSTRUMENT_LOAD
         MENUITEM "音色ファイルの保存(&S)...",            ID_INSTRUMENT_SAVE
         MENUITEM SEPARATOR
-        MENUITEM "編集(&E)\tCtrl+I",               ID_INSTRUMENT_EDIT
+        MENUITEM "編集(&E)\tCtrl+I",              ID_INSTRUMENT_EDIT
     END
     POPUP "トラッカー(&R)"
     BEGIN
-        MENUITEM "再生(&P)",                       ID_TRACKER_PLAY
-        MENUITEM "パターンを再生(&A)",               ID_TRACKER_PLAYPATTERN
-        MENUITEM "最初から再生(&F)",            ID_TRACKER_PLAY_START
-        MENUITEM "カーソル位置から再生(&U)",           ID_TRACKER_PLAY_CURSOR
-        MENUITEM "マーカーから再生(&M)",           ID_TRACKER_PLAY_MARKER
-        MENUITEM "停止(&S)",                       ID_TRACKER_STOP
+        MENUITEM "再生(&P)",                      ID_TRACKER_PLAY
+        MENUITEM "パターンを再生(&A)",                 ID_TRACKER_PLAYPATTERN
+        MENUITEM "最初から再生(&F)",                  ID_TRACKER_PLAY_START
+        MENUITEM "カーソル位置から再生(&U)",              ID_TRACKER_PLAY_CURSOR
+        MENUITEM "マーカーから再生(&M)",                ID_TRACKER_PLAY_MARKER
+        MENUITEM "停止(&S)",                      ID_TRACKER_STOP
         MENUITEM SEPARATOR
-        MENUITEM "編集(&E)",           ID_TRACKER_EDIT
-        MENUITEM "行マーカーを設定(&W)",             ID_TRACKER_SET_MARKER
+        MENUITEM "編集(&E)",                      ID_TRACKER_EDIT
+        MENUITEM "行マーカーを設定(&W)",                ID_TRACKER_SET_MARKER
         MENUITEM SEPARATOR
         MENUITEM "トラックをミュート(&T)",               ID_TRACKER_TOGGLECHANNEL
         MENUITEM "トラックをソロ(&O)",                 ID_TRACKER_SOLOCHANNEL
         MENUITEM "To&ggle Chip",                ID_TRACKER_TOGGLECHIP
         MENUITEM "So&lo Chip",                  ID_TRACKER_SOLOCHIP
         MENUITEM SEPARATOR
-        MENUITEM "再生時に音色追従(&I)", ID_TRACKER_SWITCHTOTRACKINSTRUMENT
+        MENUITEM "再生時に音色追従(&I)",                ID_TRACKER_SWITCHTOTRACKINSTRUMENT
         MENUITEM "&Record To Instrument",       ID_TRACKER_RECORDTOINST
         MENUITEM "Re&corder Settings...",       ID_TRACKER_RECORDERSETTINGS
         MENUITEM SEPARATOR
-        MENUITEM "キルサウンド(&K)\tF12",            ID_TRACKER_KILLSOUND
+        MENUITEM "キルサウンド(&K)\tF12",             ID_TRACKER_KILLSOUND
     END
     POPUP "表示(&V)"
     BEGIN
-        MENUITEM "ツールバー(&T)",                    ID_VIEW_TOOLBAR
+        MENUITEM "ツールバー(&T)",                   ID_VIEW_TOOLBAR
         MENUITEM "ステータスバー(&S)",                 ID_VIEW_STATUS_BAR
-        MENUITEM "コントロールパネル(&C)",              ID_VIEW_CONTROLPANEL
+        MENUITEM "コントロールパネル(&C)",               ID_VIEW_CONTROLPANEL
         MENUITEM SEPARATOR
-        MENUITEM "自動スクロール(&F)",                IDC_FOLLOW_TOGGLE, CHECKED
-        MENUITEM "圧縮表示(&M)",               IDC_COMPACT_TOGGLE
+        MENUITEM "自動スクロール(&F)",                 IDC_FOLLOW_TOGGLE, CHECKED
+        MENUITEM "圧縮表示(&M)",                    IDC_COMPACT_TOGGLE
         POPUP "Meter &Decay Rate"
         BEGIN
             MENUITEM "&Slow",                       ID_DECAY_SLOW
@@ -315,59 +314,59 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Average &BPM",                ID_VIEW_AVERAGEBPM
         MENUITEM "Trac&k State",                ID_VIEW_CHANNELSTATE
-        MENUITEM "レジスタ状態(&R)",             ID_TRACKER_DISPLAYREGISTERSTATE
+        MENUITEM "レジスタ状態(&R)",                  ID_TRACKER_DISPLAYREGISTERSTATE
         MENUITEM SEPARATOR
         POPUP "フレームエディタの位置(&P)"
         BEGIN
-            MENUITEM "上(&T)",                        ID_FRAMEEDITOR_TOP, CHECKED
+            MENUITEM "上(&T)",                       ID_FRAMEEDITOR_TOP, CHECKED
             MENUITEM "左(&L)",                       ID_FRAMEEDITOR_LEFT
         END
     END
     POPUP "ヘルプ(&H)"
     BEGIN
-        MENUITEM "目次(&H)\tF1",            ID_HELP_FINDER
+        MENUITEM "目次(&H)\tF1",                  ID_HELP_FINDER
         MENUITEM "エフェクトについて(&E)",               ID_HELP_EFFECTTABLE
-        MENUITEM "よくある質問(&F)",                        ID_HELP_FAQ
+        MENUITEM "よくある質問(&F)",                  ID_HELP_FAQ
         MENUITEM SEPARATOR
-        MENUITEM "パフォーマンス(&P)",                ID_HELP_PERFORMANCE
+        MENUITEM "パフォーマンス(&P)",                 ID_HELP_PERFORMANCE
         MENUITEM SEPARATOR
-        MENUITEM "0CC-FamiTracker について(&A)...",   ID_APP_ABOUT
+        MENUITEM "0CC-FamiTracker について(&A)...", ID_APP_ABOUT
     END
 END
 
-IDR_PATTERN_POPUP MENU	/// jp
+IDR_PATTERN_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "元に戻す(&U)\tCtrl+Z",               ID_EDIT_UNDO
-        MENUITEM "やり直し(&R)\tCtrl+Y",               ID_EDIT_REDO
+        MENUITEM "元に戻す(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM "やり直し(&R)\tCtrl+Y",            ID_EDIT_REDO
         MENUITEM SEPARATOR
-        MENUITEM "切り取り(&T)\tCtrl+X",                ID_EDIT_CUT
-        MENUITEM "コピー(&C)\tCtrl+C",               ID_EDIT_COPY
-        MENUITEM "貼り付け(&P)\tCtrl+V",              ID_EDIT_PASTE
-        MENUITEM "削除(&D)\tDel",                ID_EDIT_DELETE
-        MENUITEM "全て選択(&A)\tCtrl+A",         ID_EDIT_SELECTALL
+        MENUITEM "切り取り(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "コピー(&C)\tCtrl+C",             ID_EDIT_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",            ID_EDIT_PASTE
+        MENUITEM "削除(&D)\tDel",                 ID_EDIT_DELETE
+        MENUITEM "全て選択(&A)\tCtrl+A",            ID_EDIT_SELECTALL
         MENUITEM SEPARATOR
         POPUP "パターン(&N)"
         BEGIN
-            MENUITEM "数値の補間(&I)",                ID_EDIT_INTERPOLATE
-            MENUITEM "反転(&R)",                    ID_EDIT_REVERSE
-            MENUITEM "音色を置き換える(&E)",         ID_EDIT_REPLACEINSTRUMENT
+            MENUITEM "数値の補間(&I)",                   ID_EDIT_INTERPOLATE
+            MENUITEM "反転(&R)",                      ID_EDIT_REVERSE
+            MENUITEM "音色を置き換える(&E)",                ID_EDIT_REPLACEINSTRUMENT
             MENUITEM SEPARATOR
-            MENUITEM "間隔を 2 倍に(&X)",                     ID_EDIT_EXPANDPATTERNS
-            MENUITEM "間隔を半分に(&H)",                     ID_EDIT_SHRINKPATTERNS
-            MENUITEM "間隔を編集(&S)...",                 ID_EDIT_STRETCHPATTERNS
+            MENUITEM "間隔を 2 倍に(&X)",                ID_EDIT_EXPANDPATTERNS
+            MENUITEM "間隔を半分に(&H)",                  ID_EDIT_SHRINKPATTERNS
+            MENUITEM "間隔を編集(&S)...",                ID_EDIT_STRETCHPATTERNS
             MENUITEM SEPARATOR
             POPUP "トランスポーズ(&T)"
             BEGIN
-                MENUITEM "半音下げる(&D)",              ID_TRANSPOSE_DECREASENOTE
-                MENUITEM "半音上げる(&I)",              ID_TRANSPOSE_INCREASENOTE
-                MENUITEM "1 オクターブ下げる(&E)",            ID_TRANSPOSE_DECREASEOCTAVE
-                MENUITEM "1 オクターブ上げる(&N)",            ID_TRANSPOSE_INCREASEOCTAVE
+                MENUITEM "半音下げる(&D)",                   ID_TRANSPOSE_DECREASENOTE
+                MENUITEM "半音上げる(&I)",                   ID_TRANSPOSE_INCREASENOTE
+                MENUITEM "1 オクターブ下げる(&E)",              ID_TRANSPOSE_DECREASEOCTAVE
+                MENUITEM "1 オクターブ上げる(&N)",              ID_TRANSPOSE_INCREASEOCTAVE
             END
         END
         MENUITEM SEPARATOR
-        MENUITEM "行の設定を取得(&K)",                ID_POPUP_PICKUPROW
+        MENUITEM "行の設定を取得(&K)",                 ID_POPUP_PICKUPROW
         MENUITEM SEPARATOR
         MENUITEM "トラックをミュート(&O)",               ID_TRACKER_TOGGLECHANNEL
         MENUITEM "トラックをソロ(&S)",                 ID_TRACKER_SOLOCHANNEL
@@ -376,57 +375,57 @@ BEGIN
     END
 END
 
-IDR_FRAME_POPUP MENU	/// jp
+IDR_FRAME_POPUP MENU
 BEGIN
     POPUP "Frame"
     BEGIN
-        MENUITEM "フレームの挿入(&I)",               ID_MODULE_INSERTFRAME
-        MENUITEM "フレームの削除(&R)",               ID_MODULE_REMOVEFRAME
-        MENUITEM "現在のフレームを挿入(&F)",            ID_MODULE_DUPLICATEFRAME
-        MENUITEM "パターンの複製",               ID_MODULE_DUPLICATECURRENTPATTERN
-        MENUITEM "フレームの複製挿入(&U)",         ID_MODULE_DUPLICATEFRAMEPATTERNS
+        MENUITEM "フレームの挿入(&I)",                 ID_MODULE_INSERTFRAME
+        MENUITEM "フレームの削除(&R)",                 ID_MODULE_REMOVEFRAME
+        MENUITEM "現在のフレームを挿入(&F)",              ID_MODULE_DUPLICATEFRAME
+        MENUITEM "パターンの複製",                     ID_MODULE_DUPLICATECURRENTPATTERN
+        MENUITEM "フレームの複製挿入(&U)",               ID_MODULE_DUPLICATEFRAMEPATTERNS
         MENUITEM SEPARATOR
         MENUITEM "上に移動(&U)",                    ID_MODULE_MOVEFRAMEUP
-        MENUITEM "下に移動(&O)",                  ID_MODULE_MOVEFRAMEDOWN
+        MENUITEM "下に移動(&O)",                    ID_MODULE_MOVEFRAMEDOWN
         MENUITEM SEPARATOR
-        MENUITEM "切り取り(&T)\tCtrl+X",                ID_FRAME_CUT
-        MENUITEM "コピー(&C)\tCtrl+C",               ID_FRAME_COPY
-        MENUITEM "貼り付け(&P)\tCtrl+V",              ID_FRAME_PASTE
+        MENUITEM "切り取り(&T)\tCtrl+X",            ID_FRAME_CUT
+        MENUITEM "コピー(&C)\tCtrl+C",             ID_FRAME_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",            ID_FRAME_PASTE
         MENUITEM "Paste && &Overwrite",         ID_FRAME_PASTEOVERWRITE
         MENUITEM "Paste && Duplicate",          ID_FRAME_PASTENEWPATTERNS
-        MENUITEM "削除(&D)\tDel",                ID_FRAME_DELETE
+        MENUITEM "削除(&D)\tDel",                 ID_FRAME_DELETE
     END
 END
 
-IDR_INSTRUMENT_POPUP MENU	/// jp
+IDR_INSTRUMENT_POPUP MENU
 BEGIN
     POPUP "Instrument"
     BEGIN
-        MENUITEM "追加",                         ID_INSTRUMENT_NEW
-        MENUITEM "削除",                      ID_INSTRUMENT_REMOVE
+        MENUITEM "追加",                          ID_INSTRUMENT_NEW
+        MENUITEM "削除",                          ID_INSTRUMENT_REMOVE
         MENUITEM SEPARATOR
         MENUITEM "音色ファイルの読み込み(&L)...",          ID_INSTRUMENT_LOAD
         MENUITEM "音色ファイルの保存(&S)...",            ID_INSTRUMENT_SAVE
         MENUITEM SEPARATOR
-        MENUITEM "音色の複製",            ID_INSTRUMENT_CLONE
-        MENUITEM "音色をシーケンスごと複製",       ID_INSTRUMENT_DEEPCLONE
+        MENUITEM "音色の複製",                       ID_INSTRUMENT_CLONE
+        MENUITEM "音色をシーケンスごと複製",                ID_INSTRUMENT_DEEPCLONE
         MENUITEM SEPARATOR
-        MENUITEM "編集",                        ID_INSTRUMENT_EDIT
+        MENUITEM "編集",                          ID_INSTRUMENT_EDIT
     END
 END
 
-IDR_SAMPLES_POPUP MENU	/// jp
+IDR_SAMPLES_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "プレビュー",                     IDC_PREVIEW
+        MENUITEM "プレビュー",                       IDC_PREVIEW
         MENUITEM SEPARATOR
-        MENUITEM "編集",                        IDC_EDIT
+        MENUITEM "編集",                          IDC_EDIT
         MENUITEM SEPARATOR
-        MENUITEM "除去",                      IDC_UNLOAD
-        MENUITEM "保存",                        IDC_SAVE
+        MENUITEM "除去",                          IDC_UNLOAD
+        MENUITEM "保存",                          IDC_SAVE
         MENUITEM "読み込み",                        IDC_LOAD
-        MENUITEM "Wave 取り込み",                      IDC_IMPORT
+        MENUITEM "Wave 取り込み",                   IDC_IMPORT
     END
 END
 
@@ -442,7 +441,7 @@ BEGIN
     END
 END
 
-IDR_PATTERN_HEADER_POPUP MENU	/// jp
+IDR_PATTERN_HEADER_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
@@ -450,7 +449,7 @@ BEGIN
         MENUITEM "トラックをソロ(&S)",                 ID_TRACKER_SOLOCHANNEL
         MENUITEM "To&ggle Chip",                ID_TRACKER_TOGGLECHIP
         MENUITEM "So&lo Chip",                  ID_TRACKER_SOLOCHIP
-        MENUITEM "全トラックのミュートを解除(&U)",          ID_POPUP_UNMUTEALLCHANNELS
+        MENUITEM "全トラックのミュートを解除(&U)",           ID_POPUP_UNMUTEALLCHANNELS
         MENUITEM SEPARATOR
         POPUP "&Meter Decay Rate"
         BEGIN
@@ -463,14 +462,14 @@ BEGIN
     END
 END
 
-IDR_SAMPLE_EDITOR_POPUP MENU	/// jp
+IDR_SAMPLE_EDITOR_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "再生\tP",                     IDC_PLAY
+        MENUITEM "再生\tP",                       IDC_PLAY
         MENUITEM SEPARATOR
-        MENUITEM "削除\tDel",                 IDC_DELETE
-        MENUITEM "傾斜化",                        IDC_TILT
+        MENUITEM "削除\tDel",                     IDC_DELETE
+        MENUITEM "傾斜化",                         IDC_TILT
     END
 END
 
@@ -533,13 +532,13 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,3,15,3	/// jp
- PRODUCTVERSION 0,3,15,3	/// jp
+ FILEVERSION 0,3,15,3
+ PRODUCTVERSION 0,3,15,3
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
- FILEFLAGS (VS_FF_PRIVATEBUILD|VS_FF_PATCHED|VS_FF_PRERELEASE|VS_FF_DEBUG)	/// jp
+ FILEFLAGS 0xfL
 #else
- FILEFLAGS (VS_FF_PRIVATEBUILD|VS_FF_PATCHED|VS_FF_PRERELEASE)	/// jp
+ FILEFLAGS 0xeL
 #endif
  FILEOS 0x4L
  FILETYPE 0x1L
@@ -547,22 +546,22 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "041104b0"	/// jp
+        BLOCK "041104b0"
         BEGIN
             VALUE "CompanyName", "HertzDevil"
             VALUE "FileDescription", "0CC-FamiTracker, Extension of FamiTracker"
-            VALUE "FileVersion", "0.3.15.3-JP001"	/// jp
+            VALUE "FileVersion", "0.3.15.3-JP001"
             VALUE "InternalName", "0CC-FamiTracker.exe"
             VALUE "LegalCopyright", " (c) jsr, HertzDevil 2005-2018 All rights reserved."
             VALUE "OriginalFilename", "0CC-FamiTracker.exe"
+            VALUE "PrivateBuild", "Phroneris（森の子リスのミーコの大冒険）が日本語化してビルドしてみたもの。ただし元にしたバージョンは0.3.15.3公式版よりも進んだコミット。"
             VALUE "ProductName", "0CC-FamiTracker"
-            VALUE "ProductVersion", "0.3.15.3-JP001"	/// jp
-			VALUE "PrivateBuild", "Phroneris（森の子リスのミーコの大冒険）が日本語化してビルドしてみたもの。ただし元にしたバージョンは0.3.15.3公式版よりも進んだコミット。"	/// jp
+            VALUE "ProductVersion", "0.3.15.3-JP001"
         END
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0x411, 1200	/// jp
+        VALUE "Translation", 0x411, 1200
     END
 END
 
@@ -1056,7 +1055,7 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,7,105,39,16,WS_GROUP
 END
 
-IDD_MAINFRAME DIALOGEX 0, 0, 405, 126	/// jp
+IDD_MAINFRAME DIALOGEX 0, 0, 405, 126
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_TRANSPARENT | WS_EX_CONTROLPARENT
 FONT 8, "MS Shell Dlg", 400, 0, 0x0
@@ -1091,7 +1090,7 @@ BEGIN
     CONTROL         "",IDC_MAINFRAME_INST_TOOLBAR,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,221,106,124,16
 END
 
-IDD_PCMIMPORT DIALOGEX 0, 0, 211, 144	/// jp
+IDD_PCMIMPORT DIALOGEX 0, 0, 211, 144
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "PCM インポート"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1113,7 +1112,7 @@ BEGIN
     LTEXT           "Static",IDC_SAMPLESIZE,15,121,118,8
 END
 
-IDD_INSTRUMENT_INTERNAL DIALOGEX 0, 0, 372, 172	/// jp
+IDD_INSTRUMENT_INTERNAL DIALOGEX 0, 0, 372, 172
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
@@ -1128,7 +1127,7 @@ BEGIN
     CONTROL         "",IDC_INST_SEQUENCE_GRAPH,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,126,18,232,125
 END
 
-IDD_INSTRUMENT_DPCM DIALOGEX 0, 0, 372, 174	/// jp
+IDD_INSTRUMENT_DPCM DIALOGEX 0, 0, 372, 174
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
@@ -1156,14 +1155,14 @@ END
 
 IDD_INSTRUMENT DIALOGEX 0, 0, 389, 242
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "音色エディタ"	/// jp
+CAPTION "音色エディタ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_INST_TAB,"SysTabControl32",0x0,7,7,375,185
     CONTROL         "",IDC_KEYBOARD,"Static",SS_OWNERDRAW | SS_REALSIZEIMAGE | SS_SUNKEN,7,198,375,37
 END
 
-IDD_CONFIG_APPEARANCE DIALOGEX 0, 0, 280, 167	/// jp
+IDD_CONFIG_APPEARANCE DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "外観"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1186,7 +1185,7 @@ BEGIN
     PUSHBUTTON      "読み込み",IDC_BUTTON_APPEARANCE_LOAD,223,145,49,15
 END
 
-IDD_CONFIG_GENERAL DIALOGEX 0, 0, 280, 167	/// jp
+IDD_CONFIG_GENERAL DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "一般"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1212,7 +1211,7 @@ BEGIN
     EDITTEXT        IDC_EDIT_CONFIG_DESC,13,130,152,25,ES_MULTILINE | ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP
 END
 
-IDD_CONFIG_MIDI DIALOGEX 0, 0, 280, 167	/// jp
+IDD_CONFIG_MIDI DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "MIDI"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1229,7 +1228,7 @@ BEGIN
     GROUPBOX        "オプション",IDC_STATIC,7,89,266,71
 END
 
-IDD_CONFIG_SOUND DIALOGEX 0, 0, 280, 167	/// jp
+IDD_CONFIG_SOUND DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTEXTHELP
 CAPTION "音響"
@@ -1260,7 +1259,7 @@ BEGIN
     CTEXT           "100 %",IDC_VOLUME_T,234,144,31,8
 END
 
-IDD_CONFIG_SHORTCUTS DIALOGEX 0, 0, 280, 167	/// jp
+IDD_CONFIG_SHORTCUTS DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "ショートカット"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1272,7 +1271,7 @@ BEGIN
     PUSHBUTTON      "デフォルト",IDC_DEFAULT,228,147,45,14
 END
 
-IDD_OCTAVE DIALOGEX 0, 0, 322, 12	/// jp
+IDD_OCTAVE DIALOGEX 0, 0, 322, 12
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_CONTROLPARENT
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1289,7 +1288,7 @@ BEGIN
     CONTROL         "",IDC_HIGHLIGHTSPIN2,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,307,2,11,6
 END
 
-IDD_EXPORT DIALOGEX 0, 0, 247, 283	/// jp
+IDD_EXPORT DIALOGEX 0, 0, 247, 283
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "ファイルを出力"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1313,7 +1312,7 @@ BEGIN
     PUSHBUTTON      "再生(&P)",IDC_PLAY,187,68,53,14,NOT WS_VISIBLE
 END
 
-IDD_INSTRUMENT_VRC7 DIALOGEX 0, 0, 372, 172	/// jp
+IDD_INSTRUMENT_VRC7 DIALOGEX 0, 0, 372, 172
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
@@ -1363,7 +1362,7 @@ BEGIN
     CONTROL         "",IDC_FB,"msctls_trackbar32",TBS_AUTOTICKS | TBS_VERT | TBS_BOTH | WS_TABSTOP,325,124,25,41
 END
 
-IDD_CREATEWAV DIALOGEX 0, 0, 151, 208	/// jp
+IDD_CREATEWAV DIALOGEX 0, 0, 151, 208
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "WAVE ファイルを生成"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1392,7 +1391,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
 END
 
-IDD_INSTRUMENT_FDS DIALOGEX 0, 0, 372, 172	/// jp
+IDD_INSTRUMENT_FDS DIALOGEX 0, 0, 372, 172
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
@@ -1426,7 +1425,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     PUSHBUTTON      "+",IDC_FRAME_INC,0,0,17,12
     PUSHBUTTON      "-",IDC_FRAME_DEC,23,0,17,12
-    CONTROL         "全て変更",IDC_CHANGE_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,51,2,56,10	/// jp
+    CONTROL         "全て変更",IDC_CHANGE_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,51,2,56,10
 END
 
 IDD_INSTRUMENT_FDS_ENVELOPE DIALOGEX 0, 0, 372, 172
@@ -1437,7 +1436,7 @@ BEGIN
     COMBOBOX        IDC_TYPE,8,151,63,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
 END
 
-IDD_CHANNELS DIALOGEX 0, 0, 303, 236	/// jp
+IDD_CHANNELS DIALOGEX 0, 0, 303, 236
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Tracks"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1460,7 +1459,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
 END
 
-IDD_COMMENTS DIALOGEX 0, 0, 358, 230	/// jp
+IDD_COMMENTS DIALOGEX 0, 0, 358, 230
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "モジュールのコメント"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1474,7 +1473,7 @@ END
 IDD_CONFIG_MIXER DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTEXTHELP
-CAPTION "ミキサー"	/// jp
+CAPTION "ミキサー"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_SLIDER_APU1,"msctls_trackbar32",TBS_AUTOTICKS | TBS_VERT | TBS_BOTH | WS_TABSTOP,7,34,26,110
@@ -1501,11 +1500,11 @@ BEGIN
     CTEXT           "0.0dB",IDC_LEVEL_FDS,176,149,30,8
     CTEXT           "0.0dB",IDC_LEVEL_N163,209,149,30,8
     CTEXT           "0.0dB",IDC_LEVEL_S5B,243,149,30,8
-    LTEXT           "ハードウェア・ミキシングレベル",IDC_STATIC,7,7,92,8	/// jp
-    PUSHBUTTON      "リセット",IDC_BUTTON_MIXER_RESET,223,7,50,14	/// jp
+    LTEXT           "ハードウェア・ミキシングレベル",IDC_STATIC,7,7,92,8
+    PUSHBUTTON      "リセット",IDC_BUTTON_MIXER_RESET,223,7,50,14
 END
 
-IDD_INSTRUMENT_N163_WAVE DIALOGEX 0, 0, 372, 172	/// jp
+IDD_INSTRUMENT_N163_WAVE DIALOGEX 0, 0, 372, 172
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
@@ -1528,7 +1527,7 @@ BEGIN
     PUSHBUTTON      "貼付",IDC_PASTE,332,144,27,14
 END
 
-IDD_IMPORT DIALOGEX 0, 0, 173, 263	/// jp
+IDD_IMPORT DIALOGEX 0, 0, 173, 263
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "インポートオプション"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1564,7 +1563,7 @@ BEGIN
     GROUPBOX        "Audio",IDC_STATIC,81,34,88,26
 END
 
-IDD_SPEED DIALOGEX 0, 0, 196, 44	/// jp
+IDD_SPEED DIALOGEX 0, 0, 196, 44
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "スピードをカスタム"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1575,7 +1574,7 @@ BEGIN
     LTEXT           "60 Hz",IDC_SPEED,112,11,26,12
 END
 
-IDD_PROPERTIES DIALOGEX 0, 0, 213, 312	/// jp
+IDD_PROPERTIES DIALOGEX 0, 0, 213, 312
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "モジュールのプロパティ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1612,7 +1611,7 @@ BEGIN
     PUSHBUTTON      "キャンセル",IDCANCEL,153,291,53,14
 END
 
-IDD_WAVE_PROGRESS DIALOGEX 0, 0, 220, 111	/// jp
+IDD_WAVE_PROGRESS DIALOGEX 0, 0, 220, 111
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "WAV を生成中..."
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1626,7 +1625,7 @@ BEGIN
     CTEXT           "Progress",IDC_TIME,7,49,206,11
 END
 
-IDD_SAMPLE_EDITOR DIALOGEX 0, 0, 481, 261	/// jp
+IDD_SAMPLE_EDITOR DIALOGEX 0, 0, 481, 261
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "DPCM サンプルエディタ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -1644,7 +1643,7 @@ BEGIN
     LTEXT           "Zoom (1.00x)",IDC_STATIC_DPCM_ZOOM,185,214,54,8
 END
 
-IDD_DETUNE DIALOGEX 0, 0, 293, 272	/// jp
+IDD_DETUNE DIALOGEX 0, 0, 293, 272
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "デチューン設定"
 FONT 8, "MS Shell Dlg", 400, 0, 0x0
@@ -1705,8 +1704,8 @@ BEGIN
     LTEXT           "Total size:\n1 / 256 bytes",IDC_STATIC_GROOVE_TOTAL,65,94,37,24
     GROUPBOX        "Groove editor",IDC_STATIC,116,7,166,119
     LISTBOX         IDC_LIST_GROOVE_EDITOR,124,18,44,82,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "上に移動",IDC_BUTTON_GROOVE_UP,175,18,46,14	/// jp
-    PUSHBUTTON      "下に移動",IDC_BUTTON_GROOVE_DOWN,175,36,46,14	/// jp
+    PUSHBUTTON      "上に移動",IDC_BUTTON_GROOVE_UP,175,18,46,14
+    PUSHBUTTON      "下に移動",IDC_BUTTON_GROOVE_DOWN,175,36,46,14
     PUSHBUTTON      "Expand",IDC_BUTTON_GROOVE_EXPAND,227,18,46,14
     PUSHBUTTON      "Shrink",IDC_BUTTON_GROOVE_SHRINK,227,36,46,14
     PUSHBUTTON      "Generate",IDC_BUTTON_GROOVE_GENERATE,175,54,46,14
@@ -1722,8 +1721,8 @@ BEGIN
     EDITTEXT        IDC_EDIT_GROOVE_FIELD,176,105,97,14,ES_AUTOHSCROLL
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,132,275,1
     DEFPUSHBUTTON   "OK",IDOK,124,139,50,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,178,139,50,14	/// jp
-    PUSHBUTTON      "適用",IDAPPLY,232,139,50,14	/// jp
+    PUSHBUTTON      "キャンセル",IDCANCEL,178,139,50,14
+    PUSHBUTTON      "適用",IDAPPLY,232,139,50,14
 END
 
 IDD_FIND DIALOGEX 0, 0, 142, 264
@@ -1782,7 +1781,7 @@ BEGIN
     PUSHBUTTON      "Reset",IDC_BUTTON_STRETCH_RESET,202,7,39,14
     PUSHBUTTON      "Invert",IDC_BUTTON_STRETCH_INVERT,202,23,39,14
     DEFPUSHBUTTON   "OK",IDOK,248,7,39,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,248,23,39,14	/// jp
+    PUSHBUTTON      "キャンセル",IDCANCEL,248,23,39,14
 END
 
 IDD_BOOKMARKS DIALOGEX 0, 0, 325, 162
@@ -1814,7 +1813,7 @@ BEGIN
     LISTBOX         IDC_LIST_BOOKMARKS,140,18,115,130,LBS_OWNERDRAWVARIABLE | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Move Up",IDC_BUTTON_BOOKMARK_MOVEUP,270,17,48,14
     PUSHBUTTON      "Move Down",IDC_BUTTON_BOOKMARK_MOVEDOWN,270,35,48,14
-    PUSHBUTTON      "削除",IDC_BUTTON_BOOKMARK_REMOVE,270,53,48,14	/// jp
+    PUSHBUTTON      "削除",IDC_BUTTON_BOOKMARK_REMOVE,270,53,48,14
     PUSHBUTTON      "Clear All",IDC_BUTTON_BOOKMARK_CLEARALL,270,71,48,14
     LTEXT           "Sort by:",IDC_STATIC,263,103,27,8
     PUSHBUTTON      "Position",IDC_BUTTON_BOOKMARK_SORTP,270,116,48,14
@@ -1835,7 +1834,7 @@ BEGIN
     COMBOBOX        IDC_COMBO_GOTO_CHIP,80,19,35,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     EDITTEXT        IDC_EDIT_GOTO_CHANNEL,123,19,28,14,ES_AUTOHSCROLL | ES_NUMBER
     DEFPUSHBUTTON   "OK",IDOK,48,39,50,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,102,39,50,14	/// jp
+    PUSHBUTTON      "キャンセル",IDCANCEL,102,39,50,14
 END
 
 IDD_SWAP DIALOGEX 0, 0, 87, 112
@@ -1844,7 +1843,7 @@ CAPTION "Swap Tracks"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,7,91,31,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,49,91,31,14	/// jp
+    PUSHBUTTON      "キャンセル",IDCANCEL,49,91,31,14
     LTEXT           "Chip:",IDC_STATIC,9,6,18,8
     LTEXT           "Track:",IDC_STATIC,49,6,21,8
     LTEXT           "Warning: Resets undo after swapping!",IDC_STATIC,7,70,73,17
@@ -1870,7 +1869,7 @@ BEGIN
     CONTROL         "Re-initialize settings upon stopping",IDC_CHECK_RECORDER_RESET,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,62,127,10
     DEFPUSHBUTTON   "OK",IDOK,53,85,50,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,111,85,50,14	/// jp
+    PUSHBUTTON      "キャンセル",IDCANCEL,111,85,50,14
 END
 
 IDD_CONFIG_VERSION DIALOGEX 0, 0, 280, 167
@@ -1897,7 +1896,7 @@ BEGIN
     LTEXT           "Exclude these instruments:",IDC_STATIC,15,52,88,8
     LTEXT           "Warning: Resets undo history!",IDC_STATIC,15,185,99,8
     DEFPUSHBUTTON   "OK",IDOK,106,205,50,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,160,205,50,14	/// jp
+    PUSHBUTTON      "キャンセル",IDCANCEL,160,205,50,14
     CONTROL         "Transpose all songs",IDC_CHECK_TRSP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,36,79,10
     PUSHBUTTON      "Reverse",IDC_BUTTON_TRSP_REVERSE,47,166,50,14
     PUSHBUTTON      "Clear All",IDC_BUTTON_TRSP_CLEAR,120,166,50,14
@@ -1929,7 +1928,7 @@ BEGIN
     RTEXT           "Transpose:",IDC_STATIC,14,89,37,8
     COMBOBOX        IDC_COMBO_SPLIT_TRSP,55,87,65,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     DEFPUSHBUTTON   "OK",IDOK,13,112,50,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,71,112,50,14	/// jp
+    PUSHBUTTON      "キャンセル",IDCANCEL,71,112,50,14
 END
 
 
@@ -2321,7 +2320,7 @@ STRINGTABLE
 BEGIN
     IDR_MAINFRAME           "0CC-FamiTracker\n\n0CC-FamiTracker\n0CC-FamiTracker modules (*.0cc;*.ftm)\n.0cc\n0CCFamiTracker.Document\n0CCFamiTracker.Document"
     IDS_FRAME_DROP_MOVE     "Drop selection to move frames"
-    IDS_DPCM_IMPORT_QUALITY_FORMAT "品質: %1"	/// jp
+    IDS_DPCM_IMPORT_QUALITY_FORMAT "品質: %1"
     IDS_CLIPBOARD_ERROR     "Could not register clipboard format"
     IDS_FILE_OPEN_ERROR     "Could not open the file!"
     IDS_FILTER_CSV          "Comma-separated values (*.csv)"
@@ -2523,7 +2522,7 @@ BEGIN
     IDS_EXPORT_SAMPLES_FILE """%1"" already exists in the same directory as the music data file. Are you sure you want to overwrite it?"
     IDS_MODULE_ERROR_NONE   "This build is not allowed to bypass validation of loaded modules."
     IDS_FILE_LOAD_ERROR     "Couldn't load file properly. Make sure you have the latest version of 0CC-FamiTracker."
-    IDS_CONFIG_WINDOW       "FamiTracker 環境設定"	/// jp
+    IDS_CONFIG_WINDOW       "FamiTracker 環境設定"
 END
 
 STRINGTABLE
@@ -2569,7 +2568,7 @@ BEGIN
     IDS_OUT_OF_SLOTS        "Out of sample slots"
     IDS_OUT_OF_SAMPLEMEM_FORMAT 
                             "Couldn't load sample, out of sample memory (max %1 kB is avaliable)"
-    IDS_DPCM_IMPORT_GAIN_FORMAT "ゲイン: %1 dB"	/// jp
+    IDS_DPCM_IMPORT_GAIN_FORMAT "ゲイン: %1 dB"
     IDS_INFO_COPYRIGHT      "(copyright)"
     IDS_IMPORT_FAILED       "Import module failed"
     IDS_IMPORT_INSTRUMENT_COUNT 
@@ -2657,9 +2656,9 @@ BEGIN
                             "An error occured while trying to copy data to the clipboard."
     IDS_CLIPBOARD_PASTE_ERROR 
                             "An error occured while trying to paste data from the clipboard."
-    IDS_DPCM_SPACE_FORMAT   "容量: 使用済み %1 kB, 残り %2 kB (全体 %3 kB)"	/// jp
-    IDS_FILTER_0CC          "0CC-FamiTracker モジュール (*.0cc;*.ftm)"	/// jp
-    IDS_INSTRUMENT_EDITOR_TITLE "音色エディタ - %1"	/// jp
+    IDS_DPCM_SPACE_FORMAT   "容量: 使用済み %1 kB, 残り %2 kB (全体 %3 kB)"
+    IDS_FILTER_0CC          "0CC-FamiTracker モジュール (*.0cc;*.ftm)"
+    IDS_INSTRUMENT_EDITOR_TITLE "音色エディタ - %1"
     IDS_INST_VERSION_UNSUPPORTED "File version not supported!"
     IDS_FILE_SAVED          "File saved (%1 bytes)"
     IDS_MIDI_ERR_INPUT      "MIDI Error: Could not open MIDI input device!"
@@ -2690,9 +2689,9 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_INDICATOR_CHIP       "拡張音源なし"	/// jp
-    ID_INDICATOR_INSTRUMENT "音色: %1"	/// jp
-    ID_INDICATOR_OCTAVE     "オクターブ: %1"	/// jp
+    ID_INDICATOR_CHIP       "拡張音源なし"
+    ID_INDICATOR_INSTRUMENT "音色: %1"
+    ID_INDICATOR_OCTAVE     "オクターブ: %1"
     ID_INDICATOR_RATE       "000 Hz"
     ID_INDICATOR_TEMPO      "000.00 BPM"
     ID_INDICATOR_TIME       "00:00:00 "
@@ -2755,7 +2754,7 @@ BEGIN
     IDS_ABOUT_TOOLTIP_MAIL  "Send mail to nicetas.c@gmail.com"
     IDS_ABOUT_TOOLTIP_WEB   "Go to http://hertzdevil.info/programs/"
     IDS_ABOUT_VERSION_FORMAT "0CC-FamiTracker version %1"
-    IDS_PROPERTIES_CHANNELS "チャンネル数:"	/// jp
+    IDS_PROPERTIES_CHANNELS "チャンネル数:"
     IDS_LOADING_DONE        "File loaded"
     IDS_DPCM_IMPORT_SIZE_FORMAT "Converted size: %1 bytes"
     IDS_INSTRUMENT_FOLDER   "Choose a folder where you have instrument files"
@@ -2845,16 +2844,15 @@ BEGIN
     ID_FILE_IMPORTJSON      "Imports module JSON files\nImport JSON"
 END
 
-#endif    // Japanese resources	/// jp
+#endif    // 日本語 (日本) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// Swedish (Sweden) resources
+// スウェーデン語 (スウェーデン) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SVE)
 LANGUAGE LANG_SWEDISH, SUBLANG_SWEDISH
-#pragma code_page(1252)
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -2891,7 +2889,7 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-#endif    // Swedish (Sweden) resources
+#endif    // スウェーデン語 (スウェーデン) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
