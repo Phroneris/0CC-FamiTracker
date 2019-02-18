@@ -30,6 +30,6 @@ public:
 	CInstrumentVRC6() : CSeqInstrument(INST_VRC6) { }
 
 public:
-	static constexpr std::string_view SEQUENCE_NAME[] = {"Volume", "Arpeggio", "Pitch", "Hi-pitch", "Pulse Width"};
+	static constexpr std::string_view SEQUENCE_NAME[] = {"Volume", "Arpeggio", "Pitch", "Hi-pitch", "Pulse Width"};	/// jp-garbling
 	std::string_view GetSequenceName(int Index) const override { return SEQUENCE_NAME[Index]; }		// // //
 };

@@ -96,9 +96,9 @@ void CWaveRendererTick::Tick() {
 }
 
 std::string CWaveRendererTick::GetProgressString() const {
-	return "Time: " + conv::time_from_uint(static_cast<unsigned>(m_iRenderTick / m_fFrameRate)) +
+	return "Time: " + conv::time_from_uint(static_cast<unsigned>(m_iRenderTick / m_fFrameRate)) +	/// jp-garbling
 		" / " + conv::time_from_uint(static_cast<unsigned>(m_iTicksToRender / m_fFrameRate)) +
-		" (" + conv::from_int(GetProgressPercent()) + "% done)";
+		" (" + conv::from_int(GetProgressPercent()) + "% done)";	/// jp-garbling
 }
 
 int CWaveRendererTick::GetProgressPercent() const {
@@ -120,8 +120,8 @@ void CWaveRendererRow::StepRow() {
 }
 
 std::string CWaveRendererRow::GetProgressString() const {
-	return "Row: " + std::to_string(m_iRenderRow) + " / " + std::to_string(m_iRowsToRender) +
-		" (" + std::to_string(GetProgressPercent()) + "% done)";
+	return "Row: " + std::to_string(m_iRenderRow) + " / " + std::to_string(m_iRowsToRender) +	/// jp-garbling
+		" (" + std::to_string(GetProgressPercent()) + "% done)";	/// jp-garbling
 }
 
 int CWaveRendererRow::GetProgressPercent() const {

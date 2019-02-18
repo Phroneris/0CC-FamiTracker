@@ -25,7 +25,7 @@
 
 namespace {
 
-const std::string_view DEFAULT_INST_NAME = "New instrument";		// // //
+const std::string_view DEFAULT_INST_NAME = "New instrument";		// // //	/// jp-garbling
 
 // FTI instruments files
 const std::string_view INST_HEADER = "FTI";		// // // moved

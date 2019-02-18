@@ -182,7 +182,7 @@ void CInstrumentEditDlg::SetCurrentInstrument(int Index)
 			case INST_2A03: {
 					stChannelID Type = CFamiTrackerView::GetView()->GetSelectedChannelID();		// // //
 					bool bShowDPCM = IsDPCM(Type) || (std::static_pointer_cast<CInstrument2A03>(pInstrument)->AssignedSamples());
-					InsertPane(std::make_unique<CInstrumentEditorSeq>(nullptr, L"2A03 settings",
+					InsertPane(std::make_unique<CInstrumentEditorSeq>(nullptr, L"2A03 設定",	/// jp
 						CInstrument2A03::SEQUENCE_NAME, 15, 3, INST_2A03), !bShowDPCM);		// // //
 					InsertPane(std::make_unique<CInstrumentEditorDPCM>(), bShowDPCM);
 				}
@@ -199,7 +199,7 @@ void CInstrumentEditDlg::SetCurrentInstrument(int Index)
 				InsertPane(std::make_unique<CInstrumentEditorFDSEnvelope>(), false);
 				break;
 			case INST_N163:
-				InsertPane(std::make_unique<CInstrumentEditorSeq>(nullptr, L"Envelopes",
+				InsertPane(std::make_unique<CInstrumentEditorSeq>(nullptr, L"エンベロープ",	/// jp
 					CInstrumentN163::SEQUENCE_NAME, 15, CInstrumentN163::MAX_WAVE_COUNT - 1, INST_N163), true);
 				InsertPane(std::make_unique<CInstrumentEditorN163Wave>(), false);
 				break;

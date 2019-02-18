@@ -30,6 +30,6 @@ public:
 	CInstrumentS5B() : CSeqInstrument(INST_S5B) { }		// // //
 
 public:
-	static constexpr std::string_view SEQUENCE_NAME[] = {"Volume", "Arpeggio", "Pitch", "Hi-pitch", "Noise / Mode"};
+	static constexpr std::string_view SEQUENCE_NAME[] = {"Volume", "Arpeggio", "Pitch", "Hi-pitch", "Noise / Mode"};	/// jp-garbling
 	std::string_view GetSequenceName(int Index) const override { return SEQUENCE_NAME[Index]; }		// // //
 };

@@ -43,7 +43,7 @@
 
 namespace {
 
-LPCWSTR NO_SAMPLE_STR = L"(no sample)";
+LPCWSTR NO_SAMPLE_STR = L"(なし)";	/// jp
 
 std::shared_ptr<ft0cc::doc::dpcm_sample> LoadSampleFromFile(CFile &file, std::string_view name) {
 	// Clip file if too large
@@ -172,17 +172,17 @@ BOOL CInstrumentEditorDPCM::OnInitDialog()
 	m_cTableListCtrl.GetClientRect(&r);
 	int Width = r.Width() - ::GetSystemMetrics(SM_CXHSCROLL);
 	m_cTableListCtrl.DeleteAllItems();
-	m_cTableListCtrl.InsertColumn(0, L"Key", LVCFMT_LEFT, static_cast<int>(.2 * Width));
-	m_cTableListCtrl.InsertColumn(1, L"Pitch", LVCFMT_LEFT, static_cast<int>(.23 * Width));
-	m_cTableListCtrl.InsertColumn(2, L"Sample", LVCFMT_LEFT, static_cast<int>(.57 * Width));
+	m_cTableListCtrl.InsertColumn(0, L"キー", LVCFMT_LEFT, static_cast<int>(.21 * Width));	/// jp
+	m_cTableListCtrl.InsertColumn(1, L"音程", LVCFMT_LEFT, static_cast<int>(.24 * Width));	/// jp
+	m_cTableListCtrl.InsertColumn(2, L"サンプル", LVCFMT_LEFT, static_cast<int>(.55 * Width));	/// jp
 	m_cTableListCtrl.SendMessageW(LVM_SETEXTENDEDLISTVIEWSTYLE, 0, LVS_EX_FULLROWSELECT);
 
 	m_cSampleListCtrl.GetClientRect(&r);
 	Width = r.Width();
 	m_cSampleListCtrl.DeleteAllItems();
 	m_cSampleListCtrl.InsertColumn(0, L"#", LVCFMT_LEFT, static_cast<int>(.2 * Width));		// // //
-	m_cSampleListCtrl.InsertColumn(1, L"Name", LVCFMT_LEFT, static_cast<int>(.55 * Width));
-	m_cSampleListCtrl.InsertColumn(2, L"Size", LVCFMT_LEFT, static_cast<int>(.25 * Width));
+	m_cSampleListCtrl.InsertColumn(1, L"名前", LVCFMT_LEFT, static_cast<int>(.53 * Width));	/// jp
+	m_cSampleListCtrl.InsertColumn(2, L"サイズ", LVCFMT_LEFT, static_cast<int>(.27 * Width));	/// jp
 	m_cSampleListCtrl.SendMessageW(LVM_SETEXTENDEDLISTVIEWSTYLE, 0, LVS_EX_FULLROWSELECT);
 
 	for (int i = 0; i < 16; ++i)

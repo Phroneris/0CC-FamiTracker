@@ -61,7 +61,7 @@ public:
 	static const int MAX_WAVE_COUNT = 64;		// Number of waves
 
 public:
-	static constexpr std::string_view SEQUENCE_NAME[] = {"Volume", "Arpeggio", "Pitch", "Hi-pitch", "Wave Index"};
+	static constexpr std::string_view SEQUENCE_NAME[] = {"Volume", "Arpeggio", "Pitch", "Hi-pitch", "Wave Index"};	/// jp-garbling
 	std::string_view GetSequenceName(int Index) const override { return SEQUENCE_NAME[Index]; }		// // //
 
 private:

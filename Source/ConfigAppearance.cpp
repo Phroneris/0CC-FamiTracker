@@ -32,21 +32,21 @@
 #include "NumConv.h"		// // //
 #include "str_conv/str_conv.hpp"		// // //
 
-const std::string_view CConfigAppearance::COLOR_ITEMS[] = {		// // //	/// jp
-	"背景",
-	"ハイライト行の背景",
-	"ハイライト行の背景 2",
-	"パターン文字",
-	"ハイライト行のパターン文字",
-	"ハイライト行のパターン文字 2",
-	"音色カラム",
-	"音量カラム",
-	"エフェクト番号カラム",
-	"選択範囲",
-	"カーソル",
-	"カーソル行（通常モード）",		// // //
-	"カーソル行（編集モード）",
-	"カーソル行（再生中）",
+const std::string_view CConfigAppearance::COLOR_ITEMS[] = {		// // //	/// jp-garbling
+	"Background",
+	"Highlighted background",
+	"Highlighted background 2",
+	"Pattern text",
+	"Highlighted pattern text",
+	"Highlighted pattern text 2",
+	"Instrument column",
+	"Volume column",
+	"Effect number column",
+	"Selection",
+	"Cursor",
+	"Current row (normal mode)",		// // //
+	"Current row (edit mode)",
+	"Current row (playing)",
 };
 
 const char CConfigAppearance::SETTING_SEPARATOR[] = " : ";		// // // 050B

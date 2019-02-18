@@ -3259,11 +3259,11 @@ void CMainFrame::OnUpdateGrooveEdit(CCmdUI *pCmdUI)
 	CSongData &song = *GetCurrentSong();
 	int Speed = song.GetSongSpeed();
 	if (song.GetSongGroove()) {
-		m_cButtonGroove.SetWindowTextW(L"ｸﾞﾙｰｳﾞ");	/// jp
+		m_cButtonGroove.SetWindowTextW(L"グルーヴ");	/// jp
 		Speed = std::clamp(Speed, 0, MAX_GROOVE - 1);
 	}
 	else {
-		m_cButtonGroove.SetWindowTextW(L"行Tick");	/// jp
+		m_cButtonGroove.SetWindowTextW(L"行Tick");	/// jp: 行Tickは間に半角スペースを入れない
 		int MaxSpeed = song.GetSongTempo() ? GetDoc().GetModule()->GetSpeedSplitPoint() - 1 : 0xFF;
 		Speed = std::clamp(Speed, MIN_SPEED, MaxSpeed);
 	}

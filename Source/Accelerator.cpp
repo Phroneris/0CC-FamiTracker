@@ -72,8 +72,8 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"行まで移動",						MOD_ALT,		'G',			ID_EDIT_GOTO},						// // //
 	{L"チャンネルをミュート",					MOD_ALT,		VK_F9,			ID_TRACKER_TOGGLECHANNEL},
 	{L"チャンネルをソロ",					MOD_ALT,		VK_F10,			ID_TRACKER_SOLOCHANNEL},
-	{L"Toggle chip",					MOD_CONTROL|MOD_ALT, VK_F9,		ID_TRACKER_TOGGLECHIP},				// // //
-	{L"Solo chip",						MOD_CONTROL|MOD_ALT, VK_F10,	ID_TRACKER_SOLOCHIP},				// // //
+	{L"音源をミュート",					MOD_CONTROL|MOD_ALT, VK_F9,		ID_TRACKER_TOGGLECHIP},				// // //
+	{L"音源をソロ",						MOD_CONTROL|MOD_ALT, VK_F10,	ID_TRACKER_SOLOCHIP},				// // //
 	{L"Record to instrument",			0,				0,				ID_TRACKER_RECORDTOINST},			// // //
 	{L"数値の補間",					MOD_CONTROL,	'G',			ID_EDIT_INTERPOLATE},
 	{L"次のフレームへ",				MOD_CONTROL,	VK_RIGHT,		ID_NEXT_FRAME},

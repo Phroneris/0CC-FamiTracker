@@ -99,7 +99,7 @@ void CStretchDlg::UpdateStretch()
 
 void CStretchDlg::UpdateTest()
 {
-	std::string str = "Test:";
+	std::string str = "Test:";	/// jp-garbling
 	unsigned int count = 0, mapPos = 0;
 	for (int i = 0; i < STRETCH_MAP_TEST_LEN; ++i) {
 		if (count < STRETCH_MAP_TEST_LEN && m_iStretchMap[mapPos] != 0)
@@ -119,7 +119,7 @@ void CStretchDlg::OnEnChangeEditStretchMap()
 	UpdateStretch();
 
 	if (!m_bValid)
-		SetDlgItemTextW(IDC_STRETCH_TEST, L" Invalid stretch map");
+		SetDlgItemTextW(IDC_STRETCH_TEST, L" 不正な伸縮マップ");	/// jp
 	GetDlgItem(IDOK)->EnableWindow(m_bValid);
 	GetDlgItem(IDC_BUTTON_STRETCH_INVERT)->EnableWindow(m_bValid);
 }

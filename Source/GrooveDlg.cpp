@@ -230,13 +230,13 @@ void CGrooveDlg::UpdateCurrentGroove()
 
 void CGrooveDlg::UpdateIndicators()
 {
-	SetDlgItemTextW(IDC_STATIC_GROOVE_AVERAGE, FormattedW(L"Speed: %.3f", Groove->average()));
-	SetDlgItemTextW(IDC_STATIC_GROOVE_SIZE, FormattedW(L"Size: %d bytes", Groove->size() ? Groove->compiled_size() : 0));
+	SetDlgItemTextW(IDC_STATIC_GROOVE_AVERAGE, FormattedW(L"行Tick: %.3f", Groove->average()));	/// jp
+	SetDlgItemTextW(IDC_STATIC_GROOVE_SIZE, FormattedW(L"サイズ: %d バイト", Groove->size() ? Groove->compiled_size() : 0));	/// jp
 	int Total = 0;
 	for (int i = 0; i < MAX_GROOVE; ++i)
 		if (GrooveTable[i]->size())
 			Total += GrooveTable[i]->compiled_size();
-	SetDlgItemTextW(IDC_STATIC_GROOVE_TOTAL, FormattedW(L"Total size: %d / 255 bytes", Total));
+	SetDlgItemTextW(IDC_STATIC_GROOVE_TOTAL, FormattedW(L"総サイズ: %d / 255\nバイト", Total));	/// jp
 
 	CWnd *OKButton = GetDlgItem(IDOK);
 	CWnd *ApplyButton = GetDlgItem(IDAPPLY);

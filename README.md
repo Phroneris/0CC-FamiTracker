@@ -48,25 +48,28 @@ The current build is based on the version 0.5.0 beta 5 release of the official F
 # 日本語化
 
 森の子リスのミーコの大冒険 (Phroneris) が勝手に日本語化してみた。  
-現在のバージョンはv0.3.15.3-JP001。
+現在のバージョンはv0.3.15.4-JPpre001。
 
-かつて公開した[0CC-FamiTracker v0.3.11r1の日本語化パッチ](http://phroneris.com/text/20150911.shtml "自サイトの配布ページ")の翻訳を元に、それを更に改善する感じで作っている。  
+かつて私が公開した[0CC-FamiTracker v0.3.11r1の日本語化パッチ](http://phroneris.com/text/20150911.shtml "自サイトの配布ページ")の翻訳を元に、それを更に改善する感じで作っている。  
 あのパッチ作成はResource Hackerだけでなくバイナリエディタまで使ってexeファイルをちまちま改造していく作業がつらかったんだけど、ある日「OSSなんだから元のソースを日本語化しちゃえばいいじゃん！」と気付いたのでこれを作り始めた。
 
-やってる変更はほとんど単純な文字列の置換のみだけど、何せ私はC++なんて触ったことがないので、この日本語化によってどんな不具合が増えているかわからない。仮にわかったとしても、私の手には負えないかもしれない。  
+やってる変更はほとんど単純な文字列の置換とちょっとしたスペースの調整のみだけど、何せ私はC++なんて触ったことがないので、この日本語化によってどんな不具合が増えているかわからない。仮にわかったとしても、私の手には負えないかもしれない。  
 FamiTrackerはGPL 2.0ライセンスなので改めて書く必要はないことだけど、もし使う人がいるなら、どうかどんなトラブルが起きても自己責任で使ってほしい。
 
-GPLといえば、日本語化のための変更を加えた行やブロックには、`/// jp`というコメントを添えてそれを示している。
+GPLといえば、日本語化のための変更を加えた行やブロックには`/// jp`というコメントを添えてそれを示している。
 
 ## ビルドに関する注意点
 
 + 日本語化されたリソースファイル（`*.rc`）は、文字エンコーディングがUTF-16でないといけない。  
-  エンディアンの違いやBOMの必要性についてはよくわからないが、私はVisual Studio 2017の表記でいうところの`Unicode - Codepage 1200`という[エンコードを選んで保存している](https://nekko1119.hatenablog.com/entry/2017/03/28/003348 "参考記事")。
+  エンディアンの違いやBOMの必要性についてはよくわからないが、私はVisual Studio 2017の表記でいうところの`Unicode - Codepage 1200`というエンコーディングを選んで保存している。
   - 同じUTF-16でも、`Unicode (Big-Endian) - Codepage 1201`だとエラーが出る。よくわからない。
-+ UTF-16のリソースファイルをGitで管理するために、Gitへ渡す時（`add`）にはUTF-8に変換し、Gitから受け取る時（`checkout`）にはUTF-16に変換するような[フィルターをかけてやる](http://r-h.hatenablog.com/entry/2014/02/03/201805 "参考記事")と楽になる。  
++ UTF-16のリソースファイルをGitで管理するために、Gitへ渡す時（`add`）にはUTF-8に変換し、Gitから受け取る時（`checkout`）にはUTF-16に変換するようなフィルターをかけてやると楽になる。  
   私は以下の手順でどうにかしている。
   1. [nkf v2.1.1](https://www.vector.co.jp/soft/win95/util/se295331.html "nkf v2.1.1 配布サイト")の`nkf.exe`をGitの`usr/bin`に置く。
-  2. `.gitattributes`に`0CC-FamiTracker.rc filter=rc-utf16lebom`という行を追加する（このファイルは既にコミットに含んでいるので、このリポジトリでわざわざやる必要はない）。
+  2. `.gitattributes`に以下の行を追加する（このファイルは既にコミットに含んでいるので、このリポジトリでわざわざやる必要はない）。
+     ```
+	 0CC-FamiTracker.rc filter=rc-utf16lebom
+	 ```
   3. `.git/config`に以下の行を追加する。
      ```
      [filter "rc-utf16"]
@@ -74,10 +77,21 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
      	clean = nkf -w80xu
      ```
 	 - nkfの代わりにiconvでもできなくはないが、ファイル先頭にBOM差分が生じたり、事故ってファイルが崩壊したりするのでつらい。
-+ 日本語化されたその他のソースファイルは、文字エンコーディングがUTF-8でないといけない。  
-  BOMは無くても良い。本来は必要らしいんだけど、[コンパイラオプションでどうにかしている](http://tech.hikware.com/article/20171020a.html "参考記事")。
-+ バージョンを`0.3.15.3-JP001`と銘打ってはいるが、実際にビルドしたソースは0.3.15.3の公式リリース版（master）ではなく、そこから多少進んだ開発版（dev）。  
-  だって、公式版をビルドしようとすると`Error C3861 'ReadGlobalMemory': identifier not found`って言われてビルドできないんだもん…。
++ 日本語化されたその他のソースファイルは、文字エンコーディングがUTF-8でないといけない。BOMは無くても良く、その場合のVisual Studio 2017上のエンコーディング選択肢は`Unicode (UTF-8 without signature) - Codepage 65001`となる。  
+  いや、本来はBOMが必要らしいんだけど、コンパイラオプションでどうにかしている。
++ 現状、ビルドに使用したソースは0.3.15.3の公式リリース版（master）ではなく、そこから多少進んだ開発版（dev）。  
+  ほんとは公式版を使いたかったけど、ビルドしようとすると`Error C3861 'ReadGlobalMemory': identifier not found`って言われてビルドできなかったので…。
+
+## 参考にしたもの
+
++ How to localize an RC file? — Internationalization Cookbook  
+  https://mihai-nita.net/2007/05/03/how-to-localize-an-rc-file/
++ gitの便利なfilterまとめ - webネタ  
+  http://r-h.hatenablog.com/entry/2014/02/03/201805
++ Visual Studio 2017でファイルのエンコードを指定して保存する方法 - C++と色々  
+  https://nekko1119.hatenablog.com/entry/2017/03/28/003348
++ Visual Studio で UTF-8 で C++ を書いたら心が折れそうになった件 - Hikware.Tech  
+  http://tech.hikware.com/article/20171020a.html
 
 ## 多言語化についてのぼやき
 
