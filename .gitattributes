@@ -1,6 +1,7 @@
-0CC-FamiTracker.rc filter=rc-utf16
+0CC-FamiTracker.rc filter=utf16lebom
+0CC-FamiTracker.reg filter=utf16lebom
 
 # it's also required to add these lines to .git/config:
-# [filter "rc-utf16"]
+# [filter "utf16lebom"]
 # 	smudge = nkf -w16Lxu
 # 	clean = nkf -w80xu

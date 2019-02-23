@@ -51,12 +51,12 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"再生",							0,				0,				ID_TRACKER_PLAY},
 	{L"最初から再生",				0,				VK_F5,			ID_TRACKER_PLAY_START},
 	{L"カーソル位置から再生",				0,				VK_F7,			ID_TRACKER_PLAY_CURSOR},
-	{L"Play from row marker",			MOD_CONTROL,	VK_F7,			ID_TRACKER_PLAY_MARKER, L"Play from bookmark"},		// // // 050B
+	{L"行マーカーから再生",			MOD_CONTROL,	VK_F7,			ID_TRACKER_PLAY_MARKER, L"ブックマークから再生"},		// // // 050B
 	{L"パターンをループ再生",			0,				VK_F6,			ID_TRACKER_PLAYPATTERN},
 	{L"行を再生",						MOD_CONTROL,	VK_RETURN,		ID_TRACKER_PLAYROW},
 	{L"停止",							0,				VK_F8,			ID_TRACKER_STOP},
-	{L"編集を有効化/無効化",			0,				VK_SPACE,		ID_TRACKER_EDIT},
-	{L"Set row marker",					MOD_CONTROL,	'B',			ID_TRACKER_SET_MARKER, L"Set row marker"},		// // // 050B
+	{L"編集の有効化/無効化",			0,				VK_SPACE,		ID_TRACKER_EDIT},
+	{L"行マーカーを設定",					MOD_CONTROL,	'B',			ID_TRACKER_SET_MARKER, L"行マーカーを設定"},		// // // 050B
 	{L"ミックス貼り付け",					MOD_CONTROL,	'M',			ID_EDIT_PASTEMIX},
 	{L"上書き貼り付け",			0,				0,				ID_EDIT_PASTEOVERWRITE},			// // //
 	{L"挿入貼り付け",				0,				0,				ID_EDIT_PASTEINSERT},				// // //
@@ -78,7 +78,7 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"数値の補間",					MOD_CONTROL,	'G',			ID_EDIT_INTERPOLATE},
 	{L"次のフレームへ",				MOD_CONTROL,	VK_RIGHT,		ID_NEXT_FRAME},
 	{L"前のフレームへ",			MOD_CONTROL,	VK_LEFT,		ID_PREV_FRAME},
-	{L"ブックマークを切り替え",				MOD_CONTROL,	'K',			ID_BOOKMARKS_TOGGLE},				// // //
+	{L"ブックマークの切り替え",				MOD_CONTROL,	'K',			ID_BOOKMARKS_TOGGLE},				// // //
 	{L"次のブックマークへ",					MOD_CONTROL,	VK_NEXT,		ID_BOOKMARKS_NEXT},					// // //
 	{L"前のブックマークへ",				MOD_CONTROL,	VK_PRIOR,		ID_BOOKMARKS_PREVIOUS},				// // //
 	{L"半音下げる",		MOD_CONTROL,	VK_F1,			ID_TRANSPOSE_DECREASENOTE},
@@ -89,12 +89,12 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"パターン番号を減少",				0,				VK_SUBTRACT,	IDC_FRAME_DEC},
 	{L"次の音色へ",				MOD_CONTROL,	VK_DOWN,		ID_CMD_NEXT_INSTRUMENT},
 	{L"前の音色へ",			MOD_CONTROL,	VK_UP,			ID_CMD_PREV_INSTRUMENT},
-	{L"Type instrument number",			0,				0,				ID_CMD_INST_NUM},					// // //
+	{L"音色を番号入力で選択",			0,				0,				ID_CMD_INST_NUM},					// // //
 	{L"音色マスク",				MOD_ALT,		'T',			ID_EDIT_INSTRUMENTMASK},
 	{L"音量マスク",					MOD_ALT,		'V',			ID_EDIT_VOLUMEMASK},				// // //
 	{L"音色を編集",				MOD_CONTROL,	'I',			ID_INSTRUMENT_EDIT},
-	{L"ステップ量を増加",				MOD_CONTROL,	VK_ADD,			ID_CMD_INCREASESTEPSIZE},
-	{L"ステップ量を減少",				MOD_CONTROL,	VK_SUBTRACT,	ID_CMD_DECREASESTEPSIZE},
+	{L"ステップ量の増加",				MOD_CONTROL,	VK_ADD,			ID_CMD_INCREASESTEPSIZE},
+	{L"ステップ量の減少",				MOD_CONTROL,	VK_SUBTRACT,	ID_CMD_DECREASESTEPSIZE},
 	{L"自動スクロール",					0,				VK_SCROLL,		IDC_FOLLOW_TOGGLE},
 	{L"現在のフレームを挿入",				MOD_CONTROL,	'D',			ID_MODULE_DUPLICATEFRAME},
 	{L"フレームの挿入",					0,				0,				ID_MODULE_INSERTFRAME},
@@ -105,7 +105,7 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"1 ステップ上へ",				MOD_ALT,		VK_UP,			ID_CMD_STEP_UP},
 	{L"1 ステップ下へ",				MOD_ALT,		VK_DOWN,		ID_CMD_STEP_DOWN},
 	{L"音色の切り替え",				MOD_ALT,		'S',			ID_EDIT_REPLACEINSTRUMENT},
-	{L"コントロールパネルを表示/非表示",			0,				0,				ID_VIEW_CONTROLPANEL},
+	{L"コントロールパネルの表示/非表示",			0,				0,				ID_VIEW_CONTROLPANEL},
 	{L"エフェクトリストの表示",			0,				0,				ID_HELP_EFFECTTABLE},
 	{L"ブロックの先頭を選択",				MOD_ALT,		'B',			ID_BLOCK_START},
 	{L"ブロックの末尾を選択",				MOD_ALT,		'E',			ID_BLOCK_END},
@@ -121,7 +121,7 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"値の増加（小）",		MOD_SHIFT,		VK_F2,			ID_INCREASEVALUES},
 	{L"値の減少（大）",			MOD_SHIFT,		VK_F3,			ID_DECREASEVALUESCOARSE},			// // //
 	{L"値の増加（大）",			MOD_SHIFT,		VK_F4,			ID_INCREASEVALUESCOARSE},			// // //
-	{L"検索・置換タブを表示/非表示",		MOD_CONTROL,	'F',			ID_EDIT_FIND_TOGGLE},				// // //
+	{L"検索・置換タブの表示/非表示",		MOD_CONTROL,	'F',			ID_EDIT_FIND_TOGGLE},				// // //
 	{L"次を検索",						0,				0,				ID_FIND_NEXT},						// // //
 	{L"前を検索",					0,				0,				ID_FIND_PREVIOUS},					// // //
 	{L"チャンネルステータスの呼び出し",			0,				0,				ID_RECALL_CHANNEL_STATE},			// // //

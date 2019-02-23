@@ -108,8 +108,8 @@ BEGIN
         MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
         MENUITEM "名前をつけて保存(&A)...",             ID_FILE_SAVE_AS
         MENUITEM SEPARATOR
-        MENUITEM "NSF ファイルを生成(&F)...\tCtrl+E",  ID_FILE_CREATE_NSF
-        MENUITEM "WAVE ファイルを生成(&W)...",         ID_FILE_CREATEWAV
+        MENUITEM "NSF ファイルの生成(&F)...\tCtrl+E",  ID_FILE_CREATE_NSF
+        MENUITEM "WAVE ファイルの生成(&W)...",         ID_FILE_CREATEWAV
         MENUITEM SEPARATOR
         POPUP "インポート(&I)"
         BEGIN
@@ -179,7 +179,7 @@ BEGIN
         MENUITEM SEPARATOR
         POPUP "検索/置換(&F)"
         BEGIN
-            MENUITEM "検索タブを表示(&T)",                 ID_EDIT_FIND_TOGGLE
+            MENUITEM "検索タブの表示(&T)",                 ID_EDIT_FIND_TOGGLE
             MENUITEM SEPARATOR
             MENUITEM "次を検索(&N)",                    ID_FIND_NEXT
             MENUITEM "前を検索(&P)",                    ID_FIND_PREVIOUS
@@ -187,14 +187,14 @@ BEGIN
         MENUITEM "移動(&G)...",                   ID_EDIT_GOTO
         POPUP "ブックマーク(&B)"
         BEGIN
-            MENUITEM "ブックマークを切り替え(&T)",             ID_BOOKMARKS_TOGGLE
+            MENUITEM "ブックマークの切り替え(&T)",             ID_BOOKMARKS_TOGGLE
             MENUITEM "次のブックマークへ(&N)",               ID_BOOKMARKS_NEXT
             MENUITEM "前のブックマークへ(&P)",               ID_BOOKMARKS_PREVIOUS
         END
         MENUITEM SEPARATOR
         MENUITEM "音色マスク(&I)",                   ID_EDIT_INSTRUMENTMASK
         MENUITEM "音量マスク(&V)",                   ID_EDIT_VOLUMEMASK, CHECKED
-        MENUITEM "キーボードを分割...",                 ID_EDIT_SPLITKEYBOARD
+        MENUITEM "キーボードの分割...",                 ID_EDIT_SPLITKEYBOARD
         MENUITEM SEPARATOR
         MENUITEM "MIDI デバイスの有効化(&M)",           ID_EDIT_ENABLEMIDI
     END
@@ -202,11 +202,11 @@ BEGIN
     BEGIN
         MENUITEM "数値の補間(&I)",                   ID_EDIT_INTERPOLATE
         MENUITEM "反転(&R)",                      ID_EDIT_REVERSE
-        MENUITEM "音色を置き換える(&E)",                ID_EDIT_REPLACEINSTRUMENT
+        MENUITEM "音色の置換(&E)",                   ID_EDIT_REPLACEINSTRUMENT
         MENUITEM SEPARATOR
         MENUITEM "間隔を 2 倍に(&X)",                ID_EDIT_EXPANDPATTERNS
         MENUITEM "間隔を半分に(&H)",                  ID_EDIT_SHRINKPATTERNS
-        MENUITEM "間隔を編集(&S)...",                ID_EDIT_STRETCHPATTERNS
+        MENUITEM "間隔の編集(&S)...",                ID_EDIT_STRETCHPATTERNS
         MENUITEM SEPARATOR
         POPUP "トランスポーズ(&T)"
         BEGIN
@@ -227,7 +227,7 @@ BEGIN
         MENUITEM "パターンの複製(&C)",                 ID_MODULE_DUPLICATECURRENTPATTERN
         MENUITEM "フレームの複製挿入(&F)",               ID_MODULE_DUPLICATEFRAMEPATTERNS
         MENUITEM SEPARATOR
-        MENUITEM "パターンを全削除(&L)",                ID_EDIT_CLEARPATTERNS
+        MENUITEM "パターンの完全削除(&L)",               ID_EDIT_CLEARPATTERNS
         MENUITEM "重複パターンの統合(&M)",               ID_CLEANUP_MERGEDUPLICATEDPATTERNS
         MENUITEM "全パターンを全フレームに定着(&Q)",          ID_CLEANUP_POPULATEUNIQUEPATTERNS
         MENUITEM SEPARATOR
@@ -548,13 +548,13 @@ BEGIN
     BEGIN
         BLOCK "041104b0"
         BEGIN
-            VALUE "CompanyName", "HertzDevil"
-            VALUE "FileDescription", "0CC-FamiTracker, Extension of FamiTracker"
+            VALUE "CompanyName", "HertzDevil, Phroneris"
+            VALUE "FileDescription", "0CC-FamiTracker を日本語化してみたやつ"
             VALUE "FileVersion", "0.3.15.4-JPpre001"
             VALUE "InternalName", "0CC-FamiTracker.exe"
             VALUE "LegalCopyright", " (c) jsr, HertzDevil 2005-2018 All rights reserved."
             VALUE "OriginalFilename", "0CC-FamiTracker.exe"
-            VALUE "PrivateBuild", "Phroneris（森の子リスのミーコの大冒険）が日本語化してビルドしてみたもの。ただし元にしたバージョンは0.3.15.3公式版よりも進んだコミット。"
+            VALUE "PrivateBuild", "Phroneris（森の子リスのミーコの大冒険）が日本語化してビルドしてみたもの。README参照。"
             VALUE "ProductName", "0CC-FamiTracker"
             VALUE "ProductVersion", "0.3.15.4-JPpre001"
         END
@@ -1216,7 +1216,7 @@ BEGIN
     EDITTEXT        IDC_KEY_REPEAT,230,112,36,13,ES_AUTOHSCROLL | ES_READONLY
     LTEXT           "ノートリリース",IDC_STATIC,184,129,41,11
     EDITTEXT        IDC_KEY_NOTE_RELEASE,230,126,36,13,ES_AUTOHSCROLL | ES_READONLY
-    LTEXT           "残響バッファ",IDC_STATIC,184,143,41,11
+    LTEXT           "エコーバッファ",IDC_STATIC,184,143,41,11
     EDITTEXT        IDC_KEY_ECHO_BUFFER,230,140,36,13,ES_AUTOHSCROLL | ES_READONLY
     EDITTEXT        IDC_EDIT_CONFIG_DESC,13,130,152,25,ES_MULTILINE | ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP
 END
@@ -1231,10 +1231,10 @@ BEGIN
     GROUPBOX        "出力デバイス",IDC_STATIC,7,48,266,35
     COMBOBOX        IDC_OUTDEVICES,13,61,253,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     CONTROL         "MIDI タイミングクロックを受信する",IDC_MASTER_SYNC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,102,173,10
-    CONTROL         "キーリリースを省略",IDC_KEY_RELEASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,112,173,10
+    CONTROL         "キーリリースを省略する",IDC_KEY_RELEASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,112,173,10
     CONTROL         "MIDI チャンネルを NES チャンネルに割り当てる",IDC_CHANMAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,122,173,10
     CONTROL         "ベロシティを反映する",IDC_VELOCITY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,132,173,10
-    CONTROL         "和音をアルペジオ化",IDC_ARPEGGIATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,142,173,10
+    CONTROL         "和音をアルペジオ化する",IDC_ARPEGGIATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,142,173,10
     GROUPBOX        "オプション",IDC_STATIC,7,89,266,71
 END
 
@@ -1287,9 +1287,9 @@ EXSTYLE WS_EX_CONTROLPARENT
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "オクターブ",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,4,2,33,8
-    COMBOBOX        IDC_OCTAVE,36,0,25,74,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "自動スクロール",IDC_FOLLOW,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,65,0,55,13
-    CONTROL         "圧縮表示",IDC_CHECK_COMPACT,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,123,0,48,13
+    COMBOBOX        IDC_OCTAVE,37,0,25,74,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "自動スクロール",IDC_FOLLOW,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,66,0,55,13
+    CONTROL         "圧縮表示",IDC_CHECK_COMPACT,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,124,0,48,13
     RTEXT           "行を強調: 主",IDC_STATIC,176,2,53,8
     EDITTEXT        IDC_HIGHLIGHT1,235,0,27,12,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
     CONTROL         "",IDC_HIGHLIGHTSPIN1,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,257,2,11,6
@@ -1374,7 +1374,7 @@ END
 
 IDD_CREATEWAV DIALOGEX 0, 0, 151, 208
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "WAVE ファイルを生成"
+CAPTION "WAVE ファイルの生成"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "開始",IDC_BEGIN,37,187,52,14
@@ -1476,7 +1476,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     PUSHBUTTON      "キャンセル",IDCANCEL,304,211,50,14
     EDITTEXT        IDC_COMMENTS,0,0,358,206,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
-    CONTROL         "ファイルの読み込み時に表示",IDC_SHOWONOPEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,215,104,10
+    CONTROL         "ファイルの読み込み時に表示する",IDC_SHOWONOPEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,215,117,10
     DEFPUSHBUTTON   "OK",IDOK,248,211,50,14
 END
 
@@ -1648,7 +1648,7 @@ BEGIN
     CONTROL         "",IDC_PITCH,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,45,232,130,12
     PUSHBUTTON      "傾斜化",IDC_TILT,121,212,50,14
     LTEXT           "音程 (15)",IDC_STATIC_PITCH,8,233,34,11
-    CONTROL         "波形の中央化",IDC_DELTASTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,179,232,61,10
+    CONTROL         "波形を中央化して表示",IDC_DELTASTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,179,232,91,10
     CONTROL         "",IDC_ZOOM,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,240,213,181,12
     LTEXT           "拡大 (1.00 倍)",IDC_STATIC_DPCM_ZOOM,185,214,54,8
 END
@@ -1779,7 +1779,7 @@ END
 
 IDD_STRETCH DIALOGEX 0, 0, 294, 42
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "選択範囲を伸縮"
+CAPTION "選択範囲の伸縮"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     LTEXT           "伸縮マップ:",IDC_STATIC,6,9,42,8
@@ -1814,7 +1814,7 @@ BEGIN
     CONTROL         "副:",IDC_CHECK_BOOKMARK_HIGH2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,102,25,10
     EDITTEXT        IDC_EDIT_BOOKMARK_HIGH2,40,101,77,14,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
     CONTROL         "",IDC_SPIN_BOOKMARK_HIGH2,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,106,101,11,14
-    CONTROL         "全ての後続フレームに適用",IDC_CHECK_BOOKMARK_PERSIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,120,99,10
+    CONTROL         "全ての後続フレームに適用する",IDC_CHECK_BOOKMARK_PERSIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,120,110,10
     PUSHBUTTON      "新規作成",IDC_BUTTON_BOOKMARK_ADD,14,135,48,14
     PUSHBUTTON      "更新",IDC_BUTTON_BOOKMARK_UPDATE,70,135,48,14
     GROUPBOX        "ブックマーク一覧",IDC_STATIC,132,7,186,150
@@ -1859,7 +1859,7 @@ BEGIN
     COMBOBOX        IDC_COMBO_SWAP_CHIP2,7,38,41,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     EDITTEXT        IDC_EDIT_SWAP_CHAN1,55,19,41,14,ES_AUTOHSCROLL | ES_NUMBER
     EDITTEXT        IDC_EDIT_SWAP_CHAN2,55,38,41,14,ES_AUTOHSCROLL | ES_NUMBER
-    CONTROL         "全ての楽曲に適用",IDC_CHECK_SWAP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,57,89,10
+    CONTROL         "全ての楽曲に適用する",IDC_CHECK_SWAP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,57,89,10
 END
 
 IDD_RECORD_SETTINGS DIALOGEX 0, 0, 167, 105
@@ -1900,12 +1900,12 @@ BEGIN
     EDITTEXT        IDC_EDIT_TRSP_SEMITONE,56,18,40,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SPIN_TRSP_SEMITONE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,85,18,11,14
     CONTROL         "上げる",IDC_RADIO_SEMITONE_INC,"Button",BS_AUTORADIOBUTTON | WS_GROUP,103,20,33,10
-    CONTROL         "下げる",IDC_RADIO_SEMITONE_DEC,"Button",BS_AUTORADIOBUTTON,138,20,32,10
+    CONTROL         "下げる",IDC_RADIO_SEMITONE_DEC,"Button",BS_AUTORADIOBUTTON,141,20,32,10
     LTEXT           "除外する音色を選択:",IDC_STATIC,15,52,88,8
     LTEXT           "警告: トランスポーズすると、アンドゥ履歴が全消去されます！",IDC_STATIC,15,185,192,8
     DEFPUSHBUTTON   "OK",IDOK,106,205,50,14
     PUSHBUTTON      "キャンセル",IDCANCEL,160,205,50,14
-    CONTROL         "全ての楽曲をトランスポーズ",IDC_CHECK_TRSP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,36,103,10
+    CONTROL         "全ての楽曲をトランスポーズする",IDC_CHECK_TRSP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,36,115,10
     PUSHBUTTON      "反転",IDC_BUTTON_TRSP_REVERSE,47,166,50,14
     PUSHBUTTON      "全て解除",IDC_BUTTON_TRSP_CLEAR,120,166,50,14
 END
@@ -2324,6 +2324,16 @@ BEGIN
 END
 
 IDD_PERFORMANCE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_COMMENTS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_CONFIG_MIDI AFX_DIALOG_LAYOUT
 BEGIN
     0
 END

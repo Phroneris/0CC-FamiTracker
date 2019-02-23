@@ -236,7 +236,7 @@ void CGrooveDlg::UpdateIndicators()
 	for (int i = 0; i < MAX_GROOVE; ++i)
 		if (GrooveTable[i]->size())
 			Total += GrooveTable[i]->compiled_size();
-	SetDlgItemTextW(IDC_STATIC_GROOVE_TOTAL, FormattedW(L"総サイズ: %d / 255\nバイト", Total));	/// jp
+	SetDlgItemTextW(IDC_STATIC_GROOVE_TOTAL, FormattedW(L"総サイズ:\n%d / 255\nバイト", Total));	/// jp
 
 	CWnd *OKButton = GetDlgItem(IDOK);
 	CWnd *ApplyButton = GetDlgItem(IDAPPLY);
