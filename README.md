@@ -103,6 +103,7 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
 + Shortcuts are stored with localized names in the registry
 + [WIP-reg]: Save a `*.0cc` file -> close -> double-click the file -> 0CCFT crashes
   - It's OK to open it from 0CCFT
++ Not an issue, but I wonder why the actual configuration dialog is a little wider than the one previewed from the resource IDE
 
 \* WIP-reg issues occur of course because I tried building the beta sources as Release without `WIP` definition in `version.h`
 
