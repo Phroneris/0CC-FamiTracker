@@ -1531,8 +1531,8 @@ void CFamiTrackerView::OnBookmarksNext()
 		SelectFrame(pMark->m_iFrame);
 		SelectRow(pMark->m_iRow);
 		pMainFrame->SetMessageText(AfxFormattedW(IDS_BOOKMARK_FORMAT, conv::to_wide(pMark->m_sName).data(),
-			(pMark->m_Highlight.First != -1) ? FormattedW(L"%i", pMark->m_Highlight.First) : CStringW(L"None"),
-			(pMark->m_Highlight.Second != -1) ? FormattedW(L"%i", pMark->m_Highlight.Second) : CStringW(L"None")));
+			(pMark->m_Highlight.First != -1) ? FormattedW(L"%i", pMark->m_Highlight.First) : CStringW(L"なし"),	/// jp
+			(pMark->m_Highlight.Second != -1) ? FormattedW(L"%i", pMark->m_Highlight.Second) : CStringW(L"なし")));	/// jp
 		pMainFrame->UpdateBookmarkList(Col.GetBookmarkIndex(pMark));
 		SetFocus();
 	}

@@ -144,9 +144,9 @@ BEGIN
         MENUITEM "貼り付け(&P)\tCtrl+V",            ID_EDIT_PASTE
         POPUP "特殊貼り付け(&L)"
         BEGIN
-            MENUITEM "ミックス(&M)",                    ID_EDIT_PASTEMIX
-            MENUITEM "上書き(&O)",                     ID_EDIT_PASTEOVERWRITE
-            MENUITEM "挿入(&I)",                      ID_EDIT_PASTEINSERT
+            MENUITEM "ミックス貼り付け(&M)",                ID_EDIT_PASTEMIX
+            MENUITEM "上書き貼り付け(&O)",                 ID_EDIT_PASTEOVERWRITE
+            MENUITEM "挿入貼り付け(&I)",                  ID_EDIT_PASTEINSERT
             MENUITEM SEPARATOR
             MENUITEM "カーソル位置へ貼り付け(&C)",             ID_PASTESPECIAL_CURSOR, CHECKED
             MENUITEM "選択範囲へ貼り付け(&S)",               ID_PASTESPECIAL_SELECTION
@@ -166,13 +166,13 @@ BEGIN
             MENUITEM "全て選択(&A)\tCtrl+A",            ID_EDIT_SELECTALL
             MENUITEM "選択解除(&N)",                    ID_SELECT_NONE
             MENUITEM SEPARATOR
-            MENUITEM "行(&R)",                       ID_SELECT_ROW
-            MENUITEM "カラム(&C)",                     ID_SELECT_COLUMN
+            MENUITEM "行を選択(&R)",                    ID_SELECT_ROW
+            MENUITEM "カラムを選択(&C)",                  ID_SELECT_COLUMN
             MENUITEM SEPARATOR
-            MENUITEM "パターン(&P)",                    ID_SELECT_PATTERN
-            MENUITEM "フレーム(&F)",                    ID_SELECT_FRAME
-            MENUITEM "トラック(&T)",                    ID_SELECT_CHANNEL
-            MENUITEM "楽曲(&S)",                      ID_SELECT_TRACK
+            MENUITEM "パターンを選択(&P)",                 ID_SELECT_PATTERN
+            MENUITEM "フレームを選択(&F)",                 ID_SELECT_FRAME
+            MENUITEM "トラックを選択(&T)",                 ID_SELECT_CHANNEL
+            MENUITEM "楽曲を選択(&S)",                   ID_SELECT_TRACK
             MENUITEM SEPARATOR
             MENUITEM "エディタのフォーカスを切り替え(&O)",         ID_SELECT_OTHER
         END
@@ -201,7 +201,7 @@ BEGIN
     POPUP "パターン(&P)"
     BEGIN
         MENUITEM "数値の補間(&I)",                   ID_EDIT_INTERPOLATE
-        MENUITEM "反転(&R)",                      ID_EDIT_REVERSE
+        MENUITEM "内容の反転(&R)",                   ID_EDIT_REVERSE
         MENUITEM "音色の置換(&E)",                   ID_EDIT_REPLACEINSTRUMENT
         MENUITEM SEPARATOR
         MENUITEM "間隔を 2 倍に(&X)",                ID_EDIT_EXPANDPATTERNS
@@ -220,12 +220,12 @@ BEGIN
     BEGIN
         MENUITEM "フレームの挿入(&I)",                 ID_MODULE_INSERTFRAME
         MENUITEM "フレームの削除(&R)",                 ID_MODULE_REMOVEFRAME
-        MENUITEM "現在のフレームを挿入(&D)",              ID_MODULE_DUPLICATEFRAME
+        MENUITEM "フレームをそのまま複製(&D)",             ID_MODULE_DUPLICATEFRAME
         MENUITEM "フレームを上に移動(&U)",               ID_MODULE_MOVEFRAMEUP
         MENUITEM "フレームを下に移動(&W)",               ID_MODULE_MOVEFRAMEDOWN
         MENUITEM SEPARATOR
-        MENUITEM "パターンの複製(&C)",                 ID_MODULE_DUPLICATECURRENTPATTERN
-        MENUITEM "フレームの複製挿入(&F)",               ID_MODULE_DUPLICATEFRAMEPATTERNS
+        MENUITEM "パターンを新規パターン番号に複製(&C)",        ID_MODULE_DUPLICATECURRENTPATTERN
+        MENUITEM "フレームをパターンごと複製(&F)",           ID_MODULE_DUPLICATEFRAMEPATTERNS
         MENUITEM SEPARATOR
         MENUITEM "パターンの完全削除(&L)",               ID_EDIT_CLEARPATTERNS
         MENUITEM "重複パターンの統合(&M)",               ID_CLEANUP_MERGEDUPLICATEDPATTERNS
@@ -253,7 +253,7 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "デチューン設定(&D)...",              ID_MODULE_DETUNE
         MENUITEM "グルーヴ設定(&G)",                  ID_MODULE_GROOVE
-        MENUITEM "ブックマークマネージャ(&B)",             ID_MODULE_BOOKMARK
+        MENUITEM "ブックマークの管理(&B)",               ID_MODULE_BOOKMARK
         MENUITEM "トラック(&T)...",                 ID_MODULE_CHANNELS
         MENUITEM SEPARATOR
         POPUP "整理(&U)"
@@ -273,7 +273,7 @@ BEGIN
         MENUITEM "音色ファイルの読み込み(&L)...",          ID_INSTRUMENT_LOAD
         MENUITEM "音色ファイルの保存(&S)...",            ID_INSTRUMENT_SAVE
         MENUITEM SEPARATOR
-        MENUITEM "編集(&E)\tCtrl+I",              ID_INSTRUMENT_EDIT
+        MENUITEM "音色の編集(&E)\tCtrl+I",           ID_INSTRUMENT_EDIT
     END
     POPUP "トラッカー(&R)"
     BEGIN
@@ -308,12 +308,12 @@ BEGIN
         MENUITEM "圧縮表示(&M)",                    IDC_COMPACT_TOGGLE
         POPUP "メーター減衰速度(&D)"
         BEGIN
-            MENUITEM "遅い(&S)",                      ID_DECAY_SLOW
-            MENUITEM "早い(&F)",                      ID_DECAY_FAST
+            MENUITEM "遅く(&S)",                      ID_DECAY_SLOW
+            MENUITEM "早く(&F)",                      ID_DECAY_FAST
         END
         MENUITEM SEPARATOR
         MENUITEM "平均 BPM(&B)",                  ID_VIEW_AVERAGEBPM
-        MENUITEM "トラック状態(&K) [未実装?]",           ID_VIEW_CHANNELSTATE
+        MENUITEM "トラック状態(&K) [※ 未実装]",          ID_VIEW_CHANNELSTATE
         MENUITEM "レジスタ状態(&R)",                  ID_TRACKER_DISPLAYREGISTERSTATE
         MENUITEM SEPARATOR
         POPUP "フレームエディタの位置(&P)"
@@ -324,7 +324,7 @@ BEGIN
     END
     POPUP "ヘルプ(&H)"
     BEGIN
-        MENUITEM "目次(&H)\tF1",                  ID_HELP_FINDER
+        MENUITEM "ヘルプの表示(&H)\tF1",              ID_HELP_FINDER
         MENUITEM "エフェクトについて(&E)",               ID_HELP_EFFECTTABLE
         MENUITEM "よくある質問(&F)",                  ID_HELP_FAQ
         MENUITEM SEPARATOR
@@ -381,9 +381,9 @@ BEGIN
     BEGIN
         MENUITEM "フレームの挿入(&I)",                 ID_MODULE_INSERTFRAME
         MENUITEM "フレームの削除(&R)",                 ID_MODULE_REMOVEFRAME
-        MENUITEM "現在のフレームを挿入(&F)",              ID_MODULE_DUPLICATEFRAME
-        MENUITEM "パターンの複製",                     ID_MODULE_DUPLICATECURRENTPATTERN
-        MENUITEM "フレームの複製挿入(&U)",               ID_MODULE_DUPLICATEFRAMEPATTERNS
+        MENUITEM "フレームをそのまま複製(&F)",             ID_MODULE_DUPLICATEFRAME
+        MENUITEM "パターンを新規パターン番号に複製",            ID_MODULE_DUPLICATECURRENTPATTERN
+        MENUITEM "フレームをパターンごと複製(&U)",           ID_MODULE_DUPLICATEFRAMEPATTERNS
         MENUITEM SEPARATOR
         MENUITEM "上に移動(&U)",                    ID_MODULE_MOVEFRAMEUP
         MENUITEM "下に移動(&O)",                    ID_MODULE_MOVEFRAMEDOWN
@@ -391,8 +391,8 @@ BEGIN
         MENUITEM "切り取り(&T)\tCtrl+X",            ID_FRAME_CUT
         MENUITEM "コピー(&C)\tCtrl+C",             ID_FRAME_COPY
         MENUITEM "貼り付け(&P)\tCtrl+V",            ID_FRAME_PASTE
-        MENUITEM "Paste && &Overwrite",         ID_FRAME_PASTEOVERWRITE
-        MENUITEM "Paste && Duplicate",          ID_FRAME_PASTENEWPATTERNS
+        MENUITEM "上書き貼り付け(&O)",                 ID_FRAME_PASTEOVERWRITE
+        MENUITEM "複製貼り付け",                      ID_FRAME_PASTENEWPATTERNS
         MENUITEM "削除(&D)\tDel",                 ID_FRAME_DELETE
     END
 END
@@ -1203,8 +1203,8 @@ BEGIN
     GROUPBOX        "一般設定",IDC_STATIC,7,7,163,153
     CONTROL         "",IDC_CONFIG_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,19,147,109,WS_EX_TRANSPARENT
     GROUPBOX        "編集設定",IDC_STATIC,177,7,96,61
-    LTEXT           "PageUp/Down行数:",IDC_STATIC,184,21,68,9
-    COMBOBOX        IDC_PAGELENGTH,244,19,23,12,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "PageUp/Down 行数:",IDC_STATIC,184,21,68,9
+    COMBOBOX        IDC_PAGELENGTH,245,19,22,12,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
     LTEXT           "パターン編集スタイル:",IDC_STATIC,184,36,82,8
     COMBOBOX        IDC_COMBO_STYLE,184,48,83,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     GROUPBOX        "キー",IDC_STATIC,177,72,96,88
@@ -1241,7 +1241,7 @@ END
 IDD_CONFIG_SOUND DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTEXTHELP
-CAPTION "音響"
+CAPTION "サウンド"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     GROUPBOX        "デバイス",IDC_STATIC,7,7,266,35
@@ -2338,6 +2338,11 @@ BEGIN
     0
 END
 
+IDD_CONFIG_SOUND AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -2347,7 +2352,7 @@ END
 STRINGTABLE
 BEGIN
     IDR_MAINFRAME           "0CC-FamiTracker\n\n0CC-FamiTracker\n0CC-FamiTracker モジュール (*.0cc;*.ftm)\n.0cc\n0CCFamiTracker.Document\n0CCFamiTracker.Document"
-    IDS_FRAME_DROP_MOVE     "Drop selection to move frames"
+    IDS_FRAME_DROP_MOVE     "移動したい場所に選択フレームをドラッグ & ドロップしてください。"
     IDS_DPCM_IMPORT_QUALITY_FORMAT "品質: %1"
     IDS_CLIPBOARD_ERROR     "Could not register clipboard format"
     IDS_FILE_OPEN_ERROR     "Could not open the file!"
@@ -2356,7 +2361,7 @@ BEGIN
     IDS_INST_LIMIT          "You cannot add more instruments"
     IDS_CLIPBOARD_OPEN_ERROR "Cannot open clipboard."
     IDS_CLIPBOARD_NOT_AVALIABLE "Clipboard data is not available."
-    ID_TRACKER_PLAY_START   "Play module from start\nPlay From Start"
+    ID_TRACKER_PLAY_START   "モジュールを最初から再生します。\n最初から再生"
     IDS_INSTRUMENT_FILE_FAIL "Instrument file was not vaild"
     IDS_CLIPPING_MESSAGE    "Warning: Audio is clipping, decrease mixing levels!"
     IDS_FILTER_FTI          "FamiTracker 音色ファイル (*.fti)"
@@ -2375,22 +2380,22 @@ BEGIN
     IDS_DISABLE_SAVE        "Saving to external files is disabled in this build of 0CC-FamiTracker."
     IDS_BOOKMARK_EMPTY      "The current song does not contain any bookmarks."
     IDS_POPULATE_PATTERNS   "Do you want to copy a unique pattern for all frames? There is no undo for this command."
-    IDS_BOOKMARK_FORMAT     "Moved to bookmark %1. (Highlight: %2, %3)"
+    IDS_BOOKMARK_FORMAT     "ブックマーク %1 に移動しました。(行の強調: %2, %3)"
     IDS_DUMP_NOT_SUPPORTED  "Instrument logging is not supported on this track."
     IDS_SEQUENCE_LIMIT      "You cannot add more instrument sequences"
     IDS_FIND_NONE           "Could not find the search query in the current search area."
     IDS_FINDRESULT_COUNT    "%1 %2見つかりました。（Pa: パターン、Fr: フレーム、FX: エフェクト）"
     IDS_IMPORT_SEQUENCE_COUNT 
                             "Could not import all sequences, out of sequence slots!"
-    ID_FIND_NEXT            "Find the next result of the search query\nFind Next"
+    ID_FIND_NEXT            "検索条件をもとに次の検索結果へ移動します。\n次を検索"
     IDS_ABOUT_TOOLTIP_BUG   "Report bugs at http://hertzdevil.info/bug/main_page.php"
 END
 
 STRINGTABLE
 BEGIN
     AFX_IDS_APP_TITLE       "0CC-FamiTracker"
-    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
-    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+    AFX_IDS_IDLEMESSAGE     "F1 を押すとヘルプを表示します。[※ 表示しません]"
+    AFX_IDS_HELPMODEMESSAGE "[*未使用*]Select an object on which to get Help"
 END
 
 STRINGTABLE
@@ -2405,147 +2410,142 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_NEW             "Create a new document\nNew"
-    ID_FILE_OPEN            "Open an existing document\nOpen"
-    ID_FILE_CLOSE           "Close the active document\nClose"
-    ID_FILE_SAVE            "Save the active document\nSave"
-    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_NEW             "新しいドキュメントを作成します。\n新規作成"
+    ID_FILE_OPEN            "既存のドキュメントを開きます。\n開く"
+    ID_FILE_CLOSE           "[*未使用*]Close the active document\nClose"
+    ID_FILE_SAVE            "アクティブなドキュメントを保存します。\n保存"
+    ID_FILE_SAVE_AS         "アクティブなドキュメントを新しい名前で保存します。\n名前をつけて保存"
 END
 
 STRINGTABLE
 BEGIN
-    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
-    ID_APP_EXIT             "Quit the application; prompt to save documents\nExit"
-    ID_HELP_INDEX           "Open Help\nHelp Topics"
-    ID_HELP_FINDER          "List Help topics\nHelp Topics"
-    ID_HELP_USING           "Display instructions about how to use help\nHelp"
-    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
-    ID_HELP                 "Display help for current task or command\nHelp"
+    ID_APP_ABOUT            "プログラムの情報、バージョン番号、著作権について表示します。\n0CC-FamiTracker について"
+    ID_APP_EXIT             "アプリケーションを終了します。ドキュメントの保存を確認されます。\n終了"
+    ID_HELP_INDEX           "[*未使用*]Open Help\nHelp Topics"
+    ID_HELP_FINDER          "ヘルプの目次一覧を表示します。[※ 表示しません]\nヘルプの表示"
+    ID_HELP_USING           "[*未使用*]Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "ボタンやメニューやウィンドウをクリックすると、そのヘルプを表示します。[※ 表示しません]\nヘルプ"
+    ID_HELP                 "[*?unused?*]Display help for current task or command\nHelp"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_MRU_FILE1       "Open this document"
-    ID_FILE_MRU_FILE2       "Open this document"
-    ID_FILE_MRU_FILE3       "Open this document"
-    ID_FILE_MRU_FILE4       "Open this document"
-    ID_FILE_MRU_FILE5       "Open this document"
-    ID_FILE_MRU_FILE6       "Open this document"
-    ID_FILE_MRU_FILE7       "Open this document"
-    ID_FILE_MRU_FILE8       "Open this document"
-    ID_FILE_MRU_FILE9       "Open this document"
-    ID_FILE_MRU_FILE10      "Open this document"
-    ID_FILE_MRU_FILE11      "Open this document"
-    ID_FILE_MRU_FILE12      "Open this document"
-    ID_FILE_MRU_FILE13      "Open this document"
-    ID_FILE_MRU_FILE14      "Open this document"
-    ID_FILE_MRU_FILE15      "Open this document"
-    ID_FILE_MRU_FILE16      "Open this document"
+    ID_FILE_MRU_FILE1       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE2       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE3       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE4       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE5       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE6       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE7       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE8       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE9       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE10      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE11      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE12      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE13      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE14      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE15      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE16      "このドキュメントを開きます。"
 END
 
 STRINGTABLE
 BEGIN
-    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
-    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+    ID_NEXT_PANE            "[*未使用*]Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "[*未使用*]Switch back to the previous window pane\nPrevious Pane"
 END
 
 STRINGTABLE
 BEGIN
-    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+    ID_WINDOW_SPLIT         "[*未使用*]Split the active window into panes\nSplit"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_CLEAR           "Erase the selection\nErase"
-    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
-    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
-    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
-    ID_EDIT_FIND            "Find the specified text\nFind"
-    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
-    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
-    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
-    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
-    ID_EDIT_UNDO            "Undo the last action\nUndo"
-    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+    ID_EDIT_CLEAR           "[*未使用*]Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "[*未使用*]Erase everything\nErase All"
+    ID_EDIT_COPY            "選択範囲をコピーしてクリップボードに保持します。\nコピー"
+    ID_EDIT_CUT             "選択範囲を切り取ってクリップボードに保持します。\n切り取り"
+    ID_EDIT_FIND            "[*未使用*]Find the specified text\nFind"
+    ID_EDIT_PASTE           "クリップボードの内容を挿入します。\n貼り付け"
+    ID_EDIT_REPEAT          "[*未使用*]Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "[*未使用*]Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "[*未使用*]Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "直前の操作を元に戻します。\n元に戻す"
+    ID_EDIT_REDO            "元に戻した操作をやり直します。\nやり直し"
 END
 
 STRINGTABLE
 BEGIN
-    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle Toolbar"
-    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle Status Bar"
+    ID_VIEW_TOOLBAR         "ツールバーの表示/非表示を切り替えます。\nツールバーを表示"
+    ID_VIEW_STATUS_BAR      "ステータスバーの表示/非表示を切り替えます。\nステータスバーを表示"
 END
 
 STRINGTABLE
 BEGIN
-    AFX_IDS_SCSIZE          "Change the window size"
-    AFX_IDS_SCMOVE          "Change the window position"
-    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
-    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
-    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
-    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
-    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+    AFX_IDS_SCSIZE          "[*未使用*]Change the window size"
+    AFX_IDS_SCMOVE          "[*未使用*]Change the window position"
+    AFX_IDS_SCMINIMIZE      "[*未使用*]Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "[*未使用*]Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "[*未使用*]Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "[*未使用*]Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "[*未使用*]Close the active window and prompts to save the documents"
 END
 
 STRINGTABLE
 BEGIN
-    AFX_IDS_SCRESTORE       "Restore the window to normal size"
-    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_SCRESTORE       "[*未使用*]Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "[*未使用*]Activate Task List"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_PLAY         "Play module\nPlay"
-    ID_TRACKER_PLAYPATTERN  "Play and loop current pattern\nPlay Pattern"
-    ID_TRACKER_STOP         "Stop playing\nStop"
-    ID_TRACKER_EDIT         "Enable / disable edit mode\nToggle Edit Mode"
-    ID_TRACKER_KILLSOUND    "Promptly stop all channels\nKill Sound"
+    ID_TRACKER_PLAY         "モジュールを再生します。\n再生"
+    ID_TRACKER_PLAYPATTERN  "現在のパターンをループ再生します。\nパターンを再生"
+    ID_TRACKER_STOP         "再生を停止します。\n停止"
+    ID_TRACKER_EDIT         "編集モードを有効化/無効化します。\n編集"
+    ID_TRACKER_KILLSOUND    "全てのチャンネルを即座に停止させます。\nキルサウンド"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_DELETE          "Delete selection, or note if there is no selection\nDelete"
-    ID_TRACKER_NTSC         "Switch to NTSC emulation\nNTSC"
-    ID_TRACKER_PAL          "Switch to PAL emulation\nPAL"
-    ID_SPEED_CUSTOM         "Set the playback rate manually\nCustom"
-    ID_HELP_PERFORMANCE     "Display application performance\nPerformance"
-    ID_EDIT_PASTEOVERWRITE  "Pasted notes will overwrite existing notes\nPaste Overwrite"
+    ID_EDIT_DELETE          "選択範囲があればその中身を、なければノートを削除します。\n削除"
+    ID_TRACKER_NTSC         "NTSC エミュレーションに切り替えます。\nNTSC"
+    ID_TRACKER_PAL          "PAL エミュレーションに切り替えます。\nPAL"
+    ID_SPEED_CUSTOM         "再生レートを手動設定します。\nカスタム"
+    ID_HELP_PERFORMANCE     "アプリケーションのパフォーマンスを表示します。\nパフォーマンス"
+    ID_EDIT_PASTEOVERWRITE  "貼り付け先にあるノートを上書きして貼り付けます。\n上書き貼り付け"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_CREATE_NSF      "Bring up the create NSF dialog\nCreate NSF"
+    ID_FILE_CREATE_NSF      "NSF ファイルの生成ダイアログを表示します。\nNSF ファイルの生成"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRANSPOSE_INCREASENOTE 
-                            "Increase selected note/notes by one step\nIncrease Note"
-    ID_TRANSPOSE_DECREASENOTE 
-                            "Decrease selected note/notes by one step\nDecrease Note"
-    ID_TRANSPOSE_INCREASEOCTAVE 
-                            "Increase selected octave/octaves by one step\nIncrease Octave"
-    ID_TRANSPOSE_DECREASEOCTAVE 
-                            "Decrease selected octave/octaves by one step\nDecrease Octave"
-    ID_EDIT_SELECTALL       "Select pattern or all patterns\nSelect All"
+    ID_TRANSPOSE_INCREASENOTE "選択したノートを半音上げます。\n半音上げる"
+    ID_TRANSPOSE_DECREASENOTE "選択したノートを半音下げます。\n半音下げる"
+    ID_TRANSPOSE_INCREASEOCTAVE "選択したノートを 1 オクターブ上げます。\n1 オクターブ上げる"
+    ID_TRANSPOSE_DECREASEOCTAVE "選択したノートを 1 オクターブ下げます。\n1 オクターブ下げる"
+    ID_EDIT_SELECTALL       "1 つまたは全てのパターンを選択します。\n全て選択"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_GENERALSETTINGS "Open 0CC-FamiTracker settings\nConfiguration"
-    ID_EDIT_ENABLEMIDI      "Temporarily enable / disable commands from the MIDI device\nEnable MIDI"
-    ID_TRACKER_PLAYROW      "Play a single row\nPlay Current Row"
+    ID_FILE_GENERALSETTINGS "0CC-FamiTracker の設定を開きます。\n環境設定"
+    ID_EDIT_ENABLEMIDI      "MIDI デバイスからのコマンドを一時的に有効化/無効化します。\nMIDI デバイスの有効化"
+    ID_TRACKER_PLAYROW      "単一の行を再生します。\n現在の行を再生"
 END
 
 STRINGTABLE
 BEGIN
-    ID_SPEED_DEFAULT        "Choose default playback rate corresponding to selected video standard\nDefault"
-    ID_MODULE_MODULEPROPERTIES 
-                            "Open the module properties window\nModule Properties"
+    ID_SPEED_DEFAULT        "選択した動画方式に対応した再生レートを自動選択します。\nデフォルト"
+    ID_MODULE_MODULEPROPERTIES "モジュールのプロパティウィンドウを開きます。\nモジュールのプロパティ"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_TYPE_INST_NUM       "Instrument number: %1"
+    IDS_TYPE_INST_NUM       "音色番号: %1"
     IDS_INVALID_INST_NUM    "Invalid instrument number!"
     IDS_EXPORT_SAMPLES_FILE """%1"" already exists in the same directory as the music data file. Are you sure you want to overwrite it?"
     IDS_MODULE_ERROR_NONE   "This build is not allowed to bypass validation of loaded modules."
@@ -2555,45 +2555,45 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_PASTEMIX        "Pasted notes will mix with blank fields in destination\nPaste Mix"
-    ID_MODULE_MOVEFRAMEDOWN "Move selected frame one step down\nMove Frame Down"
-    ID_MODULE_MOVEFRAMEUP   "Move selected frame one step up\nMove Frame Up"
-    ID_MODULE_SAVEINSTRUMENT "Save instrument to file\nSave Instrument"
-    ID_MODULE_LOADINSTRUMENT "Load instrument from file\nLoad Instrument"
+    ID_EDIT_PASTEMIX        "貼り付け先の空白部にノートを貼り付けます。\nミックス貼り付け"
+    ID_MODULE_MOVEFRAMEDOWN "選択したフレームを 1 つ下に移動します。\nフレームを下に移動"
+    ID_MODULE_MOVEFRAMEUP   "選択したフレームを 1 つ上に移動します。\nフレームを上に移動"
+    ID_MODULE_SAVEINSTRUMENT "[*未使用*]Save instrument to file\nSave Instrument"
+    ID_MODULE_LOADINSTRUMENT 
+                            "[*未使用*]Load instrument from file\nLoad Instrument"
 END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_ADDINSTRUMENT "Add a new instrument to the module\nAdd Instrument"
+    ID_MODULE_ADDINSTRUMENT "[*未使用*]Add a new instrument to the module\nAdd Instrument"
     ID_MODULE_REMOVEINSTRUMENT 
-                            "Remove instrument from module\nRemove Instrument"
+                            "[*未使用*]Remove instrument from module\nRemove Instrument"
 END
 
 STRINGTABLE
 BEGIN
-    ID_NEXT_SONG            "Select next song\nNext Song"
-    ID_PREV_SONG            "Select previous song\nPrevious Song"
-    ID_EDIT_INSTRUMENTMASK  "Disable writing to the instrument column while entering a note\nInstrument Mask"
-    ID_TRACKER_SWITCHTOTRACKINSTRUMENT 
-                            "Switch to currently played instrument when playing\nSwitch To Track Instrument"
-    ID_FILE_CREATEWAV       "Save the file as a WAV-file\nCreate WAV"
-    ID_VIEW_CONTROLPANEL    "Show or hide the control panel\nToggle Control Panel"
-    ID_EDIT_CLEARPATTERNS   "Reset all patterns and frames\nClear Patterns"
-    ID_EDIT_INTERPOLATE     "Interpolate a selection between two values\nInterpolate"
+    ID_NEXT_SONG            "次の楽曲を選択します。\n次の楽曲へ"
+    ID_PREV_SONG            "前の楽曲を選択します。\n前の楽曲へ"
+    ID_EDIT_INSTRUMENTMASK  "ノート追加時の音色カラムへの書き込みを無効化します。\n音色マスク"
+    ID_TRACKER_SWITCHTOTRACKINSTRUMENT "再生時、現在再生されている音色に切り替えます。\n再生時に音色追従"
+    ID_FILE_CREATEWAV       "ファイルを WAVE ファイルとして保存します。\nCreate WAV"
+    ID_VIEW_CONTROLPANEL    "コントロールパネルの表示/非表示を切り替えます。\nコントロールパネルを表示"
+    ID_EDIT_CLEARPATTERNS   "全てのパターンとフレームをリセットします。\nパターンの完全削除"
+    ID_EDIT_INTERPOLATE     "選択した 2 つの数値を補間します。\n数値の補間"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_SOLOCHANNEL  "Mute / unmute all but the selected track\nSolo Track"
-    ID_TRACKER_TOGGLECHANNEL "Mute / unmute selected track\nToggle Track"
-    ID_MODULE_EDITINSTRUMENT "Open instrument editor\nEdit Instrument"
+    ID_TRACKER_SOLOCHANNEL  "選択したトラック以外の全トラックをミュート/非ミュートします。\nトラックをソロ"
+    ID_TRACKER_TOGGLECHANNEL "選択したトラックをミュート/非ミュートします。\nトラックをミュート"
+    ID_MODULE_EDITINSTRUMENT "[*未使用*]Open instrument editor\nEdit Instrument"
 END
 
 STRINGTABLE
 BEGIN
     IDS_INFO_TITLE          "(曲名)"
     IDS_INFO_AUTHOR         "(作者)"
-    IDS_OUT_OF_SLOTS        "Out of sample slots"
+    IDS_OUT_OF_SLOTS        "[*未使用*]Out of sample slots"
     IDS_OUT_OF_SAMPLEMEM_FORMAT 
                             "Couldn't load sample, out of sample memory (max %1 kB is avaliable)"
     IDS_DPCM_IMPORT_GAIN_FORMAT "ゲイン: %1 dB"
@@ -2611,42 +2611,40 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_DUPLICATEFRAME "Insert a copy of current frame\nDuplicate Frame"
+    ID_MODULE_DUPLICATEFRAME 
+                            "現在のフレームのコピーを挿入します。[※ 各パターン番号はそのままです]\nフレームをそのまま複製"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_REVERSE         "Reverse a selection\nReverse"
+    ID_EDIT_REVERSE         "選択範囲の内容を反転します。\n内容の反転"
 END
 
 STRINGTABLE
 BEGIN
-    ID_INSTRUMENT_REMOVE    "Remove instrument from module\nRemove Iinstrument"
-    ID_INSTRUMENT_EDIT      "Open instrument edtor\nEdit Instrument"
-    ID_INSTRUMENT_CLONE     "Create a copy of selected instrument\nClone Instrument"
-    ID_FRAME_COPY           "Copy the selection and put it on the Clipboard\nCopy"
-    ID_FRAME_PASTE          "Insert Clipboard contents\nPaste"
-    ID_EDIT_REPLACEINSTRUMENT 
-                            "Replace all instruments in a selection with the selected instrument\nReplace Instrument"
+    ID_INSTRUMENT_REMOVE    "モジュールから音色を削除します。\n音色の削除"
+    ID_INSTRUMENT_EDIT      "音色エディタを開きます。\n音色の編集"
+    ID_INSTRUMENT_CLONE     "選択した音色のコピーを作成します。\n音色の複製"
+    ID_FRAME_COPY           "選択範囲をコピーしてクリップボードに保持します。\nコピー"
+    ID_FRAME_PASTE          "クリップボードの内容を挿入します。\n貼り付け"
+    ID_EDIT_REPLACEINSTRUMENT "選択範囲内の全ての音色を、現在選択している音色で置き換えます。\n音色の置換"
 END
 
 STRINGTABLE
 BEGIN
-    ID_CLEANUP_REMOVEUNUSEDPATTERNS 
-                            "Remove all unused patterns\nRemove Unused Patterns"
-    ID_HELP_EFFECTTABLE     "Open help window with effect table\nEffect Table"
-    ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS 
-                            "Remove all unused instruments\nRemove Unused Instruments"
+    ID_CLEANUP_REMOVEUNUSEDPATTERNS "使われていないパターンを全て削除します。\n使われていないパターンの削除"
+    ID_HELP_EFFECTTABLE     "ヘルプウィンドウにて、エフェクト一覧を表示します。[※ 表示しません]\nエフェクトについて"
+    ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS "使われていない音色を全て削除します。\n使われていない音色の削除"
 END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_REMOVEFRAME   "Remove selected frame\nRemove Frame"
-    ID_MODULE_COMMENTS      "Open module comments dialog\nComments"
-    ID_MODULE_INSERTFRAME   "Insert a new frame\nInsert Frame"
-    ID_INSTRUMENT_NEW       "Add a new instrument to the module\nAdd Instrument"
-    ID_INSTRUMENT_LOAD      "Load instrument from file\nLoad Instrument"
-    ID_INSTRUMENT_SAVE      "Save instrument to file\nSave Instrument"
+    ID_MODULE_REMOVEFRAME   "選択したフレームを削除します。\nフレームの削除"
+    ID_MODULE_COMMENTS      "モジュールのコメントダイアログを開きます。\nコメント"
+    ID_MODULE_INSERTFRAME   "新しいフレームを挿入します。\nフレームの挿入"
+    ID_INSTRUMENT_NEW       "モジュールに新しい音色を追加します。\n音色の新規作成"
+    ID_INSTRUMENT_LOAD      "音色をファイルから読み込みます。\n音色ファイルの読み込み"
+    ID_INSTRUMENT_SAVE      "音色をファイルに保存します。\n音色ファイルの保存"
 END
 
 STRINGTABLE
@@ -2657,24 +2655,24 @@ END
 STRINGTABLE
 BEGIN
     ID_MODULE_DUPLICATEFRAMEPATTERNS 
-                            "Insert a copy of current frame including all patterns\nDuplicate Patterns"
-    ID_EDIT_EXPANDPATTERNS  "Expand selected pattern by 2x\nExpand"
-    ID_EDIT_SHRINKPATTERNS  "Shrink selected pattern by 2x\nShrink"
-    ID_FRAMEEDITOR_TOP      "Move the frame editor to the top of the window (default)\nTop"
-    ID_FRAMEEDITOR_LEFT     "Move the frame editor to the left of the window\nLeft"
+                            "全てのパターンを新しいパターン番号に複製して、現在のフレームのコピーを挿入します。\nフレームをパターンごと複製"
+    ID_EDIT_EXPANDPATTERNS  "選択したパターンを 2 倍広げます。\n間隔を 2　倍に"
+    ID_EDIT_SHRINKPATTERNS  "選択したパターンを 2 倍縮めます。\n間隔を半分に"
+    ID_FRAMEEDITOR_TOP      "フレームエディタをウィンドウの上部に配置します（デフォルト）。\nフレームエディタを上に表示"
+    ID_FRAMEEDITOR_LEFT     "フレームエディタをウィンドウの左側に配置します。\nフレームエディタを左に表示"
 END
 
 STRINGTABLE
 BEGIN
-    ID_DECAY_SLOW           "Volume meters slowly decrease over time\nSlow Decay Rate"
-    ID_DECAY_FAST           "Volume meters reflect instant track amplitude\nFast Decay Rate"
-    ID_INSTRUMENT_DEEPCLONE "Create a copy of selected instrument including all sequences\nDeep Clone Instrument"
-    ID_EDIT_FIND_TOGGLE     "Bring up the find / replace tab\nToggle Find / Replace Tab"
+    ID_DECAY_SLOW           "音量メーターを時間とともにゆっくり減衰させます。\nメーター減衰を遅く"
+    ID_DECAY_FAST           "音量メーターにトラックの瞬間的な音量を反映させます。\nメーター減衰を速く"
+    ID_INSTRUMENT_DEEPCLONE "全てのシーケンスを含めて、選択した音色のコピーを作成します。\n音色とシーケンスの複製"
+    ID_EDIT_FIND_TOGGLE     "検索・置換タブを表示します。\n検索タブの表示"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_PLAY_CURSOR  "Play pattern from cursor\nPlay From Cursor"
+    ID_TRACKER_PLAY_CURSOR  "パターンをカーソル位置から再生します。\nカーソル位置から再生"
 END
 
 STRINGTABLE
@@ -2688,10 +2686,10 @@ BEGIN
     IDS_FILTER_0CC          "0CC-FamiTracker モジュール (*.0cc;*.ftm)"
     IDS_INSTRUMENT_EDITOR_TITLE "音色エディタ - %1"
     IDS_INST_VERSION_UNSUPPORTED "File version not supported!"
-    IDS_FILE_SAVED          "File saved (%1 bytes)"
+    IDS_FILE_SAVED          "ファイルを保存しました。(%1 バイト)"
     IDS_MIDI_ERR_INPUT      "MIDI Error: Could not open MIDI input device!"
     IDS_MIDI_ERR_OUTPUT     "MIDI Error: Could not open MIDI output device!"
-    IDS_NEW_SOUND_CONFIG    "New sound configuration has been loaded"
+    IDS_NEW_SOUND_CONFIG    "新しいサウンド設定が読み込まれました。"
 END
 
 STRINGTABLE
@@ -2701,18 +2699,18 @@ BEGIN
     IDS_SONG_DELETE         "Do you want to delete the selected songs? There is no undo for this command."
     IDS_SOUND_FAIL          "It appears the current sound settings aren't working, change settings and try again."
     IDS_UNDERRUN_MESSAGE    "Warning: Audio buffer underrun, increase the audio buffer size!"
-    IDS_WELCOME_VER_FORMAT  "Welcome to 0CC-FamiTracker %1, press F1 for help"
+    IDS_WELCOME_VER_FORMAT  "0CC-FamiTracker %1 へようこそ。F1 を押すとヘルプを表示します。[※ 表示しません]"
     IDS_DPCM_IMPORT_INVALID_WAVEFILE 
                             "Cannot load this sample, file is invalid or incompatible. (Only uncompressed PCM is supported.)"
     IDS_INST_FILE_ERROR     "Could not load instrument file! Check that you have the most recent version of 0CC-FamiTracker."
-    IDS_NEW_2A03_INSTRUMENT "New 2A03 instrument"
-    IDS_NEW_VRC6_INSTRUMENT "New VRC6 instrument"
-    IDS_NEW_VRC7_INSTRUMENT "New VRC7 instrument"
-    IDS_NEW_FDS_INSTRUMENT  "New FDS instrument"
-    IDS_NEW_N163_INSTRUMENT "New Namco instrument"
-    IDS_NEW_S5B_INSTRUMENT  "New Sunsoft instrument"
-    IDS_FRAME_DROP_COPY_NEW "Drop selection to copy frames to new pattern numbers"
-    IDS_FRAME_DROP_COPY     "Drop selection to copy frames"
+    IDS_NEW_2A03_INSTRUMENT "[*未使用*]New 2A03 instrument"
+    IDS_NEW_VRC6_INSTRUMENT "[*未使用*]New VRC6 instrument"
+    IDS_NEW_VRC7_INSTRUMENT "[*未使用*]New VRC7 instrument"
+    IDS_NEW_FDS_INSTRUMENT  "[*未使用*]New FDS instrument"
+    IDS_NEW_N163_INSTRUMENT "[*未使用*]New Namco instrument"
+    IDS_NEW_S5B_INSTRUMENT  "[*未使用*]New Sunsoft instrument"
+    IDS_FRAME_DROP_COPY_NEW "新しいパターン番号へ複製したい場所に選択フレームをドラッグ & ドロップしてください。"
+    IDS_FRAME_DROP_COPY     "コピーしたい場所に選択フレームをドラッグ & ドロップしてください。"
 END
 
 STRINGTABLE
@@ -2731,43 +2729,40 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_DETUNE        "Open the detune settings dialog\nDetune Settings"
-    ID_MODULE_GROOVE        "Open the groove settings dialog\nGroove Settings"
-    ID_FILE_EXPORTROWS      "Dumps pattern data to comma-separated values\nExport Rows As CSV"
+    ID_MODULE_DETUNE        "デチューン設定ダイアログを開きます。\nデチューン設定"
+    ID_MODULE_GROOVE        "グルーヴ設定ダイアログを開きます。\nグルーヴ設定"
+    ID_FILE_EXPORTROWS      "パターンデータをカンマ区切りの値に出力します。\n行情報 CSV にエクスポート"
     ID_MODULE_DUPLICATECURRENTPATTERN 
-                            "Duplicate the current pattern or all patterns selected in the frame editor\nClone Pattern"
+                            "現在のパターン（またはフレームエディタで選択している全パターン）を、新しいパターン番号に複製します。\nパターンを新規パターン番号に複製"
     ID_CLEANUP_REMOVEUNUSEDDPCMSAMPLES 
-                            "Remove all unised DPCM samples\nRemove Unused DPCM Samples"
-    ID_EDIT_PASTEINSERT     "Pasted notes will be inserted above the destination\nPaste Insert"
-    ID_PASTESPECIAL_CURSOR  "Paste operations occur at the cursor\nCursor"
-    ID_PASTESPECIAL_SELECTION 
-                            "Paste operations occur at the start of selection\nSelection"
-    ID_PASTESPECIAL_FILL    "Paste operations loop throughout the current selection\nFill"
-    ID_CLEANUP_POPULATEUNIQUEPATTERNS 
-                            "Copy a unique pattern for each frame\nPopulate Unique Patterns"
+                            "使われていない DPCM サンプルを全て削除します。\n使われていない DPCM サンプルの削除"
+    ID_EDIT_PASTEINSERT     "貼り付け先の直前にノートを挿入して貼り付けます。\n挿入貼り付け"
+    ID_PASTESPECIAL_CURSOR  "貼り付け処理がカーソル位置で行われます。\nカーソル位置へ貼り付け"
+    ID_PASTESPECIAL_SELECTION "貼り付け処理が選択範囲の始端で行われます。\n選択範囲へ貼り付け"
+    ID_PASTESPECIAL_FILL    "貼り付け処理が現在の選択範囲内をループするように行われます。\n選択範囲へループ貼り付け"
+    ID_CLEANUP_POPULATEUNIQUEPATTERNS "パターンを各フレーム固有のパターンにします。\n全パターンを全フレームに定着"
 END
 
 STRINGTABLE
 BEGIN
-    ID_HELP_FAQ             "Open help window with the FAQ\nFAQ"
-    ID_TRACKER_DISPLAYREGISTERSTATE 
-                            "Display channel register values and tuning information\nDisplay Register State"
+    ID_HELP_FAQ             "ヘルプウィンドウにて、よくある質問を表示します。[※ 表示しません]\nよくある質問"
+    ID_TRACKER_DISPLAYREGISTERSTATE "チャンネルのレジスタ値とチューニング情報を表示します。\nレジスタ状態を表示"
 END
 
 STRINGTABLE
 BEGIN
     IDS_WAVE_PROGRESS_FILE_FORMAT "保存先: %1"
-    IDS_WAVE_PROGRESS_FRAME_FORMAT "Frame: %1 (%2 done)"
-    IDS_WAVE_PROGRESS_TIME_FORMAT "Time: %1 (%2 done)"
+    IDS_WAVE_PROGRESS_FRAME_FORMAT "[*未使用*]Frame: %1 (%2 done)"
+    IDS_WAVE_PROGRESS_TIME_FORMAT "[*未使用*]Time: %1 (%2 done)"
     IDS_WAVE_PROGRESS_ELAPSED_FORMAT "処理時間: %1"
-    IDS_DSOUND_ERROR        "DirectX: DirectSound エラー！"
-    IDS_DSOUND_BUFFER_ERROR "DirectX: DirectSound エラー: バッファを生成できません！"
-    IDS_EDIT_MODE           "Changed to edit mode"
-    IDS_NORMAL_MODE         "Changed to normal mode"
+    IDS_DSOUND_ERROR        "DirectX: DirectSound error!"
+    IDS_DSOUND_BUFFER_ERROR "DirectX: DirectSound error: Could not create buffer!"
+    IDS_EDIT_MODE           "編集モードに切り替えました。"
+    IDS_NORMAL_MODE         "通常モードに切り替えました。"
     IDS_MIDI_MESSAGE_ON_FORMAT 
-                            "MIDI message: Note on (note = %1, octave = %2, velocity = %3)"
-    IDS_MIDI_MESSAGE_OFF    "MIDI message: Note off"
-    IDS_WAVE_PROGRESS_ROW_FORMAT "Row: %1 (%2 done)"
+                            "MIDI メッセージ: ノートオン (ノート = %1, オクターブ = %2, ベロシティ = %3)"
+    IDS_MIDI_MESSAGE_OFF    "MIDI メッセージ: ノートオフ"
+    IDS_WAVE_PROGRESS_ROW_FORMAT "[*未使用*]Row: %1 (%2 done)"
 END
 
 STRINGTABLE
@@ -2776,14 +2771,14 @@ BEGIN
     IDS_FILTER_DMC          "デルタ変調サンプル (*.dmc)"
     IDS_FILTER_WAV          "WAV 音声ファイル (*.wav)"
     IDS_FILTER_TXT          "テキストファイル (*.txt)"
-    IDS_DPCM_EDIT_INFO_FORMAT "Wave end: %1, Size: %2 bytes "
+    IDS_DPCM_EDIT_INFO_FORMAT "[*未使用*]Wave end: %1, Size: %2 bytes"
     IDS_WAVE_EXPORT_DONE    "完了"
     IDS_WAVE_EXPORT_FINISHED "終了"
     IDS_ABOUT_TOOLTIP_MAIL  "Send mail to nicetas.c@gmail.com"
     IDS_ABOUT_TOOLTIP_WEB   "Go to http://hertzdevil.info/programs/"
     IDS_ABOUT_VERSION_FORMAT "0CC-FamiTracker version %1"
     IDS_PROPERTIES_CHANNELS "チャンネル数:"
-    IDS_LOADING_DONE        "File loaded"
+    IDS_LOADING_DONE        "ファイルを読み込みました。"
     IDS_DPCM_IMPORT_SIZE_FORMAT "変換後のサイズ: %1 バイト"
     IDS_INSTRUMENT_FOLDER   "Choose a folder where you have instrument files"
     IDS_IMPORT_GROOVE_SLOTS "Could not import all grooves, out of groove slots!"
@@ -2792,11 +2787,12 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_IMPORTTEXT      "Imports module text files\nImport Text"
-    ID_FILE_EXPORTTEXT      "Exports module as a text file\nExport Text"
-    ID_CLEANUP_MERGEDUPLICATEDPATTERNS 
-                            "Combine copies of duplicated patterns\nMerge Duplicated Patterns"
-    ID_EDIT_VOLUMEMASK      "Disable writing to the volume column while entering a note\nVolume Mark"
+    ID_FILE_IMPORTTEXT      "モジュールテキストファイルを取り込みます。\nテキストをインポート"
+    ID_FILE_EXPORTTEXT      "モジュールをテキストファイルとして書き出します。\nテキストをエクスポート"
+    ID_CLEANUP_MERGEDUPLICATEDPATTERNS "重複するパターンを統合します。\n重複パターンの統合"
+    ID_POPUP_SAMPLESCOPE2   "波形をブラーのかかったオシロスコープで表示します。"
+    ID_POPUP_SAMPLESCOPE1   "波形をオシロスコープで表示します。"
+    ID_EDIT_VOLUMEMASK      "ノート追加時の音量カラムへの書き込みを無効化します。\n音量マスク"
 END
 
 STRINGTABLE
@@ -2806,70 +2802,105 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_STRETCHPATTERNS "Stretch the current selection\nStretch"
-    IDC_COMPACT_TOGGLE      "Hide all columns except the note column"
-    ID_SELECT_NONE          "Clear the current selection\nDeselect"
-    ID_SELECT_ROW           "Select the current row\nSelect Row"
-    ID_SELECT_PATTERN       "Select the current patterm\nSelect Pattern"
-    ID_SELECT_FRAME         "Select the current frame\nSelect Frame"
-    ID_SELECT_CHANNEL       "Select the current track\nSelect Track"
-    ID_SELECT_TRACK         "Select the entire song\nSelect Song"
-    ID_SELECT_COLUMN        "Select the entire column in the current pattern\nSelect Column"
-    ID_COPYAS_TEXT          "Copy the current selection as pretty-printed text\nCopy As Text"
-    ID_COPYAS_VOLUMESEQUENCE 
-                            "Copy the volume sequence in the first selected track\nCopy As Volume Sequence"
-    ID_COPYAS_PPMCK         "Copy the current selection as a PPMCK-compatible MML data\nCopy As PPMCK Data"
+    ID_EDIT_STRETCHPATTERNS "現在の選択範囲を伸縮させます。\n間隔の編集"
+    IDC_COMPACT_TOGGLE      "ノートカラム以外のカラムを非表示にします。"
+    ID_SELECT_NONE          "現在の選択を解除します。\n選択解除"
+    ID_SELECT_ROW           "現在の行を選択します。\n行を選択"
+    ID_SELECT_PATTERN       "現在のパターンを選択します。\nパターンを選択"
+    ID_SELECT_FRAME         "現在のフレームを選択します。\nフレームを選択"
+    ID_SELECT_CHANNEL       "現在のトラックを選択します。\nトラックを選択"
+    ID_SELECT_TRACK         "楽曲全体を選択します。\n楽曲を選択"
+    ID_SELECT_COLUMN        "現在のパターンのカラム全体を選択します。\nカラムを選択"
+    ID_COPYAS_TEXT          "現在の選択範囲を書式整形されたテキストとしてコピーします。\nプレーンテキストとしてコピー"
+    ID_COPYAS_VOLUMESEQUENCE "最初に選択したトラックの音量シーケンスをコピーします。\n音量シーケンスとしてコピー"
+    ID_COPYAS_PPMCK         "現在の選択範囲を PPMCK 互換の MML データとしてコピーします。\nPPMCK MML データとしてコピー"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FRAME_CUT            "Cut the selection and put it on the Clipboard\nCut"
+    ID_FRAME_CUT            "選択範囲を切り取ってクリップボードに保持します。\n切り取り"
+    ID_FRAME_DELETE         "選択範囲があればその中身を、なければノートを削除します。\n削除"
 END
 
 STRINGTABLE
 BEGIN
-    ID_POPUP_PICKUPROW      "Select current row's instrument\nPick Up Row"
-    ID_POPUP_UNMUTEALLCHANNELS "Unmute all tracks\nUnmute All Tracks"
-    ID_MODULE_CHANNELS      "Add or remove tracks\nTracks"
+    ID_POPUP_SPECTRUMANALYZER "波形をスペクトログラムで表示します。"
+    ID_POPUP_NOTHING        "ロゴを表示します。"
+    ID_POPUP_PICKUPROW      "現在の行の音色を選択します。[※ 音量とかも取得します]\n行の設定を取得"
+    ID_POPUP_UNMUTEALLCHANNELS "全てのトラックを非ミュートします。\n全トラックのミュートを解除"
+    ID_MODULE_CHANNELS      "トラックを追加または削除します。\nトラック"
 END
 
 STRINGTABLE
 BEGIN
-    IDC_FOLLOW_TOGGLE       "Make the cursor follow the currently played row"
+    IDC_FOLLOW_TOGGLE       "カーソルを現在再生している行に追従させます。"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_GOTO            "Go to the specified position in the current song\nGo To"
-    ID_MODULE_BOOKMARK      "Open the bookmark settings dialog\nBookmark Manager"
-    ID_BOOKMARKS_TOGGLE     "Create or delete a bookmark on the current row\nToggle Bookmark"
-    ID_BOOKMARKS_PREVIOUS   "Navigate to the previous bookmark\nPrevious Bookmark"
-    ID_BOOKMARKS_NEXT       "Navigate to the next bookmark\nNext Bookmark"
-    ID_EDIT_SWAPCHANNELS    "Exchange the data of two tracks\nSwap Tracks"
+    ID_EDIT_GOTO            "現在の楽曲内の特定の位置に移動します。\n移動"
+    ID_MODULE_BOOKMARK      "ブックマーク設定ダイアログを開きます。\nブックマークの管理"
+    ID_BOOKMARKS_TOGGLE     "現在の行でブックマークを作成または削除します。\nブックマークの切り替え"
+    ID_BOOKMARKS_PREVIOUS   "前のブックマークへ移動します。\n前のブックマークへ"
+    ID_BOOKMARKS_NEXT       "次のブックマークへ移動します。\n次のブックマークへ"
+    ID_MODULE_ESTIMATESONGLENGTH "楽曲全体の時間、行数、Tick 数を算出します。\n楽曲の長さを算出"
+    ID_EDIT_SWAPCHANNELS    "2 つのトラックのデータを交換します。\nトラックの入れ替え"
     ID_TRACKER_RECORDTOINST "Create a new instrument by logging output from current track\nRecord to Instrument"
     ID_TRACKER_RECORDERSETTINGS 
                             "Open the instrument recorder settings dialog\nRecorder Settings"
-    ID_TRANSPOSE_CUSTOM     "Transpose song by custom amount\nTranspose Song"
+    ID_POPUP_SPECTRUMANALYZER2 "波形を詳細なスペクトログラムで表示します。"
+    ID_TRANSPOSE_CUSTOM     "楽曲を自在にトランスポーズします。\n楽曲のトランスポーズ"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_TOGGLECHIP   "Mute / unmute selected sound chip\nToggle Chip"
-    ID_TRACKER_SOLOCHIP     "Mute / unmute all but the selected sound chip\nSolo Chip"
-    ID_MODULE_LINEARPITCH   "Enable linear pitch bends\nLinear Pitch Mode"
-    ID_RECENTFILES_CLEAR    "Clear the recent file list\nClear Recent File List"
-    ID_EDIT_SPLITKEYBOARD   "Open the split keyboard settings dialog\nSplit Keyboard"
-    ID_VIEW_AVERAGEBPM      "Display average BPM value instead of instant BPM value\nDisplay Average BPM"
-    ID_VIEW_CHANNELSTATE    "Display information about active effects\nDisplay Track State"
-    ID_TRACKER_PLAY_MARKER  "Play pattern from row marker\nPlay From Marker"
-    ID_TRACKER_SET_MARKER   "Set a row marker for playback\nSet Row Marker"
-    ID_SELECT_OTHER         "Restore the current selection in the inactive editor window\nSelect in Other Editor"
+    ID_TRACKER_TOGGLECHIP   "選択した音源をミュート/非ミュートします。\n音源をミュート"
+    ID_TRACKER_SOLOCHIP     "選択したトラック以外の全音源をミュート/非ミュートします。\n音源をソロ"
+    ID_MODULE_LINEARPITCH   "[*未使用*]Enable linear pitch bends\nLinear Pitch Mode"
+    ID_RECENTFILES_CLEAR    "最近のファイルの一覧をクリアします。\nファイル履歴をクリア"
+    ID_FIND_PREVIOUS        "検索条件をもとに前の検索結果へ移動します。\n前を検索"
+    ID_EDIT_SPLITKEYBOARD   "キーボードの分割設定ダイアログを開きます。\nキーボードの分割"
+    ID_VIEW_AVERAGEBPM      "瞬間的な BPM 値の代わりに、平均 BPM 値を表示します。\n平均 BPM を表示"
+    ID_VIEW_CHANNELSTATE    "アクティブなエフェクトについての情報を表示します。\nトラック状態を表示"
+    ID_TRACKER_PLAY_MARKER  "パターンを行マーカーから再生します。\nマーカーから再生"
+    ID_TRACKER_SET_MARKER   "再生用の行マーカーを設定します。\n行マーカーを設定"
+    ID_FRAME_PASTEOVERWRITE "フレームを上書きして貼り付けます。\n上書き貼り付け"
+    ID_SELECT_OTHER         "現在の選択対象をアクティブでない方のエディタウィンドウに再設定します。\nエディタのフォーカスを切り替え"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_EXPORTJSON      "Exports module as a JSON file\nExport JSON"
-    ID_FILE_IMPORTJSON      "Imports module JSON files\nImport JSON"
+    ID_FILE_EXPORTJSON      "モジュールを JSON ファイルとして書き出します。\nJSON をエクスポート"
+    ID_FILE_IMPORTJSON      "モジュール JSON ファイルを取り込みます。\nJSON をインポート"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_PLAY                "選択した音程でサンプルをプレビュー再生します。"
+    IDC_DELETE              "選択範囲のサンプルを削除します。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_TILT                "サンプルを 0 に向かって傾かせます。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_PREVIEW             "サンプルを音程 15 でプレビュー再生します。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_IMPORT              "PCM ファイルを読み込んでデルタ PCM に変換します。"
+    IDC_EDIT                "DPCM エディタを開きます。"
+    IDC_SAVE                "選択したサンプルをファイルに保存します。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_LOAD                "サンプルをファイルから読み込みます。"
+    IDC_UNLOAD              "選択したサンプルを取り除きます。"
 END
 
 #endif    // 日本語 (日本) resources

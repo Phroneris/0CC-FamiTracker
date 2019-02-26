@@ -1626,7 +1626,7 @@ void CMainFrame::OnUpdateSBChip(CCmdUI *pCmdUI)
 		FTEnv.GetSoundChipService()->ForeachType([&] (sound_chip_t c) {
 			if (Chip.ContainsChip(c)) {
 				if (!String.empty())
-					String += " + ";
+					String += "+";	/// jp: 日本語化とは関係ないけど、ステータスバーの欄内に入りきってないので
 				String += std::string {FTEnv.GetSoundChipService()->GetChipShortName(c)};
 			}
 		});
@@ -2598,7 +2598,7 @@ void CMainFrame::OnNewInstrumentMenu(NMHDR* pNotifyStruct, LRESULT* result)
 	auto *pSCS = FTEnv.GetSoundChipService();
 	pSCS->ForeachType([&] (sound_chip_t c) {
 		if (Chip.ContainsChip(c))
-			menu.AppendMenuW(MFT_STRING, value_cast(c) + 1, (L"New " + conv::to_wide(pSCS->GetChipShortName(c)) + L" instrument").data());
+			menu.AppendMenuW(MFT_STRING, value_cast(c) + 1, (L"" + conv::to_wide(pSCS->GetChipShortName(c)) + L" の音色を新規作成").data());	/// jp
 	});
 
 	if (SelectedChip != sound_chip_t::none)

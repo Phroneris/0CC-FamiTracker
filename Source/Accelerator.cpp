@@ -60,7 +60,7 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"ミックス貼り付け",					MOD_CONTROL,	'M',			ID_EDIT_PASTEMIX},
 	{L"上書き貼り付け",			0,				0,				ID_EDIT_PASTEOVERWRITE},			// // //
 	{L"挿入貼り付け",				0,				0,				ID_EDIT_PASTEINSERT},				// // //
-	{L"全選択",						MOD_CONTROL,	'A',			ID_EDIT_SELECTALL},
+	{L"全て選択",						MOD_CONTROL,	'A',			ID_EDIT_SELECTALL},
 	{L"選択解除",						0,				VK_ESCAPE,		ID_SELECT_NONE},					// // //
 	{L"行を選択",						0,				0,				ID_SELECT_ROW},						// // //
 	{L"カラムを選択",					0,				0,				ID_SELECT_COLUMN},					// // //
@@ -92,19 +92,19 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"音色を番号入力で選択",			0,				0,				ID_CMD_INST_NUM},					// // //
 	{L"音色マスク",				MOD_ALT,		'T',			ID_EDIT_INSTRUMENTMASK},
 	{L"音量マスク",					MOD_ALT,		'V',			ID_EDIT_VOLUMEMASK},				// // //
-	{L"音色を編集",				MOD_CONTROL,	'I',			ID_INSTRUMENT_EDIT},
+	{L"音色の編集",				MOD_CONTROL,	'I',			ID_INSTRUMENT_EDIT},
 	{L"ステップ量の増加",				MOD_CONTROL,	VK_ADD,			ID_CMD_INCREASESTEPSIZE},
 	{L"ステップ量の減少",				MOD_CONTROL,	VK_SUBTRACT,	ID_CMD_DECREASESTEPSIZE},
 	{L"自動スクロール",					0,				VK_SCROLL,		IDC_FOLLOW_TOGGLE},
-	{L"現在のフレームを挿入",				MOD_CONTROL,	'D',			ID_MODULE_DUPLICATEFRAME},
+	{L"フレームをそのまま複製",				MOD_CONTROL,	'D',			ID_MODULE_DUPLICATEFRAME},
 	{L"フレームの挿入",					0,				0,				ID_MODULE_INSERTFRAME},
 	{L"フレームの削除",					0,				0,				ID_MODULE_REMOVEFRAME},
-	{L"反転",						MOD_CONTROL,	'R',			ID_EDIT_REVERSE},
+	{L"内容の反転",						MOD_CONTROL,	'R',			ID_EDIT_REVERSE},
 	{L"フレームエディタにフォーカス",			0,				VK_F3,			ID_FOCUS_FRAME_EDITOR},
 	{L"パターンエディタにフォーカス",			0,				VK_F2,			ID_FOCUS_PATTERN_EDITOR},
 	{L"1 ステップ上へ",				MOD_ALT,		VK_UP,			ID_CMD_STEP_UP},
 	{L"1 ステップ下へ",				MOD_ALT,		VK_DOWN,		ID_CMD_STEP_DOWN},
-	{L"音色の切り替え",				MOD_ALT,		'S',			ID_EDIT_REPLACEINSTRUMENT},
+	{L"音色の置換",				MOD_ALT,		'S',			ID_EDIT_REPLACEINSTRUMENT},
 	{L"コントロールパネルの表示/非表示",			0,				0,				ID_VIEW_CONTROLPANEL},
 	{L"エフェクトリストの表示",			0,				0,				ID_HELP_EFFECTTABLE},
 	{L"ブロックの先頭を選択",				MOD_ALT,		'B',			ID_BLOCK_START},
@@ -114,9 +114,9 @@ const std::vector<stAccelEntry> CAccelerator::DEFAULT_TABLE {	/// jp
 	{L"前の楽曲へ",					0,				0,				ID_PREV_SONG},
 	{L"間隔を 2 倍に",				0,				0,				ID_EDIT_EXPANDPATTERNS},
 	{L"間隔を半分に",				0,				0,				ID_EDIT_SHRINKPATTERNS},
-	{L"間隔を編集",				0,				0,				ID_EDIT_STRETCHPATTERNS},			// // //
-	{L"フレームの複製挿入",					0,				0,				ID_MODULE_DUPLICATEFRAMEPATTERNS, L"フレームの複製挿入"},		// // //
-	{L"パターンの複製",					MOD_ALT,		'D',			ID_MODULE_DUPLICATECURRENTPATTERN, L"パターンの複製"},	// // //
+	{L"間隔の編集",				0,				0,				ID_EDIT_STRETCHPATTERNS},			// // //
+	{L"フレームをパターンごと複製",					0,				0,				ID_MODULE_DUPLICATEFRAMEPATTERNS, L"フレームをパターンごと複製"},		// // //
+	{L"パターンを新規パターン番号に複製",					MOD_ALT,		'D',			ID_MODULE_DUPLICATECURRENTPATTERN, L"パターンを新規パターン番号に複製"},	// // //
 	{L"値の減少（小）",		MOD_SHIFT,		VK_F1,			ID_DECREASEVALUES},
 	{L"値の増加（小）",		MOD_SHIFT,		VK_F2,			ID_INCREASEVALUES},
 	{L"値の減少（大）",			MOD_SHIFT,		VK_F3,			ID_DECREASEVALUESCOARSE},			// // //
