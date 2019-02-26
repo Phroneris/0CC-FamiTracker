@@ -41,7 +41,7 @@ const std::wstring_view SEQ_SETTING_TEXT[][SEQ_COUNT] = {		// // // 050B	/// jp
 #else
 	{        L"", L"相対",         L"", L"", L""},
 #endif
-	{        L"",   L"スキーム",         L"", L"", L""},
+	{        L"",   L"配音",         L"", L"", L""},
 };
 
 } // namespace
