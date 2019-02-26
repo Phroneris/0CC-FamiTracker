@@ -67,21 +67,26 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
 + UTF-16のファイルをGitで管理するために、Gitへ渡す（add）時にはUTF-8に変換し、Gitから受け取る（checkout）時にはUTF-16に変換するようなフィルターをかけてやると楽になる。  
   私は以下の手順でどうにかしている。
   1. [nkf v2.1.1](https://www.vector.co.jp/soft/win95/util/se295331.html "nkf v2.1.1 配布サイト")の`nkf.exe`をGitの`usr/bin`に置く。
-  2. `.gitattributes`に以下の行を追加する（このファイルは既にコミットに含んでいるので、このリポジトリでわざわざやる必要はない）。
+  2. 日本語化リポジトリをチェックアウトする。
+  3. `.gitattributes`に以下の行を追加してコミットする（これは既に日本語化リポジトリに含まれているので、改めてやる必要はない）。
      ```
 	 0CC-FamiTracker.rc filter=utf16lebom
 	 0CC-FamiTracker.reg filter=utf16lebom
 	 ```
-  3. `.git/config`に以下の行を追加する。
+  4. `.git/config`に以下の行を追加する。
      ```
      [filter "utf16lebom"]
      	smudge = nkf -w16Lxu
      	clean = nkf -w80xu
      ```
 	 - nkfの代わりにiconvでもできなくはないが、ファイル先頭にBOM差分が生じたり、事故ってファイルが崩壊したりするのでつらい。
-+ 日本語化されたその他のソースファイルは、文字エンコーディングがUTF-8でないといけない。BOMは無くても良く、その場合のVisual Studio 2017上のエンコーディング選択肢は`Unicode (UTF-8 without signature) - Codepage 65001`となる。  
+  5. 日本語化リポジトリをチェックアウトし直す。
++ 日本語化されたその他のソースファイルは、文字エンコーディングがUTF-8でないといけない。BOMは無くても良く、その場合のVisual Studio 2017上のエンコーディング選択肢は`Unicode (UTF-8 without signature) - Codepage 65001`となる。
   - いや、本来はBOMが必要らしいんだけど、コンパイラオプションでどうにかしている。
-+ 現状、ビルドに使用したソースは0.3.15.3の公式リリース版（master）ではなく、そこから多少進んだ開発版（dev）。  
+  - `resource.h`だけは、たまにShift_JISに戻っちゃうのでBOMをつけてみている。
++ 事前にVisual Studioの「C++に関するXPサポート」とDirectXの「DirectX SDK June 2010」の導入が要る。  
+  手動でやったかどうか覚えてないけど、必要なら`$(DXSDK_DIR)`へのパスも通す。
++ 現状、ビルドに使用したソースは0.3.15.3の公式リリース版（master）ではなく、そこから多少進んだ開発版（dev）。
   - ほんとは公式版を使いたかったけど、ビルドしようとすると`Error C3861 'ReadGlobalMemory': identifier not found`って言われてビルドできなかったので…。
 
 ## 参考にしたもの
@@ -94,6 +99,10 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
   https://nekko1119.hatenablog.com/entry/2017/03/28/003348
 + Visual Studio で UTF-8 で C++ を書いたら心が折れそうになった件 - Hikware.Tech  
   http://tech.hikware.com/article/20171020a.html
++ visual studio - How to install build tools for v141_xp for VC 2017? - Stack Overflow  
+  https://stackoverflow.com/questions/49516896/how-to-install-build-tools-for-v141-xp-for-vc-2017
++ DirectX SDKインストール時に”S1023エラー”が出る時の対処法  
+  http://nanoappli.com/blog/archives/4739
 
 ## Known issues
 
