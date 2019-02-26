@@ -2186,10 +2186,10 @@ void CMainFrame::OnModuleEstimateSongLength()		// // //
 
 	int Rate = GetDoc().GetModule()->GetFrameRate();
 
-	const LPCWSTR fmt = L"Estimated duration:\n"
-		L"Intro: %lld:%02lld.%02lld (%d rows, %lld ticks)\n"
-		L"Loop: %lld:%02lld.%02lld (%d rows, %lld ticks)\n"
-		L"Tick counts are subject to rounding errors!";
+	const LPCWSTR fmt = L"算出長さ:\n"	/// jp
+		L"前奏: %lld:%02lld.%02lld (%d 行, %lld tick)\n"
+		L"ループ: %lld:%02lld.%02lld (%d 行, %lld tick)\n"
+		L"Tick 数は丸め誤差が出ている場合があります。";
 	AfxMessageBox(FormattedW(fmt,
 		static_cast<long long>(Intro + .5 / 6000) / 60,
 		static_cast<long long>(Intro + .005) % 60,
