@@ -34,14 +34,14 @@
 namespace {
 
 const std::wstring_view SEQ_SETTING_TEXT[][SEQ_COUNT] = {		// // // 050B	/// jp
-	{L"16 段階", L"絶対", L"相対", L"", L""},
-	{L"64 段階",    L"固定", L"絶対", L"", L""},
+	{L"16 段階", L"基音から", L"直前から", L"", L""},
+	{L"64 段階",   L"固定音", L"基音から", L"", L""},
 #ifdef _DEBUG
-	{        L"", L"相対",    L"スイープ", L"", L""},
+	{       L"", L"直前から", L"スウィープ", L"", L""},
 #else
-	{        L"", L"相対",         L"", L"", L""},
+	{       L"", L"直前から",         L"", L"", L""},
 #endif
-	{        L"",   L"配音",         L"", L"", L""},
+	{       L"",     L"配音",         L"", L"", L""},
 };
 
 } // namespace

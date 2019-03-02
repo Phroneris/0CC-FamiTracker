@@ -313,7 +313,7 @@ BEGIN
         END
         MENUITEM SEPARATOR
         MENUITEM "平均 BPM(&B)",                  ID_VIEW_AVERAGEBPM
-        MENUITEM "トラック状態(&K) [※ 未実装]",          ID_VIEW_CHANNELSTATE
+        MENUITEM "トラック状態(&K) [※未実装]",           ID_VIEW_CHANNELSTATE
         MENUITEM "レジスタ状態(&R)",                  ID_TRACKER_DISPLAYREGISTERSTATE
         MENUITEM SEPARATOR
         POPUP "フレームエディタの位置(&P)"
@@ -324,9 +324,9 @@ BEGIN
     END
     POPUP "ヘルプ(&H)"
     BEGIN
-        MENUITEM "ヘルプの表示(&H)\tF1",              ID_HELP_FINDER
-        MENUITEM "エフェクトについて(&E)",               ID_HELP_EFFECTTABLE
-        MENUITEM "よくある質問(&F)",                  ID_HELP_FAQ
+        MENUITEM "ヘルプの表示(&H) [※未実装]\tF1",       ID_HELP_FINDER
+        MENUITEM "エフェクトについて(&E) [※未実装]",        ID_HELP_EFFECTTABLE
+        MENUITEM "よくある質問(&F) [※未実装]",           ID_HELP_FAQ
         MENUITEM SEPARATOR
         MENUITEM "パフォーマンス(&P)",                 ID_HELP_PERFORMANCE
         MENUITEM SEPARATOR
@@ -2394,7 +2394,7 @@ END
 STRINGTABLE
 BEGIN
     AFX_IDS_APP_TITLE       "0CC-FamiTracker"
-    AFX_IDS_IDLEMESSAGE     "F1 を押すとヘルプを表示します。[※ 表示しません]"
+    AFX_IDS_IDLEMESSAGE     "F1 を押すとヘルプを表示します。[※未実装]"
     AFX_IDS_HELPMODEMESSAGE "[*未使用*]Select an object on which to get Help"
 END
 
@@ -2422,10 +2422,10 @@ BEGIN
     ID_APP_ABOUT            "プログラムの情報、バージョン番号、著作権について表示します。\n0CC-FamiTracker について"
     ID_APP_EXIT             "アプリケーションを終了します。ドキュメントの保存を確認されます。\n終了"
     ID_HELP_INDEX           "[*未使用*]Open Help\nHelp Topics"
-    ID_HELP_FINDER          "ヘルプの目次一覧を表示します。[※ 表示しません]\nヘルプの表示"
+    ID_HELP_FINDER          "ヘルプの目次一覧を表示します。[※未実装]\nヘルプの表示"
     ID_HELP_USING           "[*未使用*]Display instructions about how to use help\nHelp"
-    ID_CONTEXT_HELP         "ボタンやメニューやウィンドウをクリックすると、そのヘルプを表示します。[※ 表示しません]\nヘルプ"
-    ID_HELP                 "[*?unused?*]Display help for current task or command\nHelp"
+    ID_CONTEXT_HELP         "ボタンやメニューやウィンドウをクリックすると、そのヘルプを表示します。[※未実装]\nヘルプ"
+    ID_HELP                 "[*?unknown?*]Display help for current task or command\nHelp"
 END
 
 STRINGTABLE
@@ -2612,7 +2612,7 @@ END
 STRINGTABLE
 BEGIN
     ID_MODULE_DUPLICATEFRAME 
-                            "現在のフレームのコピーを挿入します。[※ 各パターン番号はそのままです]\nフレームをそのまま複製"
+                            "現在のフレームのコピーを挿入します。[※各パターン番号はそのままです]\nフレームをそのまま複製"
 END
 
 STRINGTABLE
@@ -2633,7 +2633,7 @@ END
 STRINGTABLE
 BEGIN
     ID_CLEANUP_REMOVEUNUSEDPATTERNS "使われていないパターンを全て削除します。\n使われていないパターンの削除"
-    ID_HELP_EFFECTTABLE     "ヘルプウィンドウにて、エフェクト一覧を表示します。[※ 表示しません]\nエフェクトについて"
+    ID_HELP_EFFECTTABLE     "ヘルプウィンドウにて、エフェクト一覧を表示します。[※未実装]\nエフェクトについて"
     ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS "使われていない音色を全て削除します。\n使われていない音色の削除"
 END
 
@@ -2699,7 +2699,7 @@ BEGIN
     IDS_SONG_DELETE         "Do you want to delete the selected songs? There is no undo for this command."
     IDS_SOUND_FAIL          "It appears the current sound settings aren't working, change settings and try again."
     IDS_UNDERRUN_MESSAGE    "Warning: Audio buffer underrun, increase the audio buffer size!"
-    IDS_WELCOME_VER_FORMAT  "0CC-FamiTracker %1 へようこそ。F1 を押すとヘルプを表示します。[※ 表示しません]"
+    IDS_WELCOME_VER_FORMAT  "0CC-FamiTracker %1 へようこそ。F1 を押すとヘルプを表示します。[※未実装]"
     IDS_DPCM_IMPORT_INVALID_WAVEFILE 
                             "Cannot load this sample, file is invalid or incompatible. (Only uncompressed PCM is supported.)"
     IDS_INST_FILE_ERROR     "Could not load instrument file! Check that you have the most recent version of 0CC-FamiTracker."
@@ -2745,7 +2745,7 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_HELP_FAQ             "ヘルプウィンドウにて、よくある質問を表示します。[※ 表示しません]\nよくある質問"
+    ID_HELP_FAQ             "ヘルプウィンドウにて、よくある質問を表示します。[※未実装]\nよくある質問"
     ID_TRACKER_DISPLAYREGISTERSTATE "チャンネルのレジスタ値とチューニング情報を表示します。\nレジスタ状態を表示"
 END
 
@@ -2826,7 +2826,7 @@ STRINGTABLE
 BEGIN
     ID_POPUP_SPECTRUMANALYZER "波形をスペクトログラムで表示します。"
     ID_POPUP_NOTHING        "ロゴを表示します。"
-    ID_POPUP_PICKUPROW      "現在の行の音色を選択します。[※ 音量とかも取得します]\n行の設定を取得"
+    ID_POPUP_PICKUPROW      "現在の行の音色を選択します。[※音量とかも取得します]\n行の設定を取得"
     ID_POPUP_UNMUTEALLCHANNELS "全てのトラックを非ミュートします。\n全トラックのミュートを解除"
     ID_MODULE_CHANNELS      "トラックを追加または削除します。\nトラック"
 END
@@ -2861,7 +2861,7 @@ BEGIN
     ID_FIND_PREVIOUS        "検索条件をもとに前の検索結果へ移動します。\n前を検索"
     ID_EDIT_SPLITKEYBOARD   "キーボードの分割設定ダイアログを開きます。\nキーボードの分割"
     ID_VIEW_AVERAGEBPM      "瞬間的な BPM 値の代わりに、平均 BPM 値を表示します。\n平均 BPM を表示"
-    ID_VIEW_CHANNELSTATE    "アクティブなエフェクトについての情報を表示します。\nトラック状態を表示"
+    ID_VIEW_CHANNELSTATE    "アクティブなエフェクトについての情報を表示します。[※未実装]\nトラック状態を表示"
     ID_TRACKER_PLAY_MARKER  "パターンを行マーカーから再生します。\nマーカーから再生"
     ID_TRACKER_SET_MARKER   "再生用の行マーカーを設定します。\n行マーカーを設定"
     ID_FRAME_PASTEOVERWRITE "フレームを上書きして貼り付けます。\n上書き貼り付け"

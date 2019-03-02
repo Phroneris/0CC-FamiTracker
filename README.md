@@ -88,15 +88,15 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
   - Marked with `/// jp-garbling` in source codes
 + Shortcuts are stored with localized names in the registry
 + `ID_CLONE_SEQUENCE` (in `IDR_SEQUENCE_POPUP`) shows `IDS_DISABLE_SAVE` string on the resource IDE
-+ `IDR_FRAME_POPUP`, `IDR_PATTERN_HEADER_POPUP`, `IDR_SAMPLE_EDITOR_POPUP`, `IDR_SAMPLE_WND_POPUP`, `IDR_SAMPLES_POPUP` and `IDR_SEQUENCE_POPUP` don't show menu prompts on the status bar
-+ [WIP-reg]: Save a `*.0cc` file -> close -> double-click the file -> 0CCFT crashes
++ These don't show menu prompts on the status bar: `IDR_FRAME_POPUP`, `IDR_PATTERN_HEADER_POPUP`, `IDR_SAMPLE_EDITOR_POPUP`, `IDR_SAMPLE_WND_POPUP`, `IDR_SAMPLES_POPUP` and `IDR_SEQUENCE_POPUP`
++ Double-clicking a `*.0cc` file makes 0CCFT crash
   - It's OK to open it from 0CCFT
+  - It doesn't matter if `WIP` is defined in `version.h`
++ `V`xx effect for N163 shows a hint for VRC7
 + [Non-issue]: Some contents of `ID_FRAME_*` are duplicated to ones of `ID_EDIT_*`
 + [Non-issue]: There are many strings unused in the string table
   - Marked some of them as beginning with `[*未使用*]`
 + [Non-issue]: I wonder why the actual configuration dialog is a little wider than the one previewed from the resource IDE
-
-※ WIP-reg issues occur of course because I tried building the beta sources as Release without `WIP` definition in `version.h`
 
 
 ## 多言語化についてのぼやき
