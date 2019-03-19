@@ -106,7 +106,7 @@ bool CFamiTrackerEnv::IsFileLoaded() {
 
 std::string CFamiTrackerEnv::GetDocumentTitle() {
 #ifdef FT0CC_EXT_BUILD
-	return "Untitled";
+	return "Untitled";	/// jp-noeffect
 #else
 	return conv::to_utf8(CFamiTrackerDoc::GetDoc()->GetTitle());
 #endif

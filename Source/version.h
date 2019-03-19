@@ -33,6 +33,7 @@
 #define VERSION_MAJ  3
 #define VERSION_MIN  15
 #define VERSION_REV  3
+#define VERSION_OPT  JP001	/// jp
 
 constexpr int Compare0CCFTVersion(int api, int maj, int min, int rev) noexcept {
 	if (api > VERSION_API)

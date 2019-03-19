@@ -42,7 +42,7 @@ public:
 	CInstrumentEditorDPCM(CWnd* pParent = NULL);   // standard constructor
 	virtual ~CInstrumentEditorDPCM();
 	int GetIDD() const override { return IDD; }
-	LPCWSTR GetTitle() const override { return L"DPCM samples"; }		// // //
+	LPCWSTR GetTitle() const override { return L"DPCM サンプル"; }		// // //	/// jp
 
 // Dialog Data
 	enum { IDD = IDD_INSTRUMENT_DPCM };

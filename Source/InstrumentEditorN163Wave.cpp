@@ -127,7 +127,7 @@ BOOL CInstrumentEditorN163Wave::OnInitDialog()
 	CRect r;
 	m_cWaveListCtrl.SubclassDlgItem(IDC_N163_WAVES, this);
 	m_cWaveListCtrl.GetClientRect(&r);		// // // 050B
-	m_cWaveListCtrl.InsertColumn(0, L"Wave", LVCFMT_LEFT, static_cast<int>(.85 * r.Width()));
+	m_cWaveListCtrl.InsertColumn(0, L"波形", LVCFMT_LEFT, static_cast<int>(.85 * r.Width()));	/// jp
 	m_cWaveListCtrl.InsertColumn(1, L"#", LVCFMT_LEFT, static_cast<int>(.15 * r.Width()));
 	m_cWaveListCtrl.SetColumnOrderArray(2, order);
 

@@ -1522,7 +1522,7 @@ void CPatternEditor::DrawHeader(CDC &DC)
 
 			unsigned fxcols = pSongView->GetEffectColumnCount(Channel);
 			for (unsigned int fx = 1; fx < fxcols; ++fx)		// // //
-				DC.TextOutW(Offset + GetChannelWidth(fx) - m_iCharWidth * 3 / 2, HEADER_CHAN_START + HEADER_CHAN_HEIGHT - 17, FormattedW(L"fx%d", fx + 1));
+				DC.TextOutW(Offset + GetChannelWidth(fx) - m_iCharWidth * 3 / 2, HEADER_CHAN_START + HEADER_CHAN_HEIGHT - 17, FormattedW(L"FX%d", fx + 1));	/// jp: GUI上のfxは大文字に
 
 			// Arrows for expanding/removing fx columns
 			if (fxcols > 1) {
@@ -3512,7 +3512,7 @@ CStringW CPatternEditor::GetSelectionAsText() const {		// // //
 		if (i == e.m_iChannel)
 			Columns = std::clamp(static_cast<int>(GetSelectColumn(e.m_iColumn)) - 3, 0, Columns);
 		for (int j = 0; j < Columns; ++j)
-			AppendFormatW(Header, L"fx%d ", j + 2);
+			AppendFormatW(Header, L"fx%d ", j + 2);	/// jp: これは特殊コピー時の文字列なので大文字化しない
 	}
 	str = Header.TrimRight() + L"\r\n";
 

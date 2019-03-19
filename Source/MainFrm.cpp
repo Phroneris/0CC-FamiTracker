@@ -1613,7 +1613,7 @@ void CMainFrame::OnUpdateSBChip(CCmdUI *pCmdUI)
 		FTEnv.GetSoundChipService()->ForeachType([&] (sound_chip_t c) {
 			if (Chip.ContainsChip(c)) {
 				if (!String.empty())
-					String += " + ";
+					String += "+";	/// jp: 日本語化とは関係ないけど、ステータスバーの欄内に入りきってないので	/// jp-garbling
 				String += std::string {FTEnv.GetSoundChipService()->GetChipShortName(c)};
 			}
 		});
@@ -2173,10 +2173,10 @@ void CMainFrame::OnModuleEstimateSongLength()		// // //
 
 	int Rate = GetDoc().GetModule()->GetFrameRate();
 
-	const LPCWSTR fmt = L"Estimated duration:\n"
-		L"Intro: %lld:%02lld.%02lld (%d rows, %lld ticks)\n"
-		L"Loop: %lld:%02lld.%02lld (%d rows, %lld ticks)\n"
-		L"Tick counts are subject to rounding errors!";
+	const LPCWSTR fmt = L"算出長さ:\n"	/// jp
+		L"前奏: %lld:%02lld.%02lld (%d 行, %lld Tick)\n"
+		L"ループ: %lld:%02lld.%02lld (%d 行, %lld Tick)\n"
+		L"Tick 数は、丸め誤差が出ている場合があります。";
 	AfxMessageBox(FormattedW(fmt,
 		static_cast<long long>(Intro + .5 / 6000) / 60,
 		static_cast<long long>(Intro + .005) % 60,
@@ -2585,7 +2585,7 @@ void CMainFrame::OnNewInstrumentMenu(NMHDR* pNotifyStruct, LRESULT* result)
 	auto *pSCS = FTEnv.GetSoundChipService();
 	pSCS->ForeachType([&] (sound_chip_t c) {
 		if (Chip.ContainsChip(c))
-			menu.AppendMenuW(MFT_STRING, value_cast(c) + 1, (L"New " + conv::to_wide(pSCS->GetChipShortName(c)) + L" instrument").data());
+			menu.AppendMenuW(MFT_STRING, value_cast(c) + 1, (L"" + conv::to_wide(pSCS->GetChipShortName(c)) + L" の音色を新規作成").data());	/// jp
 	});
 
 	if (SelectedChip != sound_chip_t::none)
@@ -3246,11 +3246,11 @@ void CMainFrame::OnUpdateGrooveEdit(CCmdUI *pCmdUI)
 	CSongData &song = *GetCurrentSong();
 	int Speed = song.GetSongSpeed();
 	if (song.GetSongGroove()) {
-		m_cButtonGroove.SetWindowTextW(L"Groove");
+		m_cButtonGroove.SetWindowTextW(L"グルーヴ");	/// jp
 		Speed = std::clamp(Speed, 0, MAX_GROOVE - 1);
 	}
 	else {
-		m_cButtonGroove.SetWindowTextW(L"Speed");
+		m_cButtonGroove.SetWindowTextW(L"行Tick");	/// jp: 行Tickは間に半角スペースを入れない
 		int MaxSpeed = song.GetSongTempo() ? GetDoc().GetModule()->GetSpeedSplitPoint() - 1 : 0xFF;
 		Speed = std::clamp(Speed, MIN_SPEED, MaxSpeed);
 	}
@@ -3270,12 +3270,12 @@ void CMainFrame::OnToggleFixTempo()
 void CMainFrame::OnUpdateToggleFixTempo(CCmdUI *pCmdUI)
 {
 	if (int Tempo = GetCurrentSong()->GetSongTempo()) {
-		m_cButtonFixTempo.SetWindowTextW(L"Tempo");
+		m_cButtonFixTempo.SetWindowTextW(L"BPM");	/// jp
 		m_cLockedEditTempo.EnableWindow(true);
 		m_wndDialogBar.GetDlgItem(IDC_TEMPO_SPIN)->EnableWindow(true);
 	}
 	else {
-		m_cButtonFixTempo.SetWindowTextW(L"Fixed");
+		m_cButtonFixTempo.SetWindowTextW(L"固定");	/// jp
 		m_cLockedEditTempo.EnableWindow(false);
 		m_wndDialogBar.GetDlgItem(IDC_TEMPO_SPIN)->EnableWindow(false);
 		m_cLockedEditTempo.SetWindowTextW(FormattedW(L"%.2f", static_cast<float>(GetDoc().GetModule()->GetFrameRate()) * 2.5));

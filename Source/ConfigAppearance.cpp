@@ -32,7 +32,7 @@
 #include "NumConv.h"		// // //
 #include "str_conv/str_conv.hpp"		// // //
 
-const std::string_view CConfigAppearance::COLOR_ITEMS[] = {		// // //
+const std::string_view CConfigAppearance::COLOR_ITEMS[] = {		// // //	/// jp-garbling
 	"Background",
 	"Highlighted background",
 	"Highlighted background 2",

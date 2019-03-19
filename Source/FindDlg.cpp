@@ -272,7 +272,7 @@ void CFindResultsBox::UpdateCount() const
 {
 	int Count = m_cListResults.GetItemCount();
 	GetDlgItem(IDC_STATIC_FINDRESULT_COUNT)->SetWindowTextW(AfxFormattedW(
-		IDS_FINDRESULT_COUNT, FormattedW(L"%d", Count), Count == 1 ? L"result" : L"results"));
+		IDS_FINDRESULT_COUNT, FormattedW(L"%d", Count), Count == 1 ? L"件" : L"件"));	/// jp
 }
 
 
@@ -294,16 +294,16 @@ BOOL CFindResultsBox::OnInitDialog()
 	m_cListResults.GetClientRect(&r);
 	const int w = r.Width() - ::GetSystemMetrics(SM_CXHSCROLL);
 
-	m_cListResults.InsertColumn(ID, L"ID", LVCFMT_LEFT, static_cast<int>(.085 * w));
-	m_cListResults.InsertColumn(CHANNEL, L"Channel", LVCFMT_LEFT, static_cast<int>(.19 * w));
+	m_cListResults.InsertColumn(ID, L"ID", LVCFMT_LEFT, static_cast<int>(.07 * w));	/// jp
+	m_cListResults.InsertColumn(CHANNEL, L"チャンネル", LVCFMT_LEFT, static_cast<int>(.19 * w));	/// jp
 	m_cListResults.InsertColumn(PATTERN, L"Pa.", LVCFMT_LEFT, static_cast<int>(.065 * w));
 	m_cListResults.InsertColumn(FRAME, L"Fr.", LVCFMT_LEFT, static_cast<int>(.065 * w));
-	m_cListResults.InsertColumn(ROW, L"Ro.", LVCFMT_LEFT, static_cast<int>(.065 * w));
-	m_cListResults.InsertColumn(NOTE, L"Note", LVCFMT_LEFT, static_cast<int>(.08 * w));
-	m_cListResults.InsertColumn(INST, L"In.", LVCFMT_LEFT, static_cast<int>(.065 * w));
-	m_cListResults.InsertColumn(VOL, L"Vo.", LVCFMT_LEFT, static_cast<int>(.065 * w));
+	m_cListResults.InsertColumn(ROW, L"行", LVCFMT_LEFT, static_cast<int>(.065 * w));	/// jp
+	m_cListResults.InsertColumn(NOTE, L"ノート", LVCFMT_LEFT, static_cast<int>(.085 * w));	/// jp
+	m_cListResults.InsertColumn(INST, L"音色", LVCFMT_LEFT, static_cast<int>(.08 * w));	/// jp
+	m_cListResults.InsertColumn(VOL, L"音量", LVCFMT_LEFT, static_cast<int>(.08 * w));	/// jp
 	for (int i = MAX_EFFECT_COLUMNS; i > 0; --i)
-		m_cListResults.InsertColumn(EFFECT, FormattedW(L"fx%d", i), LVCFMT_LEFT, static_cast<int>(.08 * w));
+		m_cListResults.InsertColumn(EFFECT, FormattedW(L"FX%d", i), LVCFMT_LEFT, static_cast<int>(.075 * w));	/// jp
 
 	UpdateCount();
 

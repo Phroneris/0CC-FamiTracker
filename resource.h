@@ -1,6 +1,6 @@
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by 0CC-FamiTracker.rc
+﻿//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ で生成されたインクルード ファイル。
+// 0CC-FamiTracker.rc で使用
 //
 #define IDAPPLY                         3
 #define IDC_IMPORT                      4

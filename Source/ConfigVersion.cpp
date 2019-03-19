@@ -28,13 +28,13 @@
 
 namespace {
 
-const LPCWSTR MODULE_ERROR_DESC[] = {
-	L"None: Perform no validation at all while loading or saving modules. "
-	 "The tracker might crash or enter an inconsistent state.",
-	L"Default: Perform the usual error checking according to the most recent official stable build.",
-	L"Official: Perform extra bounds checking to ensure that modules are openable in the official build.",
-	L"Strict: Validate all modules so that they do not contain any illegal data. "
-	 "Modules openable in the official build might be rejected.",
+const LPCWSTR MODULE_ERROR_DESC[] = {	/// jp
+	L"皆無: モジュールの読み込みや保存の際、一切の検証を行いません。"
+	L"トラッカーがクラッシュしたり、不整合な状態に陥ったりする恐れがあります。",
+	L"規定: 最新の公式安定版ビルドに基づいて、通常のエラーチェックを行います。",
+	L"公式: より踏み込んだチェックを行い、モジュールを公式ビルド版で開くことができるかどうかを確認します。",
+	L"厳密: 全てのモジュールにおいて、一切の不正なデータがないことを検証します。"
+	L"公式ビルド版で開けるモジュールすら落第する恐れがあります。",
 };
 
 } // namespace

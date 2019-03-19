@@ -33,15 +33,15 @@
 
 namespace {
 
-const std::wstring_view SEQ_SETTING_TEXT[][SEQ_COUNT] = {		// // // 050B
-	{L"16 steps", L"Absolute", L"Relative", L"", L""},
-	{L"64 steps",    L"Fixed", L"Absolute", L"", L""},
+const std::wstring_view SEQ_SETTING_TEXT[][SEQ_COUNT] = {		// // // 050B	/// jp
+	{L"16 段階", L"基音から", L"直前から", L"", L""},
+	{L"64 段階",   L"固定音", L"基音から", L"", L""},
 #ifdef _DEBUG
-	{        L"", L"Relative",    L"Sweep", L"", L""},
+	{       L"", L"直前から", L"スウィープ", L"", L""},
 #else
-	{        L"", L"Relative",         L"", L"", L""},
+	{       L"", L"直前から",         L"", L"", L""},
 #endif
-	{        L"",   L"Scheme",         L"", L"", L""},
+	{       L"",     L"配音",         L"", L"", L""},
 };
 
 } // namespace

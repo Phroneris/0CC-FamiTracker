@@ -40,7 +40,7 @@ public:
 	CInstrumentEditorN163Wave(CWnd* pParent = NULL);   // standard constructor
 	virtual ~CInstrumentEditorN163Wave();
 	int GetIDD() const override { return IDD; }
-	LPCWSTR GetTitle() const { return L"Wave"; }		// // //
+	LPCWSTR GetTitle() const { return L"波形"; }		// // //	/// jp
 
 	// Public
 	virtual void SelectInstrument(std::shared_ptr<CInstrument> pInst);

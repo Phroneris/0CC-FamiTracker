@@ -34,7 +34,7 @@ const stHighlight CSongData::DEFAULT_HIGHLIGHT = {4, 16, 0};		// // //
 // A list of these objects exists inside the document one for each song
 
 CSongData::CSongData(unsigned int PatternLength) :		// // //
-	m_sTrackName("New song"),
+	m_sTrackName("New song"),	/// jp-garbling
 	m_iPatternLength(PatternLength)
 {
 	FTEnv.GetSoundChipService()->ForeachTrack([&] (stChannelID track) {		// // //

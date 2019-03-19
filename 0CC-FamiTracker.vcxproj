@@ -191,11 +191,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <ConformanceMode>true</ConformanceMode>
       <DisableSpecificWarnings>4100;4244;4245;4389</DisableSpecificWarnings>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
+      <Culture>0x0411</Culture>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
@@ -235,13 +235,13 @@
       <ConformanceMode>true</ConformanceMode>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
+      <Culture>0x0411</Culture>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
@@ -278,11 +278,11 @@
       <ConformanceMode>true</ConformanceMode>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <DisableSpecificWarnings>4100;4244;4245;4389</DisableSpecificWarnings>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
+      <Culture>0x0411</Culture>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
@@ -325,13 +325,13 @@
       <ConformanceMode>true</ConformanceMode>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <StringPooling>true</StringPooling>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
+      <Culture>0x0411</Culture>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
@@ -368,14 +368,14 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ObjectFileName>obj/$(IntDir)/%(RelativeDir)</ObjectFileName>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
       <ConformanceMode>true</ConformanceMode>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
+      <Culture>0x0411</Culture>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
@@ -416,14 +416,14 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ObjectFileName>obj/$(IntDir)/%(RelativeDir)</ObjectFileName>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
       <ConformanceMode>true</ConformanceMode>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
+      <Culture>0x0411</Culture>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
@@ -445,20 +445,26 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
     <ClCompile>
       <ObjectFileName>obj/$(IntDir)/%(RelativeDir)</ObjectFileName>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
       <ConformanceMode>true</ConformanceMode>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
     <ClCompile>
       <ObjectFileName>obj/$(IntDir)/%(RelativeDir)</ObjectFileName>
-      <AdditionalOptions>/Zc:__cplusplus</AdditionalOptions>
+      <AdditionalOptions>/Zc:__cplusplus /source-charset:utf-8</AdditionalOptions>
       <ConformanceMode>true</ConformanceMode>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\ActionHandler.cpp" />

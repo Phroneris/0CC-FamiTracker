@@ -13,11 +13,10 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 日本語 (日本) resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
-#pragma code_page(1252)
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -102,236 +101,236 @@ END
 
 IDR_MAINFRAME MENU
 BEGIN
-    POPUP "&File"
+    POPUP "ファイル(&F)"
     BEGIN
-        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
-        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
-        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
-        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "新規作成(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "開く(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
+        MENUITEM "名前をつけて保存(&A)...",             ID_FILE_SAVE_AS
         MENUITEM SEPARATOR
-        MENUITEM "Create NS&F...\tCtrl+E",      ID_FILE_CREATE_NSF
-        MENUITEM "Create &WAV...",              ID_FILE_CREATEWAV
+        MENUITEM "NSF ファイルの生成(&F)...\tCtrl+E",  ID_FILE_CREATE_NSF
+        MENUITEM "WAVE ファイルの生成(&W)...",         ID_FILE_CREATEWAV
         MENUITEM SEPARATOR
-        POPUP "&Import"
+        POPUP "インポート(&I)"
         BEGIN
-            MENUITEM "&Text...",                    ID_FILE_IMPORTTEXT
-            MENUITEM "&JSON...",                    ID_FILE_IMPORTJSON
+            MENUITEM "テキスト(&T)...",                 ID_FILE_IMPORTTEXT
+            MENUITEM "JSON(&J)...",                 ID_FILE_IMPORTJSON
         END
-        POPUP "&Export"
+        POPUP "エクスポート(&E)"
         BEGIN
-            MENUITEM "&Text...",                    ID_FILE_EXPORTTEXT
-            MENUITEM "&JSON...",                    ID_FILE_EXPORTJSON
-            MENUITEM "Rows As &CSV...",             ID_FILE_EXPORTROWS
+            MENUITEM "テキスト(&T)...",                 ID_FILE_EXPORTTEXT
+            MENUITEM "JSON(&J)...",                 ID_FILE_EXPORTJSON
+            MENUITEM "行情報 CSV(&C)...",              ID_FILE_EXPORTROWS
         END
         MENUITEM SEPARATOR
-        MENUITEM "&Configuration...",           ID_FILE_GENERALSETTINGS
+        MENUITEM "環境設定(&C)...",                 ID_FILE_GENERALSETTINGS
         MENUITEM SEPARATOR
-        POPUP "&Recent Files"
+        POPUP "最近のファイル(&R)"
         BEGIN
-            MENUITEM "&Clear",                      ID_RECENTFILES_CLEAR
+            MENUITEM "履歴をクリア(&C)",                  ID_RECENTFILES_CLEAR
             MENUITEM SEPARATOR
-            MENUITEM "(File)",                      ID_FILE_MRU_FILE1
+            MENUITEM "(ファイル履歴)",                    ID_FILE_MRU_FILE1
         END
         MENUITEM SEPARATOR
-        MENUITEM "E&xit\tAlt+F4",               ID_APP_EXIT
+        MENUITEM "終了(&X)\tAlt+F4",              ID_APP_EXIT
     END
-    POPUP "&Edit"
+    POPUP "編集(&E)"
     BEGIN
-        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
-        MENUITEM "&Redo\tCtrl+Y",               ID_EDIT_REDO
+        MENUITEM "元に戻す(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM "やり直し(&R)\tCtrl+Y",            ID_EDIT_REDO
         MENUITEM SEPARATOR
-        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
-        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
-        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
-        POPUP "Paste Specia&l"
+        MENUITEM "切り取り(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "コピー(&C)\tCtrl+C",             ID_EDIT_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",            ID_EDIT_PASTE
+        POPUP "特殊貼り付け(&L)"
         BEGIN
-            MENUITEM "&Mix",                        ID_EDIT_PASTEMIX
-            MENUITEM "&Overwrite",                  ID_EDIT_PASTEOVERWRITE
-            MENUITEM "&Insert",                     ID_EDIT_PASTEINSERT
+            MENUITEM "ミックス貼り付け(&M)",                ID_EDIT_PASTEMIX
+            MENUITEM "上書き貼り付け(&O)",                 ID_EDIT_PASTEOVERWRITE
+            MENUITEM "挿入貼り付け(&I)",                  ID_EDIT_PASTEINSERT
             MENUITEM SEPARATOR
-            MENUITEM "&Cursor",                     ID_PASTESPECIAL_CURSOR, CHECKED
-            MENUITEM "&Selection",                  ID_PASTESPECIAL_SELECTION
-            MENUITEM "&Fill",                       ID_PASTESPECIAL_FILL
+            MENUITEM "カーソル位置へ貼り付け(&C)",             ID_PASTESPECIAL_CURSOR, CHECKED
+            MENUITEM "選択範囲へ貼り付け(&S)",               ID_PASTESPECIAL_SELECTION
+            MENUITEM "選択範囲へループ貼り付け(&F)",            ID_PASTESPECIAL_FILL
         END
-        MENUITEM "&Delete\tDel",                ID_EDIT_DELETE
+        MENUITEM "削除(&D)\tDel",                 ID_EDIT_DELETE
         MENUITEM SEPARATOR
-        POPUP "Copy &As"
+        POPUP "特殊コピー(&A)"
         BEGIN
-            MENUITEM "&Volume Sequence",            ID_COPYAS_VOLUMESEQUENCE
-            MENUITEM "&Plain Text",                 ID_COPYAS_TEXT
-            MENUITEM "PPMCK &MML Data",             ID_COPYAS_PPMCK
-        END
-        MENUITEM SEPARATOR
-        POPUP "&Select"
-        BEGIN
-            MENUITEM "&All\tCtrl+A",                ID_EDIT_SELECTALL
-            MENUITEM "&None",                       ID_SELECT_NONE
-            MENUITEM SEPARATOR
-            MENUITEM "&Row",                        ID_SELECT_ROW
-            MENUITEM "&Column",                     ID_SELECT_COLUMN
-            MENUITEM SEPARATOR
-            MENUITEM "&Pattern",                    ID_SELECT_PATTERN
-            MENUITEM "&Frame",                      ID_SELECT_FRAME
-            MENUITEM "&Track",                      ID_SELECT_CHANNEL
-            MENUITEM "&Song",                       ID_SELECT_TRACK
-            MENUITEM SEPARATOR
-            MENUITEM "In &Other Editor",            ID_SELECT_OTHER
+            MENUITEM "音量シーケンスとしてコピー(&V)",           ID_COPYAS_VOLUMESEQUENCE
+            MENUITEM "プレーンテキストとしてコピー(&P)",          ID_COPYAS_TEXT
+            MENUITEM "PPMCK MML データとしてコピー(&M)",     ID_COPYAS_PPMCK
         END
         MENUITEM SEPARATOR
-        POPUP "&Find / Replace"
+        POPUP "選択(&S)"
         BEGIN
-            MENUITEM "&Toggle Tab",                 ID_EDIT_FIND_TOGGLE
+            MENUITEM "全て選択(&A)\tCtrl+A",            ID_EDIT_SELECTALL
+            MENUITEM "選択解除(&N)",                    ID_SELECT_NONE
             MENUITEM SEPARATOR
-            MENUITEM "Find &Next",                  ID_FIND_NEXT
-            MENUITEM "Find &Previous",              ID_FIND_PREVIOUS
+            MENUITEM "行を選択(&R)",                    ID_SELECT_ROW
+            MENUITEM "カラムを選択(&C)",                  ID_SELECT_COLUMN
+            MENUITEM SEPARATOR
+            MENUITEM "パターンを選択(&P)",                 ID_SELECT_PATTERN
+            MENUITEM "フレームを選択(&F)",                 ID_SELECT_FRAME
+            MENUITEM "トラックを選択(&T)",                 ID_SELECT_CHANNEL
+            MENUITEM "楽曲を選択(&S)",                   ID_SELECT_TRACK
+            MENUITEM SEPARATOR
+            MENUITEM "エディタのフォーカスを切り替え(&O)",         ID_SELECT_OTHER
         END
-        MENUITEM "&Go To...",                   ID_EDIT_GOTO
-        POPUP "&Bookmarks"
+        MENUITEM SEPARATOR
+        POPUP "検索/置換(&F)"
         BEGIN
-            MENUITEM "&Toggle Bookmark",            ID_BOOKMARKS_TOGGLE
-            MENUITEM "&Next Bookmark",              ID_BOOKMARKS_NEXT
-            MENUITEM "&Previous Bookmark",          ID_BOOKMARKS_PREVIOUS
+            MENUITEM "検索タブの表示(&T)",                 ID_EDIT_FIND_TOGGLE
+            MENUITEM SEPARATOR
+            MENUITEM "次を検索(&N)",                    ID_FIND_NEXT
+            MENUITEM "前を検索(&P)",                    ID_FIND_PREVIOUS
+        END
+        MENUITEM "移動(&G)...",                   ID_EDIT_GOTO
+        POPUP "ブックマーク(&B)"
+        BEGIN
+            MENUITEM "ブックマークの切り替え(&T)",             ID_BOOKMARKS_TOGGLE
+            MENUITEM "次のブックマークへ(&N)",               ID_BOOKMARKS_NEXT
+            MENUITEM "前のブックマークへ(&P)",               ID_BOOKMARKS_PREVIOUS
         END
         MENUITEM SEPARATOR
-        MENUITEM "&Instrument Mask",            ID_EDIT_INSTRUMENTMASK
-        MENUITEM "&Volume Mask",                ID_EDIT_VOLUMEMASK, CHECKED
-        MENUITEM "Split Keyboard...",           ID_EDIT_SPLITKEYBOARD
+        MENUITEM "音色マスク(&I)",                   ID_EDIT_INSTRUMENTMASK
+        MENUITEM "音量マスク(&V)",                   ID_EDIT_VOLUMEMASK, CHECKED
+        MENUITEM "キーボードの分割...",                 ID_EDIT_SPLITKEYBOARD
         MENUITEM SEPARATOR
-        MENUITEM "Enable &MIDI",                ID_EDIT_ENABLEMIDI
+        MENUITEM "MIDI デバイスの有効化(&M)",           ID_EDIT_ENABLEMIDI
     END
-    POPUP "&Pattern"
+    POPUP "パターン(&P)"
     BEGIN
-        MENUITEM "&Interpolate",                ID_EDIT_INTERPOLATE
-        MENUITEM "&Reverse",                    ID_EDIT_REVERSE
-        MENUITEM "R&eplace Instrument",         ID_EDIT_REPLACEINSTRUMENT
+        MENUITEM "数値の補間(&I)",                   ID_EDIT_INTERPOLATE
+        MENUITEM "内容の反転(&R)",                   ID_EDIT_REVERSE
+        MENUITEM "音色の置換(&E)",                   ID_EDIT_REPLACEINSTRUMENT
         MENUITEM SEPARATOR
-        MENUITEM "E&xpand",                     ID_EDIT_EXPANDPATTERNS
-        MENUITEM "S&hrink",                     ID_EDIT_SHRINKPATTERNS
-        MENUITEM "&Stretch...",                 ID_EDIT_STRETCHPATTERNS
+        MENUITEM "間隔を 2 倍に(&X)",                ID_EDIT_EXPANDPATTERNS
+        MENUITEM "間隔を半分に(&H)",                  ID_EDIT_SHRINKPATTERNS
+        MENUITEM "間隔の編集(&S)...",                ID_EDIT_STRETCHPATTERNS
         MENUITEM SEPARATOR
-        POPUP "&Transpose"
+        POPUP "トランスポーズ(&T)"
         BEGIN
-            MENUITEM "&Decrease Note",              ID_TRANSPOSE_DECREASENOTE
-            MENUITEM "&Increase Note",              ID_TRANSPOSE_INCREASENOTE
-            MENUITEM "D&ecrease Octave",            ID_TRANSPOSE_DECREASEOCTAVE
-            MENUITEM "I&ncrease Octave",            ID_TRANSPOSE_INCREASEOCTAVE
-        END
-    END
-    POPUP "&Song"
-    BEGIN
-        MENUITEM "&Insert Frame",               ID_MODULE_INSERTFRAME
-        MENUITEM "&Remove Frame",               ID_MODULE_REMOVEFRAME
-        MENUITEM "&Duplicate Frame",            ID_MODULE_DUPLICATEFRAME
-        MENUITEM "Move Frame &Up",              ID_MODULE_MOVEFRAMEUP
-        MENUITEM "Move Frame Do&wn",            ID_MODULE_MOVEFRAMEDOWN
-        MENUITEM SEPARATOR
-        MENUITEM "&Clone Patterns",             ID_MODULE_DUPLICATECURRENTPATTERN
-        MENUITEM "Clone &Frame",                ID_MODULE_DUPLICATEFRAMEPATTERNS
-        MENUITEM SEPARATOR
-        MENUITEM "C&lear Patterns",             ID_EDIT_CLEARPATTERNS
-        MENUITEM "&Merge Duplicated Patterns",  ID_CLEANUP_MERGEDUPLICATEDPATTERNS
-        MENUITEM "Populate Uni&que Patterns",   ID_CLEANUP_POPULATEUNIQUEPATTERNS
-        MENUITEM SEPARATOR
-        MENUITEM "&Transpose Song...",          ID_TRANSPOSE_CUSTOM
-        MENUITEM "&Swap Tracks...",             ID_EDIT_SWAPCHANNELS
-        MENUITEM SEPARATOR
-        MENUITEM "&Estimate Song Length",       ID_MODULE_ESTIMATESONGLENGTH
-    END
-    POPUP "&Module"
-    BEGIN
-        MENUITEM "&Module Properties...\tCtrl+P", ID_MODULE_MODULEPROPERTIES
-        MENUITEM "&Comments...",                ID_MODULE_COMMENTS
-        POPUP "&Region"
-        BEGIN
-            MENUITEM "&NTSC",                       ID_TRACKER_NTSC
-            MENUITEM "&PAL",                        ID_TRACKER_PAL
-        END
-        POPUP "&Engine Speed"
-        BEGIN
-            MENUITEM "&Default",                    ID_SPEED_DEFAULT
-            MENUITEM "&Custom...",                  ID_SPEED_CUSTOM
-        END
-        MENUITEM SEPARATOR
-        MENUITEM "&Detune Settings...",         ID_MODULE_DETUNE
-        MENUITEM "&Groove Settings",            ID_MODULE_GROOVE
-        MENUITEM "&Bookmark Manager",           ID_MODULE_BOOKMARK
-        MENUITEM "&Tracks...",                  ID_MODULE_CHANNELS
-        MENUITEM SEPARATOR
-        POPUP "Clean&up"
-        BEGIN
-            MENUITEM "Remove Unused &Instruments",  ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS
-            MENUITEM "Remove Unused &DPCM Samples", ID_CLEANUP_REMOVEUNUSEDDPCMSAMPLES
-            MENUITEM "Remove Unused &Patterns",     ID_CLEANUP_REMOVEUNUSEDPATTERNS
+            MENUITEM "半音下げる(&D)",                   ID_TRANSPOSE_DECREASENOTE
+            MENUITEM "半音上げる(&I)",                   ID_TRANSPOSE_INCREASENOTE
+            MENUITEM "1 オクターブ下げる(&E)",              ID_TRANSPOSE_DECREASEOCTAVE
+            MENUITEM "1 オクターブ上げる(&N)",              ID_TRANSPOSE_INCREASEOCTAVE
         END
     END
-    POPUP "&Instrument"
+    POPUP "楽曲(&S)"
     BEGIN
-        MENUITEM "&New Instrument",             ID_INSTRUMENT_NEW
-        MENUITEM "&Remove Instrument",          ID_INSTRUMENT_REMOVE
-        MENUITEM "&Clone Instrument",           ID_INSTRUMENT_CLONE
-        MENUITEM "&Deep Clone Instrument",      ID_INSTRUMENT_DEEPCLONE
+        MENUITEM "フレームの挿入(&I)",                 ID_MODULE_INSERTFRAME
+        MENUITEM "フレームの削除(&R)",                 ID_MODULE_REMOVEFRAME
+        MENUITEM "フレームをそのまま複製(&D)",             ID_MODULE_DUPLICATEFRAME
+        MENUITEM "フレームを上に移動(&U)",               ID_MODULE_MOVEFRAMEUP
+        MENUITEM "フレームを下に移動(&W)",               ID_MODULE_MOVEFRAMEDOWN
         MENUITEM SEPARATOR
-        MENUITEM "&Load From File...",          ID_INSTRUMENT_LOAD
-        MENUITEM "&Save To File...",            ID_INSTRUMENT_SAVE
+        MENUITEM "パターンを新規パターン番号に複製(&C)",        ID_MODULE_DUPLICATECURRENTPATTERN
+        MENUITEM "フレームをパターンごと複製(&F)",           ID_MODULE_DUPLICATEFRAMEPATTERNS
         MENUITEM SEPARATOR
-        MENUITEM "&Edit\tCtrl+I",               ID_INSTRUMENT_EDIT
+        MENUITEM "パターンの完全削除(&L)",               ID_EDIT_CLEARPATTERNS
+        MENUITEM "重複パターンの統合(&M)",               ID_CLEANUP_MERGEDUPLICATEDPATTERNS
+        MENUITEM "全パターンを全フレームに定着(&Q)",          ID_CLEANUP_POPULATEUNIQUEPATTERNS
+        MENUITEM SEPARATOR
+        MENUITEM "楽曲のトランスポーズ(&T)...",           ID_TRANSPOSE_CUSTOM
+        MENUITEM "トラックの入れ替え(&S)...",            ID_EDIT_SWAPCHANNELS
+        MENUITEM SEPARATOR
+        MENUITEM "楽曲の長さを算出(&E)",                ID_MODULE_ESTIMATESONGLENGTH
     END
-    POPUP "T&racker"
+    POPUP "モジュール(&M)"
     BEGIN
-        MENUITEM "&Play",                       ID_TRACKER_PLAY
-        MENUITEM "Play P&attern",               ID_TRACKER_PLAYPATTERN
-        MENUITEM "Play &From Start",            ID_TRACKER_PLAY_START
-        MENUITEM "Play From C&ursor",           ID_TRACKER_PLAY_CURSOR
-        MENUITEM "Play From &Marker",           ID_TRACKER_PLAY_MARKER
-        MENUITEM "&Stop",                       ID_TRACKER_STOP
+        MENUITEM "モジュールのプロパティ(&M)...\tCtrl+P",  ID_MODULE_MODULEPROPERTIES
+        MENUITEM "コメント(&C)...",                 ID_MODULE_COMMENTS
+        POPUP "地域フォーマット(&R)"
+        BEGIN
+            MENUITEM "NTSC(&N)",                    ID_TRACKER_NTSC
+            MENUITEM "PAL(&P)",                     ID_TRACKER_PAL
+        END
+        POPUP "エンジンスピード(&E)"
+        BEGIN
+            MENUITEM "デフォルト(&D)",                   ID_SPEED_DEFAULT
+            MENUITEM "カスタム(&C)...",                 ID_SPEED_CUSTOM
+        END
         MENUITEM SEPARATOR
-        MENUITEM "Toggle &Edit Mode",           ID_TRACKER_EDIT
-        MENUITEM "Set Ro&w Marker",             ID_TRACKER_SET_MARKER
+        MENUITEM "デチューン設定(&D)...",              ID_MODULE_DETUNE
+        MENUITEM "グルーヴ設定(&G)",                  ID_MODULE_GROOVE
+        MENUITEM "ブックマークの管理(&B)",               ID_MODULE_BOOKMARK
+        MENUITEM "トラック(&T)...",                 ID_MODULE_CHANNELS
         MENUITEM SEPARATOR
-        MENUITEM "&Toggle Track",               ID_TRACKER_TOGGLECHANNEL
-        MENUITEM "S&olo Track",                 ID_TRACKER_SOLOCHANNEL
-        MENUITEM "To&ggle Chip",                ID_TRACKER_TOGGLECHIP
-        MENUITEM "So&lo Chip",                  ID_TRACKER_SOLOCHIP
+        POPUP "整理(&U)"
+        BEGIN
+            MENUITEM "使われていない音色の削除(&I)",            ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS
+            MENUITEM "使われていない DPCM サンプルの削除(&D)",    ID_CLEANUP_REMOVEUNUSEDDPCMSAMPLES
+            MENUITEM "使われていないパターンの削除(&P)",          ID_CLEANUP_REMOVEUNUSEDPATTERNS
+        END
+    END
+    POPUP "音色(&I)"
+    BEGIN
+        MENUITEM "音色の新規作成(&N)",                 ID_INSTRUMENT_NEW
+        MENUITEM "音色の削除(&R)",                   ID_INSTRUMENT_REMOVE
+        MENUITEM "音色の複製(&C)",                   ID_INSTRUMENT_CLONE
+        MENUITEM "音色とシーケンスの複製 (&D)",            ID_INSTRUMENT_DEEPCLONE
         MENUITEM SEPARATOR
-        MENUITEM "Switch To Track &Instrument", ID_TRACKER_SWITCHTOTRACKINSTRUMENT
+        MENUITEM "音色ファイルの読み込み(&L)...",          ID_INSTRUMENT_LOAD
+        MENUITEM "音色ファイルの保存(&S)...",            ID_INSTRUMENT_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "音色の編集(&E)\tCtrl+I",           ID_INSTRUMENT_EDIT
+    END
+    POPUP "トラッカー(&R)"
+    BEGIN
+        MENUITEM "再生(&P)",                      ID_TRACKER_PLAY
+        MENUITEM "パターンを再生(&A)",                 ID_TRACKER_PLAYPATTERN
+        MENUITEM "最初から再生(&F)",                  ID_TRACKER_PLAY_START
+        MENUITEM "カーソル位置から再生(&U)",              ID_TRACKER_PLAY_CURSOR
+        MENUITEM "マーカーから再生(&M)",                ID_TRACKER_PLAY_MARKER
+        MENUITEM "停止(&S)",                      ID_TRACKER_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "編集(&E)",                      ID_TRACKER_EDIT
+        MENUITEM "行マーカーを設定(&W)",                ID_TRACKER_SET_MARKER
+        MENUITEM SEPARATOR
+        MENUITEM "トラックをミュート(&T)",               ID_TRACKER_TOGGLECHANNEL
+        MENUITEM "トラックをソロ(&O)",                 ID_TRACKER_SOLOCHANNEL
+        MENUITEM "音源をミュート(&G)",                 ID_TRACKER_TOGGLECHIP
+        MENUITEM "音源をソロ(&L)",                   ID_TRACKER_SOLOCHIP
+        MENUITEM SEPARATOR
+        MENUITEM "再生時に音色追従(&I)",                ID_TRACKER_SWITCHTOTRACKINSTRUMENT
         MENUITEM "&Record To Instrument",       ID_TRACKER_RECORDTOINST
         MENUITEM "Re&corder Settings...",       ID_TRACKER_RECORDERSETTINGS
         MENUITEM SEPARATOR
-        MENUITEM "&Kill Sound\tF12",            ID_TRACKER_KILLSOUND
+        MENUITEM "キルサウンド(&K)\tF12",             ID_TRACKER_KILLSOUND
     END
-    POPUP "&View"
+    POPUP "表示(&V)"
     BEGIN
-        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
-        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
-        MENUITEM "&Control Panel",              ID_VIEW_CONTROLPANEL
+        MENUITEM "ツールバー(&T)",                   ID_VIEW_TOOLBAR
+        MENUITEM "ステータスバー(&S)",                 ID_VIEW_STATUS_BAR
+        MENUITEM "コントロールパネル(&C)",               ID_VIEW_CONTROLPANEL
         MENUITEM SEPARATOR
-        MENUITEM "&Follow Mode",                IDC_FOLLOW_TOGGLE, CHECKED
-        MENUITEM "Co&mpact View",               IDC_COMPACT_TOGGLE
-        POPUP "Meter &Decay Rate"
+        MENUITEM "自動スクロール(&F)",                 IDC_FOLLOW_TOGGLE, CHECKED
+        MENUITEM "圧縮表示(&M)",                    IDC_COMPACT_TOGGLE
+        POPUP "メーター減衰速度(&D)"
         BEGIN
-            MENUITEM "&Slow",                       ID_DECAY_SLOW
-            MENUITEM "&Fast",                       ID_DECAY_FAST
+            MENUITEM "遅く(&S)",                      ID_DECAY_SLOW
+            MENUITEM "早く(&F)",                      ID_DECAY_FAST
         END
         MENUITEM SEPARATOR
-        MENUITEM "Average &BPM",                ID_VIEW_AVERAGEBPM
-        MENUITEM "Trac&k State",                ID_VIEW_CHANNELSTATE
-        MENUITEM "&Register State",             ID_TRACKER_DISPLAYREGISTERSTATE
+        MENUITEM "平均 BPM(&B)",                  ID_VIEW_AVERAGEBPM
+        MENUITEM "トラック状態(&K) [※未実装]",           ID_VIEW_CHANNELSTATE
+        MENUITEM "レジスタ状態(&R)",                  ID_TRACKER_DISPLAYREGISTERSTATE
         MENUITEM SEPARATOR
-        POPUP "Frame Editor &Position"
+        POPUP "フレームエディタの位置(&P)"
         BEGIN
-            MENUITEM "&Top",                        ID_FRAMEEDITOR_TOP, CHECKED
-            MENUITEM "&Left",                       ID_FRAMEEDITOR_LEFT
+            MENUITEM "上(&T)",                       ID_FRAMEEDITOR_TOP, CHECKED
+            MENUITEM "左(&L)",                       ID_FRAMEEDITOR_LEFT
         END
     END
-    POPUP "&Help"
+    POPUP "ヘルプ(&H)"
     BEGIN
-        MENUITEM "&Help Topics\tF1",            ID_HELP_FINDER
-        MENUITEM "&Effect Table",               ID_HELP_EFFECTTABLE
-        MENUITEM "&FAQ",                        ID_HELP_FAQ
+        MENUITEM "ヘルプの表示(&H) [※未実装]\tF1",       ID_HELP_FINDER
+        MENUITEM "エフェクトについて(&E) [※未実装]",        ID_HELP_EFFECTTABLE
+        MENUITEM "よくある質問(&F) [※未実装]",           ID_HELP_FAQ
         MENUITEM SEPARATOR
-        MENUITEM "&Performance",                ID_HELP_PERFORMANCE
+        MENUITEM "パフォーマンス(&P)",                 ID_HELP_PERFORMANCE
         MENUITEM SEPARATOR
-        MENUITEM "&About 0CC-FamiTracker...",   ID_APP_ABOUT
+        MENUITEM "0CC-FamiTracker について(&A)...", ID_APP_ABOUT
     END
 END
 
@@ -339,40 +338,40 @@ IDR_PATTERN_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
-        MENUITEM "&Redo\tCtrl+Y",               ID_EDIT_REDO
+        MENUITEM "元に戻す(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM "やり直し(&R)\tCtrl+Y",            ID_EDIT_REDO
         MENUITEM SEPARATOR
-        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
-        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
-        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
-        MENUITEM "&Delete\tDel",                ID_EDIT_DELETE
-        MENUITEM "Select &All\tCtrl+A",         ID_EDIT_SELECTALL
+        MENUITEM "切り取り(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "コピー(&C)\tCtrl+C",             ID_EDIT_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",            ID_EDIT_PASTE
+        MENUITEM "削除(&D)\tDel",                 ID_EDIT_DELETE
+        MENUITEM "全て選択(&A)\tCtrl+A",            ID_EDIT_SELECTALL
         MENUITEM SEPARATOR
-        POPUP "Patter&n"
+        POPUP "パターン(&N)"
         BEGIN
-            MENUITEM "&Interpolate",                ID_EDIT_INTERPOLATE
-            MENUITEM "&Reverse",                    ID_EDIT_REVERSE
-            MENUITEM "R&eplace Instrument",         ID_EDIT_REPLACEINSTRUMENT
+            MENUITEM "数値の補間(&I)",                   ID_EDIT_INTERPOLATE
+            MENUITEM "反転(&R)",                      ID_EDIT_REVERSE
+            MENUITEM "音色を置き換える(&E)",                ID_EDIT_REPLACEINSTRUMENT
             MENUITEM SEPARATOR
-            MENUITEM "E&xpand",                     ID_EDIT_EXPANDPATTERNS
-            MENUITEM "S&hrink",                     ID_EDIT_SHRINKPATTERNS
-            MENUITEM "&Stretch...",                 ID_EDIT_STRETCHPATTERNS
+            MENUITEM "間隔を 2 倍に(&X)",                ID_EDIT_EXPANDPATTERNS
+            MENUITEM "間隔を半分に(&H)",                  ID_EDIT_SHRINKPATTERNS
+            MENUITEM "間隔を編集(&S)...",                ID_EDIT_STRETCHPATTERNS
             MENUITEM SEPARATOR
-            POPUP "&Transpose"
+            POPUP "トランスポーズ(&T)"
             BEGIN
-                MENUITEM "&Decrease Note",              ID_TRANSPOSE_DECREASENOTE
-                MENUITEM "&Increase Note",              ID_TRANSPOSE_INCREASENOTE
-                MENUITEM "D&ecrease Octave",            ID_TRANSPOSE_DECREASEOCTAVE
-                MENUITEM "I&ncrease Octave",            ID_TRANSPOSE_INCREASEOCTAVE
+                MENUITEM "半音下げる(&D)",                   ID_TRANSPOSE_DECREASENOTE
+                MENUITEM "半音上げる(&I)",                   ID_TRANSPOSE_INCREASENOTE
+                MENUITEM "1 オクターブ下げる(&E)",              ID_TRANSPOSE_DECREASEOCTAVE
+                MENUITEM "1 オクターブ上げる(&N)",              ID_TRANSPOSE_INCREASEOCTAVE
             END
         END
         MENUITEM SEPARATOR
-        MENUITEM "Pic&k Up Row",                ID_POPUP_PICKUPROW
+        MENUITEM "行の設定を取得(&K)",                 ID_POPUP_PICKUPROW
         MENUITEM SEPARATOR
-        MENUITEM "T&oggle Track",               ID_TRACKER_TOGGLECHANNEL
-        MENUITEM "&Solo Track",                 ID_TRACKER_SOLOCHANNEL
-        MENUITEM "To&ggle Chip",                ID_TRACKER_TOGGLECHIP
-        MENUITEM "So&lo Chip",                  ID_TRACKER_SOLOCHIP
+        MENUITEM "トラックをミュート(&O)",               ID_TRACKER_TOGGLECHANNEL
+        MENUITEM "トラックをソロ(&S)",                 ID_TRACKER_SOLOCHANNEL
+        MENUITEM "音源をミュート(&G)",                 ID_TRACKER_TOGGLECHIP
+        MENUITEM "音源をソロ(&L)",                   ID_TRACKER_SOLOCHIP
     END
 END
 
@@ -380,21 +379,21 @@ IDR_FRAME_POPUP MENU
 BEGIN
     POPUP "Frame"
     BEGIN
-        MENUITEM "&Insert Frame",               ID_MODULE_INSERTFRAME
-        MENUITEM "&Remove Frame",               ID_MODULE_REMOVEFRAME
-        MENUITEM "Duplicate &Frame",            ID_MODULE_DUPLICATEFRAME
-        MENUITEM "Clone Pattern",               ID_MODULE_DUPLICATECURRENTPATTERN
-        MENUITEM "D&uplicate Patterns",         ID_MODULE_DUPLICATEFRAMEPATTERNS
+        MENUITEM "フレームの挿入(&I)",                 ID_MODULE_INSERTFRAME
+        MENUITEM "フレームの削除(&R)",                 ID_MODULE_REMOVEFRAME
+        MENUITEM "フレームをそのまま複製(&F)",             ID_MODULE_DUPLICATEFRAME
+        MENUITEM "パターンを新規パターン番号に複製",            ID_MODULE_DUPLICATECURRENTPATTERN
+        MENUITEM "フレームをパターンごと複製(&U)",           ID_MODULE_DUPLICATEFRAMEPATTERNS
         MENUITEM SEPARATOR
-        MENUITEM "Move &Up",                    ID_MODULE_MOVEFRAMEUP
-        MENUITEM "Move D&own",                  ID_MODULE_MOVEFRAMEDOWN
+        MENUITEM "上に移動(&U)",                    ID_MODULE_MOVEFRAMEUP
+        MENUITEM "下に移動(&O)",                    ID_MODULE_MOVEFRAMEDOWN
         MENUITEM SEPARATOR
-        MENUITEM "Cu&t\tCtrl+X",                ID_FRAME_CUT
-        MENUITEM "&Copy\tCtrl+C",               ID_FRAME_COPY
-        MENUITEM "&Paste\tCtrl+V",              ID_FRAME_PASTE
-        MENUITEM "Paste && &Overwrite",         ID_FRAME_PASTEOVERWRITE
-        MENUITEM "Paste && Duplicate",          ID_FRAME_PASTENEWPATTERNS
-        MENUITEM "&Delete\tDel",                ID_FRAME_DELETE
+        MENUITEM "切り取り(&T)\tCtrl+X",            ID_FRAME_CUT
+        MENUITEM "コピー(&C)\tCtrl+C",             ID_FRAME_COPY
+        MENUITEM "貼り付け(&P)\tCtrl+V",            ID_FRAME_PASTE
+        MENUITEM "上書き貼り付け(&O)",                 ID_FRAME_PASTEOVERWRITE
+        MENUITEM "複製貼り付け",                      ID_FRAME_PASTENEWPATTERNS
+        MENUITEM "削除(&D)\tDel",                 ID_FRAME_DELETE
     END
 END
 
@@ -402,16 +401,16 @@ IDR_INSTRUMENT_POPUP MENU
 BEGIN
     POPUP "Instrument"
     BEGIN
-        MENUITEM "Add",                         ID_INSTRUMENT_NEW
-        MENUITEM "Remove",                      ID_INSTRUMENT_REMOVE
+        MENUITEM "追加",                          ID_INSTRUMENT_NEW
+        MENUITEM "削除",                          ID_INSTRUMENT_REMOVE
         MENUITEM SEPARATOR
-        MENUITEM "&Load From File...",          ID_INSTRUMENT_LOAD
-        MENUITEM "&Save To File...",            ID_INSTRUMENT_SAVE
+        MENUITEM "音色ファイルの読み込み(&L)...",          ID_INSTRUMENT_LOAD
+        MENUITEM "音色ファイルの保存(&S)...",            ID_INSTRUMENT_SAVE
         MENUITEM SEPARATOR
-        MENUITEM "Clone Instrument",            ID_INSTRUMENT_CLONE
-        MENUITEM "Deep Clone Instrument",       ID_INSTRUMENT_DEEPCLONE
+        MENUITEM "音色の複製",                       ID_INSTRUMENT_CLONE
+        MENUITEM "音色とシーケンスの複製",                 ID_INSTRUMENT_DEEPCLONE
         MENUITEM SEPARATOR
-        MENUITEM "Edit",                        ID_INSTRUMENT_EDIT
+        MENUITEM "編集",                          ID_INSTRUMENT_EDIT
     END
 END
 
@@ -419,14 +418,14 @@ IDR_SAMPLES_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "Preview",                     IDC_PREVIEW
+        MENUITEM "プレビュー",                       IDC_PREVIEW
         MENUITEM SEPARATOR
-        MENUITEM "Edit",                        IDC_EDIT
+        MENUITEM "編集",                          IDC_EDIT
         MENUITEM SEPARATOR
-        MENUITEM "Unload",                      IDC_UNLOAD
-        MENUITEM "Save",                        IDC_SAVE
-        MENUITEM "Load",                        IDC_LOAD
-        MENUITEM "Import",                      IDC_IMPORT
+        MENUITEM "除去",                          IDC_UNLOAD
+        MENUITEM "保存",                          IDC_SAVE
+        MENUITEM "読み込み",                        IDC_LOAD
+        MENUITEM "Wave 取り込み",                   IDC_IMPORT
     END
 END
 
@@ -434,11 +433,11 @@ IDR_SAMPLE_WND_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "Oscilloscope",                ID_POPUP_SAMPLESCOPE1
-        MENUITEM "Oscilloscope (Blur)",         ID_POPUP_SAMPLESCOPE2
-        MENUITEM "Spectrogram",                 ID_POPUP_SPECTRUMANALYZER
-        MENUITEM "Spectrogram (Fine)",          ID_POPUP_SPECTRUMANALYZER2
-        MENUITEM "Logo",                        ID_POPUP_NOTHING
+        MENUITEM "オシロスコープ",                     ID_POPUP_SAMPLESCOPE1
+        MENUITEM "オシロスコープ (ブラー)",               ID_POPUP_SAMPLESCOPE2
+        MENUITEM "スペクトログラム",                    ID_POPUP_SPECTRUMANALYZER
+        MENUITEM "スペクトログラム (詳細)",               ID_POPUP_SPECTRUMANALYZER2
+        MENUITEM "ロゴ",                          ID_POPUP_NOTHING
     END
 END
 
@@ -446,16 +445,16 @@ IDR_PATTERN_HEADER_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "&Toggle Track",               ID_TRACKER_TOGGLECHANNEL
-        MENUITEM "&Solo Track",                 ID_TRACKER_SOLOCHANNEL
-        MENUITEM "To&ggle Chip",                ID_TRACKER_TOGGLECHIP
-        MENUITEM "So&lo Chip",                  ID_TRACKER_SOLOCHIP
-        MENUITEM "&Unmute All Tracks",          ID_POPUP_UNMUTEALLCHANNELS
+        MENUITEM "トラックをミュート(&T)",               ID_TRACKER_TOGGLECHANNEL
+        MENUITEM "トラックをソロ(&S)",                 ID_TRACKER_SOLOCHANNEL
+        MENUITEM "音源をミュート(&G)",                 ID_TRACKER_TOGGLECHIP
+        MENUITEM "音源をソロ(&L)",                   ID_TRACKER_SOLOCHIP
+        MENUITEM "全トラックのミュートを解除(&U)",           ID_POPUP_UNMUTEALLCHANNELS
         MENUITEM SEPARATOR
-        POPUP "&Meter Decay Rate"
+        POPUP "メーター減衰速度(&M)"
         BEGIN
-            MENUITEM "&Slow",                       ID_DECAY_SLOW
-            MENUITEM "&Fast",                       ID_DECAY_FAST
+            MENUITEM "遅い(&S)",                      ID_DECAY_SLOW
+            MENUITEM "早い(&F)",                      ID_DECAY_FAST
         END
         MENUITEM SEPARATOR
         MENUITEM "&Record To Instrument",       ID_TRACKER_RECORDTOINST
@@ -467,10 +466,10 @@ IDR_SAMPLE_EDITOR_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "Play\tP",                     IDC_PLAY
+        MENUITEM "再生\tP",                       IDC_PLAY
         MENUITEM SEPARATOR
-        MENUITEM "Delete\tDel",                 IDC_DELETE
-        MENUITEM "Tilt",                        IDC_TILT
+        MENUITEM "削除\tDel",                     IDC_DELETE
+        MENUITEM "傾斜化",                         IDC_TILT
     END
 END
 
@@ -478,7 +477,7 @@ IDR_SEQUENCE_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
-        MENUITEM "&Clone Sequence",             ID_CLONE_SEQUENCE
+        MENUITEM "シーケンスを複製(&C)",                ID_CLONE_SEQUENCE
     END
 END
 
@@ -537,9 +536,9 @@ VS_VERSION_INFO VERSIONINFO
  PRODUCTVERSION 0,3,15,3
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
- FILEFLAGS 0x1L
+ FILEFLAGS 0xdL
 #else
- FILEFLAGS 0x0L
+ FILEFLAGS 0xcL
 #endif
  FILEOS 0x4L
  FILETYPE 0x1L
@@ -547,21 +546,22 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "040904e4"
+        BLOCK "041104b0"
         BEGIN
-            VALUE "CompanyName", "HertzDevil"
-            VALUE "FileDescription", "0CC-FamiTracker, Extension of FamiTracker"
-            VALUE "FileVersion", "0.3.15.3"
+            VALUE "CompanyName", "HertzDevil, Phroneris"
+            VALUE "FileDescription", "0CC-FamiTracker を日本語化してみたやつ"
+            VALUE "FileVersion", "0.3.15.3-JP001"
             VALUE "InternalName", "0CC-FamiTracker.exe"
-            VALUE "LegalCopyright", " (c) jsr, HertzDevil 2005-2018 All rights reserved."
+            VALUE "LegalCopyright", " (c) jsr, HertzDevil, Phroneris 2005-2019 All rights reserved."
             VALUE "OriginalFilename", "0CC-FamiTracker.exe"
+            VALUE "PrivateBuild", "Phroneris（森の子リスのミーコの大冒険）が日本語化してビルドしてみたもの。README参照。"
             VALUE "ProductName", "0CC-FamiTracker"
-            VALUE "ProductVersion", "0.3.15.3"
+            VALUE "ProductVersion", "0.3.15.3-JP001"
         END
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0x409, 1252
+        VALUE "Translation", 0x411, 1200
     END
 END
 
@@ -591,7 +591,10 @@ BEGIN
     IDD_MAINFRAME, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 399
+        RIGHTMARGIN, 408
+        VERTGUIDE, 47
+        VERTGUIDE, 92
+        VERTGUIDE, 99
         TOPMARGIN, 5
         BOTTOMMARGIN, 121
     END
@@ -944,6 +947,8 @@ BEGIN
     BEGIN
         LEFTMARGIN, 8
         RIGHTMARGIN, 134
+        VERTGUIDE, 68
+        VERTGUIDE, 73
         TOPMARGIN, 9
         BOTTOMMARGIN, 256
     END
@@ -975,9 +980,11 @@ BEGIN
     IDD_SWAP, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 80
+        RIGHTMARGIN, 96
+        VERTGUIDE, 48
+        VERTGUIDE, 55
         TOPMARGIN, 7
-        BOTTOMMARGIN, 105
+        BOTTOMMARGIN, 104
     END
 
     IDD_RECORD_SETTINGS, DIALOG
@@ -1016,6 +1023,9 @@ BEGIN
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 128
+        VERTGUIDE, 57
+        VERTGUIDE, 60
+        VERTGUIDE, 120
         TOPMARGIN, 7
         BOTTOMMARGIN, 126
     END
@@ -1055,60 +1065,60 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,7,105,39,16,WS_GROUP
 END
 
-IDD_MAINFRAME DIALOGEX 0, 0, 405, 126
+IDD_MAINFRAME DIALOGEX 0, 0, 414, 126
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_TRANSPARENT | WS_EX_CONTROLPARENT
 FONT 8, "MS Shell Dlg", 400, 0, 0x0
 BEGIN
-    GROUPBOX        "Song settings",IDC_STATIC,7,5,78,71
-    EDITTEXT        IDC_SPEED,43,15,38,12,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
-    CONTROL         "",IDC_SPEED_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,81,15,11,13
-    EDITTEXT        IDC_TEMPO,43,29,38,12,ES_AUTOHSCROLL | ES_READONLY
-    CONTROL         "",IDC_TEMPO_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,81,28,11,13
-    LTEXT           "Rows",IDC_STATIC,13,45,29,10
-    EDITTEXT        IDC_ROWS,43,43,38,12,ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN
-    CONTROL         "",IDC_ROWS_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,81,43,11,13
-    LTEXT           "Frames",IDC_STATIC,13,59,29,10
-    EDITTEXT        IDC_FRAMES,43,57,38,12,ES_AUTOHSCROLL | ES_READONLY
-    CONTROL         "",IDC_FRAME_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,81,58,11,13
-    GROUPBOX        "Edit settings",IDC_STATIC,7,78,78,43,0,WS_EX_TRANSPARENT
-    LTEXT           "Step",IDC_STATIC,13,91,29,10,0,WS_EX_TRANSPARENT
-    EDITTEXT        IDC_KEYSTEP,43,90,38,12,ES_AUTOHSCROLL | ES_READONLY
-    CONTROL         "",IDC_KEYSTEP_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,81,88,11,13
-    CONTROL         "Key repetition",IDC_KEYREPEAT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,105,68,9,WS_EX_TRANSPARENT
-    GROUPBOX        "Module information",IDC_STATIC,91,5,124,61
-    EDITTEXT        IDC_SONG_NAME,97,18,111,12,ES_AUTOHSCROLL
-    EDITTEXT        IDC_SONG_ARTIST,97,33,111,12,ES_AUTOHSCROLL
-    EDITTEXT        IDC_SONG_COPYRIGHT,97,49,111,12,ES_AUTOHSCROLL
-    GROUPBOX        "Songs",IDC_STATIC,91,94,124,27
-    COMBOBOX        IDC_SUBTUNE,97,104,112,85,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "",IDC_INSTRUMENTS,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,221,5,178,97
-    EDITTEXT        IDC_INSTNAME,351,108,48,12,ES_AUTOHSCROLL
-    PUSHBUTTON      "Speed",IDC_BUTTON_GROOVE,12,14,30,13
-    PUSHBUTTON      "Tempo",IDC_BUTTON_FIXTEMPO,12,28,30,13
-    CONTROL         "",IDC_MAINFRAME_VISUALIZER,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,91,69,124,25
-    CONTROL         "",IDC_MAINFRAME_INST_TOOLBAR,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,221,106,124,16
+    GROUPBOX        "楽曲設定",IDC_STATIC,7,5,85,71
+    EDITTEXT        IDC_SPEED,51,15,38,12,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    CONTROL         "",IDC_SPEED_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,15,11,13
+    EDITTEXT        IDC_TEMPO,51,29,38,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_TEMPO_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,28,11,13
+    LTEXT           "行数",IDC_STATIC,13,45,29,10
+    EDITTEXT        IDC_ROWS,51,43,38,12,ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN
+    CONTROL         "",IDC_ROWS_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,43,11,13
+    LTEXT           "フレーム数",IDC_STATIC,13,59,38,10
+    EDITTEXT        IDC_FRAMES,51,57,38,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_FRAME_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,58,11,13
+    GROUPBOX        "編集設定",IDC_STATIC,7,78,85,43,0,WS_EX_TRANSPARENT
+    LTEXT           "ステップ",IDC_STATIC,13,91,29,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_KEYSTEP,51,90,38,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_KEYSTEP_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,88,11,13
+    CONTROL         "キーリピート",IDC_KEYREPEAT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,105,68,9,WS_EX_TRANSPARENT
+    GROUPBOX        "モジュール情報",IDC_STATIC,99,5,124,61
+    EDITTEXT        IDC_SONG_NAME,105,18,111,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SONG_ARTIST,105,33,111,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SONG_COPYRIGHT,105,49,111,12,ES_AUTOHSCROLL
+    GROUPBOX        "楽曲",IDC_STATIC,99,94,124,27
+    COMBOBOX        IDC_SUBTUNE,105,104,112,85,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_INSTRUMENTS,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,230,5,178,97
+    EDITTEXT        IDC_INSTNAME,360,108,48,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "行Tick",IDC_BUTTON_GROOVE,12,14,35,13
+    PUSHBUTTON      "BPM",IDC_BUTTON_FIXTEMPO,12,28,35,13
+    CONTROL         "",IDC_MAINFRAME_VISUALIZER,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,99,69,124,25
+    CONTROL         "",IDC_MAINFRAME_INST_TOOLBAR,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,229,106,124,16
 END
 
 IDD_PCMIMPORT DIALOGEX 0, 0, 211, 144
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "PCM import"
+CAPTION "PCM インポート"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Quality: 0",IDC_QUALITY_FRM,7,7,136,36
-    LTEXT           "Low",IDC_STATIC,15,21,15,10
+    GROUPBOX        "品質: 0",IDC_QUALITY_FRM,7,7,136,36
+    LTEXT           "低",IDC_STATIC,15,21,15,10
     CONTROL         "",IDC_QUALITY,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,30,19,90,15
-    LTEXT           "High",IDC_STATIC,123,21,16,10
-    GROUPBOX        "Gain: +0dB",IDC_VOLUME_FRM,7,47,136,35
-    LTEXT           "Low",IDC_STATIC,15,61,15,10
+    LTEXT           "高",IDC_STATIC,123,21,16,10
+    GROUPBOX        "ゲイン: +0dB",IDC_VOLUME_FRM,7,47,136,35
+    LTEXT           "低",IDC_STATIC,15,61,15,10
     CONTROL         "",IDC_VOLUME,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,30,59,90,15
-    LTEXT           "High",IDC_STATIC,123,61,16,10
-    GROUPBOX        "File info",IDC_STATIC,7,86,136,51
+    LTEXT           "高",IDC_STATIC,123,61,16,10
+    GROUPBOX        "ファイル情報",IDC_STATIC,7,86,136,51
     LTEXT           "Static",IDC_SAMPLE_RATE,15,99,118,8
     LTEXT           "Static",IDC_RESAMPLING,15,110,118,8
-    PUSHBUTTON      "Preview",IDC_PREVIEW,154,7,50,14
+    PUSHBUTTON      "プレビュー",IDC_PREVIEW,154,7,50,14
     DEFPUSHBUTTON   "OK",IDOK,154,24,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,154,41,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,154,41,50,14
     LTEXT           "Static",IDC_SAMPLESIZE,15,121,118,8
 END
 
@@ -1117,13 +1127,13 @@ STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_INSTSETTINGS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,12,18,96,107,WS_EX_TRANSPARENT
-    PUSHBUTTON      "Select next empty slot",IDC_FREE_SEQ,12,129,96,15
-    CONTROL         "Sequence #",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,12,148,53,10,WS_EX_TRANSPARENT
+    PUSHBUTTON      "次の空スロットを選択",IDC_FREE_SEQ,12,129,96,15
+    CONTROL         "シーケンス番号",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,12,148,53,10,WS_EX_TRANSPARENT
     EDITTEXT        IDC_SEQ_INDEX,69,147,39,12,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SEQUENCE_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,66,153,11,9
     EDITTEXT        IDC_SEQUENCE_STRING,126,147,232,12,ES_AUTOHSCROLL
-    GROUPBOX        "Sequence editor",IDC_STATIC,120,7,245,158
-    GROUPBOX        "Instrument settings",IDC_STATIC,7,7,107,158,0,WS_EX_TRANSPARENT
+    GROUPBOX        "シーケンスエディタ",IDC_STATIC,120,7,245,158
+    GROUPBOX        "音色の設定",IDC_STATIC,7,7,107,158,0,WS_EX_TRANSPARENT
     CONTROL         "",IDC_INST_SEQUENCE_GRAPH,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,126,18,232,125
 END
 
@@ -1131,31 +1141,31 @@ IDD_INSTRUMENT_DPCM DIALOGEX 0, 0, 372, 174
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Assigned samples",IDC_STATIC,7,7,179,160
+    GROUPBOX        "サンプル割り当て",IDC_STATIC,7,7,179,160
     CONTROL         "",IDC_TABLE,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,19,117,125
     COMBOBOX        IDC_SAMPLES,15,148,117,125,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Pitch",IDC_STATIC,138,19,30,8
+    LTEXT           "音程",IDC_STATIC,138,19,30,8
     COMBOBOX        IDC_PITCH,138,29,42,53,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Loop",IDC_LOOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,46,42,9
+    CONTROL         "ループ",IDC_LOOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,46,42,9
     EDITTEXT        IDC_DELTA_COUNTER,138,72,42,14,ES_AUTOHSCROLL
     CONTROL         "",IDC_DELTA_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,170,72,11,14
     PUSHBUTTON      "",IDC_ADD,138,130,42,14,BS_ICON
     PUSHBUTTON      "",IDC_REMOVE,138,148,42,14,BS_ICON
-    GROUPBOX        "Loaded samples",IDC_STATIC,192,7,173,160
+    GROUPBOX        "読込済みサンプル",IDC_STATIC,192,7,173,160
     CONTROL         "",IDC_SAMPLE_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,198,19,108,125
-    LTEXT           "Space used 16 / 16 kb",IDC_SPACE,198,151,166,9
-    DEFPUSHBUTTON   "Load",IDC_LOAD,312,19,47,14
-    PUSHBUTTON      "Unload",IDC_UNLOAD,312,35,47,14
-    PUSHBUTTON      "Save",IDC_SAVE,312,51,47,14
-    PUSHBUTTON      "Import",IDC_IMPORT,312,67,47,14
-    PUSHBUTTON      "Edit",IDC_EDIT,312,83,47,14
-    PUSHBUTTON      "Preview",IDC_PREVIEW,312,99,47,14
-    LTEXT           "D-counter",IDC_STATIC,138,61,33,8
+    LTEXT           "容量: 使用済み 16 / 16 KB",IDC_SPACE,198,151,166,9
+    DEFPUSHBUTTON   "読み込み",IDC_LOAD,312,19,47,14
+    PUSHBUTTON      "除去",IDC_UNLOAD,312,35,47,14
+    PUSHBUTTON      "保存",IDC_SAVE,312,51,47,14
+    PUSHBUTTON      "Wave 取込",IDC_IMPORT,312,67,47,14
+    PUSHBUTTON      "編集",IDC_EDIT,312,83,47,14
+    PUSHBUTTON      "プレビュー",IDC_PREVIEW,312,99,47,14
+    LTEXT           "デルタカウンタ",IDC_STATIC,138,61,45,8
 END
 
 IDD_INSTRUMENT DIALOGEX 0, 0, 389, 242
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Instrument editor"
+CAPTION "音色エディタ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_INST_TAB,"SysTabControl32",0x0,7,7,375,185
@@ -1164,49 +1174,49 @@ END
 
 IDD_CONFIG_APPEARANCE DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Appearance"
+CAPTION "外観"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Color schemes",IDC_STATIC,7,7,149,39
+    GROUPBOX        "カラーテーマ",IDC_STATIC,7,7,149,39
     COMBOBOX        IDC_SCHEME,15,22,135,126,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Colors",IDC_STATIC,7,54,149,65
-    LTEXT           "Item",IDC_STATIC,15,68,16,8
+    GROUPBOX        "色",IDC_STATIC,7,54,149,65
+    LTEXT           "項目",IDC_STATIC,15,68,16,8
     COMBOBOX        IDC_COL_ITEM,35,66,115,172,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     CONTROL         "",IDC_COL_PREVIEW,"Static",SS_OWNERDRAW,15,85,69,15
-    PUSHBUTTON      "Pick color",IDC_PICK_COL,96,85,54,15
-    CONTROL         "Pattern colors",IDC_PATTERNCOLORS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,105,58,9
-    GROUPBOX        "Pattern font and size",IDC_STATIC,7,126,149,34
+    PUSHBUTTON      "色の選択",IDC_PICK_COL,96,85,54,15
+    CONTROL         "カラムを色分け",IDC_PATTERNCOLORS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,105,58,9
+    GROUPBOX        "パターンのフォントと大きさ",IDC_STATIC,7,126,149,34
     COMBOBOX        IDC_FONT,15,139,102,93,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Preview",IDC_STATIC,166,7,106,132
+    GROUPBOX        "プレビュー",IDC_STATIC,166,7,106,132
     CONTROL         "",IDC_PREVIEW,"Static",SS_OWNERDRAW,175,19,89,111
-    CONTROL         "Display flats",IDC_DISPLAYFLATS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,105,58,9
+    CONTROL         "黒鍵を♭で表示",IDC_DISPLAYFLATS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,105,67,9
     COMBOBOX        IDC_FONT_SIZE,122,139,28,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "Save",IDC_BUTTON_APPEARANCE_SAVE,165,145,49,15
-    PUSHBUTTON      "Load",IDC_BUTTON_APPEARANCE_LOAD,223,145,49,15
+    PUSHBUTTON      "保存",IDC_BUTTON_APPEARANCE_SAVE,165,145,49,15
+    PUSHBUTTON      "読み込み",IDC_BUTTON_APPEARANCE_LOAD,223,145,49,15
 END
 
 IDD_CONFIG_GENERAL DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "General"
+CAPTION "一般"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "General settings",IDC_STATIC,7,7,163,153
+    GROUPBOX        "一般設定",IDC_STATIC,7,7,163,153
     CONTROL         "",IDC_CONFIG_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,19,147,109,WS_EX_TRANSPARENT
-    GROUPBOX        "Edit settings",IDC_STATIC,177,7,96,61
-    LTEXT           "Page jump length:",IDC_STATIC,184,20,58,9
-    COMBOBOX        IDC_PAGELENGTH,240,19,27,12,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Pattern edit style:",IDC_STATIC,184,35,59,8
+    GROUPBOX        "編集設定",IDC_STATIC,177,7,96,61
+    LTEXT           "PageUp/Down 行数:",IDC_STATIC,184,21,68,9
+    COMBOBOX        IDC_PAGELENGTH,245,19,22,12,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "パターン編集スタイル:",IDC_STATIC,184,36,82,8
     COMBOBOX        IDC_COMBO_STYLE,184,48,83,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Keys",IDC_STATIC,177,72,96,88
-    LTEXT           "Note cut",IDC_STATIC,184,87,41,11
+    GROUPBOX        "キー",IDC_STATIC,177,72,96,88
+    LTEXT           "ノートカット",IDC_STATIC,184,86,41,11
     EDITTEXT        IDC_KEY_NOTE_CUT,230,84,36,13,ES_AUTOHSCROLL | ES_READONLY
-    LTEXT           "Clear field",IDC_STATIC,184,101,41,11
+    LTEXT           "削除",IDC_STATIC,184,100,41,11
     EDITTEXT        IDC_KEY_CLEAR,230,98,36,13,ES_AUTOHSCROLL | ES_READONLY
-    LTEXT           "Repeat",IDC_STATIC,184,115,41,11
+    LTEXT           "繰り返し",IDC_STATIC,184,114,41,11
     EDITTEXT        IDC_KEY_REPEAT,230,112,36,13,ES_AUTOHSCROLL | ES_READONLY
-    LTEXT           "Note release",IDC_STATIC,184,129,41,11
+    LTEXT           "ノートリリース",IDC_STATIC,184,128,41,11
     EDITTEXT        IDC_KEY_NOTE_RELEASE,230,126,36,13,ES_AUTOHSCROLL | ES_READONLY
-    LTEXT           "Echo buffer",IDC_STATIC,184,143,41,11
+    LTEXT           "エコーバッファ",IDC_STATIC,184,142,41,11
     EDITTEXT        IDC_KEY_ECHO_BUFFER,230,140,36,13,ES_AUTOHSCROLL | ES_READONLY
     EDITTEXT        IDC_EDIT_CONFIG_DESC,13,130,152,25,ES_MULTILINE | ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP
 END
@@ -1216,59 +1226,59 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSM
 CAPTION "MIDI"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Input Device",IDC_STATIC,7,7,266,35
+    GROUPBOX        "入力デバイス",IDC_STATIC,7,7,266,35
     COMBOBOX        IDC_INDEVICES,13,20,253,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Output Device",IDC_STATIC,7,48,266,35
+    GROUPBOX        "出力デバイス",IDC_STATIC,7,48,266,35
     COMBOBOX        IDC_OUTDEVICES,13,61,253,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Receive sync ticks",IDC_MASTER_SYNC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,102,173,10
-    CONTROL         "Skip key releases",IDC_KEY_RELEASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,112,173,10
-    CONTROL         "Map MIDI channels to NES channels",IDC_CHANMAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,122,173,10
-    CONTROL         "Record velocities",IDC_VELOCITY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,132,173,10
-    CONTROL         "Auto arpeggiate chords",IDC_ARPEGGIATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,142,173,10
-    GROUPBOX        "Options",IDC_STATIC,7,89,266,71
+    CONTROL         "MIDI タイミングクロックを受信する",IDC_MASTER_SYNC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,102,173,10
+    CONTROL         "キーリリースを省略する",IDC_KEY_RELEASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,112,173,10
+    CONTROL         "MIDI チャンネルを NES チャンネルに割り当てる",IDC_CHANMAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,122,173,10
+    CONTROL         "ベロシティを反映する",IDC_VELOCITY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,132,173,10
+    CONTROL         "和音をアルペジオ化する",IDC_ARPEGGIATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,142,173,10
+    GROUPBOX        "オプション",IDC_STATIC,7,89,266,71
 END
 
 IDD_CONFIG_SOUND DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTEXTHELP
-CAPTION "Sound"
+CAPTION "サウンド"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Device",IDC_STATIC,7,7,266,35
+    GROUPBOX        "デバイス",IDC_STATIC,7,7,266,35
     COMBOBOX        IDC_DEVICES,13,20,253,12,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Sample rate",IDC_STATIC,7,48,113,33
+    GROUPBOX        "サンプリングレート",IDC_STATIC,7,48,113,33
     COMBOBOX        IDC_SAMPLE_RATE,13,61,101,62,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Sample size",IDC_STATIC,7,90,113,33
+    GROUPBOX        "サンプリングサイズ",IDC_STATIC,7,90,113,33
     COMBOBOX        IDC_SAMPLE_SIZE,13,102,101,62,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Buffer length",IDC_STATIC,7,129,113,31
+    GROUPBOX        "バッファ長さ",IDC_STATIC,7,129,113,31
     CONTROL         "",IDC_BUF_LENGTH,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,13,141,69,12
     CTEXT           "20 ms",IDC_BUF_LEN,83,142,31,11
-    GROUPBOX        "Bass filtering",IDC_STATIC,126,48,147,33
-    LTEXT           "Frequency",IDC_STATIC,132,63,36,11
+    GROUPBOX        "低域フィルタ",IDC_STATIC,126,48,147,33
+    LTEXT           "周波数",IDC_STATIC,132,63,36,11
     CONTROL         "",IDC_BASS_FREQ,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,174,63,55,12
     CTEXT           "16 Hz",IDC_BASS_FREQ_T,234,64,32,10
-    GROUPBOX        "Treble filtering",IDC_STATIC,126,86,147,43
-    LTEXT           "Damping",IDC_STATIC,132,99,36,10
+    GROUPBOX        "高域フィルタ",IDC_STATIC,126,86,147,43
+    LTEXT           "減衰",IDC_STATIC,132,99,36,10
     CONTROL         "",IDC_TREBLE_DAMP,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,174,99,55,12
     CTEXT           "-24 dB",IDC_TREBLE_DAMP_T,234,99,32,9
-    LTEXT           "Frequency",IDC_STATIC,132,112,36,10
+    LTEXT           "周波数",IDC_STATIC,132,112,36,10
     CONTROL         "",IDC_TREBLE_FREQ,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,174,112,55,12
     CTEXT           "12000 Hz",IDC_TREBLE_FREQ_T,234,110,32,11
-    GROUPBOX        "Volume",IDC_STATIC,126,133,147,27
+    GROUPBOX        "音量",IDC_STATIC,126,133,147,27
     CONTROL         "",IDC_VOLUME,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,132,144,96,12
     CTEXT           "100 %",IDC_VOLUME_T,234,144,31,8
 END
 
 IDD_CONFIG_SHORTCUTS DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Shortcuts"
+CAPTION "ショートカット"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_SHORTCUTS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,266,136
-    LTEXT           "Keys:",IDC_STATIC,7,149,23,12
+    LTEXT           "キー:",IDC_STATIC,7,149,23,12
     EDITTEXT        IDC_KEY,36,147,144,14,ES_AUTOHSCROLL | ES_READONLY
-    PUSHBUTTON      "Clear",IDC_CLEAR,186,147,36,14
-    PUSHBUTTON      "Default",IDC_DEFAULT,228,147,45,14
+    PUSHBUTTON      "削除",IDC_CLEAR,186,147,36,14
+    PUSHBUTTON      "デフォルト",IDC_DEFAULT,228,147,45,14
 END
 
 IDD_OCTAVE DIALOGEX 0, 0, 322, 12
@@ -1276,111 +1286,111 @@ STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_CONTROLPARENT
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    CONTROL         "Octave",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,4,2,24,8
-    COMBOBOX        IDC_OCTAVE,31,0,25,74,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Follow-mode",IDC_FOLLOW,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,60,0,52,13
-    CONTROL         "Compact view",IDC_CHECK_COMPACT,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,115,0,52,13
-    CONTROL         "Row highlight, 1st",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,173,2,58,8
+    CONTROL         "オクターブ",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,4,2,33,8
+    COMBOBOX        IDC_OCTAVE,37,0,25,74,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "自動スクロール",IDC_FOLLOW,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,66,0,55,13
+    CONTROL         "圧縮表示",IDC_CHECK_COMPACT,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,124,0,48,13
+    RTEXT           "行を強調: 主",IDC_STATIC,176,2,53,8
     EDITTEXT        IDC_HIGHLIGHT1,235,0,27,12,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
     CONTROL         "",IDC_HIGHLIGHTSPIN1,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,257,2,11,6
-    CONTROL         "2nd",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,269,2,13,8
+    CONTROL         "副",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,269,2,13,8
     EDITTEXT        IDC_HIGHLIGHT2,285,0,27,12,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
     CONTROL         "",IDC_HIGHLIGHTSPIN2,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,307,2,11,6
 END
 
 IDD_EXPORT DIALOGEX 0, 0, 247, 283
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Export file"
+CAPTION "ファイルを出力"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "&Export",IDC_EXPORT,187,7,53,14
-    PUSHBUTTON      "&Close",IDC_CLOSE,187,23,53,14
+    DEFPUSHBUTTON   "出力(&E)",IDC_EXPORT,187,7,53,14
+    PUSHBUTTON      "閉じる(&C)",IDC_CLOSE,187,23,53,14
     EDITTEXT        IDC_NAME,60,18,114,13,ES_AUTOHSCROLL
     EDITTEXT        IDC_ARTIST,60,33,114,13,ES_AUTOHSCROLL
     EDITTEXT        IDC_COPYRIGHT,60,49,114,13,ES_AUTOHSCROLL
     CONTROL         "NTSC",IDC_NTSC,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,16,67,33,10
     CONTROL         "PAL",IDC_PAL,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,54,67,28,10
-    CONTROL         "Dual",IDC_DUAL,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,88,67,30,10
+    CONTROL         "両方",IDC_DUAL,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,88,67,30,10
     COMBOBOX        IDC_TYPE,16,97,218,100,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "NSF file options",IDC_STATIC,7,7,173,75
-    LTEXT           "Name",IDC_STATIC,16,20,38,11
-    LTEXT           "Artist",IDC_STATIC,16,35,38,11
-    LTEXT           "Copyright",IDC_STATIC,16,51,38,11
-    GROUPBOX        "Progress",IDC_STATIC,7,120,233,156
+    GROUPBOX        "NSF ファイルオプション",IDC_STATIC,7,7,173,75
+    LTEXT           "名前",IDC_STATIC,16,20,38,11
+    LTEXT           "作者",IDC_STATIC,16,35,38,11
+    LTEXT           "著作権表示",IDC_STATIC,16,51,44,11
+    GROUPBOX        "進行状況",IDC_STATIC,7,120,233,156
     EDITTEXT        IDC_OUTPUT,16,132,218,139,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | WS_VSCROLL
-    GROUPBOX        "Type of file",IDC_STATIC,7,87,233,29
-    PUSHBUTTON      "&Play",IDC_PLAY,187,68,53,14,NOT WS_VISIBLE
+    GROUPBOX        "ファイルの種類",IDC_STATIC,7,87,233,29
+    PUSHBUTTON      "再生(&P)",IDC_PLAY,187,68,53,14,NOT WS_VISIBLE
 END
 
 IDD_INSTRUMENT_VRC7 DIALOGEX 0, 0, 372, 172
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Patch",IDC_STATIC,7,7,310,30
+    GROUPBOX        "パッチ",IDC_STATIC,7,7,310,30
     COMBOBOX        IDC_PATCH,15,18,295,128,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "Copy",IDC_COPY,322,7,43,14
-    PUSHBUTTON      "Paste",IDC_PASTE,322,23,43,14
-    GROUPBOX        "Modulator settings",IDC_STATIC,7,42,153,123
-    CONTROL         "Amplitude modulation",IDC_M_AM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,54,84,10,WS_EX_TRANSPARENT
-    CONTROL         "Vibrato",IDC_M_VIB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,109,54,39,10,WS_EX_TRANSPARENT
-    CONTROL         "Sustained",IDC_M_EG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,70,47,10,WS_EX_TRANSPARENT
-    CONTROL         "Key scaling",IDC_M_KSR2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,86,51,10,WS_EX_TRANSPARENT
-    CONTROL         "Wave rectification",IDC_M_DM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,74,70,74,10,WS_EX_TRANSPARENT
-    LTEXT           "Level",IDC_STATIC,69,87,18,8
+    PUSHBUTTON      "コピー",IDC_COPY,322,7,43,14
+    PUSHBUTTON      "貼り付け",IDC_PASTE,322,23,43,14
+    GROUPBOX        "変調波設定",IDC_STATIC,7,42,153,123
+    CONTROL         "トレモロモジュレーション",IDC_M_AM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,54,84,10,WS_EX_TRANSPARENT
+    CONTROL         "ビブラート",IDC_M_VIB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,109,54,39,10,WS_EX_TRANSPARENT
+    CONTROL         "持続音",IDC_M_EG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,70,47,10,WS_EX_TRANSPARENT
+    CONTROL         "キースケール",IDC_M_KSR2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,86,51,10,WS_EX_TRANSPARENT
+    CONTROL         "波形を半波整流",IDC_M_DM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,74,70,74,10,WS_EX_TRANSPARENT
+    LTEXT           "レベル:",IDC_STATIC,69,87,25,8
     CONTROL         "",IDC_M_KSL,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,90,86,58,11,WS_EX_TRANSPARENT
-    LTEXT           "Mult. factor",IDC_STATIC,14,108,38,8
+    LTEXT           "倍率",IDC_STATIC,14,108,38,8
     CONTROL         "",IDC_M_MUL,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,51,107,105,11,WS_EX_TRANSPARENT
-    LTEXT           "Attack",IDC_STATIC,14,127,22,8
+    LTEXT           "アタック",IDC_STATIC,14,127,22,8
     CONTROL         "",IDC_M_AR,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,40,126,42,11
-    LTEXT           "Decay",IDC_STATIC,87,127,21,8
+    LTEXT           "ディケイ",IDC_STATIC,85,127,26,8
     CONTROL         "",IDC_M_DR,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,114,126,42,11
-    LTEXT           "Sustain",IDC_STATIC,14,144,24,8
+    LTEXT           "サスティン",IDC_STATIC,10,144,31,8
     CONTROL         "",IDC_M_SL,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,39,143,42,11
-    LTEXT           "Release",IDC_STATIC,85,144,26,8
+    LTEXT           "リリース",IDC_STATIC,85,144,26,8
     CONTROL         "",IDC_M_RR,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,114,143,42,11
-    GROUPBOX        "Carrier settings",IDC_STATIC,166,42,152,123
-    CONTROL         "Amplitude modulation",IDC_C_AM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,54,84,10
-    CONTROL         "Vibrato",IDC_C_VIB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,267,54,39,10
-    CONTROL         "Sustained",IDC_C_EG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,70,47,10
-    CONTROL         "Key scaling",IDC_C_KSR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,86,51,10
-    CONTROL         "Wave rectification",IDC_C_DM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,232,70,74,10
-    LTEXT           "Level",IDC_STATIC,226,87,18,8
+    GROUPBOX        "搬送波設定",IDC_STATIC,166,42,152,123
+    CONTROL         "トレモロモジュレーション",IDC_C_AM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,54,84,10
+    CONTROL         "ビブラート",IDC_C_VIB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,267,54,39,10
+    CONTROL         "持続音",IDC_C_EG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,70,47,10
+    CONTROL         "キースケール",IDC_C_KSR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,86,51,10
+    CONTROL         "波形を半波整流",IDC_C_DM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,232,70,74,10
+    LTEXT           "レベル:",IDC_STATIC,226,87,25,8
     CONTROL         "",IDC_C_KSL,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,247,86,59,11
-    LTEXT           "Mult. factor",IDC_STATIC,171,108,38,8
+    LTEXT           "倍率",IDC_STATIC,171,108,38,8
     CONTROL         "",IDC_C_MUL,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,208,107,106,11
-    LTEXT           "Attack",IDC_STATIC,171,127,22,8
+    LTEXT           "アタック",IDC_STATIC,171,127,22,8
     CONTROL         "",IDC_C_AR,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,199,126,42,11
-    LTEXT           "Decay",IDC_STATIC,247,127,21,8
+    LTEXT           "ディケイ",IDC_STATIC,245,127,26,8
     CONTROL         "",IDC_C_DR,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,271,126,43,11
-    LTEXT           "Sustain",IDC_STATIC,171,144,24,8
+    LTEXT           "サスティン",IDC_STATIC,168,144,31,8
     CONTROL         "",IDC_C_SL,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,199,143,42,11
-    LTEXT           "Release",IDC_STATIC,245,144,26,8
+    LTEXT           "リリース",IDC_STATIC,245,144,26,8
     CONTROL         "",IDC_C_RR,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,271,143,43,11
-    CTEXT           "Modulator\nlevel",IDC_STATIC,322,42,36,17
+    CTEXT           "モジュレータ\nレベル",IDC_STATIC,322,42,36,17
     CONTROL         "",IDC_TL,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,329,59,16,53
-    CTEXT           "Feedback",IDC_STATIC,322,112,36,9
+    CTEXT           "フィードバック",IDC_STATIC,322,112,40,9
     CONTROL         "",IDC_FB,"msctls_trackbar32",TBS_AUTOTICKS | TBS_VERT | TBS_BOTH | WS_TABSTOP,325,124,25,41
 END
 
 IDD_CREATEWAV DIALOGEX 0, 0, 151, 208
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Create wave file"
+CAPTION "WAVE ファイルの生成"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "Begin",IDC_BEGIN,37,187,52,14
-    PUSHBUTTON      "Cancel",IDCANCEL,92,187,52,14
-    GROUPBOX        "Song length",IDC_STATIC,7,7,137,47
-    CONTROL         "Play the song",IDC_RADIO_LOOP,"Button",BS_AUTORADIOBUTTON,14,20,55,10
-    CONTROL         "Play for",IDC_RADIO_TIME,"Button",BS_AUTORADIOBUTTON,14,38,37,10
+    DEFPUSHBUTTON   "開始",IDC_BEGIN,37,187,52,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,92,187,52,14
+    GROUPBOX        "楽曲の長さ",IDC_STATIC,7,7,137,47
+    CONTROL         "回数指定:",IDC_RADIO_LOOP,"Button",BS_AUTORADIOBUTTON,14,20,55,10
+    CONTROL         "長さ指定:",IDC_RADIO_TIME,"Button",BS_AUTORADIOBUTTON,14,38,49,10
     EDITTEXT        IDC_TIMES,73,19,36,12,ES_AUTOHSCROLL
     CONTROL         "",IDC_SPIN_LOOP,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,105,17,11,17
-    LTEXT           "time(s)",IDC_STATIC,115,20,21,10,SS_CENTERIMAGE
-    EDITTEXT        IDC_SECONDS,53,37,44,12,ES_AUTOHSCROLL
-    CONTROL         "",IDC_SPIN_TIME,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,93,36,11,14
-    LTEXT           "mm:ss",IDC_STATIC,106,38,21,10,SS_CENTERIMAGE
-    GROUPBOX        "Tracks",IDC_STATIC,7,96,137,87
+    LTEXT           "(回)",IDC_STATIC,115,20,21,10,SS_CENTERIMAGE
+    EDITTEXT        IDC_SECONDS,63,37,44,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_TIME,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,96,36,11,14
+    LTEXT           "(分:秒)",IDC_STATIC,110,38,27,10,SS_CENTERIMAGE
+    GROUPBOX        "トラック",IDC_STATIC,7,96,137,87
     LISTBOX         IDC_CHANNELS,14,107,124,70,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Song",IDC_STATIC,7,60,137,30
+    GROUPBOX        "楽曲",IDC_STATIC,7,60,137,30
     COMBOBOX        IDC_TRACKS,14,72,124,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
 END
 
@@ -1395,28 +1405,28 @@ IDD_INSTRUMENT_FDS DIALOGEX 0, 0, 372, 172
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Wave editor",IDC_STATIC,7,7,228,111
-    PUSHBUTTON      "Sine",IDC_PRESET_SINE,14,101,41,12
-    PUSHBUTTON      "Triangle",IDC_PRESET_TRIANGLE,57,101,41,12
-    PUSHBUTTON      "Sawtooth",IDC_PRESET_SAWTOOTH,100,101,41,12
-    LTEXT           "Modulation rate",IDC_STATIC,246,24,51,8
+    GROUPBOX        "波形エディタ",IDC_STATIC,7,7,228,111
+    PUSHBUTTON      "正弦波",IDC_PRESET_SINE,14,101,41,12
+    PUSHBUTTON      "三角波",IDC_PRESET_TRIANGLE,57,101,41,12
+    PUSHBUTTON      "のこぎり波",IDC_PRESET_SAWTOOTH,100,101,41,12
+    LTEXT           "モジュレーション速さ",IDC_STATIC,246,24,65,8
     EDITTEXT        IDC_MOD_RATE,318,22,37,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_MOD_RATE_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,344,25,11,14
-    LTEXT           "Modulation depth",IDC_STATIC,246,46,56,8
+    LTEXT           "モジュレーション深さ",IDC_STATIC,246,46,65,8
     EDITTEXT        IDC_MOD_DEPTH,318,43,37,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_MOD_DEPTH_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,344,43,11,14
-    LTEXT           "Modulation delay",IDC_STATIC,246,68,55,8
+    LTEXT           "モジュレーション遅延",IDC_STATIC,246,68,65,8
     EDITTEXT        IDC_MOD_DELAY,318,65,37,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_MOD_DELAY_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,344,63,11,14
-    PUSHBUTTON      "Flat",IDC_MOD_PRESET_FLAT,318,131,46,12
-    PUSHBUTTON      "Sine",IDC_MOD_PRESET_SINE,318,148,46,12
-    GROUPBOX        "Frequency modulation",IDC_STATIC,240,7,124,79
-    PUSHBUTTON      "Copy wave",IDC_COPY_WAVE,240,90,59,14
-    PUSHBUTTON      "Paste wave",IDC_PASTE_WAVE,240,104,59,14
-    PUSHBUTTON      "Copy table",IDC_COPY_TABLE,305,90,59,14
-    PUSHBUTTON      "Paste table",IDC_PASTE_TABLE,305,104,59,14
-    PUSHBUTTON      "50% pulse",IDC_PRESET_PULSE_50,143,101,41,12
-    PUSHBUTTON      "25% pulse",IDC_PRESET_PULSE_25,186,101,41,12
+    PUSHBUTTON      "水平",IDC_MOD_PRESET_FLAT,318,131,46,12
+    PUSHBUTTON      "正弦波",IDC_MOD_PRESET_SINE,318,148,46,12
+    GROUPBOX        "モジュレーション",IDC_STATIC,240,7,124,79
+    PUSHBUTTON      "波形コピー",IDC_COPY_WAVE,240,90,59,14
+    PUSHBUTTON      "波形貼り付け",IDC_PASTE_WAVE,240,104,59,14
+    PUSHBUTTON      "表コピー",IDC_COPY_TABLE,305,90,59,14
+    PUSHBUTTON      "表貼り付け",IDC_PASTE_TABLE,305,104,59,14
+    PUSHBUTTON      "50%矩形波",IDC_PRESET_PULSE_50,143,101,41,12
+    PUSHBUTTON      "25%矩形波",IDC_PRESET_PULSE_25,186,101,41,12
 END
 
 IDD_FRAMECONTROLS DIALOGEX 0, 0, 107, 12
@@ -1425,7 +1435,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     PUSHBUTTON      "+",IDC_FRAME_INC,0,0,17,12
     PUSHBUTTON      "-",IDC_FRAME_DEC,23,0,17,12
-    CONTROL         "Change all",IDC_CHANGE_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,51,2,56,10
+    CONTROL         "全て変更",IDC_CHANGE_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,51,2,56,10
 END
 
 IDD_INSTRUMENT_FDS_ENVELOPE DIALOGEX 0, 0, 372, 172
@@ -1438,17 +1448,17 @@ END
 
 IDD_CHANNELS DIALOGEX 0, 0, 303, 236
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Tracks"
+CAPTION "トラック"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,194,215,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,246,215,50,14
-    PUSHBUTTON      "Move up",IDC_MOVE_UP,7,215,50,14
-    PUSHBUTTON      "Move down",IDC_MOVE_DOWN,62,215,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,246,215,50,14
+    PUSHBUTTON      "上に移動",IDC_MOVE_UP,7,215,50,14
+    PUSHBUTTON      "下に移動",IDC_MOVE_DOWN,62,215,50,14
     CONTROL         "",IDC_ADDED_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,159,17,129,181
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,209,289,1
-    GROUPBOX        "Available tracks",IDC_STATIC,7,7,138,197
-    GROUPBOX        "Added tracks",IDC_STATIC,151,7,145,197
+    GROUPBOX        "利用できるトラック",IDC_STATIC,7,7,138,197
+    GROUPBOX        "追加されたトラック",IDC_STATIC,151,7,145,197
     CONTROL         "",IDC_AVAILABLE_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,14,17,122,181
 END
 
@@ -1461,19 +1471,19 @@ END
 
 IDD_COMMENTS DIALOGEX 0, 0, 358, 230
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "Module comments"
+CAPTION "モジュールのコメント"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    PUSHBUTTON      "Cancel",IDCANCEL,304,211,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,304,211,50,14
     EDITTEXT        IDC_COMMENTS,0,0,358,206,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
-    CONTROL         "Show when loading file",IDC_SHOWONOPEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,215,89,10
+    CONTROL         "ファイルの読み込み時に表示する",IDC_SHOWONOPEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,215,117,10
     DEFPUSHBUTTON   "OK",IDOK,248,211,50,14
 END
 
 IDD_CONFIG_MIXER DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTEXTHELP
-CAPTION "Mixer"
+CAPTION "ミキサー"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_SLIDER_APU1,"msctls_trackbar32",TBS_AUTOTICKS | TBS_VERT | TBS_BOTH | WS_TABSTOP,7,34,26,110
@@ -1500,191 +1510,191 @@ BEGIN
     CTEXT           "0.0dB",IDC_LEVEL_FDS,176,149,30,8
     CTEXT           "0.0dB",IDC_LEVEL_N163,209,149,30,8
     CTEXT           "0.0dB",IDC_LEVEL_S5B,243,149,30,8
-    LTEXT           "Hardware mixing levels",IDC_STATIC,7,7,74,8
-    PUSHBUTTON      "Reset",IDC_BUTTON_MIXER_RESET,223,7,50,14
+    LTEXT           "ハードウェア・ミキシングレベル",IDC_STATIC,7,7,92,8
+    PUSHBUTTON      "リセット",IDC_BUTTON_MIXER_RESET,223,7,50,14
 END
 
 IDD_INSTRUMENT_N163_WAVE DIALOGEX 0, 0, 372, 172
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Wave editor",IDC_STATIC,7,7,228,116
-    PUSHBUTTON      "Sine",IDC_PRESET_SINE,14,104,41,14
-    PUSHBUTTON      "Triangle",IDC_PRESET_TRIANGLE,57,104,41,14
-    PUSHBUTTON      "Sawtooth",IDC_PRESET_SAWTOOTH,100,104,41,14
-    PUSHBUTTON      "50% pulse",IDC_PRESET_PULSE_50,143,104,41,14
-    PUSHBUTTON      "25% pulse",IDC_PRESET_PULSE_25,186,104,41,14
+    GROUPBOX        "波形エディタ",IDC_STATIC,7,7,228,116
+    PUSHBUTTON      "正弦波",IDC_PRESET_SINE,14,104,41,14
+    PUSHBUTTON      "三角波",IDC_PRESET_TRIANGLE,57,104,41,14
+    PUSHBUTTON      "のこぎり波",IDC_PRESET_SAWTOOTH,100,104,41,14
+    PUSHBUTTON      "50%矩形波",IDC_PRESET_PULSE_50,143,104,41,14
+    PUSHBUTTON      "25%矩形波",IDC_PRESET_PULSE_25,186,104,41,14
     EDITTEXT        IDC_MML,7,129,228,14,ES_AUTOHSCROLL
-    LTEXT           "Wave size:",IDC_STATIC,8,152,36,8
-    COMBOBOX        IDC_WAVE_SIZE,46,149,36,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Wave position:",IDC_STATIC,94,152,49,8
+    LTEXT           "波形サイズ:",IDC_STATIC,8,152,41,8
+    COMBOBOX        IDC_WAVE_SIZE,48,149,36,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "波形領域:",IDC_STATIC,94,152,49,8
     COMBOBOX        IDC_WAVE_POS,145,150,36,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Loaded waves",IDC_STATIC,242,7,123,159
+    GROUPBOX        "波形一覧",IDC_STATIC,242,7,123,159
     CONTROL         "",IDC_N163_WAVES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,250,20,107,118
-    PUSHBUTTON      "Add",IDC_N163_ADD,248,144,27,14
-    PUSHBUTTON      "Delete",IDC_N163_DELETE,276,144,27,14
-    PUSHBUTTON      "Copy",IDC_COPY,304,144,27,14
-    PUSHBUTTON      "Paste",IDC_PASTE,332,144,27,14
+    PUSHBUTTON      "追加",IDC_N163_ADD,248,144,27,14
+    PUSHBUTTON      "削除",IDC_N163_DELETE,276,144,27,14
+    PUSHBUTTON      "コピー",IDC_COPY,304,144,27,14
+    PUSHBUTTON      "貼付",IDC_PASTE,332,144,27,14
 END
 
 IDD_IMPORT DIALOGEX 0, 0, 173, 263
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "Import options"
+CAPTION "インポートオプション"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Songs",IDC_STATIC,7,7,159,158
+    GROUPBOX        "楽曲",IDC_STATIC,7,7,159,158
     LISTBOX         IDC_TRACKS,14,18,145,123,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "Select All",IDC_BUTTON_IMPORT_ALL,29,145,50,14
-    PUSHBUTTON      "Select None",IDC_BUTTON_IMPORT_NONE,93,145,50,14
-    GROUPBOX        "Options",IDC_STATIC,7,168,159,61
-    LTEXT           "Instruments:",IDC_STATIC,15,183,42,8
+    PUSHBUTTON      "全て選択",IDC_BUTTON_IMPORT_ALL,29,145,50,14
+    PUSHBUTTON      "選択解除",IDC_BUTTON_IMPORT_NONE,93,145,50,14
+    GROUPBOX        "オプション",IDC_STATIC,7,168,159,61
+    LTEXT           "音色:",IDC_STATIC,15,183,42,8
     COMBOBOX        IDC_COMBO_IMPORT_INST,60,180,98,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Grooves:",IDC_STATIC,15,199,30,8
+    LTEXT           "グルーヴ:",IDC_STATIC,15,199,30,8
     COMBOBOX        IDC_COMBO_IMPORT_GROOVE,60,196,98,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Overwrite detune table",IDC_IMPORT_DETUNE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,213,116,10
+    CONTROL         "デチューンテーブルを上書きする",IDC_IMPORT_DETUNE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,213,116,10
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,235,159,1
     DEFPUSHBUTTON   "OK",IDOK,61,242,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,116,242,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,116,242,50,14
 END
 
 IDD_PERFORMANCE DIALOGEX 0, 0, 177, 95
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Performance"
+CAPTION "パフォーマンス"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "Close",IDOK,58,74,60,14
-    GROUPBOX        "CPU usage",IDC_STATIC,7,7,68,53
+    DEFPUSHBUTTON   "閉じる",IDOK,58,74,60,14
+    GROUPBOX        "CPU 使用率",IDC_STATIC,7,7,68,53
     CTEXT           "--%",IDC_CPU,43,30,29,10
     CONTROL         "",IDC_CPU_BAR,"msctls_progress32",PBS_SMOOTH | PBS_VERTICAL | WS_BORDER,18,19,18,34
-    LTEXT           "Frame rate: 0 Hz",IDC_FRAMERATE,89,18,72,8
-    LTEXT           "Underruns: 0",IDC_UNDERRUN,89,45,66,8
+    LTEXT           "フレームレート: 0 Hz",IDC_FRAMERATE,89,18,72,8
+    LTEXT           "アンダーラン: 0",IDC_UNDERRUN,89,45,66,8
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,67,162,1
-    GROUPBOX        "Other",IDC_STATIC,81,7,88,26
-    GROUPBOX        "Audio",IDC_STATIC,81,34,88,26
+    GROUPBOX        "他",IDC_STATIC,81,7,88,26
+    GROUPBOX        "音声",IDC_STATIC,81,34,88,26
 END
 
 IDD_SPEED DIALOGEX 0, 0, 196, 44
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Custom speed"
+CAPTION "スピードをカスタム"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,139,7,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,139,23,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,139,23,50,14
     CONTROL         "",IDC_SPEED_SLD,"msctls_trackbar32",WS_TABSTOP,7,7,101,16
     LTEXT           "60 Hz",IDC_SPEED,112,11,26,12
 END
 
 IDD_PROPERTIES DIALOGEX 0, 0, 213, 312
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Module properties"
+CAPTION "モジュールのプロパティ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Song editor",IDC_STATIC,7,7,199,147
+    GROUPBOX        "楽曲エディタ",IDC_STATIC,7,7,199,147
     CONTROL         "",IDC_SONGLIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,14,18,120,114
-    PUSHBUTTON      "Add",IDC_SONG_ADD,138,17,60,14
-    PUSHBUTTON      "Insert",IDC_SONG_INSERT,138,33,60,14
-    PUSHBUTTON      "Remove",IDC_SONG_REMOVE,138,49,60,14
-    PUSHBUTTON      "Move up",IDC_SONG_UP,138,65,60,14
-    PUSHBUTTON      "Move down",IDC_SONG_DOWN,138,81,60,14
-    PUSHBUTTON      "Import file",IDC_SONG_IMPORT,138,97,60,14
-    LTEXT           " Title",IDC_STATIC,14,135,17,12,SS_CENTERIMAGE
+    PUSHBUTTON      "追加",IDC_SONG_ADD,138,17,60,14
+    PUSHBUTTON      "挿入",IDC_SONG_INSERT,138,33,60,14
+    PUSHBUTTON      "削除",IDC_SONG_REMOVE,138,49,60,14
+    PUSHBUTTON      "上に移動",IDC_SONG_UP,138,65,60,14
+    PUSHBUTTON      "下に移動",IDC_SONG_DOWN,138,81,60,14
+    PUSHBUTTON      "インポート",IDC_SONG_IMPORT,138,97,60,14
+    LTEXT           " 曲名",IDC_STATIC,14,135,17,12,SS_CENTERIMAGE
     EDITTEXT        IDC_SONGNAME,34,135,100,12,ES_AUTOHSCROLL
-    GROUPBOX        "Expansion chips",IDC_STATIC,7,156,199,43
+    GROUPBOX        "拡張音源",IDC_STATIC,7,156,199,43
     CONTROL         "VRC6",IDC_EXPANSION_VRC6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,168,33,10
     CONTROL         "MMC5",IDC_EXPANSION_MMC5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,168,35,10
     CONTROL         "N163",IDC_EXPANSION_N163,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,168,33,10
     CONTROL         "FDS",IDC_EXPANSION_FDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,182,29,10
     CONTROL         "VRC7",IDC_EXPANSION_VRC7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,182,33,10
     CONTROL         "S5B",IDC_EXPANSION_S5B,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,182,24,10
-    LTEXT           "Channels: 1",IDC_CHANNELS_NR,150,168,51,8,WS_DISABLED
+    LTEXT           "チャンネル数: 1",IDC_CHANNELS_NR,150,168,51,8,WS_DISABLED
     CONTROL         "",IDC_CHANNELS,"msctls_trackbar32",TBS_AUTOTICKS | WS_DISABLED | WS_TABSTOP,145,180,51,13
-    GROUPBOX        "Pattern effect settings",IDC_STATIC,7,202,199,76
-    LTEXT           "Vibrato style:",IDC_STATIC,20,220,44,8
+    GROUPBOX        "パターンエフェクト設定",IDC_STATIC,7,202,199,76
+    RTEXT           "ビブラート形式:",IDC_STATIC,12,220,52,8
     COMBOBOX        IDC_VIBRATO,67,218,130,61,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Pitch mode:",IDC_STATIC,25,239,39,8
+    RTEXT           "音程モード:",IDC_STATIC,22,239,42,8
     COMBOBOX        IDC_COMBO_LINEARPITCH,67,236,130,61,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Fxx split point:",IDC_STATIC,15,257,47,8
+    RTEXT           "Fxx 分割境界:",IDC_STATIC,10,257,54,8
     EDITTEXT        IDC_EDIT_FXX_SPLIT,67,255,34,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SPIN_FXX_SPLIT,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,100,255,11,14
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,285,199,1
     DEFPUSHBUTTON   "OK",IDOK,95,291,53,14
-    PUSHBUTTON      "Cancel",IDCANCEL,153,291,53,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,153,291,53,14
 END
 
 IDD_WAVE_PROGRESS DIALOGEX 0, 0, 220, 111
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Creating WAV..."
+CAPTION "WAV を生成中..."
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    PUSHBUTTON      "Cancel",IDC_CANCEL,84,90,50,14
+    PUSHBUTTON      "キャンセル",IDC_CANCEL,84,90,50,14
     CONTROL         "",IDC_PROGRESS_BAR,"msctls_progress32",WS_BORDER,7,65,206,12
     CTEXT           "Progress",IDC_PROGRESS_LBL,7,37,206,11
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,7,83,206,1
-    CTEXT           "File",IDC_PROGRESS_FILE,7,7,206,20,SS_CENTERIMAGE
+    CTEXT           "ファイル",IDC_PROGRESS_FILE,7,7,206,20,SS_CENTERIMAGE
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,7,29,206,1
     CTEXT           "Progress",IDC_TIME,7,49,206,11
 END
 
 IDD_SAMPLE_EDITOR DIALOGEX 0, 0, 481, 261
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "DPCM sample editor"
+CAPTION "DPCM サンプルエディタ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,424,213,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,424,230,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,424,230,50,14
     CONTROL         "",IDC_SAMPLE,"Static",SS_WHITERECT | SS_NOTIFY | SS_SUNKEN,2,2,476,204
-    PUSHBUTTON      "Play",IDC_PLAY,7,212,50,14
-    PUSHBUTTON      "Delete",IDC_DELETE,64,212,50,14
+    PUSHBUTTON      "再生",IDC_PLAY,7,212,50,14
+    PUSHBUTTON      "削除",IDC_DELETE,64,212,50,14
     CONTROL         "",IDC_PITCH,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,45,232,130,12
-    PUSHBUTTON      "Tilt",IDC_TILT,121,212,50,14
-    LTEXT           "Pitch (15)",IDC_STATIC_PITCH,8,233,34,11
-    CONTROL         "Center wave",IDC_DELTASTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,179,232,57,10
+    PUSHBUTTON      "傾斜化",IDC_TILT,121,212,50,14
+    LTEXT           "音程 (15)",IDC_STATIC_PITCH,8,233,34,11
+    CONTROL         "波形を中央化して表示",IDC_DELTASTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,179,232,91,10
     CONTROL         "",IDC_ZOOM,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,240,213,181,12
-    LTEXT           "Zoom (1.00x)",IDC_STATIC_DPCM_ZOOM,185,214,54,8
+    LTEXT           "拡大 (1.00 倍)",IDC_STATIC_DPCM_ZOOM,185,214,54,8
 END
 
 IDD_DETUNE DIALOGEX 0, 0, 293, 272
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Detune Settings"
+CAPTION "デチューン設定"
 FONT 8, "MS Shell Dlg", 400, 0, 0x0
 BEGIN
-    GROUPBOX        "Detune editor",IDC_STATIC,7,7,220,103
-    RTEXT           "Octave:",IDC_STATIC,16,21,27,8
+    GROUPBOX        "デチューンの編集",IDC_STATIC,7,7,220,103
+    RTEXT           "オクターブ:",IDC_STATIC,9,21,35,8
     CONTROL         "",IDC_SLIDER_OCTAVE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,44,19,132,15
     EDITTEXT        IDC_EDIT_OCTAVE,180,18,38,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SPIN_OCTAVE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,18,11,14
-    RTEXT           "Note:",IDC_STATIC,24,41,19,8
+    RTEXT           "ノート:",IDC_STATIC,19,41,25,8
     CONTROL         "",IDC_SLIDER_NOTE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,43,39,132,15
     EDITTEXT        IDC_EDIT_NOTE,180,37,38,14,ES_UPPERCASE | ES_AUTOHSCROLL
     CONTROL         "",IDC_SPIN_NOTE,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,37,11,14
-    RTEXT           "Offset:",IDC_STATIC,19,61,24,8
+    RTEXT           "オフセット:",IDC_STATIC,12,61,32,8
     CONTROL         "",IDC_SLIDER_OFFSET,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,43,59,132,15
     EDITTEXT        IDC_EDIT_OFFSET,180,57,38,14,ES_AUTOHSCROLL
     CONTROL         "",IDC_SPIN_OFFSET,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,57,11,14
-    RTEXT           "Table:",IDC_STATIC,21,80,21,8
-    CONTROL         "2A03/Default",IDC_RADIO_NTSC,"Button",BS_AUTORADIOBUTTON | WS_GROUP,46,80,59,10
-    CONTROL         "2A07",IDC_RADIO_PAL,"Button",BS_AUTORADIOBUTTON,108,80,33,10
-    CONTROL         "VRC6 Sawtooth",IDC_RADIO_VRC6,"Button",BS_AUTORADIOBUTTON,145,80,66,10
-    CONTROL         "VRC7",IDC_RADIO_VRC7,"Button",BS_AUTORADIOBUTTON,46,93,33,10
-    CONTROL         "FDS",IDC_RADIO_FDS,"Button",BS_AUTORADIOBUTTON,108,93,33,10
+    RTEXT           "テーブル:",IDC_STATIC,15,80,29,8
+    CONTROL         "2A03/デフォルト",IDC_RADIO_NTSC,"Button",BS_AUTORADIOBUTTON | WS_GROUP,47,80,63,10
+    CONTROL         "2A07",IDC_RADIO_PAL,"Button",BS_AUTORADIOBUTTON,111,80,33,10
+    CONTROL         "VRC6 鋸波",IDC_RADIO_VRC6,"Button",BS_AUTORADIOBUTTON,145,80,66,10
+    CONTROL         "VRC7",IDC_RADIO_VRC7,"Button",BS_AUTORADIOBUTTON,47,93,33,10
+    CONTROL         "FDS",IDC_RADIO_FDS,"Button",BS_AUTORADIOBUTTON,111,93,33,10
     CONTROL         "N163",IDC_RADIO_N163,"Button",BS_AUTORADIOBUTTON,145,93,33,10
     CONTROL         "Enable",IDC_CHECK_ENABLE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,181,93,34,10
-    GROUPBOX        "Global tuning",IDC_STATIC,7,114,220,73
-    LTEXT           "Semitone: +0",IDC_STATIC_DETUNE_SEMITONE,15,129,52,8
+    GROUPBOX        "全体チューニング",IDC_STATIC,7,114,220,73
+    LTEXT           "半音: +0",IDC_STATIC_DETUNE_SEMITONE,15,129,52,8
     CONTROL         "",IDC_SLIDER_DETUNE_SEMITONE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,72,126,150,15
-    LTEXT           "Cent: +0",IDC_STATIC_DETUNE_CENT,15,147,52,8
+    LTEXT           "セント: +0",IDC_STATIC_DETUNE_CENT,15,147,52,8
     CONTROL         "",IDC_SLIDER_DETUNE_CENT,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,72,144,150,15
     LTEXT           "Modules saved in this build of 0CC-FamiTracker will erase the tuning information for official 0.5.0 beta.",IDC_STATIC,15,163,201,18
-    PUSHBUTTON      "Reset",IDC_BUTTON_RESET,236,10,50,14
-    PUSHBUTTON      "Import",IDC_BUTTON_IMPORT,236,27,50,14
-    PUSHBUTTON      "Export",IDC_BUTTON_EXPORT,236,44,50,14
+    PUSHBUTTON      "リセット",IDC_BUTTON_RESET,236,10,50,14
+    PUSHBUTTON      "インポート",IDC_BUTTON_IMPORT,236,27,50,14
+    PUSHBUTTON      "エクスポート",IDC_BUTTON_EXPORT,236,44,50,14
     PUSHBUTTON      "OK",IDOK,235,233,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,235,251,50,14
-    GROUPBOX        "Info panel",IDC_STATIC,7,191,220,74
+    PUSHBUTTON      "キャンセル",IDCANCEL,235,251,50,14
+    GROUPBOX        "情報パネル",IDC_STATIC,7,191,220,74
     RTEXT           "\nOld register\nNew register\nOld frequency\nNew frequency\nBase frequency\nCent detune",IDC_STATIC,13,202,50,55
     CTEXT           "NTSC\n0\n0\n0\n0\n0\n0",IDC_DETUNE_INFO_NTSC,66,202,26,55
     CTEXT           "PAL\n0\n0\n0\n0\n0\n0",IDC_DETUNE_INFO_PAL,94,202,24,55
-    CTEXT           "Saw\n0\n0\n0\n0\n0\n0",IDC_DETUNE_INFO_SAW,120,202,24,55
+    CTEXT           "鋸波\n0\n0\n0\n0\n0\n0",IDC_DETUNE_INFO_SAW,120,202,24,55
     CTEXT           "VRC7\n0\n0\n0\n0\n0\n0",IDC_DETUNE_INFO_VRC7,146,202,24,55
     CTEXT           "FDS\n0\n0\n0\n0\n0\n0",IDC_DETUNE_INFO_FDS,172,202,24,55
     CTEXT           "N163\n0\n0\n0\n0\n0\n0",IDC_DETUNE_INFO_N163,198,202,24,55
@@ -1692,37 +1702,37 @@ END
 
 IDD_GROOVE DIALOGEX 0, 0, 289, 160
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Groove Settings"
+CAPTION "グルーヴ設定"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Groove list",IDC_STATIC,7,7,101,119
+    GROUPBOX        "グルーヴ一覧",IDC_STATIC,7,7,101,119
     LISTBOX         IDC_LIST_GROOVE_TABLE,15,18,44,100,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "Up",IDC_BUTTON_GROOVEL_UP,66,18,35,14
-    PUSHBUTTON      "Down",IDC_BUTTON_GROOVEL_DOWN,66,36,35,14
-    PUSHBUTTON      "Clear",IDC_BUTTON_GROOVEL_CLEAR,66,54,35,14
-    PUSHBUTTON      "Clear all",IDC_BUTTON_GROOVEL_CLEARALL,66,72,35,14
-    LTEXT           "Total size:\n1 / 256 bytes",IDC_STATIC_GROOVE_TOTAL,65,94,37,24
-    GROUPBOX        "Groove editor",IDC_STATIC,116,7,166,119
+    PUSHBUTTON      "上へ",IDC_BUTTON_GROOVEL_UP,66,18,35,14
+    PUSHBUTTON      "下へ",IDC_BUTTON_GROOVEL_DOWN,66,36,35,14
+    PUSHBUTTON      "削除",IDC_BUTTON_GROOVEL_CLEAR,66,54,35,14
+    PUSHBUTTON      "全て削除",IDC_BUTTON_GROOVEL_CLEARALL,66,72,35,14
+    LTEXT           "総サイズ:\n1 / 256\nバイト",IDC_STATIC_GROOVE_TOTAL,65,94,37,24
+    GROUPBOX        "グルーヴエディタ",IDC_STATIC,116,7,166,119
     LISTBOX         IDC_LIST_GROOVE_EDITOR,124,18,44,82,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "Move up",IDC_BUTTON_GROOVE_UP,175,18,46,14
-    PUSHBUTTON      "Move down",IDC_BUTTON_GROOVE_DOWN,175,36,46,14
-    PUSHBUTTON      "Expand",IDC_BUTTON_GROOVE_EXPAND,227,18,46,14
-    PUSHBUTTON      "Shrink",IDC_BUTTON_GROOVE_SHRINK,227,36,46,14
-    PUSHBUTTON      "Generate",IDC_BUTTON_GROOVE_GENERATE,175,54,46,14
+    PUSHBUTTON      "上に移動",IDC_BUTTON_GROOVE_UP,175,18,46,14
+    PUSHBUTTON      "下に移動",IDC_BUTTON_GROOVE_DOWN,175,36,46,14
+    PUSHBUTTON      "2 倍に",IDC_BUTTON_GROOVE_EXPAND,227,18,46,14
+    PUSHBUTTON      "半分に",IDC_BUTTON_GROOVE_SHRINK,227,36,46,14
+    PUSHBUTTON      "生成",IDC_BUTTON_GROOVE_GENERATE,175,54,46,14
     EDITTEXT        IDC_EDIT_GROOVE_NUM,228,54,17,14,ES_AUTOHSCROLL | ES_NUMBER
     LTEXT           " /",IDC_STATIC,247,56,8,8
     EDITTEXT        IDC_EDIT_GROOVE_DENOM,255,54,17,14,ES_AUTOHSCROLL | ES_NUMBER
-    PUSHBUTTON      "Pad",IDC_BUTTON_GROOVE_PAD,175,72,46,14
+    PUSHBUTTON      "後埋め",IDC_BUTTON_GROOVE_PAD,175,72,46,14
     EDITTEXT        IDC_EDIT_GROOVE_PAD,228,72,45,14,ES_AUTOHSCROLL
     CONTROL         "",IDC_SPIN_PAD,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,264,72,10,14
-    LTEXT           "Speed: 6.000",IDC_STATIC_GROOVE_AVERAGE,176,91,46,8
-    LTEXT           "Size: 0 bytes",IDC_STATIC_GROOVE_SIZE,228,91,45,8
-    PUSHBUTTON      "Copy Fxx",IDC_BUTTON_GROOVE_COPY,123,105,45,14
+    CONTROL         "行Tick: 6.000",IDC_STATIC_GROOVE_AVERAGE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,176,91,46,8
+    CONTROL         "サイズ: 0 バイト",IDC_STATIC_GROOVE_SIZE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,228,91,45,8
+    PUSHBUTTON      "Fxx にコピー",IDC_BUTTON_GROOVE_COPY,123,105,45,14
     EDITTEXT        IDC_EDIT_GROOVE_FIELD,176,105,97,14,ES_AUTOHSCROLL
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,132,275,1
     DEFPUSHBUTTON   "OK",IDOK,124,139,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,178,139,50,14
-    PUSHBUTTON      "Apply",IDAPPLY,232,139,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,178,139,50,14
+    PUSHBUTTON      "適用",IDAPPLY,232,139,50,14
 END
 
 IDD_FIND DIALOGEX 0, 0, 142, 264
@@ -1730,128 +1740,126 @@ STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_STATICEDGE
 FONT 8, "MS Shell Dlg", 400, 0, 0x0
 BEGIN
-    GROUPBOX        "Find / Replace",IDC_STATIC,8,9,126,121
-    LTEXT           "Find what:",IDC_STATIC,15,21,34,8
-    CONTROL         "Note",IDC_CHECK_FIND_NOTE,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,15,34,24,10
+    GROUPBOX        "検索 / 置換",IDC_STATIC,8,9,126,121
+    LTEXT           "検索:",IDC_STATIC,15,21,34,8
+    CONTROL         "ノート",IDC_CHECK_FIND_NOTE,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,15,34,24,10
     EDITTEXT        IDC_EDIT_FIND_NOTE,15,47,24,14,ES_AUTOHSCROLL | WS_DISABLED
     EDITTEXT        IDC_EDIT_FIND_NOTE2,15,64,24,14,ES_AUTOHSCROLL | WS_DISABLED
-    CONTROL         "Inst",IDC_CHECK_FIND_INST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,44,34,24,10
+    CONTROL         "音色",IDC_CHECK_FIND_INST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,44,34,24,10
     EDITTEXT        IDC_EDIT_FIND_INST,44,47,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
     EDITTEXT        IDC_EDIT_FIND_INST2,44,64,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
-    CONTROL         "Vol",IDC_CHECK_FIND_VOL,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,73,34,24,10
+    CONTROL         "音量",IDC_CHECK_FIND_VOL,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,73,34,24,10
     EDITTEXT        IDC_EDIT_FIND_VOL,73,47,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
     EDITTEXT        IDC_EDIT_FIND_VOL2,73,64,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
     CONTROL         "FX",IDC_CHECK_FIND_EFF,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,102,34,24,10
     EDITTEXT        IDC_EDIT_FIND_EFF,102,47,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
-    LTEXT           "Replace with:",IDC_STATIC,15,83,43,8
-    CONTROL         "Note",IDC_CHECK_REPLACE_NOTE,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,15,96,24,10
+    LTEXT           "置換:",IDC_STATIC,15,83,43,8
+    CONTROL         "ノート",IDC_CHECK_REPLACE_NOTE,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,15,96,24,10
     EDITTEXT        IDC_EDIT_REPLACE_NOTE,15,109,24,14,ES_AUTOHSCROLL | WS_DISABLED
-    CONTROL         "Inst",IDC_CHECK_REPLACE_INST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,44,96,24,10
+    CONTROL         "音色",IDC_CHECK_REPLACE_INST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,44,96,24,10
     EDITTEXT        IDC_EDIT_REPLACE_INST,44,109,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
-    CONTROL         "Vol",IDC_CHECK_REPLACE_VOL,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,73,96,24,10
+    CONTROL         "音量",IDC_CHECK_REPLACE_VOL,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,73,96,24,10
     EDITTEXT        IDC_EDIT_REPLACE_VOL,73,109,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
     CONTROL         "FX",IDC_CHECK_REPLACE_EFF,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,102,96,24,10
     EDITTEXT        IDC_EDIT_REPLACE_EFF,102,109,24,14,ES_UPPERCASE | ES_AUTOHSCROLL | WS_DISABLED
-    GROUPBOX        "Search Options",IDC_STATIC,8,133,126,67
-    LTEXT           "Look in:",IDC_STATIC,15,147,26,8
+    GROUPBOX        "検索オプション",IDC_STATIC,8,133,126,67
+    LTEXT           "範囲:",IDC_STATIC,15,147,26,8
     COMBOBOX        IDC_COMBO_FIND_IN,43,145,44,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     COMBOBOX        IDC_COMBO_EFFCOLUMN,95,145,31,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Vertical-first searching",IDC_CHECK_VERTICAL_SEARCH,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,162,98,10
-    CONTROL         "Remove original data",IDC_CHECK_FIND_REMOVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,173,98,10
-    CONTROL         "Negate search",IDC_CHECK_FIND_NEGATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,184,98,10
-    PUSHBUTTON      "Find Next",IDC_BUTTON_FIND_NEXT,8,206,54,14,WS_GROUP
-    PUSHBUTTON      "Find Previous",IDC_BUTTON_FIND_PREVIOUS,8,224,54,14
-    PUSHBUTTON      "Find All",IDC_BUTTON_FIND_ALL,8,242,54,14
-    PUSHBUTTON      "Replace Next",IDC_BUTTON_REPLACE,69,206,65,14
-    PUSHBUTTON      "Replace Previous",IDC_BUTTON_REPLACE_PREVIOUS,69,224,65,14
-    PUSHBUTTON      "Replace All",IDC_BUTTON_FIND_REPLACEALL,69,242,65,14
+    CONTROL         "縦方向の検索を優先する",IDC_CHECK_VERTICAL_SEARCH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,162,98,10
+    CONTROL         "行を削除して置換する",IDC_CHECK_FIND_REMOVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,173,98,10
+    CONTROL         "検索を反転する",IDC_CHECK_FIND_NEGATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,184,98,10
+    PUSHBUTTON      "次を検索",IDC_BUTTON_FIND_NEXT,8,206,60,14,WS_GROUP
+    PUSHBUTTON      "前を検索",IDC_BUTTON_FIND_PREVIOUS,8,224,60,14
+    PUSHBUTTON      "全て検索",IDC_BUTTON_FIND_ALL,8,242,60,14
+    PUSHBUTTON      "次を置換",IDC_BUTTON_REPLACE,73,206,61,14
+    PUSHBUTTON      "前を置換",IDC_BUTTON_REPLACE_PREVIOUS,73,224,61,14
+    PUSHBUTTON      "全て置換",IDC_BUTTON_FIND_REPLACEALL,73,242,61,14
 END
 
 IDD_STRETCH DIALOGEX 0, 0, 294, 42
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Stretch selection"
+CAPTION "選択範囲の伸縮"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Stretch map:",IDC_STATIC,6,9,42,8
+    LTEXT           "伸縮マップ:",IDC_STATIC,6,9,42,8
     EDITTEXT        IDC_EDIT_STRETCH_MAP,51,7,98,14,ES_AUTOHSCROLL
     LTEXT           "Test: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",IDC_STRETCH_TEST,6,26,143,8
-    PUSHBUTTON      "Expand",IDC_BUTTON_STRETCH_EXPAND,156,7,39,14
-    PUSHBUTTON      "Shrink",IDC_BUTTON_STRETCH_SHRINK,156,23,39,14
-    PUSHBUTTON      "Reset",IDC_BUTTON_STRETCH_RESET,202,7,39,14
-    PUSHBUTTON      "Invert",IDC_BUTTON_STRETCH_INVERT,202,23,39,14
+    PUSHBUTTON      "2 倍に",IDC_BUTTON_STRETCH_EXPAND,156,7,39,14
+    PUSHBUTTON      "半分に",IDC_BUTTON_STRETCH_SHRINK,156,23,39,14
+    PUSHBUTTON      "リセット",IDC_BUTTON_STRETCH_RESET,202,7,39,14
+    PUSHBUTTON      "反転",IDC_BUTTON_STRETCH_INVERT,202,23,39,14
     DEFPUSHBUTTON   "OK",IDOK,248,7,39,14
-    PUSHBUTTON      "Cancel",IDCANCEL,248,23,39,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,248,23,39,14
 END
 
 IDD_BOOKMARKS DIALOGEX 0, 0, 325, 162
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Bookmark Manager"
+CAPTION "ブックマークの管理"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Bookmark Editor",IDC_STATIC,7,7,117,150
-    LTEXT           "Name:",IDC_STATIC,16,19,22,8
+    GROUPBOX        "ブックマークエディタ",IDC_STATIC,7,7,117,150
+    RTEXT           "名前:",IDC_STATIC,15,19,23,8
     EDITTEXT        IDC_EDIT_BOOKMARK_NAME,40,17,77,14,ES_AUTOHSCROLL
-    LTEXT           "Frame:",IDC_STATIC,14,37,24,8
+    RTEXT           "フレーム:",IDC_STATIC,10,37,28,8
     EDITTEXT        IDC_EDIT_BOOKMARK_FRAME,40,35,77,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SPIN_BOOKMARK_FRAME,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,106,35,11,14
-    LTEXT           "Row:",IDC_STATIC,20,55,18,8
+    RTEXT           "行:",IDC_STATIC,26,55,12,8
     EDITTEXT        IDC_EDIT_BOOKMARK_ROW,40,53,77,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SPIN_BOOKMARK_ROW,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,106,52,11,14
-    LTEXT           "Highlight Settings",IDC_STATIC,14,70,56,8
-    CONTROL         "1st:",IDC_CHECK_BOOKMARK_HIGH1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,84,25,10
+    LTEXT           "行の強調設定",IDC_STATIC,14,70,48,8
+    CONTROL         "主:",IDC_CHECK_BOOKMARK_HIGH1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,84,25,10
     EDITTEXT        IDC_EDIT_BOOKMARK_HIGH1,40,83,77,14,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
     CONTROL         "",IDC_SPIN_BOOKMARK_HIGH1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,106,83,11,14
-    CONTROL         "2nd:",IDC_CHECK_BOOKMARK_HIGH2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,102,25,10
+    CONTROL         "副:",IDC_CHECK_BOOKMARK_HIGH2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,102,25,10
     EDITTEXT        IDC_EDIT_BOOKMARK_HIGH2,40,101,77,14,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
     CONTROL         "",IDC_SPIN_BOOKMARK_HIGH2,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,106,101,11,14
-    CONTROL         "Apply to all following frames",IDC_CHECK_BOOKMARK_PERSIST,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,120,105,10
-    PUSHBUTTON      "Create New",IDC_BUTTON_BOOKMARK_ADD,14,135,48,14
-    PUSHBUTTON      "Update",IDC_BUTTON_BOOKMARK_UPDATE,70,135,48,14
-    GROUPBOX        "Bookmark List",IDC_STATIC,132,7,186,150
+    CONTROL         "全ての後続フレームに適用する",IDC_CHECK_BOOKMARK_PERSIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,120,110,10
+    PUSHBUTTON      "新規作成",IDC_BUTTON_BOOKMARK_ADD,14,135,48,14
+    PUSHBUTTON      "更新",IDC_BUTTON_BOOKMARK_UPDATE,70,135,48,14
+    GROUPBOX        "ブックマーク一覧",IDC_STATIC,132,7,186,150
     LISTBOX         IDC_LIST_BOOKMARKS,140,18,115,130,LBS_OWNERDRAWVARIABLE | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "Move Up",IDC_BUTTON_BOOKMARK_MOVEUP,270,17,48,14
-    PUSHBUTTON      "Move Down",IDC_BUTTON_BOOKMARK_MOVEDOWN,270,35,48,14
-    PUSHBUTTON      "Remove",IDC_BUTTON_BOOKMARK_REMOVE,270,53,48,14
-    PUSHBUTTON      "Clear All",IDC_BUTTON_BOOKMARK_CLEARALL,270,71,48,14
-    LTEXT           "Sort by:",IDC_STATIC,263,103,27,8
-    PUSHBUTTON      "Position",IDC_BUTTON_BOOKMARK_SORTP,270,116,48,14
-    PUSHBUTTON      "Name",IDC_BUTTON_BOOKMARK_SORTN,270,134,48,14
+    PUSHBUTTON      "上に移動",IDC_BUTTON_BOOKMARK_MOVEUP,263,17,48,14
+    PUSHBUTTON      "下に移動",IDC_BUTTON_BOOKMARK_MOVEDOWN,263,35,48,14
+    PUSHBUTTON      "削除",IDC_BUTTON_BOOKMARK_REMOVE,263,53,48,14
+    PUSHBUTTON      "全て削除",IDC_BUTTON_BOOKMARK_CLEARALL,263,71,48,14
+    LTEXT           "並び替え:",IDC_STATIC,263,103,32,8
+    PUSHBUTTON      "位置で",IDC_BUTTON_BOOKMARK_SORTP,263,116,48,14
+    PUSHBUTTON      "名前で",IDC_BUTTON_BOOKMARK_SORTN,263,134,48,14
 END
 
 IDD_GOTO DIALOGEX 0, 0, 159, 60
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Go To"
+CAPTION "移動"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Frame:",IDC_STATIC,9,6,24,8
-    LTEXT           "Row:",IDC_STATIC,45,6,18,8
-    LTEXT           "Chip:",IDC_STATIC,81,6,18,8
-    LTEXT           "Track:",IDC_STATIC,124,6,21,8
+    LTEXT           "フレーム:",IDC_STATIC,9,6,30,8
+    LTEXT           "行:",IDC_STATIC,45,6,18,8
+    LTEXT           "音源:",IDC_STATIC,81,6,27,8
+    LTEXT           "トラック:",IDC_STATIC,124,6,28,8
     EDITTEXT        IDC_EDIT_GOTO_FRAME,8,19,28,14,ES_AUTOHSCROLL | ES_NUMBER
     EDITTEXT        IDC_EDIT_GOTO_ROW,44,19,28,14,ES_AUTOHSCROLL | ES_NUMBER
     COMBOBOX        IDC_COMBO_GOTO_CHIP,80,19,35,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     EDITTEXT        IDC_EDIT_GOTO_CHANNEL,123,19,28,14,ES_AUTOHSCROLL | ES_NUMBER
     DEFPUSHBUTTON   "OK",IDOK,48,39,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,102,39,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,102,39,50,14
 END
 
-IDD_SWAP DIALOGEX 0, 0, 87, 112
+IDD_SWAP DIALOGEX 0, 0, 103, 111
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Swap Tracks"
+CAPTION "トラックの入れ替え"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,7,91,31,14
-    PUSHBUTTON      "Cancel",IDCANCEL,49,91,31,14
-    LTEXT           "Chip:",IDC_STATIC,9,6,18,8
-    LTEXT           "Track:",IDC_STATIC,49,6,21,8
-    LTEXT           "Warning: Resets undo after swapping!",IDC_STATIC,7,70,73,17
-    COMBOBOX        IDC_COMBO_SWAP_CHIP1,7,19,34,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_COMBO_SWAP_CHIP2,7,38,34,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    EDITTEXT        IDC_EDIT_SWAP_CHAN1,49,19,28,14,ES_AUTOHSCROLL | ES_NUMBER
-    EDITTEXT        IDC_EDIT_SWAP_CHAN2,49,38,28,14,ES_AUTOHSCROLL | ES_NUMBER
-    CONTROL         "Apply to all songs",IDC_CHECK_SWAP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,57,72,10
+    DEFPUSHBUTTON   "OK",IDOK,6,90,42,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,55,90,41,14
+    LTEXT           "音源:",IDC_STATIC,9,6,20,8
+    LTEXT           "トラック:",IDC_STATIC,55,6,24,8
+    LTEXT           "警告: 入れ替えると、アンドゥ履歴が全消去されます！",IDC_STATIC,7,70,89,17
+    COMBOBOX        IDC_COMBO_SWAP_CHIP1,7,19,41,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SWAP_CHIP2,7,38,41,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SWAP_CHAN1,55,19,41,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_SWAP_CHAN2,55,38,41,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "全ての楽曲に適用する",IDC_CHECK_SWAP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,57,89,10
 END
 
 IDD_RECORD_SETTINGS DIALOGEX 0, 0, 167, 105
@@ -1869,66 +1877,66 @@ BEGIN
     CONTROL         "Re-initialize settings upon stopping",IDC_CHECK_RECORDER_RESET,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,62,127,10
     DEFPUSHBUTTON   "OK",IDOK,53,85,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,111,85,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,111,85,50,14
 END
 
 IDD_CONFIG_VERSION DIALOGEX 0, 0, 280, 167
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Version"
+CAPTION "バージョン"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Module Error Level",IDC_STATIC,7,7,148,60
+    GROUPBOX        "モジュールのエラー検出レベル",IDC_STATIC,7,7,148,60
     CONTROL         "",IDC_SLIDER_VERSION_ERRORLEVEL,"msctls_trackbar32",TBS_AUTOTICKS | TBS_VERT | TBS_BOTH | WS_TABSTOP,12,15,26,48
     LTEXT           "Description",IDC_STATIC_VERSION_ERROR,45,18,98,41
 END
 
 IDD_TRANSPOSE DIALOGEX 0, 0, 217, 226
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Transpose"
+CAPTION "トランスポーズ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    GROUPBOX        "Transpose",IDC_STATIC,7,7,203,193
-    LTEXT           "Semitones:",IDC_STATIC,16,20,36,8
+    GROUPBOX        "トランスポーズ",IDC_STATIC,7,7,203,193
+    LTEXT           "半音:",IDC_STATIC,16,20,36,8
     EDITTEXT        IDC_EDIT_TRSP_SEMITONE,56,18,40,14,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SPIN_TRSP_SEMITONE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,85,18,11,14
-    CONTROL         "Raise",IDC_RADIO_SEMITONE_INC,"Button",BS_AUTORADIOBUTTON | WS_GROUP,103,20,33,10
-    CONTROL         "Lower",IDC_RADIO_SEMITONE_DEC,"Button",BS_AUTORADIOBUTTON,138,20,32,10
-    LTEXT           "Exclude these instruments:",IDC_STATIC,15,52,88,8
-    LTEXT           "Warning: Resets undo history!",IDC_STATIC,15,185,99,8
+    CONTROL         "上げる",IDC_RADIO_SEMITONE_INC,"Button",BS_AUTORADIOBUTTON | WS_GROUP,103,20,33,10
+    CONTROL         "下げる",IDC_RADIO_SEMITONE_DEC,"Button",BS_AUTORADIOBUTTON,141,20,32,10
+    LTEXT           "除外する音色を選択:",IDC_STATIC,15,52,88,8
+    LTEXT           "警告: トランスポーズすると、アンドゥ履歴が全消去されます！",IDC_STATIC,15,185,192,8
     DEFPUSHBUTTON   "OK",IDOK,106,205,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,160,205,50,14
-    CONTROL         "Transpose all songs",IDC_CHECK_TRSP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,36,79,10
-    PUSHBUTTON      "Reverse",IDC_BUTTON_TRSP_REVERSE,47,166,50,14
-    PUSHBUTTON      "Clear All",IDC_BUTTON_TRSP_CLEAR,120,166,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,160,205,50,14
+    CONTROL         "全ての楽曲をトランスポーズする",IDC_CHECK_TRSP_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,36,115,10
+    PUSHBUTTON      "反転",IDC_BUTTON_TRSP_REVERSE,47,166,50,14
+    PUSHBUTTON      "全て解除",IDC_BUTTON_TRSP_CLEAR,120,166,50,14
 END
 
 IDD_FINDRESULTS DIALOGEX 0, 0, 331, 192
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "Find Results"
+CAPTION "検索結果"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_LIST_FINDRESULTS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,317,163
-    LTEXT           "0 results found.",IDC_STATIC_FINDRESULT_COUNT,7,176,78,8
+    LTEXT           "0 件見つかりました。（Pa: パターン、Fr: フレーム、FX: エフェクト）",IDC_STATIC_FINDRESULT_COUNT,7,176,317,8
 END
 
 IDD_SPLIT_KEYBOARD DIALOGEX 0, 0, 135, 133
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Split Keyboard Settings"
+CAPTION "キーボードの分割の設定"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    CONTROL         "Enable split keyboard",IDC_CHECK_SPLIT_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,84,10
-    GROUPBOX        "Split keyboard options",IDC_STATIC,7,20,121,87
-    RTEXT           "Split point:",IDC_STATIC,16,35,35,8
-    COMBOBOX        IDC_COMBO_SPLIT_NOTE,55,33,37,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "キーボードの分割を使用",IDC_CHECK_SPLIT_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,105,10
+    GROUPBOX        "オプション",IDC_STATIC,7,20,121,87
+    RTEXT           "分割位置:",IDC_STATIC,22,35,35,8
+    COMBOBOX        IDC_COMBO_SPLIT_NOTE,60,33,35,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     COMBOBOX        IDC_COMBO_SPLIT_OCTAVE,99,33,21,15,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    RTEXT           "Track:",IDC_STATIC,30,53,21,8
-    COMBOBOX        IDC_COMBO_SPLIT_CHAN,55,51,65,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    RTEXT           "Instrument:",IDC_STATIC,12,71,39,8
-    COMBOBOX        IDC_COMBO_SPLIT_INST,55,69,65,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    RTEXT           "Transpose:",IDC_STATIC,14,89,37,8
-    COMBOBOX        IDC_COMBO_SPLIT_TRSP,55,87,65,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "トラック:",IDC_STATIC,20,53,37,8
+    COMBOBOX        IDC_COMBO_SPLIT_CHAN,60,51,60,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "音色:",IDC_STATIC,18,71,39,8
+    COMBOBOX        IDC_COMBO_SPLIT_INST,60,69,60,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "トランスポーズ:",IDC_STATIC,10,89,47,8
+    COMBOBOX        IDC_COMBO_SPLIT_TRSP,60,87,60,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     DEFPUSHBUTTON   "OK",IDOK,13,112,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,71,112,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,71,112,50,14
 END
 
 
@@ -2039,42 +2047,42 @@ END
 
 IDD_PROPERTIES DLGINIT
 BEGIN
-    IDC_VIBRATO, 0x403, 27, 0
-0x654e, 0x2077, 0x7473, 0x6c79, 0x2065, 0x6228, 0x6e65, 0x2064, 0x7075, 
-0x2620, 0x6420, 0x776f, 0x296e, "\000" 
-    IDC_VIBRATO, 0x403, 20, 0
-0x6c4f, 0x2064, 0x7473, 0x6c79, 0x2065, 0x6228, 0x6e65, 0x2064, 0x7075, 
-0x0029, 
-    IDC_COMBO_LINEARPITCH, 0x403, 35, 0
-0x694c, 0x656e, 0x7261, 0x7020, 0x7265, 0x6f69, 0x2064, 0x202f, 0x7266, 
-0x7165, 0x6575, 0x636e, 0x2079, 0x6572, 0x6967, 0x7473, 0x7265, "\000" 
+    IDC_VIBRATO, 0x403, 21, 0
+0x5690, 0xfb95, 0xae8e, 0x6981, 0xe38f, 0xba89, 0x7883, 0x9383, 0x6883, 
+0x6a81, "\000" 
+    IDC_VIBRATO, 0x403, 19, 0
+0x8c8b, 0xfb95, 0xae8e, 0x6981, 0xe38f, 0x7883, 0x9383, 0x6883, 0x6a81, 
+"\000" 
+    IDC_COMBO_LINEARPITCH, 0x403, 28, 0
+0xfc8e, 0xfa8a, 0x8e2f, 0x94fc, 0x9067, 0x8394, 0x838c, 0x8357, 0x8358, 
+0x825e, 0x90f0, 0x8cfc, 0x8260, 0x00c9, 
     IDC_COMBO_LINEARPITCH, 0x403, 13, 0
-0x694c, 0x656e, 0x7261, 0x7020, 0x7469, 0x6863, "\000" 
+0xb989, 0xf692, 0xf082, 0xfc90, 0x608c, 0xc982, "\000" 
     0
 END
 
 IDD_FIND DLGINIT
 BEGIN
     IDC_COMBO_FIND_IN, 0x403, 5, 0
-0x6f53, 0x676e, "\000" 
-    IDC_COMBO_FIND_IN, 0x403, 6, 0
-0x7254, 0x6361, 0x006b, 
-    IDC_COMBO_FIND_IN, 0x403, 6, 0
-0x7246, 0x6d61, 0x0065, 
-    IDC_COMBO_FIND_IN, 0x403, 8, 0
-0x6150, 0x7474, 0x7265, 0x006e, 
-    IDC_COMBO_FIND_IN, 0x403, 10, 0
-0x6553, 0x656c, 0x7463, 0x6f69, 0x006e, 
+0x798a, 0xc88b, "\000" 
+    IDC_COMBO_FIND_IN, 0x403, 9, 0
+0x6783, 0x8983, 0x6283, 0x4e83, "\000" 
+    IDC_COMBO_FIND_IN, 0x403, 9, 0
+0x7483, 0x8c83, 0x5b81, 0x8083, "\000" 
+    IDC_COMBO_FIND_IN, 0x403, 9, 0
+0x7083, 0x5e83, 0x5b81, 0x9383, "\000" 
+    IDC_COMBO_FIND_IN, 0x403, 9, 0
+0x4991, 0xf091, 0xcd94, 0xcd88, "\000" 
     IDC_COMBO_EFFCOLUMN, 0x403, 4, 0
-0x7866, 0x0031, 
+0x5846, 0x0031, 
     IDC_COMBO_EFFCOLUMN, 0x403, 4, 0
-0x7866, 0x0032, 
+0x5846, 0x0032, 
     IDC_COMBO_EFFCOLUMN, 0x403, 4, 0
-0x7866, 0x0033, 
+0x5846, 0x0033, 
     IDC_COMBO_EFFCOLUMN, 0x403, 4, 0
-0x7866, 0x0034, 
-    IDC_COMBO_EFFCOLUMN, 0x403, 4, 0
-0x6c41, 0x006c, 
+0x5846, 0x0034, 
+    IDC_COMBO_EFFCOLUMN, 0x403, 5, 0
+0x5391, 0xc482, "\000" 
     0
 END
 
@@ -2310,6 +2318,31 @@ BEGIN
     100, 100, 0, 0
 END
 
+IDD_STRETCH AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PERFORMANCE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_COMMENTS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_CONFIG_MIDI AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_CONFIG_SOUND AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -2318,20 +2351,20 @@ END
 
 STRINGTABLE
 BEGIN
-    IDR_MAINFRAME           "0CC-FamiTracker\n\n0CC-FamiTracker\n0CC-FamiTracker modules (*.0cc;*.ftm)\n.0cc\n0CCFamiTracker.Document\n0CCFamiTracker.Document"
-    IDS_FRAME_DROP_MOVE     "Drop selection to move frames"
-    IDS_DPCM_IMPORT_QUALITY_FORMAT "Quality: %1"
+    IDR_MAINFRAME           "0CC-FamiTracker\n\n0CC-FamiTracker\n0CC-FamiTracker モジュール (*.0cc;*.ftm)\n.0cc\n0CCFamiTracker.Document\n0CCFamiTracker.Document"
+    IDS_FRAME_DROP_MOVE     "移動したい場所に選択フレームをドラッグ & ドロップしてください。"
+    IDS_DPCM_IMPORT_QUALITY_FORMAT "品質: %1"
     IDS_CLIPBOARD_ERROR     "Could not register clipboard format"
     IDS_FILE_OPEN_ERROR     "Could not open the file!"
-    IDS_FILTER_CSV          "Comma-separated values (*.csv)"
-    IDS_FILTER_JSON         "JavaScript Object Notation (*.json)"
+    IDS_FILTER_CSV          "カンマ区切り情報テキストファイル (*.csv)"
+    IDS_FILTER_JSON         "JavaScript オブジェクト記述ファイル (*.json)"
     IDS_INST_LIMIT          "You cannot add more instruments"
     IDS_CLIPBOARD_OPEN_ERROR "Cannot open clipboard."
     IDS_CLIPBOARD_NOT_AVALIABLE "Clipboard data is not available."
-    ID_TRACKER_PLAY_START   "Play module from start\nPlay From Start"
+    ID_TRACKER_PLAY_START   "モジュールを最初から再生します。\n最初から再生"
     IDS_INSTRUMENT_FILE_FAIL "Instrument file was not vaild"
     IDS_CLIPPING_MESSAGE    "Warning: Audio is clipping, decrease mixing levels!"
-    IDS_FILTER_FTI          "FamiTracker Instrument (*.fti)"
+    IDS_FILTER_FTI          "FamiTracker 音色ファイル (*.fti)"
     IDS_START_ERROR         "Program could not start properly, default settings has been restored. Please restart the program."
 END
 
@@ -2346,22 +2379,22 @@ BEGIN
     IDS_DISABLE_SAVE        "Saving to external files is disabled in this build of 0CC-FamiTracker."
     IDS_BOOKMARK_EMPTY      "The current song does not contain any bookmarks."
     IDS_POPULATE_PATTERNS   "Do you want to copy a unique pattern for all frames? There is no undo for this command."
-    IDS_BOOKMARK_FORMAT     "Moved to bookmark %1. (Highlight: %2, %3)"
+    IDS_BOOKMARK_FORMAT     "ブックマーク %1 に移動しました。(行の強調: %2, %3)"
     IDS_DUMP_NOT_SUPPORTED  "Instrument logging is not supported on this track."
     IDS_SEQUENCE_LIMIT      "You cannot add more instrument sequences"
     IDS_FIND_NONE           "Could not find the search query in the current search area."
-    IDS_FINDRESULT_COUNT    "%1 %2 found."
+    IDS_FINDRESULT_COUNT    "%1 %2見つかりました。（Pa: パターン、Fr: フレーム、FX: エフェクト）"
     IDS_IMPORT_SEQUENCE_COUNT 
                             "Could not import all sequences, out of sequence slots!"
-    ID_FIND_NEXT            "Find the next result of the search query\nFind Next"
+    ID_FIND_NEXT            "検索条件をもとに次の検索結果へ移動します。\n次を検索"
     IDS_ABOUT_TOOLTIP_BUG   "Report bugs at http://hertzdevil.info/bug/main_page.php"
 END
 
 STRINGTABLE
 BEGIN
     AFX_IDS_APP_TITLE       "0CC-FamiTracker"
-    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
-    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+    AFX_IDS_IDLEMESSAGE     "F1 を押すとヘルプを表示します。[※未実装]"
+    AFX_IDS_HELPMODEMESSAGE "[*未使用*]Select an object on which to get Help"
 END
 
 STRINGTABLE
@@ -2376,248 +2409,241 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_NEW             "Create a new document\nNew"
-    ID_FILE_OPEN            "Open an existing document\nOpen"
-    ID_FILE_CLOSE           "Close the active document\nClose"
-    ID_FILE_SAVE            "Save the active document\nSave"
-    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_NEW             "新しいドキュメントを作成します。\n新規作成"
+    ID_FILE_OPEN            "既存のドキュメントを開きます。\n開く"
+    ID_FILE_CLOSE           "[*未使用*]Close the active document\nClose"
+    ID_FILE_SAVE            "アクティブなドキュメントを保存します。\n保存"
+    ID_FILE_SAVE_AS         "アクティブなドキュメントを新しい名前で保存します。\n名前をつけて保存"
 END
 
 STRINGTABLE
 BEGIN
-    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
-    ID_APP_EXIT             "Quit the application; prompt to save documents\nExit"
-    ID_HELP_INDEX           "Open Help\nHelp Topics"
-    ID_HELP_FINDER          "List Help topics\nHelp Topics"
-    ID_HELP_USING           "Display instructions about how to use help\nHelp"
-    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
-    ID_HELP                 "Display help for current task or command\nHelp"
+    ID_APP_ABOUT            "プログラムの情報、バージョン番号、著作権について表示します。\n0CC-FamiTracker について"
+    ID_APP_EXIT             "アプリケーションを終了します。ドキュメントの保存を確認されます。\n終了"
+    ID_HELP_INDEX           "[*未使用*]Open Help\nHelp Topics"
+    ID_HELP_FINDER          "ヘルプの目次一覧を表示します。[※未実装]\nヘルプの表示"
+    ID_HELP_USING           "[*未使用*]Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "ボタンやメニューやウィンドウをクリックすると、そのヘルプを表示します。[※未実装]\nヘルプ"
+    ID_HELP                 "[*?unknown?*]Display help for current task or command\nHelp"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_MRU_FILE1       "Open this document"
-    ID_FILE_MRU_FILE2       "Open this document"
-    ID_FILE_MRU_FILE3       "Open this document"
-    ID_FILE_MRU_FILE4       "Open this document"
-    ID_FILE_MRU_FILE5       "Open this document"
-    ID_FILE_MRU_FILE6       "Open this document"
-    ID_FILE_MRU_FILE7       "Open this document"
-    ID_FILE_MRU_FILE8       "Open this document"
-    ID_FILE_MRU_FILE9       "Open this document"
-    ID_FILE_MRU_FILE10      "Open this document"
-    ID_FILE_MRU_FILE11      "Open this document"
-    ID_FILE_MRU_FILE12      "Open this document"
-    ID_FILE_MRU_FILE13      "Open this document"
-    ID_FILE_MRU_FILE14      "Open this document"
-    ID_FILE_MRU_FILE15      "Open this document"
-    ID_FILE_MRU_FILE16      "Open this document"
+    ID_FILE_MRU_FILE1       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE2       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE3       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE4       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE5       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE6       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE7       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE8       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE9       "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE10      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE11      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE12      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE13      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE14      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE15      "このドキュメントを開きます。"
+    ID_FILE_MRU_FILE16      "このドキュメントを開きます。"
 END
 
 STRINGTABLE
 BEGIN
-    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
-    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+    ID_NEXT_PANE            "[*未使用*]Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "[*未使用*]Switch back to the previous window pane\nPrevious Pane"
 END
 
 STRINGTABLE
 BEGIN
-    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+    ID_WINDOW_SPLIT         "[*未使用*]Split the active window into panes\nSplit"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_CLEAR           "Erase the selection\nErase"
-    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
-    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
-    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
-    ID_EDIT_FIND            "Find the specified text\nFind"
-    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
-    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
-    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
-    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
-    ID_EDIT_UNDO            "Undo the last action\nUndo"
-    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+    ID_EDIT_CLEAR           "[*未使用*]Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "[*未使用*]Erase everything\nErase All"
+    ID_EDIT_COPY            "選択範囲をコピーしてクリップボードに保持します。\nコピー"
+    ID_EDIT_CUT             "選択範囲を切り取ってクリップボードに保持します。\n切り取り"
+    ID_EDIT_FIND            "[*未使用*]Find the specified text\nFind"
+    ID_EDIT_PASTE           "クリップボードの内容を挿入します。\n貼り付け"
+    ID_EDIT_REPEAT          "[*未使用*]Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "[*未使用*]Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "[*未使用*]Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "直前の操作を元に戻します。\n元に戻す"
+    ID_EDIT_REDO            "元に戻した操作をやり直します。\nやり直し"
 END
 
 STRINGTABLE
 BEGIN
-    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle Toolbar"
-    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle Status Bar"
+    ID_VIEW_TOOLBAR         "ツールバーの表示/非表示を切り替えます。\nツールバーを表示"
+    ID_VIEW_STATUS_BAR      "ステータスバーの表示/非表示を切り替えます。\nステータスバーを表示"
 END
 
 STRINGTABLE
 BEGIN
-    AFX_IDS_SCSIZE          "Change the window size"
-    AFX_IDS_SCMOVE          "Change the window position"
-    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
-    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
-    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
-    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
-    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+    AFX_IDS_SCSIZE          "[*未使用*]Change the window size"
+    AFX_IDS_SCMOVE          "[*未使用*]Change the window position"
+    AFX_IDS_SCMINIMIZE      "[*未使用*]Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "[*未使用*]Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "[*未使用*]Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "[*未使用*]Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "[*未使用*]Close the active window and prompts to save the documents"
 END
 
 STRINGTABLE
 BEGIN
-    AFX_IDS_SCRESTORE       "Restore the window to normal size"
-    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_SCRESTORE       "[*未使用*]Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "[*未使用*]Activate Task List"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_PLAY         "Play module\nPlay"
-    ID_TRACKER_PLAYPATTERN  "Play and loop current pattern\nPlay Pattern"
-    ID_TRACKER_STOP         "Stop playing\nStop"
-    ID_TRACKER_EDIT         "Enable / disable edit mode\nToggle Edit Mode"
-    ID_TRACKER_KILLSOUND    "Promptly stop all channels\nKill Sound"
+    ID_TRACKER_PLAY         "モジュールを再生します。\n再生"
+    ID_TRACKER_PLAYPATTERN  "現在のパターンをループ再生します。\nパターンを再生"
+    ID_TRACKER_STOP         "再生を停止します。\n停止"
+    ID_TRACKER_EDIT         "編集モードを有効化/無効化します。\n編集"
+    ID_TRACKER_KILLSOUND    "全てのチャンネルを即座に停止させます。\nキルサウンド"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_DELETE          "Delete selection, or note if there is no selection\nDelete"
-    ID_TRACKER_NTSC         "Switch to NTSC emulation\nNTSC"
-    ID_TRACKER_PAL          "Switch to PAL emulation\nPAL"
-    ID_SPEED_CUSTOM         "Set the playback rate manually\nCustom"
-    ID_HELP_PERFORMANCE     "Display application performance\nPerformance"
-    ID_EDIT_PASTEOVERWRITE  "Pasted notes will overwrite existing notes\nPaste Overwrite"
+    ID_EDIT_DELETE          "選択範囲があればその中身を、なければノートを削除します。\n削除"
+    ID_TRACKER_NTSC         "NTSC エミュレーションに切り替えます。\nNTSC"
+    ID_TRACKER_PAL          "PAL エミュレーションに切り替えます。\nPAL"
+    ID_SPEED_CUSTOM         "再生レートを手動設定します。\nカスタム"
+    ID_HELP_PERFORMANCE     "アプリケーションのパフォーマンスを表示します。\nパフォーマンス"
+    ID_EDIT_PASTEOVERWRITE  "貼り付け先にあるノートを上書きして貼り付けます。\n上書き貼り付け"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_CREATE_NSF      "Bring up the create NSF dialog\nCreate NSF"
+    ID_FILE_CREATE_NSF      "NSF ファイルの生成ダイアログを表示します。\nNSF ファイルの生成"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRANSPOSE_INCREASENOTE 
-                            "Increase selected note/notes by one step\nIncrease Note"
-    ID_TRANSPOSE_DECREASENOTE 
-                            "Decrease selected note/notes by one step\nDecrease Note"
-    ID_TRANSPOSE_INCREASEOCTAVE 
-                            "Increase selected octave/octaves by one step\nIncrease Octave"
-    ID_TRANSPOSE_DECREASEOCTAVE 
-                            "Decrease selected octave/octaves by one step\nDecrease Octave"
-    ID_EDIT_SELECTALL       "Select pattern or all patterns\nSelect All"
+    ID_TRANSPOSE_INCREASENOTE "選択したノートを半音上げます。\n半音上げる"
+    ID_TRANSPOSE_DECREASENOTE "選択したノートを半音下げます。\n半音下げる"
+    ID_TRANSPOSE_INCREASEOCTAVE "選択したノートを 1 オクターブ上げます。\n1 オクターブ上げる"
+    ID_TRANSPOSE_DECREASEOCTAVE "選択したノートを 1 オクターブ下げます。\n1 オクターブ下げる"
+    ID_EDIT_SELECTALL       "1 つまたは全てのパターンを選択します。\n全て選択"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_GENERALSETTINGS "Open 0CC-FamiTracker settings\nConfiguration"
-    ID_EDIT_ENABLEMIDI      "Temporarily enable / disable commands from the MIDI device\nEnable MIDI"
-    ID_TRACKER_PLAYROW      "Play a single row\nPlay Current Row"
+    ID_FILE_GENERALSETTINGS "0CC-FamiTracker の設定を開きます。\n環境設定"
+    ID_EDIT_ENABLEMIDI      "MIDI デバイスからのコマンドを一時的に有効化/無効化します。\nMIDI デバイスの有効化"
+    ID_TRACKER_PLAYROW      "単一の行を再生します。\n現在の行を再生"
 END
 
 STRINGTABLE
 BEGIN
-    ID_SPEED_DEFAULT        "Choose default playback rate corresponding to selected video standard\nDefault"
-    ID_MODULE_MODULEPROPERTIES 
-                            "Open the module properties window\nModule Properties"
+    ID_SPEED_DEFAULT        "選択した動画方式に対応した再生レートを自動選択します。\nデフォルト"
+    ID_MODULE_MODULEPROPERTIES "モジュールのプロパティウィンドウを開きます。\nモジュールのプロパティ"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_TYPE_INST_NUM       "Instrument number: %1"
+    IDS_TYPE_INST_NUM       "音色番号: %1"
     IDS_INVALID_INST_NUM    "Invalid instrument number!"
     IDS_EXPORT_SAMPLES_FILE """%1"" already exists in the same directory as the music data file. Are you sure you want to overwrite it?"
     IDS_MODULE_ERROR_NONE   "This build is not allowed to bypass validation of loaded modules."
     IDS_FILE_LOAD_ERROR     "Couldn't load file properly. Make sure you have the latest version of 0CC-FamiTracker."
-    IDS_CONFIG_WINDOW       "FamiTracker configuration"
+    IDS_CONFIG_WINDOW       "FamiTracker 環境設定"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_PASTEMIX        "Pasted notes will mix with blank fields in destination\nPaste Mix"
-    ID_MODULE_MOVEFRAMEDOWN "Move selected frame one step down\nMove Frame Down"
-    ID_MODULE_MOVEFRAMEUP   "Move selected frame one step up\nMove Frame Up"
-    ID_MODULE_SAVEINSTRUMENT "Save instrument to file\nSave Instrument"
-    ID_MODULE_LOADINSTRUMENT "Load instrument from file\nLoad Instrument"
+    ID_EDIT_PASTEMIX        "貼り付け先の空白部にノートを貼り付けます。\nミックス貼り付け"
+    ID_MODULE_MOVEFRAMEDOWN "選択したフレームを 1 つ下に移動します。\nフレームを下に移動"
+    ID_MODULE_MOVEFRAMEUP   "選択したフレームを 1 つ上に移動します。\nフレームを上に移動"
+    ID_MODULE_SAVEINSTRUMENT "[*未使用*]Save instrument to file\nSave Instrument"
+    ID_MODULE_LOADINSTRUMENT 
+                            "[*未使用*]Load instrument from file\nLoad Instrument"
 END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_ADDINSTRUMENT "Add a new instrument to the module\nAdd Instrument"
+    ID_MODULE_ADDINSTRUMENT "[*未使用*]Add a new instrument to the module\nAdd Instrument"
     ID_MODULE_REMOVEINSTRUMENT 
-                            "Remove instrument from module\nRemove Instrument"
+                            "[*未使用*]Remove instrument from module\nRemove Instrument"
 END
 
 STRINGTABLE
 BEGIN
-    ID_NEXT_SONG            "Select next song\nNext Song"
-    ID_PREV_SONG            "Select previous song\nPrevious Song"
-    ID_EDIT_INSTRUMENTMASK  "Disable writing to the instrument column while entering a note\nInstrument Mask"
-    ID_TRACKER_SWITCHTOTRACKINSTRUMENT 
-                            "Switch to currently played instrument when playing\nSwitch To Track Instrument"
-    ID_FILE_CREATEWAV       "Save the file as a WAV-file\nCreate WAV"
-    ID_VIEW_CONTROLPANEL    "Show or hide the control panel\nToggle Control Panel"
-    ID_EDIT_CLEARPATTERNS   "Reset all patterns and frames\nClear Patterns"
-    ID_EDIT_INTERPOLATE     "Interpolate a selection between two values\nInterpolate"
+    ID_NEXT_SONG            "次の楽曲を選択します。\n次の楽曲へ"
+    ID_PREV_SONG            "前の楽曲を選択します。\n前の楽曲へ"
+    ID_EDIT_INSTRUMENTMASK  "ノート追加時の音色カラムへの書き込みを無効化します。\n音色マスク"
+    ID_TRACKER_SWITCHTOTRACKINSTRUMENT "再生時、現在再生されている音色に切り替えます。\n再生時に音色追従"
+    ID_FILE_CREATEWAV       "ファイルを WAVE ファイルとして保存します。\nCreate WAV"
+    ID_VIEW_CONTROLPANEL    "コントロールパネルの表示/非表示を切り替えます。\nコントロールパネルを表示"
+    ID_EDIT_CLEARPATTERNS   "全てのパターンとフレームをリセットします。\nパターンの完全削除"
+    ID_EDIT_INTERPOLATE     "選択した 2 つの数値を補間します。\n数値の補間"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_SOLOCHANNEL  "Mute / unmute all but the selected track\nSolo Track"
-    ID_TRACKER_TOGGLECHANNEL "Mute / unmute selected track\nToggle Track"
-    ID_MODULE_EDITINSTRUMENT "Open instrument editor\nEdit Instrument"
+    ID_TRACKER_SOLOCHANNEL  "選択したトラック以外の全トラックをミュート/非ミュートします。\nトラックをソロ"
+    ID_TRACKER_TOGGLECHANNEL "選択したトラックをミュート/非ミュートします。\nトラックをミュート"
+    ID_MODULE_EDITINSTRUMENT "[*未使用*]Open instrument editor\nEdit Instrument"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_INFO_TITLE          "(title)"
-    IDS_INFO_AUTHOR         "(author)"
-    IDS_OUT_OF_SLOTS        "Out of sample slots"
+    IDS_INFO_TITLE          "(曲名)"
+    IDS_INFO_AUTHOR         "(作者)"
+    IDS_OUT_OF_SLOTS        "[*未使用*]Out of sample slots"
     IDS_OUT_OF_SAMPLEMEM_FORMAT 
                             "Couldn't load sample, out of sample memory (max %1 kB is avaliable)"
-    IDS_DPCM_IMPORT_GAIN_FORMAT "Gain: %1 dB"
-    IDS_INFO_COPYRIGHT      "(copyright)"
+    IDS_DPCM_IMPORT_GAIN_FORMAT "ゲイン: %1 dB"
+    IDS_INFO_COPYRIGHT      "(著作権表示)"
     IDS_IMPORT_FAILED       "Import module failed"
     IDS_IMPORT_INSTRUMENT_COUNT 
                             "Could not import all instruments, out of instrument slots!"
     IDS_IMPORT_SAMPLE_SLOTS "Could not import all samples, out of sample slots!"
-    IDS_DPCM_IMPORT_TITLE_FORMAT "PCM Import (%1)"
-    IDS_DPCM_IMPORT_WAVE_FORMAT "%1 Hz, %2 bits, %3"
-    IDS_DPCM_IMPORT_TARGET_FORMAT "Target sample rate: %1 Hz"
-    IDS_PERFORMANCE_FRAMERATE_FORMAT "Frame rate: %1 Hz"
-    IDS_PERFORMANCE_UNDERRUN_FORMAT "Underruns: %1"
+    IDS_DPCM_IMPORT_TITLE_FORMAT "PCM 取り込み (%1)"
+    IDS_DPCM_IMPORT_WAVE_FORMAT "%1 Hz, %2 bit, %3"
+    IDS_DPCM_IMPORT_TARGET_FORMAT "目標サンプリングレート: %1 Hz"
+    IDS_PERFORMANCE_FRAMERATE_FORMAT "フレームレート: %1 Hz"
+    IDS_PERFORMANCE_UNDERRUN_FORMAT "アンダーラン: %1"
 END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_DUPLICATEFRAME "Insert a copy of current frame\nDuplicate Frame"
+    ID_MODULE_DUPLICATEFRAME 
+                            "現在のフレームのコピーを挿入します。[※各パターン番号はそのままです]\nフレームをそのまま複製"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_REVERSE         "Reverse a selection\nReverse"
+    ID_EDIT_REVERSE         "選択範囲の内容を反転します。\n内容の反転"
 END
 
 STRINGTABLE
 BEGIN
-    ID_INSTRUMENT_REMOVE    "Remove instrument from module\nRemove Iinstrument"
-    ID_INSTRUMENT_EDIT      "Open instrument edtor\nEdit Instrument"
-    ID_INSTRUMENT_CLONE     "Create a copy of selected instrument\nClone Instrument"
-    ID_FRAME_COPY           "Copy the selection and put it on the Clipboard\nCopy"
-    ID_FRAME_PASTE          "Insert Clipboard contents\nPaste"
-    ID_EDIT_REPLACEINSTRUMENT 
-                            "Replace all instruments in a selection with the selected instrument\nReplace Instrument"
+    ID_INSTRUMENT_REMOVE    "モジュールから音色を削除します。\n音色の削除"
+    ID_INSTRUMENT_EDIT      "音色エディタを開きます。\n音色の編集"
+    ID_INSTRUMENT_CLONE     "選択した音色のコピーを作成します。\n音色の複製"
+    ID_FRAME_COPY           "選択範囲をコピーしてクリップボードに保持します。\nコピー"
+    ID_FRAME_PASTE          "クリップボードの内容を挿入します。\n貼り付け"
+    ID_EDIT_REPLACEINSTRUMENT "選択範囲内の全ての音色を、現在選択している音色で置き換えます。\n音色の置換"
 END
 
 STRINGTABLE
 BEGIN
-    ID_CLEANUP_REMOVEUNUSEDPATTERNS 
-                            "Remove all unused patterns\nRemove Unused Patterns"
-    ID_HELP_EFFECTTABLE     "Open help window with effect table\nEffect Table"
-    ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS 
-                            "Remove all unused instruments\nRemove Unused Instruments"
+    ID_CLEANUP_REMOVEUNUSEDPATTERNS "使われていないパターンを全て削除します。\n使われていないパターンの削除"
+    ID_HELP_EFFECTTABLE     "ヘルプウィンドウにて、エフェクト一覧を表示します。[※未実装]\nエフェクトについて"
+    ID_CLEANUP_REMOVEUNUSEDINSTRUMENTS "使われていない音色を全て削除します。\n使われていない音色の削除"
 END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_REMOVEFRAME   "Remove selected frame\nRemove Frame"
-    ID_MODULE_COMMENTS      "Open module comments dialog\nComments"
-    ID_MODULE_INSERTFRAME   "Insert a new frame\nInsert Frame"
-    ID_INSTRUMENT_NEW       "Add a new instrument to the module\nAdd Instrument"
-    ID_INSTRUMENT_LOAD      "Load instrument from file\nLoad Instrument"
-    ID_INSTRUMENT_SAVE      "Save instrument to file\nSave Instrument"
+    ID_MODULE_REMOVEFRAME   "選択したフレームを削除します。\nフレームの削除"
+    ID_MODULE_COMMENTS      "モジュールのコメントダイアログを開きます。\nコメント"
+    ID_MODULE_INSERTFRAME   "新しいフレームを挿入します。\nフレームの挿入"
+    ID_INSTRUMENT_NEW       "モジュールに新しい音色を追加します。\n音色の新規作成"
+    ID_INSTRUMENT_LOAD      "音色をファイルから読み込みます。\n音色ファイルの読み込み"
+    ID_INSTRUMENT_SAVE      "音色をファイルに保存します。\n音色ファイルの保存"
 END
 
 STRINGTABLE
@@ -2628,24 +2654,24 @@ END
 STRINGTABLE
 BEGIN
     ID_MODULE_DUPLICATEFRAMEPATTERNS 
-                            "Insert a copy of current frame including all patterns\nDuplicate Patterns"
-    ID_EDIT_EXPANDPATTERNS  "Expand selected pattern by 2x\nExpand"
-    ID_EDIT_SHRINKPATTERNS  "Shrink selected pattern by 2x\nShrink"
-    ID_FRAMEEDITOR_TOP      "Move the frame editor to the top of the window (default)\nTop"
-    ID_FRAMEEDITOR_LEFT     "Move the frame editor to the left of the window\nLeft"
+                            "全てのパターンを新しいパターン番号に複製して、現在のフレームのコピーを挿入します。\nフレームをパターンごと複製"
+    ID_EDIT_EXPANDPATTERNS  "選択したパターンを 2 倍広げます。\n間隔を 2　倍に"
+    ID_EDIT_SHRINKPATTERNS  "選択したパターンを 2 倍縮めます。\n間隔を半分に"
+    ID_FRAMEEDITOR_TOP      "フレームエディタをウィンドウの上部に配置します（デフォルト）。\nフレームエディタを上に表示"
+    ID_FRAMEEDITOR_LEFT     "フレームエディタをウィンドウの左側に配置します。\nフレームエディタを左に表示"
 END
 
 STRINGTABLE
 BEGIN
-    ID_DECAY_SLOW           "Volume meters slowly decrease over time\nSlow Decay Rate"
-    ID_DECAY_FAST           "Volume meters reflect instant track amplitude\nFast Decay Rate"
-    ID_INSTRUMENT_DEEPCLONE "Create a copy of selected instrument including all sequences\nDeep Clone Instrument"
-    ID_EDIT_FIND_TOGGLE     "Bring up the find / replace tab\nToggle Find / Replace Tab"
+    ID_DECAY_SLOW           "音量メーターを時間とともにゆっくり減衰させます。\nメーター減衰を遅く"
+    ID_DECAY_FAST           "音量メーターにトラックの瞬間的な音量を反映させます。\nメーター減衰を速く"
+    ID_INSTRUMENT_DEEPCLONE "全てのシーケンスを含めて、選択した音色のコピーを作成します。\n音色とシーケンスの複製"
+    ID_EDIT_FIND_TOGGLE     "検索・置換タブを表示します。\n検索タブの表示"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_PLAY_CURSOR  "Play pattern from cursor\nPlay From Cursor"
+    ID_TRACKER_PLAY_CURSOR  "パターンをカーソル位置から再生します。\nカーソル位置から再生"
 END
 
 STRINGTABLE
@@ -2655,14 +2681,14 @@ BEGIN
                             "An error occured while trying to copy data to the clipboard."
     IDS_CLIPBOARD_PASTE_ERROR 
                             "An error occured while trying to paste data from the clipboard."
-    IDS_DPCM_SPACE_FORMAT   "Space used %1 kB, left %2 kB (%3 kB available)"
-    IDS_FILTER_0CC          "0CC-FamiTracker modules (*.0cc;*.ftm)"
-    IDS_INSTRUMENT_EDITOR_TITLE "Instrument editor - %1"
+    IDS_DPCM_SPACE_FORMAT   "容量: 使用済み %1 KB, 残り %2 KB (全体 %3 KB)"
+    IDS_FILTER_0CC          "0CC-FamiTracker モジュール (*.0cc;*.ftm)"
+    IDS_INSTRUMENT_EDITOR_TITLE "音色エディタ - %1"
     IDS_INST_VERSION_UNSUPPORTED "File version not supported!"
-    IDS_FILE_SAVED          "File saved (%1 bytes)"
+    IDS_FILE_SAVED          "ファイルを保存しました。(%1 バイト)"
     IDS_MIDI_ERR_INPUT      "MIDI Error: Could not open MIDI input device!"
     IDS_MIDI_ERR_OUTPUT     "MIDI Error: Could not open MIDI output device!"
-    IDS_NEW_SOUND_CONFIG    "New sound configuration has been loaded"
+    IDS_NEW_SOUND_CONFIG    "新しいサウンド設定が読み込まれました。"
 END
 
 STRINGTABLE
@@ -2672,90 +2698,87 @@ BEGIN
     IDS_SONG_DELETE         "Do you want to delete the selected songs? There is no undo for this command."
     IDS_SOUND_FAIL          "It appears the current sound settings aren't working, change settings and try again."
     IDS_UNDERRUN_MESSAGE    "Warning: Audio buffer underrun, increase the audio buffer size!"
-    IDS_WELCOME_VER_FORMAT  "Welcome to 0CC-FamiTracker %1, press F1 for help"
+    IDS_WELCOME_VER_FORMAT  "0CC-FamiTracker %1 へようこそ。F1 を押すとヘルプを表示します。[※未実装]"
     IDS_DPCM_IMPORT_INVALID_WAVEFILE 
                             "Cannot load this sample, file is invalid or incompatible. (Only uncompressed PCM is supported.)"
     IDS_INST_FILE_ERROR     "Could not load instrument file! Check that you have the most recent version of 0CC-FamiTracker."
-    IDS_NEW_2A03_INSTRUMENT "New 2A03 instrument"
-    IDS_NEW_VRC6_INSTRUMENT "New VRC6 instrument"
-    IDS_NEW_VRC7_INSTRUMENT "New VRC7 instrument"
-    IDS_NEW_FDS_INSTRUMENT  "New FDS instrument"
-    IDS_NEW_N163_INSTRUMENT "New Namco instrument"
-    IDS_NEW_S5B_INSTRUMENT  "New Sunsoft instrument"
-    IDS_FRAME_DROP_COPY_NEW "Drop selection to copy frames to new pattern numbers"
-    IDS_FRAME_DROP_COPY     "Drop selection to copy frames"
+    IDS_NEW_2A03_INSTRUMENT "[*未使用*]New 2A03 instrument"
+    IDS_NEW_VRC6_INSTRUMENT "[*未使用*]New VRC6 instrument"
+    IDS_NEW_VRC7_INSTRUMENT "[*未使用*]New VRC7 instrument"
+    IDS_NEW_FDS_INSTRUMENT  "[*未使用*]New FDS instrument"
+    IDS_NEW_N163_INSTRUMENT "[*未使用*]New Namco instrument"
+    IDS_NEW_S5B_INSTRUMENT  "[*未使用*]New Sunsoft instrument"
+    IDS_FRAME_DROP_COPY_NEW "新しいパターン番号へ複製したい場所に選択フレームをドラッグ & ドロップしてください。"
+    IDS_FRAME_DROP_COPY     "コピーしたい場所に選択フレームをドラッグ & ドロップしてください。"
 END
 
 STRINGTABLE
 BEGIN
-    ID_INDICATOR_CHIP       "No expansion chip"
-    ID_INDICATOR_INSTRUMENT "Instrument: %1"
-    ID_INDICATOR_OCTAVE     "Octave: %1"
+    ID_INDICATOR_CHIP       "拡張音源なし"
+    ID_INDICATOR_INSTRUMENT "音色: %1"
+    ID_INDICATOR_OCTAVE     "オクターブ: %1"
     ID_INDICATOR_RATE       "000 Hz"
     ID_INDICATOR_TEMPO      "000.00 BPM"
     ID_INDICATOR_TIME       "00:00:00 "
     ID_INDICATOR_POS        "00 / 00    "
-    ID_INDICATOR_DPCM_SEGMENT "Segment: %1, length: %2"
-    ID_INDICATOR_DPCM_SIZE  "Size: %1 bytes"
-    ID_INDICATOR_DPCM_ENDPOS "Delta end pos: %1"
+    ID_INDICATOR_DPCM_SEGMENT "区間: %1, 長さ: %2"
+    ID_INDICATOR_DPCM_SIZE  "サイズ: %1 バイト"
+    ID_INDICATOR_DPCM_ENDPOS "デルタ終端値: %1"
 END
 
 STRINGTABLE
 BEGIN
-    ID_MODULE_DETUNE        "Open the detune settings dialog\nDetune Settings"
-    ID_MODULE_GROOVE        "Open the groove settings dialog\nGroove Settings"
-    ID_FILE_EXPORTROWS      "Dumps pattern data to comma-separated values\nExport Rows As CSV"
+    ID_MODULE_DETUNE        "デチューン設定ダイアログを開きます。\nデチューン設定"
+    ID_MODULE_GROOVE        "グルーヴ設定ダイアログを開きます。\nグルーヴ設定"
+    ID_FILE_EXPORTROWS      "パターンデータをカンマ区切りの値に出力します。\n行情報 CSV にエクスポート"
     ID_MODULE_DUPLICATECURRENTPATTERN 
-                            "Duplicate the current pattern or all patterns selected in the frame editor\nClone Pattern"
+                            "現在のパターン（またはフレームエディタで選択している全パターン）を、新しいパターン番号に複製します。\nパターンを新規パターン番号に複製"
     ID_CLEANUP_REMOVEUNUSEDDPCMSAMPLES 
-                            "Remove all unised DPCM samples\nRemove Unused DPCM Samples"
-    ID_EDIT_PASTEINSERT     "Pasted notes will be inserted above the destination\nPaste Insert"
-    ID_PASTESPECIAL_CURSOR  "Paste operations occur at the cursor\nCursor"
-    ID_PASTESPECIAL_SELECTION 
-                            "Paste operations occur at the start of selection\nSelection"
-    ID_PASTESPECIAL_FILL    "Paste operations loop throughout the current selection\nFill"
-    ID_CLEANUP_POPULATEUNIQUEPATTERNS 
-                            "Copy a unique pattern for each frame\nPopulate Unique Patterns"
+                            "使われていない DPCM サンプルを全て削除します。\n使われていない DPCM サンプルの削除"
+    ID_EDIT_PASTEINSERT     "貼り付け先の直前にノートを挿入して貼り付けます。\n挿入貼り付け"
+    ID_PASTESPECIAL_CURSOR  "貼り付け処理がカーソル位置で行われます。\nカーソル位置へ貼り付け"
+    ID_PASTESPECIAL_SELECTION "貼り付け処理が選択範囲の始端で行われます。\n選択範囲へ貼り付け"
+    ID_PASTESPECIAL_FILL    "貼り付け処理が現在の選択範囲内をループするように行われます。\n選択範囲へループ貼り付け"
+    ID_CLEANUP_POPULATEUNIQUEPATTERNS "パターンを各フレーム固有のパターンにします。\n全パターンを全フレームに定着"
 END
 
 STRINGTABLE
 BEGIN
-    ID_HELP_FAQ             "Open help window with the FAQ\nFAQ"
-    ID_TRACKER_DISPLAYREGISTERSTATE 
-                            "Display channel register values and tuning information\nDisplay Register State"
+    ID_HELP_FAQ             "ヘルプウィンドウにて、よくある質問を表示します。[※未実装]\nよくある質問"
+    ID_TRACKER_DISPLAYREGISTERSTATE "チャンネルのレジスタ値とチューニング情報を表示します。\nレジスタ状態を表示"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_WAVE_PROGRESS_FILE_FORMAT "Saving to: %1"
-    IDS_WAVE_PROGRESS_FRAME_FORMAT "Frame: %1 (%2 done)"
-    IDS_WAVE_PROGRESS_TIME_FORMAT "Time: %1 (%2 done)"
-    IDS_WAVE_PROGRESS_ELAPSED_FORMAT "Elapsed time: %1"
+    IDS_WAVE_PROGRESS_FILE_FORMAT "保存先: %1"
+    IDS_WAVE_PROGRESS_FRAME_FORMAT "[*未使用*]Frame: %1 (%2 done)"
+    IDS_WAVE_PROGRESS_TIME_FORMAT "[*未使用*]Time: %1 (%2 done)"
+    IDS_WAVE_PROGRESS_ELAPSED_FORMAT "処理時間: %1"
     IDS_DSOUND_ERROR        "DirectX: DirectSound error!"
     IDS_DSOUND_BUFFER_ERROR "DirectX: DirectSound error: Could not create buffer!"
-    IDS_EDIT_MODE           "Changed to edit mode"
-    IDS_NORMAL_MODE         "Changed to normal mode"
+    IDS_EDIT_MODE           "編集モードに切り替えました。"
+    IDS_NORMAL_MODE         "通常モードに切り替えました。"
     IDS_MIDI_MESSAGE_ON_FORMAT 
-                            "MIDI message: Note on (note = %1, octave = %2, velocity = %3)"
-    IDS_MIDI_MESSAGE_OFF    "MIDI message: Note off"
-    IDS_WAVE_PROGRESS_ROW_FORMAT "Row: %1 (%2 done)"
+                            "MIDI メッセージ: ノートオン (ノート = %1, オクターブ = %2, ベロシティ = %3)"
+    IDS_MIDI_MESSAGE_OFF    "MIDI メッセージ: ノートオフ"
+    IDS_WAVE_PROGRESS_ROW_FORMAT "[*未使用*]Row: %1 (%2 done)"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_LOADING_FILE        "Loading file..."
-    IDS_FILTER_DMC          "Delta modulated samples (*.dmc)"
-    IDS_FILTER_WAV          "Waveform Audio File Format (*.wav)"
-    IDS_FILTER_TXT          "Text files (*.txt)"
-    IDS_DPCM_EDIT_INFO_FORMAT "Wave end: %1, Size: %2 bytes "
-    IDS_WAVE_EXPORT_DONE    "Done"
-    IDS_WAVE_EXPORT_FINISHED "finished"
+    IDS_LOADING_FILE        "ファイルを読み込んでいます..."
+    IDS_FILTER_DMC          "デルタ変調サンプル (*.dmc)"
+    IDS_FILTER_WAV          "WAV 音声ファイル (*.wav)"
+    IDS_FILTER_TXT          "テキストファイル (*.txt)"
+    IDS_DPCM_EDIT_INFO_FORMAT "[*未使用*]Wave end: %1, Size: %2 bytes"
+    IDS_WAVE_EXPORT_DONE    "完了"
+    IDS_WAVE_EXPORT_FINISHED "終了"
     IDS_ABOUT_TOOLTIP_MAIL  "Send mail to nicetas.c@gmail.com"
     IDS_ABOUT_TOOLTIP_WEB   "Go to http://hertzdevil.info/programs/"
     IDS_ABOUT_VERSION_FORMAT "0CC-FamiTracker version %1"
-    IDS_PROPERTIES_CHANNELS "Channels:"
-    IDS_LOADING_DONE        "File loaded"
-    IDS_DPCM_IMPORT_SIZE_FORMAT "Converted size: %1 bytes"
+    IDS_PROPERTIES_CHANNELS "チャンネル数:"
+    IDS_LOADING_DONE        "ファイルを読み込みました。"
+    IDS_DPCM_IMPORT_SIZE_FORMAT "変換後のサイズ: %1 バイト"
     IDS_INSTRUMENT_FOLDER   "Choose a folder where you have instrument files"
     IDS_IMPORT_GROOVE_SLOTS "Could not import all grooves, out of groove slots!"
     IDS_REMOVE_SAMPLES      "Do you want to remove all unused DPCM samples and DPCM assignments? There is no undo for this command."
@@ -2763,11 +2786,12 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_IMPORTTEXT      "Imports module text files\nImport Text"
-    ID_FILE_EXPORTTEXT      "Exports module as a text file\nExport Text"
-    ID_CLEANUP_MERGEDUPLICATEDPATTERNS 
-                            "Combine copies of duplicated patterns\nMerge Duplicated Patterns"
-    ID_EDIT_VOLUMEMASK      "Disable writing to the volume column while entering a note\nVolume Mark"
+    ID_FILE_IMPORTTEXT      "モジュールテキストファイルを取り込みます。\nテキストをインポート"
+    ID_FILE_EXPORTTEXT      "モジュールをテキストファイルとして書き出します。\nテキストをエクスポート"
+    ID_CLEANUP_MERGEDUPLICATEDPATTERNS "重複するパターンを統合します。\n重複パターンの統合"
+    ID_POPUP_SAMPLESCOPE2   "波形をブラーのかかったオシロスコープで表示します。"
+    ID_POPUP_SAMPLESCOPE1   "波形をオシロスコープで表示します。"
+    ID_EDIT_VOLUMEMASK      "ノート追加時の音量カラムへの書き込みを無効化します。\n音量マスク"
 END
 
 STRINGTABLE
@@ -2777,82 +2801,116 @@ END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_STRETCHPATTERNS "Stretch the current selection\nStretch"
-    IDC_COMPACT_TOGGLE      "Hide all columns except the note column"
-    ID_SELECT_NONE          "Clear the current selection\nDeselect"
-    ID_SELECT_ROW           "Select the current row\nSelect Row"
-    ID_SELECT_PATTERN       "Select the current patterm\nSelect Pattern"
-    ID_SELECT_FRAME         "Select the current frame\nSelect Frame"
-    ID_SELECT_CHANNEL       "Select the current track\nSelect Track"
-    ID_SELECT_TRACK         "Select the entire song\nSelect Song"
-    ID_SELECT_COLUMN        "Select the entire column in the current pattern\nSelect Column"
-    ID_COPYAS_TEXT          "Copy the current selection as pretty-printed text\nCopy As Text"
-    ID_COPYAS_VOLUMESEQUENCE 
-                            "Copy the volume sequence in the first selected track\nCopy As Volume Sequence"
-    ID_COPYAS_PPMCK         "Copy the current selection as a PPMCK-compatible MML data\nCopy As PPMCK Data"
+    ID_EDIT_STRETCHPATTERNS "現在の選択範囲を伸縮させます。\n間隔の編集"
+    IDC_COMPACT_TOGGLE      "ノートカラム以外のカラムを非表示にします。"
+    ID_SELECT_NONE          "現在の選択を解除します。\n選択解除"
+    ID_SELECT_ROW           "現在の行を選択します。\n行を選択"
+    ID_SELECT_PATTERN       "現在のパターンを選択します。\nパターンを選択"
+    ID_SELECT_FRAME         "現在のフレームを選択します。\nフレームを選択"
+    ID_SELECT_CHANNEL       "現在のトラックを選択します。\nトラックを選択"
+    ID_SELECT_TRACK         "楽曲全体を選択します。\n楽曲を選択"
+    ID_SELECT_COLUMN        "現在のパターンのカラム全体を選択します。\nカラムを選択"
+    ID_COPYAS_TEXT          "現在の選択範囲を書式整形されたテキストとしてコピーします。\nプレーンテキストとしてコピー"
+    ID_COPYAS_VOLUMESEQUENCE "最初に選択したトラックの音量シーケンスをコピーします。\n音量シーケンスとしてコピー"
+    ID_COPYAS_PPMCK         "現在の選択範囲を PPMCK 互換の MML データとしてコピーします。\nPPMCK MML データとしてコピー"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FRAME_CUT            "Cut the selection and put it on the Clipboard\nCut"
+    ID_FRAME_CUT            "選択範囲を切り取ってクリップボードに保持します。\n切り取り"
+    ID_FRAME_DELETE         "選択範囲があればその中身を、なければノートを削除します。\n削除"
 END
 
 STRINGTABLE
 BEGIN
-    ID_POPUP_PICKUPROW      "Select current row's instrument\nPick Up Row"
-    ID_POPUP_UNMUTEALLCHANNELS "Unmute all tracks\nUnmute All Tracks"
-    ID_MODULE_CHANNELS      "Add or remove tracks\nTracks"
+    ID_POPUP_SPECTRUMANALYZER "波形をスペクトログラムで表示します。"
+    ID_POPUP_NOTHING        "ロゴを表示します。"
+    ID_POPUP_PICKUPROW      "現在の行の音色を選択します。[※音量とかも取得します]\n行の設定を取得"
+    ID_POPUP_UNMUTEALLCHANNELS "全てのトラックを非ミュートします。\n全トラックのミュートを解除"
+    ID_MODULE_CHANNELS      "トラックを追加または削除します。\nトラック"
 END
 
 STRINGTABLE
 BEGIN
-    IDC_FOLLOW_TOGGLE       "Make the cursor follow the currently played row"
+    IDC_FOLLOW_TOGGLE       "カーソルを現在再生している行に追従させます。"
 END
 
 STRINGTABLE
 BEGIN
-    ID_EDIT_GOTO            "Go to the specified position in the current song\nGo To"
-    ID_MODULE_BOOKMARK      "Open the bookmark settings dialog\nBookmark Manager"
-    ID_BOOKMARKS_TOGGLE     "Create or delete a bookmark on the current row\nToggle Bookmark"
-    ID_BOOKMARKS_PREVIOUS   "Navigate to the previous bookmark\nPrevious Bookmark"
-    ID_BOOKMARKS_NEXT       "Navigate to the next bookmark\nNext Bookmark"
-    ID_EDIT_SWAPCHANNELS    "Exchange the data of two tracks\nSwap Tracks"
+    ID_EDIT_GOTO            "現在の楽曲内の特定の位置に移動します。\n移動"
+    ID_MODULE_BOOKMARK      "ブックマーク設定ダイアログを開きます。\nブックマークの管理"
+    ID_BOOKMARKS_TOGGLE     "現在の行でブックマークを作成または削除します。\nブックマークの切り替え"
+    ID_BOOKMARKS_PREVIOUS   "前のブックマークへ移動します。\n前のブックマークへ"
+    ID_BOOKMARKS_NEXT       "次のブックマークへ移動します。\n次のブックマークへ"
+    ID_MODULE_ESTIMATESONGLENGTH "楽曲全体の時間、行数、Tick 数を算出します。\n楽曲の長さを算出"
+    ID_EDIT_SWAPCHANNELS    "2 つのトラックのデータを交換します。\nトラックの入れ替え"
     ID_TRACKER_RECORDTOINST "Create a new instrument by logging output from current track\nRecord to Instrument"
     ID_TRACKER_RECORDERSETTINGS 
                             "Open the instrument recorder settings dialog\nRecorder Settings"
-    ID_TRANSPOSE_CUSTOM     "Transpose song by custom amount\nTranspose Song"
+    ID_POPUP_SPECTRUMANALYZER2 "波形を詳細なスペクトログラムで表示します。"
+    ID_TRANSPOSE_CUSTOM     "楽曲を自在にトランスポーズします。\n楽曲のトランスポーズ"
 END
 
 STRINGTABLE
 BEGIN
-    ID_TRACKER_TOGGLECHIP   "Mute / unmute selected sound chip\nToggle Chip"
-    ID_TRACKER_SOLOCHIP     "Mute / unmute all but the selected sound chip\nSolo Chip"
-    ID_MODULE_LINEARPITCH   "Enable linear pitch bends\nLinear Pitch Mode"
-    ID_RECENTFILES_CLEAR    "Clear the recent file list\nClear Recent File List"
-    ID_EDIT_SPLITKEYBOARD   "Open the split keyboard settings dialog\nSplit Keyboard"
-    ID_VIEW_AVERAGEBPM      "Display average BPM value instead of instant BPM value\nDisplay Average BPM"
-    ID_VIEW_CHANNELSTATE    "Display information about active effects\nDisplay Track State"
-    ID_TRACKER_PLAY_MARKER  "Play pattern from row marker\nPlay From Marker"
-    ID_TRACKER_SET_MARKER   "Set a row marker for playback\nSet Row Marker"
-    ID_SELECT_OTHER         "Restore the current selection in the inactive editor window\nSelect in Other Editor"
+    ID_TRACKER_TOGGLECHIP   "選択した音源をミュート/非ミュートします。\n音源をミュート"
+    ID_TRACKER_SOLOCHIP     "選択したトラック以外の全音源をミュート/非ミュートします。\n音源をソロ"
+    ID_MODULE_LINEARPITCH   "[*未使用*]Enable linear pitch bends\nLinear Pitch Mode"
+    ID_RECENTFILES_CLEAR    "最近のファイルの一覧をクリアします。\nファイル履歴をクリア"
+    ID_FIND_PREVIOUS        "検索条件をもとに前の検索結果へ移動します。\n前を検索"
+    ID_EDIT_SPLITKEYBOARD   "キーボードの分割設定ダイアログを開きます。\nキーボードの分割"
+    ID_VIEW_AVERAGEBPM      "瞬間的な BPM 値の代わりに、平均 BPM 値を表示します。\n平均 BPM を表示"
+    ID_VIEW_CHANNELSTATE    "アクティブなエフェクトについての情報を表示します。[※未実装]\nトラック状態を表示"
+    ID_TRACKER_PLAY_MARKER  "パターンを行マーカーから再生します。\nマーカーから再生"
+    ID_TRACKER_SET_MARKER   "再生用の行マーカーを設定します。\n行マーカーを設定"
+    ID_FRAME_PASTEOVERWRITE "フレームを上書きして貼り付けます。\n上書き貼り付け"
+    ID_SELECT_OTHER         "現在の選択対象をアクティブでない方のエディタウィンドウに再設定します。\nエディタのフォーカスを切り替え"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_EXPORTJSON      "Exports module as a JSON file\nExport JSON"
-    ID_FILE_IMPORTJSON      "Imports module JSON files\nImport JSON"
+    ID_FILE_EXPORTJSON      "モジュールを JSON ファイルとして書き出します。\nJSON をエクスポート"
+    ID_FILE_IMPORTJSON      "モジュール JSON ファイルを取り込みます。\nJSON をインポート"
 END
 
-#endif    // English (United States) resources
+STRINGTABLE
+BEGIN
+    IDC_PLAY                "選択した音程でサンプルをプレビュー再生します。"
+    IDC_DELETE              "選択範囲のサンプルを削除します。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_TILT                "サンプルを 0 に向かって傾かせます。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_PREVIEW             "サンプルを音程 15 でプレビュー再生します。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_IMPORT              "PCM ファイルを読み込んでデルタ PCM に変換します。"
+    IDC_EDIT                "DPCM エディタを開きます。"
+    IDC_SAVE                "選択したサンプルをファイルに保存します。"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_LOAD                "サンプルをファイルから読み込みます。"
+    IDC_UNLOAD              "選択したサンプルを取り除きます。"
+END
+
+#endif    // 日本語 (日本) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// Swedish (Sweden) resources
+// スウェーデン語 (スウェーデン) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SVE)
 LANGUAGE LANG_SWEDISH, SUBLANG_SWEDISH
-#pragma code_page(1252)
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -2878,18 +2936,18 @@ BEGIN
     "#define _AFX_NO_TRACKER_RESOURCES\r\n"
     "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
     "\r\n"
-    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
-    "LANGUAGE 9, 1\r\n"
-    "#pragma code_page(1252)\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "LANGUAGE 0x11, 0x01\r\n"
+    "#pragma code_page(932)\r\n"
     "#include ""res\\0CC-FamiTracker.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
-    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""l.jpn\\\\afxres.rc""         // Standard components\r\n"
     "#endif\r\n"
     "\0"
 END
 
 #endif    // APSTUDIO_INVOKED
 
-#endif    // Swedish (Sweden) resources
+#endif    // スウェーデン語 (スウェーデン) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -2904,11 +2962,11 @@ END
 #define _AFX_NO_TRACKER_RESOURCES
 #define _AFX_NO_PROPERTY_RESOURCES
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-LANGUAGE 9, 1
-#pragma code_page(1252)
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE 0x11, 0x01
+#pragma code_page(932)
 #include "res\0CC-FamiTracker.rc2"  // non-Microsoft Visual C++ edited resources
-#include "afxres.rc"         // Standard components
+#include "l.jpn\\afxres.rc"         // Standard components
 #endif
 
 /////////////////////////////////////////////////////////////////////////////

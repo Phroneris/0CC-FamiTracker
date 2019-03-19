@@ -213,7 +213,7 @@ void CSequenceInstrumentEditPanel::SetupDialog(const LPCSTR *pListItems)		// // 
 	pList->DeleteAllItems();
 	pList->InsertColumn(0, L"", LVCFMT_LEFT, static_cast<int>(.18 * Width));
 	pList->InsertColumn(1, L"#", LVCFMT_LEFT, static_cast<int>(.22 * Width));
-	pList->InsertColumn(2, L"Effect name", LVCFMT_LEFT, static_cast<int>(.6 * Width));
+	pList->InsertColumn(2, L"エフェクト名", LVCFMT_LEFT, static_cast<int>(.6 * Width));	/// jp
 	pList->SendMessageW(LVM_SETEXTENDEDLISTVIEWSTYLE, 0, LVS_EX_FULLROWSELECT | LVS_EX_CHECKBOXES);
 
 	for (auto i : enum_values<sequence_t>()) {

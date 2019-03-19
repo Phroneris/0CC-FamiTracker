@@ -256,8 +256,8 @@ void CDetuneDlg::UpdateOffset()
 		SetDlgItemTextW(IDC_DETUNE_INFO_NTSC + i, FormattedW(fmt, CHIP_STR[i], oldReg, newReg, values[0], values[1], values[2], values[3]));
 	}
 
-	SetDlgItemTextW(IDC_STATIC_DETUNE_SEMITONE, FormattedW(L"Semitone: %+d", m_iGlobalSemitone));
-	SetDlgItemTextW(IDC_STATIC_DETUNE_CENT, FormattedW(L"Cent: %+d", m_iGlobalCent));
+	SetDlgItemTextW(IDC_STATIC_DETUNE_SEMITONE, FormattedW(L"半音: %+d", m_iGlobalSemitone));	/// jp
+	SetDlgItemTextW(IDC_STATIC_DETUNE_CENT, FormattedW(L"セント: %+d", m_iGlobalCent));	/// jp
 }
 
 void CDetuneDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)

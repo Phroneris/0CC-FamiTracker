@@ -127,7 +127,7 @@ void CSequenceEditor::OnPaint()
 	m_BackDC.SetBkMode(TRANSPARENT);		// // //
 	m_BackDC.SetTextColor(BLACK);
 	m_BackDC.SetTextAlign(TA_LEFT);
-	m_BackDC.TextOutW(7, DPI::SY(6), L"Size:");
+	m_BackDC.TextOutW(7, DPI::SY(6), L"長さ:");	/// jp
 
 	float Rate = static_cast<CInstrumentEditDlg*>(static_cast<CSequenceInstrumentEditPanel*>(m_pParent)->GetParent())->GetRefreshRate();
 	m_BackDC.TextOutW(120, DPI::SY(6), FormattedW(L"%.0f ms", (1000.0f * m_pSizeEditor->GetValue()) / Rate));
