@@ -200,7 +200,7 @@ BOOL CFamiTrackerApp::InitInstance()
 #if !defined(WIP) && !defined(_DEBUG)
 	// Add shell options
 	RegisterShellFileTypes();		// // //
-	const WCHAR FILE_ASSOC_NAME[] = L"0CC-FamiTracker Module";
+	const WCHAR FILE_ASSOC_NAME[] = L"0CC-FamiTracker モジュール";	/// jp
 	RegSetValueW(HKEY_CLASSES_ROOT, L"0CCFamiTracker.Document", REG_SZ, FILE_ASSOC_NAME, std::size(FILE_ASSOC_NAME) * sizeof(WCHAR));
 	// Add an option to play files
 	CStringW strPathName, strFileTypeId;

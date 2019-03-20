@@ -1613,7 +1613,7 @@ void CMainFrame::OnUpdateSBChip(CCmdUI *pCmdUI)
 		FTEnv.GetSoundChipService()->ForeachType([&] (sound_chip_t c) {
 			if (Chip.ContainsChip(c)) {
 				if (!String.empty())
-					String += "+";	/// jp: 日本語化とは関係ないけど、ステータスバーの欄内に入りきってないので	/// jp-garbling
+					String += " + ";	/// jp-garbling
 				String += std::string {FTEnv.GetSoundChipService()->GetChipShortName(c)};
 			}
 		});
