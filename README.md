@@ -11,7 +11,8 @@
 あのパッチ作成はResource Hackerだけでなくバイナリエディタまで使ってexeファイルをちまちま改造していく作業がつらかったんだけど、ある日「OSSなんだから元のソースを日本語化しちゃえばいいじゃん！」と気付いたのでこちらを作った。
 
 やってる変更はほとんど単純な文字列の置換とちょっとしたスペースの調整のみだけど、何せ私はC++なんて触ったことがないので、この日本語化によってどんな不具合が増えているかわからない。仮にわかったとしても、私の手には負えないかもしれない。  
-FamiTrackerはGPL 2.0ライセンスなので改めて書く必要はないことだけど、もし使う人がいるなら、どうかどんなトラブルが起きても自己責任で使ってほしい。
+FamiTrackerはGPL 2.0ライセンスなので改めて書く必要はないことだけど、もし使う人がいるなら、どうかどんなトラブルが起きても自己責任で使ってほしい。  
+一応、私が見つけられた範囲のトラブルは下の[Known issues](#known-issues "既知の問題点の項目")の項目に書き留めてある。  
 
 GPLといえば、日本語化のための変更を加えた行やブロックには`/// jp`というコメントを添えてそれを示している。
 
@@ -19,8 +20,55 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
 ## エフェクトについて
 
 0CC-FamiTrackerには、独自のエフェクトや本家FamiTrackerのベータ版のエフェクトなどが搭載されている。  
-独自の方については0CCFTのREADMEに説明が書かれてるけど、全部英語なので日本語でまとめてみた。  
+独自の方については`0CC-readme.txt`に説明が書かれてるけど、全部英語でつらいので、これも日本語化してまとめてみた。  
 → [エフェクトとアルペジオ（日訳）.md](エフェクトとアルペジオ（日訳）.md "別ファイルへのリンク")
+
+
+## レジストリについて
+
+私はこれにとりかかるまで「インストーラーのないソフト」＝「拡張子関連付けをしない限り、レジストリに影響を残さないソフト」だとばかり思ってたんだけど、どうも最近のソフトはそうでもないらしい。  
+本家FamiTrackerや0CC-FamiTrackerは、最新版であればファイル拡張子が自動で関連付けされる。すごい。  
+処理のタイミングとしては、起動時に関連付けが行われ、保存時にファイルアイコンの登録と拡張子表示の省略登録が行われ、終了時に環境設定の保存が行われる…という感じに見える。
+
+私が見つけられる限り、0CC-FT 0.3.15.3では以下のレジストリが自動登録される（`★`はユーザー識別子）。  
+なお、下位リストとして書いたものは連動しているレジストリなので、親玉を消すと勝手に消える。
+```
+  HKEY_CLASSES_ROOT\.0cc : 拡張子の関連付け
+    - HKEY_CURRENT_USER\Software\Classes\.0cc
+    - HKEY_USERS\★\Software\Classes\.0cc
+    - HKEY_USERS\★_Classes\.0cc
+
+  HKEY_CLASSES_ROOT\0CCFamiTracker.Document : 関連付けの詳細
+    - HKEY_CURRENT_USER\Software\Classes\0CCFamiTracker.Document
+    - HKEY_USERS\★\Software\Classes\0CCFamiTracker.Document
+    - HKEY_USERS\★_Classes\0CCFamiTracker.Document
+
+  HKEY_CURRENT_USER\Software\0CC-FamiTracker : 環境設定
+    - HKEY_USERS\★\Software\0CC-FamiTracker
+```
+
+<!-- 以下、個人的なぼやき：
+
+  レジストリ自動登録、INIファイルも手動関連付けも要らないので導入時には確かにお手軽で便利だけど、
+  消したり保管したり移動したりしたい時には結局それなりの知識と調査が必要になるので、むしろめんどくさい気がするなぁ。
+  その辺をお手軽に処理する機能も一緒に実装されてるなら別だけど、それはソフトによってまちまちだろうから、
+  どのみち調べるか試すかする必要が出てくるし。
+
+  でもまあ、少なくとも私の使っているWindows7には
+  【exeファイルのあるパスを変更すると同じexeファイルを二度と関連付けできなくなる】という忌まわしい不具合があって
+  （「ファイルを開くプログラムの選択」で参照から選択しても一覧に表示されなくなっちゃう）、
+  それを解決するためには結局レジストリをいじる羽目になるんだよね。
+    ※ このようにいじるのだ→ https://www.pasoble.jp/windows/7/08843.html
+  せっかくのポータブルexeなんだから気軽に場所を変えたいこともあるのに。
+  で、起動のたびにレジストリが自動修正されるなら、晴れてこの不具合とは無縁になるわけだ。うーんやはり便利なのかも。
+
+  …いや、でもINIファイルが無いことに初めて気付いた時は「どこに設定が保存されてんだこれ！？」って純粋にビビったな。
+  ぶっちゃけ気味が悪かった。
+  このソフトがたまたまOSSだったので、後から多少なりともタネが理解できたけど。
+
+  ということで個人的な総評は「そうと知った上で使えば便利」。わぁ無難。
+
+-->
 
 
 ## ビルドに関する注意点
@@ -52,23 +100,61 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
   - nkfの代わりにiconvでもできなくはないけど、ファイル先頭にBOM差分が生じたり、事故ってファイルが崩壊したりするので気に食わなかった。
     入力を自動判別してくれるnkf最高。環境の共有しやすさとか知らん。みんな頑張ってnkfと上記設定を導入してほしい。
 
-+ 日本語化されたその他のソースファイルは、文字エンコーディングがUTF-8でないといけない。BOMは無くても良く、その場合のVisual Studio 2017上のエンコーディング選択肢は`Unicode (UTF-8 without signature) - Codepage 65001`となる。
-
-  - いや、本来はBOMが必要らしいんだけど、コンパイラオプションでどうにかしている。
-  - `resource.h`だけは、たまにShift_JISに戻っちゃうのでBOMをつけてみている。
++ 日本語化されたその他のソースファイルは、文字エンコーディングがUTF-8でないといけない。BOMは無くても良く、その場合のVisual Studio 2017上のエンコーディング選択肢は`Unicode (UTF-8 without signature) - Codepage 65001`となる。  
+  いや本来はBOMが必要らしいんだけど、私は以下の手順でBOMなしファイルをどうにかしている。
+  
+  1. ソリューションエクスプローラーで0CC-FamiTrackerを右クリック→「プロパティ」を開く。
+  2. 構成とプラットフォームに「すべての構成」「すべてのプラットフォーム」を選択しておく。
+  3. 「構成プロパティ」→「C/C++」→「コマンド ライン」のメニューを表示する。
+  4. 「追加のオプション」の欄に`/source-charset:utf-8`というコンパイラオプションを追加して「OK」。
+  
+  備考：
+  - `resource.h`だけは、BOMなしだとたまにShift_JISに戻っちゃうのでBOMをつけている。
 
 + 事前にVisual Studioの「C++に関するXPサポート」とDirectXの「DirectX SDK June 2010」の導入が要る。  
-  手動でやったかどうか覚えてないけど、必要なら`$(DXSDK_DIR)`へのパスも通す。
+  `$(DXSDK_DIR)`へのパスも、通ってなければ通す（手動でやったかどうか覚えてない）。
 
 + 現状、ビルドに使用したソースは0.3.15.3の公式リリース版（master）ではなく、それをちょっとだけいじったもの。
 
   - ほんとは公式版と完全に同じ状態で翻訳したかったけど、そのままビルドしようとすると`Error C3861 'ReadGlobalMemory': identifier not found`と言われて失敗し、`Source/Clipboard.h`の一部の行を移動させたら成功したのでそれで良しとした。
 
 
+## Known issues
+
++ 0CCFT never open help files
++ Some strings get garbled if they are localized
+  - Marked with `/// jp-garbling` in source codes
++ There are some unexpected note mappings to right-side keys on my (Japanese) keyboard
+  ```
+    |key(shift)| expected |  actual  |
+    |----------+----------+----------|
+    |  ; (+)   |  D#4     |  F#5     | *   Z=C3
+    |  \ (_)   |  F4      |  (none)  | **  has the same char as "\ (|)" but works differently 
+    |  ] (})   |  F#4     |  G5      |
+    |  @ (`)   |  F5      |  (none)  |
+    |  ^ (~)   |  F#5     |  (none)  |
+    |  [ ({)   |  G5      |  F5      |
+    |  \ (|)   |  G#5     |  (none)  | *** note release by default
+  ```
++ `V`xx effect of N163 shows a hint for one of VRC7
++ I couldn't confirm how the instrument recorder works (so I didn't localize it)
++ `Page Down` and `Scroll Lock` become invisible on the shortcut config list
++ Shortcuts are stored with localized names in the registry
++ `/Unregister` command causes `Unhandled exception C0000005` and crash, and no registry items are removed
++ `ID_CLONE_SEQUENCE` (in `IDR_SEQUENCE_POPUP`) shows `IDS_DISABLE_SAVE` string on the resource IDE
++ These don't show menu prompts on the status bar: `IDR_FRAME_POPUP`, `IDR_PATTERN_HEADER_POPUP`, `IDR_SAMPLE_EDITOR_POPUP`, `IDR_SAMPLE_WND_POPUP`, `IDR_SAMPLES_POPUP` and `IDR_SEQUENCE_POPUP`
++ [Non-issue]: Some contents of `ID_FRAME_*` are duplicated to ones of `ID_EDIT_*`
++ [Non-issue]: There are many unused strings in the string table
+  - Marked some of them as beginning with `[*未使用*]`
++ [Non-issue]: I wonder why the actual configuration dialog is a little wider than the one previewed from the resource IDE
+
+
 ## 参考にしたもの
 
 + How to localize an RC file? — Internationalization Cookbook  
   https://mihai-nita.net/2007/05/03/how-to-localize-an-rc-file/
++ レジストリの直接編集によるファイルの拡張子と関連づけ - Glamenv-Septzen.net  
+  https://www.glamenv-septzen.net/view/14
 + gitの便利なfilterまとめ - webネタ  
   http://r-h.hatenablog.com/entry/2014/02/03/201805
 + Visual Studio 2017でファイルのエンコードを指定して保存する方法 - C++と色々  
@@ -81,37 +167,24 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
   http://nanoappli.com/blog/archives/4739
 
 
-## Known issues
+<!-- 以下、多言語化についてのぼやき：
 
-+ 0CCFT never open help files
-+ Some strings get garbled if they are localized
-  - Marked with `/// jp-garbling` in source codes
-+ Shortcuts are stored with localized names in the registry
-+ `ID_CLONE_SEQUENCE` (in `IDR_SEQUENCE_POPUP`) shows `IDS_DISABLE_SAVE` string on the resource IDE
-+ These don't show menu prompts on the status bar: `IDR_FRAME_POPUP`, `IDR_PATTERN_HEADER_POPUP`, `IDR_SAMPLE_EDITOR_POPUP`, `IDR_SAMPLE_WND_POPUP`, `IDR_SAMPLES_POPUP` and `IDR_SEQUENCE_POPUP`
-+ Double-clicking a `*.0cc` file makes 0CCFT crash
-  - It's OK to open it from 0CCFT
-  - It doesn't matter if `WIP` is defined in `version.h`
-+ `V`xx effect for N163 shows a hint for VRC7
-+ [Non-issue]: Some contents of `ID_FRAME_*` are duplicated to ones of `ID_EDIT_*`
-+ [Non-issue]: There are many strings unused in the string table
-  - Marked some of them as beginning with `[*未使用*]`
-+ [Non-issue]: I wonder why the actual configuration dialog is a little wider than the one previewed from the resource IDE
+  …なんかFamiTracker.cppのLoadLocalization()という箇所を見ると、
+  language.dllというものを用意してやることでお手軽に翻訳できるようにする機能が、
+  本家FamiTrackerの頃から搭載されているらしい。  
+  しかし、本格実装の要望があって開発者も興味を持っているものの、そこまでには至っていないっぽい。残念。
+   → Language pack - FamiTracker http://forums.famitracker.com/viewtopic.php?t=380
+  
+  更には別のローカライズエンジンを作る動きもあったようだけど、よくわからない。残念。
+   → Famitracker Localization engine - FamiTracker http://forums.famitracker.com/viewtopic.php?p=9456
 
-
-## 多言語化についてのぼやき
-
-…なんか[`FamiTracker.cpp`の`LoadLocalization()`という箇所](Source/FamiTracker.cpp#L420 "ソースの該当箇所")を見ると、`language.dll`というものを用意してやることでお手軽に翻訳できるようにする機能が本家FamiTrackerの頃から搭載されているらしい。  
-しかし、[要望があって開発者も興味を持っているものの、本格実装には至っていないっぽい](http://forums.famitracker.com/viewtopic.php?t=380 "FamiTracker公式フォーラムのトピック")。残念。
-
-更には[別のローカライズエンジンを作る動きもあったようだけど](http://forums.famitracker.com/viewtopic.php?p=9456 "FamiTracker公式フォーラムのトピック")、よくわからない。残念。
-
+-->
 
 
 
 ​
 
-以下は日本語化元のREADME。
+以下は日本語化元の0CC-FamiTrackerのREADME。
 
 -----
 
