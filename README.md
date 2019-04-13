@@ -27,23 +27,26 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
 ## レジストリについて
 
 私はこれにとりかかるまで「インストーラーのないソフト」＝「拡張子関連付けをしない限り、レジストリに影響を残さないソフト」だとばかり思ってたんだけど、どうも最近のソフトはそうでもないらしい。  
-本家FamiTrackerや0CC-FamiTrackerは、最新版であればファイル拡張子が自動で関連付けされる。すごい。  
+本家FamiTrackerや0CC-FamiTrackerは、インストーラーがないにもかかわらず、最新版であればファイル拡張子が自動で関連付けされる。すごい。  
 処理のタイミングとしては、起動時に関連付けが行われ、保存時にファイルアイコンの登録と拡張子表示の省略登録が行われ、終了時に環境設定の保存が行われる…という感じに見える。
 
 私が見つけられる限り、0CC-FT 0.3.15.3では以下のレジストリが自動登録される（`★`はユーザー識別子）。  
 なお、下位リストとして書いたものは連動しているレジストリなので、親玉を消すと勝手に消える。
 ```
-  HKEY_CLASSES_ROOT\.0cc : 拡張子の関連付け
+  拡張子の関連付け：
+  HKEY_CLASSES_ROOT\.0cc
     - HKEY_CURRENT_USER\Software\Classes\.0cc
     - HKEY_USERS\★\Software\Classes\.0cc
     - HKEY_USERS\★_Classes\.0cc
 
-  HKEY_CLASSES_ROOT\0CCFamiTracker.Document : 関連付けの詳細
+  関連付けの詳細：
+  HKEY_CLASSES_ROOT\0CCFamiTracker.Document
     - HKEY_CURRENT_USER\Software\Classes\0CCFamiTracker.Document
     - HKEY_USERS\★\Software\Classes\0CCFamiTracker.Document
     - HKEY_USERS\★_Classes\0CCFamiTracker.Document
 
-  HKEY_CURRENT_USER\Software\0CC-FamiTracker : 環境設定
+  環境設定：
+  HKEY_CURRENT_USER\Software\0CC-FamiTracker
     - HKEY_USERS\★\Software\0CC-FamiTracker
 ```
 
@@ -71,7 +74,7 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
 -->
 
 
-## ビルドに関する注意点
+## ビルドに関する注意点（開発者向け）
 
 + 日本語化されたリソースファイル（`*.rc`）やレジストリファイル（`*.reg`）は、文字エンコーディングがUTF-16 Little-Endianでないといけないっぽい。Visual Studio 2017上のエンコーディング選択肢は`Unicode - Codepage 1200`となる。
 
@@ -184,7 +187,7 @@ GPLといえば、日本語化のための変更を加えた行やブロック�
 
 ​
 
-以下は日本語化元の0CC-FamiTrackerのREADME。
+以下は、日本語化元であるオリジナルの0CC-FamiTrackerのREADME。
 
 -----
 
