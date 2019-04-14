@@ -1313,7 +1313,7 @@ BEGIN
     CONTROL         "両方",IDC_DUAL,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,88,67,30,10
     COMBOBOX        IDC_TYPE,16,97,218,100,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     GROUPBOX        "NSF ファイルオプション",IDC_STATIC,7,7,173,75
-    LTEXT           "名前",IDC_STATIC,16,20,38,11
+    LTEXT           "作品名",IDC_STATIC,16,20,38,11
     LTEXT           "作者",IDC_STATIC,16,35,38,11
     LTEXT           "著作権表示",IDC_STATIC,16,51,44,11
     GROUPBOX        "進行状況",IDC_STATIC,7,120,233,156
@@ -2590,7 +2590,7 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_INFO_TITLE          "(曲名)"
+    IDS_INFO_TITLE          "(作品名)"
     IDS_INFO_AUTHOR         "(作者)"
     IDS_OUT_OF_SLOTS        "[*未使用*]Out of sample slots"
     IDS_OUT_OF_SAMPLEMEM_FORMAT 
